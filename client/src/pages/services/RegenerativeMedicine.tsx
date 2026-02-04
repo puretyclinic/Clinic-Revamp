@@ -85,9 +85,9 @@ export default function RegenerativeMedicine() {
                 <div className="w-12 h-12 bg-secondary/30 rounded-full flex items-center justify-center text-primary mb-6">
                   <Bone className="w-6 h-6" />
                 </div>
-                <h3 className="font-serif text-2xl font-bold mb-4">Cellular Matrix</h3>
+                <h3 className="font-serif text-2xl font-bold mb-4">Biologic Injections</h3>
                 <p className="text-muted-foreground mb-6">
-                  Advanced biologic allografts derived from perinatal tissues, providing a rich scaffold of growth factors and cytokines for severe degeneration.
+                  Advanced biologic allografts including Wharton's Jelly and Exosomes, providing a rich scaffold of growth factors and cytokines for tissue repair and regeneration.
                 </p>
                 <ul className="space-y-2 mb-8 text-sm text-foreground/80">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent"/> Severe Arthritis</li>
