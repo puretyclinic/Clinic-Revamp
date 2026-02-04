@@ -71,8 +71,8 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-1 text-primary" />
                 <span>
-                  123 Healing Way, Suite 100<br/>
-                  Santa Barbara, CA 93101
+                  2323 Oak Park Lane Suite 102<br/>
+                  Santa Barbara, CA 93105
                 </span>
               </li>
               <li className="flex items-center gap-3">

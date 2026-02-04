@@ -42,8 +42,8 @@ export default function Contact() {
                       <div>
                         <h3 className="font-bold text-foreground mb-1">Visit Us</h3>
                         <p className="text-muted-foreground leading-relaxed">
-                          123 Healing Way, Suite 100<br/>
-                          Santa Barbara, CA 93101
+                          2323 Oak Park Lane Suite 102<br/>
+                          Santa Barbara, CA 93105
                         </p>
                       </div>
                     </div>
