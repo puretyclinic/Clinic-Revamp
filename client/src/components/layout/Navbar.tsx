@@ -22,6 +22,8 @@ export function Navbar() {
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Doctors", href: "/doctors" },
+    { name: "Blog", href: "/blog" },
+    { name: "Shop", href: "/shop" },
     { name: "Contact", href: "/contact" },
   ];
 
