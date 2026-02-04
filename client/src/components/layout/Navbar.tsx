@@ -39,14 +39,11 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/">
           <a className="flex items-center gap-2 group">
-            <div className="flex flex-col items-center md:items-start">
-              <span className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-primary group-hover:text-primary/80 transition-colors">
-                PURETY
-              </span>
-              <span className="text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.2em] text-accent font-bold">
-                Family Medical Clinic
-              </span>
-            </div>
+             <img 
+               src="https://puretyclinicshop.com/cdn/shop/files/b6e6d47b8b6ccc24fdda4f3455f4897233fa8172.png?v=1749923486&width=600" 
+               alt="Purety Family Medical Clinic" 
+               className="h-12 md:h-16 w-auto object-contain"
+             />
           </a>
         </Link>
 
