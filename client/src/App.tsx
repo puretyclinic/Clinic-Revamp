@@ -8,6 +8,8 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
 import Contact from "@/pages/Contact";
+import Blog from "@/pages/Blog";
+import Shop from "@/pages/Shop";
 import ClaimPreview from "@/pages/ClaimPreview";
 
 function Router() {
@@ -16,8 +18,10 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
-      <Route path="/doctors" component={About} /> {/* Reusing About for Doctors for now as it contains bios */}
+      <Route path="/doctors" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/shop" component={Shop} />
       <Route path="/claim" component={ClaimPreview} />
       <Route component={NotFound} />
     </Switch>
