@@ -135,6 +135,10 @@ export default function FMT() {
                        <Input id="email" type="email" placeholder="john@example.com" required className="bg-gray-50 border-gray-200" />
                      </div>
                      <div>
+                       <Label htmlFor="phone">Phone Number</Label>
+                       <Input id="phone" type="tel" placeholder="(555) 123-4567" required className="bg-gray-50 border-gray-200" />
+                     </div>
+                     <div>
                        <Label htmlFor="condition">Primary Condition</Label>
                        <Input id="condition" placeholder="e.g. C. diff, IBS, etc." className="bg-gray-50 border-gray-200" />
                      </div>
