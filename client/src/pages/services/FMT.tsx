@@ -2,9 +2,23 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, CheckCircle2, ArrowRight, Cloud } from "lucide-react"; // Microclimatology as abstract for microbiome
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { ShieldCheck, CheckCircle2, ArrowRight, Cloud, Mail } from "lucide-react"; // Microclimatology as abstract for microbiome
+import { useToast } from "@/hooks/use-toast";
 
 export default function FMT() {
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Message Sent",
+      description: "Dr. Jonathan will review your message shortly. (Sent to drjonathan@puretyclinic.com)",
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
       <Navbar />
@@ -91,16 +105,50 @@ export default function FMT() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-24 bg-accent/10 text-center">
-           <div className="container mx-auto px-4 max-w-2xl">
-             <h2 className="font-serif text-4xl mb-6">Ready to End the Cycle?</h2>
-             <p className="text-muted-foreground mb-8">
-               Dr. Jonathan Birch has helped over 1,000 patients achieve lasting relief. Schedule your consultation to see if FMT is right for you.
-             </p>
-             <Button size="lg" className="rounded-full px-10 bg-primary hover:bg-primary/90 text-white shadow-lg">
-               Schedule FMT Consultation
-             </Button>
+        {/* Contact Form Section */}
+        <section className="py-24 bg-accent/10 relative overflow-hidden" id="fmt-consult">
+           <div className="container mx-auto px-4 max-w-4xl relative z-10">
+             <div className="bg-white rounded-[2rem] shadow-xl overflow-hidden">
+               <div className="grid md:grid-cols-2">
+                 <div className="p-10 bg-primary text-white flex flex-col justify-center">
+                   <h2 className="font-serif text-3xl md:text-4xl mb-6">Start Your Recovery</h2>
+                   <p className="text-white/80 mb-8 leading-relaxed">
+                     Directly contact Dr. Jonathan Birch to discuss your case. We treat C. diff and other complex microbiome conditions.
+                   </p>
+                   <div className="flex items-center gap-3 mb-2">
+                     <Mail className="w-5 h-5 text-accent" />
+                     <span className="font-medium">drjonathan@puretyclinic.com</span>
+                   </div>
+                   <p className="text-xs text-white/50 mt-8">
+                     HIPAA Compliant & Confidential
+                   </p>
+                 </div>
+                 
+                 <div className="p-10">
+                   <form onSubmit={handleSubmit} className="space-y-4">
+                     <div>
+                       <Label htmlFor="name">Full Name</Label>
+                       <Input id="name" placeholder="John Doe" required className="bg-gray-50 border-gray-200" />
+                     </div>
+                     <div>
+                       <Label htmlFor="email">Email Address</Label>
+                       <Input id="email" type="email" placeholder="john@example.com" required className="bg-gray-50 border-gray-200" />
+                     </div>
+                     <div>
+                       <Label htmlFor="condition">Primary Condition</Label>
+                       <Input id="condition" placeholder="e.g. C. diff, IBS, etc." className="bg-gray-50 border-gray-200" />
+                     </div>
+                     <div>
+                       <Label htmlFor="message">Message for Dr. Jonathan</Label>
+                       <Textarea id="message" placeholder="Tell us a bit about your history..." className="bg-gray-50 border-gray-200 min-h-[120px]" />
+                     </div>
+                     <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-white font-bold">
+                       Send Message
+                     </Button>
+                   </form>
+                 </div>
+               </div>
+             </div>
            </div>
         </section>
       </main>
