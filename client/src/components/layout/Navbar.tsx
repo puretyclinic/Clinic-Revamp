@@ -40,7 +40,7 @@ export function Navbar() {
         <Link href="/">
           <a className="flex items-center gap-2 group">
              <img 
-               src="https://puretyclinicshop.com/cdn/shop/files/b6e6d47b8b6ccc24fdda4f3455f4897233fa8172.png?v=1749923486&width=600" 
+               src="/images/logo.gif" 
                alt="Purety Family Medical Clinic" 
                className="h-12 md:h-16 w-auto object-contain"
              />
