@@ -21,7 +21,7 @@ export function Footer() {
               Holistic, integrative, and functional medicine in Santa Barbara, CA. 
               Curing the entire body, not just the malady.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-8">
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
@@ -29,6 +29,23 @@ export function Footer() {
                 <Instagram className="w-4 h-4" />
               </a>
             </div>
+
+            {/* Google Reviews Badge */}
+            <a href="https://www.google.com/search?q=Purety+Family+Medical+Clinic+reviews" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-white py-2 px-4 rounded-xl shadow-lg hover:shadow-xl transition-all group">
+               <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0">
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" className="w-5 h-5" />
+               </div>
+               <div>
+                 <div className="flex text-[#FBBC05]">
+                   {[...Array(5)].map((_, i) => (
+                     <svg key={i} className="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                   ))}
+                 </div>
+                 <div className="text-[10px] text-gray-500 font-bold leading-tight mt-0.5 group-hover:text-primary transition-colors">
+                   5.0 Rating | 80+ Reviews
+                 </div>
+               </div>
+            </a>
           </div>
 
           <div>
