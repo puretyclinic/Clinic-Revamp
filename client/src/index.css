@@ -35,46 +35,56 @@
 }
 
 :root {
-  /* Purety Clinic Palette */
-  /* Primary Teal: #739BA0 -> HSL 187, 20%, 54% */
-  /* Accent Gold: #BF780C -> HSL 36, 88%, 40% */
-  /* Bg: #F7F7F7 -> HSL 0, 0%, 97% */
+  /* Organic Modern Palette - Warmed Up */
+  
+  /* Background: Warm Antique White / Cream */
+  /* #FDFBF7 -> HSL 36, 33%, 98% */
+  --background: 36 33% 98%; 
+  
+  /* Foreground: Soft Earthy Charcoal */
+  /* #2C3333 -> HSL 180, 7%, 19% */
+  --foreground: 180 7% 19%; 
 
-  --background: 0 0% 98%; /* Slightly cooler white for paper feel */
-  --foreground: 180 5% 15%; /* Dark charcoal, softer than black */
-
+  /* Primary: Muted Sage/Teal (Restorative) */
+  /* #739BA0 -> HSL 187, 20%, 54% */
   --primary: 187 20% 54%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 187 20% 94%; /* Very light teal tint */
-  --secondary-foreground: 187 25% 35%;
+  /* Secondary: Very light Sage Tint */
+  --secondary: 187 25% 96%;
+  --secondary-foreground: 187 30% 35%;
 
+  /* Accent: Warm Ochre/Gold (Vitality) */
+  /* #BF780C -> HSL 36, 88%, 40% */
   --accent: 36 88% 40%;
   --accent-foreground: 0 0% 100%;
 
-  --muted: 60 5% 90%;
-  --muted-foreground: 0 0% 40%;
+  /* Muted: Warm Stone */
+  --muted: 40 10% 92%;
+  --muted-foreground: 30 5% 45%;
 
   --card: 0 0% 100%;
-  --card-foreground: 180 5% 15%;
+  --card-foreground: 180 7% 19%;
 
-  --border: 187 10% 85%;
-  --input: 187 10% 85%;
+  --border: 40 10% 88%;
+  --input: 40 10% 88%;
   --ring: 187 20% 54%;
 
-  --radius: 0.25rem;
+  --radius: 0.75rem; /* Softer, friendlier corners */
 }
 
 body {
   font-family: var(--font-sans);
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  /* Subtle grain texture overlay */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   font-weight: 500;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .font-serif {

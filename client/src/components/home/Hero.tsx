@@ -12,37 +12,36 @@ export function Hero() {
           alt="Peaceful Clinic Interior"
           className="w-full h-full object-cover"
         />
-        {/* Soft overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-white/30 backdrop-blur-[1px] mix-blend-overlay" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
+        {/* Warm, soft overlay for a 'Golden Hour' feel */}
+        <div className="absolute inset-0 bg-stone-100/40 mix-blend-soft-light" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-white/50 to-transparent" />
       </div>
 
       <div className="container relative z-10 px-4 text-center mx-auto max-w-4xl pt-20">
         <FadeIn delay={0.2} direction="up">
-          <span className="inline-block py-1 px-3 rounded-full bg-accent/10 text-accent text-xs font-bold tracking-[0.2em] uppercase mb-6 border border-accent/20">
-            Holistic Medicine Santa Barbara
+          <span className="inline-block py-2 px-4 rounded-full bg-white/60 backdrop-blur-md text-accent text-xs font-bold tracking-[0.2em] uppercase mb-8 border border-white shadow-sm">
+            Holistic Sanctuary Santa Barbara
           </span>
         </FadeIn>
         
         <FadeIn delay={0.4} direction="up">
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium text-foreground mb-6 leading-[0.9]">
-            Curing the <span className="italic text-primary">entire body</span>, <br /> not just the malady.
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium text-foreground mb-8 leading-[1.1]">
+            Nurturing the <span className="italic text-primary">whole person</span>, <br /> naturally.
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.6} direction="up">
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-            Purety Family Medical Clinic practices holistic, integrative, and functional medicine. 
-            We believe in your body's innate ability to heal.
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+            A sanctuary for integrative healing. We believe in supporting your body's innate wisdom to restore balance and vitality.
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.8} direction="up" className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" className="h-14 px-8 rounded-full bg-primary hover:bg-primary/90 text-white text-base shadow-xl shadow-primary/20 w-full sm:w-auto transition-transform hover:scale-105">
-            Book Appointment
+        <FadeIn delay={0.8} direction="up" className="flex flex-col sm:flex-row items-center justify-center gap-5">
+          <Button size="lg" className="h-14 px-10 rounded-full bg-primary hover:bg-primary/90 text-white text-base shadow-xl shadow-primary/20 w-full sm:w-auto transition-all hover:-translate-y-1">
+            Begin Your Journey
           </Button>
-          <Button variant="outline" size="lg" className="h-14 px-8 rounded-full border-primary/20 bg-white/50 backdrop-blur-sm hover:bg-white text-primary text-base w-full sm:w-auto">
-            Explore Services <ArrowRight className="ml-2 w-4 h-4" />
+          <Button variant="outline" size="lg" className="h-14 px-10 rounded-full border-primary/20 bg-white/60 backdrop-blur-md hover:bg-white text-primary text-base w-full sm:w-auto transition-all hover:-translate-y-1">
+            Our Philosophy <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
         </FadeIn>
       </div>
