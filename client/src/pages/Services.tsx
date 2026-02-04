@@ -2,11 +2,13 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Syringe, Wind, Droplet, Flower, Activity, Baby, HeartPulse, Brain, Bone, Leaf, Pill } from "lucide-react";
+import { Syringe, Wind, Droplet, Flower, Activity, Baby, HeartPulse, Brain, Bone, Leaf, Pill, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 const services = [
   {
     category: "Consultations",
+    link: "/services/naturopathic",
     items: [
       {
         title: "Holistic Medical Consultations",
@@ -27,6 +29,7 @@ const services = [
   },
   {
     category: "Regenerative & Injection Therapies",
+    link: "/services/regenerative",
     items: [
       {
         title: "PRP & Stem Cell Matrix",
@@ -47,6 +50,7 @@ const services = [
   },
   {
     category: "Specialized Treatments",
+    link: "/services/iv-therapy",
     items: [
       {
         title: "Ozone Therapy",
@@ -96,22 +100,29 @@ export default function Services() {
           <div className="container mx-auto px-4">
             {services.map((section, idx) => (
               <div key={idx} className="mb-20 last:mb-0">
-                <FadeIn direction="up">
-                  <h2 className="font-serif text-3xl text-foreground mb-10 border-b border-gray-100 pb-4 inline-block">
+                <FadeIn direction="up" className="flex items-end justify-between border-b border-gray-100 pb-4 mb-10">
+                  <h2 className="font-serif text-3xl text-foreground">
                     {section.category}
                   </h2>
+                  <Link href={section.link}>
+                    <a className="text-sm font-bold text-primary uppercase tracking-wider flex items-center hover:translate-x-1 transition-transform">
+                      Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                    </a>
+                  </Link>
                 </FadeIn>
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {section.items.map((item, i) => (
                     <FadeIn key={i} delay={i * 0.1} direction="up">
-                      <div className="group p-8 rounded-2xl bg-muted/20 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10 h-full flex flex-col">
-                        <div className="w-12 h-12 rounded-full bg-white text-primary flex items-center justify-center shadow-sm mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                          <item.icon className="w-6 h-6" />
-                        </div>
-                        <h3 className="font-serif text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                      </div>
+                      <Link href={section.link}>
+                        <a className="group p-8 rounded-2xl bg-muted/20 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10 h-full flex flex-col block">
+                          <div className="w-12 h-12 rounded-full bg-white text-primary flex items-center justify-center shadow-sm mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <item.icon className="w-6 h-6" />
+                          </div>
+                          <h3 className="font-serif text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                        </a>
+                      </Link>
                     </FadeIn>
                   ))}
                 </div>

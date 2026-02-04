@@ -11,6 +11,9 @@ import Contact from "@/pages/Contact";
 import Blog from "@/pages/Blog";
 import Shop from "@/pages/Shop";
 import ClaimPreview from "@/pages/ClaimPreview";
+import RegenerativeMedicine from "@/pages/services/RegenerativeMedicine";
+import IVTherapy from "@/pages/services/IVTherapy";
+import NaturopathicMedicine from "@/pages/services/NaturopathicMedicine";
 
 function Router() {
   return (
@@ -18,6 +21,9 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
+      <Route path="/services/regenerative" component={RegenerativeMedicine} />
+      <Route path="/services/iv-therapy" component={IVTherapy} />
+      <Route path="/services/naturopathic" component={NaturopathicMedicine} />
       <Route path="/doctors" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/blog" component={Blog} />
