@@ -1,0 +1,119 @@
+import { FadeIn } from "@/components/layout/FadeIn";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { Button } from "@/components/ui/button";
+import { Heart, Sun, Leaf, Shield, AlertCircle } from "lucide-react";
+
+export default function CancerSupport() {
+  return (
+    <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
+      <Navbar />
+      
+      <main className="flex-grow">
+        {/* Hero */}
+        <section className="relative py-24 bg-primary text-white flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/images/paper-texture.jpg')] opacity-10 mix-blend-overlay" />
+          <div className="container px-4 text-center relative z-10">
+            <FadeIn>
+              <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 text-white text-xs font-bold tracking-[0.2em] uppercase mb-6 border border-white/20">
+                Integrative Oncology Support
+              </span>
+              <h1 className="font-serif text-5xl md:text-7xl mb-6">Holistic Cancer <span className="italic text-accent">Support</span></h1>
+              <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+                Complementary therapies to strengthen the body, reduce side effects, and improve quality of life during and after conventional treatment.
+              </p>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* Introduction */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <FadeIn>
+              <div className="flex items-start gap-4 p-6 bg-blue-50 text-blue-900 rounded-xl mb-12 border border-blue-100">
+                <AlertCircle className="w-6 h-6 shrink-0 mt-1" />
+                <p className="text-sm leading-relaxed">
+                  <strong>Note:</strong> We do not treat cancer directly. We provide supportive, integrative care to work alongside your oncologist. Our goal is to keep your healthy cells strong while your conventional treatments target the disease.
+                </p>
+              </div>
+
+              <h2 className="font-serif text-3xl text-foreground mb-6">Strengthening the Terrain</h2>
+              <div className="prose prose-lg text-muted-foreground leading-relaxed">
+                <p>
+                  A cancer diagnosis affects the whole person—body, mind, and spirit. While surgery, chemotherapy, and radiation focus on the tumor, our holistic approach focuses on the "host"—YOU.
+                </p>
+                <p>
+                  By optimizing nutrition, reducing inflammation, and supporting detoxification pathways, we help patients tolerate conventional treatments better and recover faster.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* Therapies Grid */}
+        <section className="py-24 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              
+              <FadeIn delay={0.1} className="bg-white p-8 rounded-2xl shadow-sm">
+                <div className="w-12 h-12 bg-secondary/30 rounded-full flex items-center justify-center text-primary mb-6">
+                  <Shield className="w-6 h-6" />
+                </div>
+                <h3 className="font-serif text-2xl font-bold mb-4">Immune Support</h3>
+                <p className="text-muted-foreground">
+                  Using High-Dose Vitamin C IVs, Mistletoe Therapy, and targeted supplementation to maintain robust immune function during treatment.
+                </p>
+              </FadeIn>
+
+              <FadeIn delay={0.2} className="bg-white p-8 rounded-2xl shadow-sm">
+                <div className="w-12 h-12 bg-secondary/30 rounded-full flex items-center justify-center text-primary mb-6">
+                  <Leaf className="w-6 h-6" />
+                </div>
+                <h3 className="font-serif text-2xl font-bold mb-4">Detoxification</h3>
+                <p className="text-muted-foreground">
+                  Supporting the liver and kidneys to safely eliminate metabolic waste and chemotherapy byproducts using Chelation and Lymphatic support.
+                </p>
+              </FadeIn>
+
+              <FadeIn delay={0.3} className="bg-white p-8 rounded-2xl shadow-sm">
+                <div className="w-12 h-12 bg-secondary/30 rounded-full flex items-center justify-center text-primary mb-6">
+                  <Heart className="w-6 h-6" />
+                </div>
+                <h3 className="font-serif text-2xl font-bold mb-4">Nutrition & Diet</h3>
+                <p className="text-muted-foreground">
+                  Personalized ketogenic or metabolic nutritional plans designed to starve cancer cells of glucose while nourishing healthy tissue.
+                </p>
+              </FadeIn>
+              
+              <FadeIn delay={0.4} className="bg-white p-8 rounded-2xl shadow-sm">
+                <div className="w-12 h-12 bg-secondary/30 rounded-full flex items-center justify-center text-primary mb-6">
+                  <Sun className="w-6 h-6" />
+                </div>
+                <h3 className="font-serif text-2xl font-bold mb-4">Psycho-Oncology</h3>
+                <p className="text-muted-foreground">
+                  Addressing the emotional impact of diagnosis through stress reduction techniques, cortisol management, and mind-body connection.
+                </p>
+              </FadeIn>
+
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-24 bg-white text-center">
+           <div className="container mx-auto px-4 max-w-2xl">
+             <h2 className="font-serif text-4xl mb-6">You Are Not Alone</h2>
+             <p className="text-muted-foreground mb-8">
+               Let us build a comprehensive support plan to walk with you through your healing journey.
+             </p>
+             <Button size="lg" className="rounded-full px-10 bg-primary hover:bg-primary/90 text-white shadow-lg">
+               Consult with Dr. Birch
+             </Button>
+           </div>
+        </section>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+}

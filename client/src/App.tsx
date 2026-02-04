@@ -14,6 +14,10 @@ import ClaimPreview from "@/pages/ClaimPreview";
 import RegenerativeMedicine from "@/pages/services/RegenerativeMedicine";
 import IVTherapy from "@/pages/services/IVTherapy";
 import NaturopathicMedicine from "@/pages/services/NaturopathicMedicine";
+import FMT from "@/pages/services/FMT";
+import CancerSupport from "@/pages/services/CancerSupport";
+import BlogPost from "@/pages/blog/BlogPost";
+import ProductDetail from "@/pages/shop/ProductDetail";
 
 function Router() {
   return (
@@ -24,10 +28,14 @@ function Router() {
       <Route path="/services/regenerative" component={RegenerativeMedicine} />
       <Route path="/services/iv-therapy" component={IVTherapy} />
       <Route path="/services/naturopathic" component={NaturopathicMedicine} />
+      <Route path="/services/fmt" component={FMT} />
+      <Route path="/services/cancer-support" component={CancerSupport} />
       <Route path="/doctors" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/blog" component={Blog} />
+      <Route path="/blog/post" component={BlogPost} /> {/* Demo single post route */}
       <Route path="/shop" component={Shop} />
+      <Route path="/shop/product" component={ProductDetail} /> {/* Demo single product route */}
       <Route path="/claim" component={ClaimPreview} />
       <Route component={NotFound} />
     </Switch>

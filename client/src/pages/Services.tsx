@@ -21,8 +21,8 @@ const services = [
         icon: Baby
       },
       {
-        title: "Longevity & Anti-Aging",
-        description: "Preventative care strategies to optimize health span.",
+        title: "Holistic Cancer Support",
+        description: "Integrative oncology support to strengthen the body during treatment.",
         icon: Leaf
       }
     ]
@@ -65,7 +65,8 @@ const services = [
       {
         title: "Fecal Transplant (FMT)",
         description: "Microbiome restoration for gut health and C. diff.",
-        icon: Activity
+        icon: Activity,
+        customLink: "/services/fmt"
       },
       {
         title: "Bioidentical HRT",
@@ -114,7 +115,7 @@ export default function Services() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {section.items.map((item, i) => (
                     <FadeIn key={i} delay={i * 0.1} direction="up">
-                      <Link href={section.link}>
+                      <Link href={item.customLink || section.link}>
                         <a className="group p-8 rounded-2xl bg-muted/20 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10 h-full flex flex-col block">
                           <div className="w-12 h-12 rounded-full bg-white text-primary flex items-center justify-center shadow-sm mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                             <item.icon className="w-6 h-6" />
