@@ -4,8 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-serif: "Cormorant Garamond", serif;
-  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -35,56 +35,57 @@
 }
 
 :root {
-  /* Organic Modern Palette - Warmed Up */
+  /* PureFMT Enhanced Palette */
   
-  /* Background: Warm Antique White / Cream */
-  /* #FDFBF7 -> HSL 36, 33%, 98% */
-  --background: 36 33% 98%; 
+  /* Background: Crisp White with Warmth */
+  --background: 0 0% 100%;
   
-  /* Foreground: Soft Earthy Charcoal */
-  /* #2C3333 -> HSL 180, 7%, 19% */
-  --foreground: 180 7% 19%; 
+  /* Foreground: Slate Charcoal */
+  /* #334155 -> HSL 215, 25%, 27% */
+  --foreground: 215 25% 27%;
 
-  /* Primary: Muted Sage/Teal (Restorative) */
-  /* #739BA0 -> HSL 187, 20%, 54% */
-  --primary: 187 20% 54%;
+  /* Primary: Deep Sage Teal */
+  /* #5A8085 -> HSL 187, 19%, 44% */
+  --primary: 187 19% 44%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Very light Sage Tint */
-  --secondary: 187 25% 96%;
-  --secondary-foreground: 187 30% 35%;
+  /* Secondary: Soft Sage Mist */
+  /* #E0F2F1 -> HSL 178, 43%, 91% */
+  --secondary: 178 43% 91%;
+  --secondary-foreground: 187 30% 30%;
 
-  /* Accent: Warm Ochre/Gold (Vitality) */
+  /* Accent: Rich Golden Ochre */
   /* #BF780C -> HSL 36, 88%, 40% */
   --accent: 36 88% 40%;
   --accent-foreground: 0 0% 100%;
 
-  /* Muted: Warm Stone */
-  --muted: 40 10% 92%;
-  --muted-foreground: 30 5% 45%;
+  /* Muted: Warm Greige */
+  --muted: 40 10% 96%;
+  --muted-foreground: 215 15% 45%;
 
   --card: 0 0% 100%;
-  --card-foreground: 180 7% 19%;
+  --card-foreground: 215 25% 27%;
 
-  --border: 40 10% 88%;
-  --input: 40 10% 88%;
-  --ring: 187 20% 54%;
+  --border: 215 15% 90%;
+  --input: 215 15% 90%;
+  --ring: 187 19% 44%;
 
-  --radius: 0.75rem; /* Softer, friendlier corners */
+  --radius: 0.5rem;
 }
 
 body {
   font-family: var(--font-sans);
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
-  /* Subtle grain texture overlay */
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  background-image: url("/images/paper-texture.jpg");
+  background-blend-mode: multiply;
+  background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .font-serif {

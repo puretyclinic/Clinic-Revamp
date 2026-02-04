@@ -1,60 +1,65 @@
 import { FadeIn } from "@/components/layout/FadeIn";
+import { CheckCircle2 } from "lucide-react";
 
 export function Doctors() {
   return (
-    <section id="doctors" className="py-24 bg-gradient-to-b from-white to-secondary/20">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <FadeIn direction="up">
-            <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Your Guides</span>
-            <h2 className="font-serif text-4xl md:text-5xl">Meet Our <span className="italic text-primary">Healers</span></h2>
-          </FadeIn>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Dr Dena */}
-          <FadeIn direction="right" delay={0.1}>
-            <div className="flex flex-col group items-center text-center">
-              <div className="overflow-hidden rounded-full aspect-square w-64 md:w-80 mb-8 relative shadow-2xl border-4 border-white">
-                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 duration-500" />
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          <FadeIn direction="right">
+            <div className="relative">
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
+              <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-primary/10 rounded-full blur-3xl" />
+              
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative border-8 border-white">
                 <img 
-                  src="/images/dr-dena.jpg" 
-                  alt="Dr. Dena Nakhle Birch"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  src="https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1586254533732-DIBCSH2O3LNIQGHE1231/purety-clinic_Home_screen-3.jpg" 
+                  alt="Dr. Jonathan Birch" 
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="max-w-md">
-                <h3 className="font-serif text-3xl mb-2 text-foreground">Dr. Dena Nakhle Birch</h3>
-                <p className="text-xs font-bold uppercase tracking-widest text-accent mb-6">NMD • Women's Health & Wellness</p>
-                <p className="text-muted-foreground leading-relaxed font-light">
-                  Dr. Dena approaches health with a heart-centered focus on nature's wisdom. 
-                  She considers it an honor to walk alongside her patients, helping women and children find balance and joy in their health journey.
-                </p>
+              
+              <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur p-6 rounded-xl shadow-lg border border-gray-100 max-w-xs">
+                 <div className="text-3xl font-serif font-bold text-primary mb-1">10+</div>
+                 <div className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Years of FMT Leadership</div>
               </div>
             </div>
           </FadeIn>
 
-          {/* Dr Jonathan */}
-          <FadeIn direction="left" delay={0.2}>
-            <div className="flex flex-col group items-center text-center">
-              <div className="overflow-hidden rounded-full aspect-square w-64 md:w-80 mb-8 relative shadow-2xl border-4 border-white">
-                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 duration-500" />
-                <img 
-                  src="/images/dr-jonathan.jpg" 
-                  alt="Dr. Jonathan Birch"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+          <FadeIn direction="left">
+            <div>
+              <span className="text-accent font-bold tracking-widest uppercase text-xs mb-4 block">Medical Director</span>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-foreground">Meet Dr. Jonathan Birch</h2>
+              
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Since 2014, Dr. Birch has been one of the nation's leading FMT specialists, helping over 1,000 patients achieve lasting relief through personalized FMT protocols.
+              </p>
+              
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                His approach combines rigorous safety protocols with compassionate, personalized care. Each treatment protocol is tailored to your specific condition and health history.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                {[
+                  "1,000+ Successful Procedures",
+                  "Super Donor Protocol",
+                  "10+ Years FMT Experience",
+                  "Remote Consultations Available"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="font-medium text-foreground/80">{item}</span>
+                  </div>
+                ))}
               </div>
-              <div className="max-w-md">
-                <h3 className="font-serif text-3xl mb-2 text-foreground">Dr. Jonathan Birch</h3>
-                <p className="text-xs font-bold uppercase tracking-widest text-accent mb-6">NMD, RMSK • Restorative Medicine</p>
-                <p className="text-muted-foreground leading-relaxed font-light">
-                  With a deep respect for the body's potential, Dr. Jonathan focuses on natural pathways to restore comfort and mobility. 
-                  He partners with you to unlock your highest potential for wellness and life experience.
-                </p>
-              </div>
+
+              <a href="#consultation" className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-primary/90 text-white font-bold transition-colors">
+                Schedule Your Consultation
+              </a>
             </div>
           </FadeIn>
+
         </div>
       </div>
     </section>
