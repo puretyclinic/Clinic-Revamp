@@ -1,9 +1,9 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/home/Hero";
-import { TreatmentPath } from "@/components/home/TreatmentPath";
+import { Philosophy } from "@/components/home/Philosophy";
+import { Services } from "@/components/home/Services";
 import { Doctors } from "@/components/home/Doctors";
 import { Testimonials } from "@/components/home/Testimonials";
-import { FAQ } from "@/components/home/FAQ";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
@@ -13,41 +13,33 @@ export default function Home() {
       
       <main className="flex-grow">
         <Hero />
+        <Philosophy />
+        <Services />
+        <Testimonials />
+        <Doctors />
         
-        {/* The Antibiotic Trap Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 text-center max-w-4xl">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6 text-foreground">Tired of the Endless Antibiotic Cycle?</h2>
-            <p className="text-lg text-muted-foreground mb-12">
-              You've tried everything. Multiple rounds of antibiotics. Strict diets. Nothing works for long. There's a better way.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-8 text-left">
-              <div className="p-6 bg-red-50 rounded-xl border border-red-100">
-                <div className="text-3xl mb-4">💊</div>
-                <h3 className="font-serif font-bold text-lg mb-2 text-red-900">The Antibiotic Trap</h3>
-                <p className="text-sm text-red-700/80">Round after round of antibiotics... They kill the bad bacteria but also destroy your healthy gut flora.</p>
-              </div>
-              
-              <div className="p-6 bg-orange-50 rounded-xl border border-orange-100">
-                <div className="text-3xl mb-4">🔄</div>
-                <h3 className="font-serif font-bold text-lg mb-2 text-orange-900">Recurring Infections</h3>
-                <p className="text-sm text-orange-700/80">25-35% of C. diff patients experience recurrence. After 2+ recurrences, your chances jump to 60%.</p>
-              </div>
-              
-              <div className="p-6 bg-green-50 rounded-xl border border-green-100">
-                <div className="text-3xl mb-4">✔</div>
-                <h3 className="font-serif font-bold text-lg mb-2 text-green-900">The FMT Solution</h3>
-                <p className="text-sm text-green-700/80">FMT restores your complete gut microbiome with healthy donor bacteria. 90%+ success rate.</p>
-              </div>
-            </div>
+        {/* Conditions List Section - Simple Text Block */}
+        <section className="py-20 bg-muted/30 border-t border-gray-200">
+          <div className="container mx-auto px-4 max-w-5xl">
+             <h3 className="font-serif text-3xl font-bold mb-10 text-center text-foreground">Conditions We Treat</h3>
+             <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 text-sm text-muted-foreground">
+               <ul className="space-y-4">
+                 <li><strong className="text-primary">Women’s Health</strong> – breast exams, fertility, pre-conception, menopause, hormone imbalance.</li>
+                 <li><strong className="text-primary">Men’s Health</strong> – Annual exams, longevity, testosterone replacement.</li>
+                 <li><strong className="text-primary">Orthopedics</strong> – chronic joint pain, tendon tears, arthritis, tennis elbow, plantar fasciitis.</li>
+                 <li><strong className="text-primary">Hormone Balance</strong> – thyroid, adrenals, sex hormones, and growth hormone.</li>
+                 <li><strong className="text-primary">Pediatrics</strong> – well-child exams and treatment of common illnesses.</li>
+               </ul>
+               <ul className="space-y-4">
+                 <li><strong className="text-primary">Diabetes</strong> – minimizing or reversion progression.</li>
+                 <li><strong className="text-primary">Heart Health</strong> – testing, management, and prevention of heart disease.</li>
+                 <li><strong className="text-primary">Pregnancy Services</strong> – Prenatal counseling and post-delivery recuperation.</li>
+                 <li><strong className="text-primary">Geriatric</strong> – common conditions, general wellness, longevity.</li>
+                 <li><strong className="text-primary">Lifestyle Counseling</strong> – stress, smoking, habit cessation.</li>
+               </ul>
+             </div>
           </div>
         </section>
-
-        <TreatmentPath />
-        <Doctors />
-        <Testimonials />
-        <FAQ />
       </main>
 
       <Footer />

@@ -1,78 +1,86 @@
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Wind, Droplet, Flower, Heart, Baby } from "lucide-react";
+import { Syringe, Wind, Droplet, Flower, Activity, Baby, HeartPulse, Brain } from "lucide-react";
 
 const services = [
   {
-    title: "Restorative Therapies",
-    description: "Natural support for joint comfort and mobility using your body's own healing factors.",
-    icon: Sparkles
+    title: "Holistic Medical Consultations",
+    description: "Deep dive into your health history to discover and address root causes.",
+    icon: Brain
   },
   {
-    title: "Oxygen & Immunity",
-    description: "Gentle oxidative therapies to support immune resilience and promote cellular vitality.",
+    title: "Regenerative Injections",
+    description: "PRP, Stem Cell Matrix, Prolotherapy / Prolozone for joint pain and injuries.",
+    icon: Syringe
+  },
+  {
+    title: "Ozone Therapy",
+    description: "EBO2 and Ten Pass / Multipass treatment to oxygenate and modulate immunity.",
     icon: Wind
   },
   {
-    title: "Nutrient Hydration",
-    description: "Personalized nutrient blends to replenish, detoxify, and restore deep hydration.",
+    title: "IV Drip Therapies",
+    description: "Personalized nutrients, chelation, Plaquex, and growth factors.",
     icon: Droplet
   },
   {
-    title: "Women's Vitality",
-    description: "Holistic support for hormonal harmony, fertility, and graceful transitions through all life stages.",
+    title: "Bioidentical HRT",
+    description: "Natural hormone balancing for thyroid, adrenals, and sex hormones.",
     icon: Flower
   },
   {
-    title: "Men's Wellness",
-    description: "Optimizing longevity, energy, and hormonal health through integrative lifestyle strategies.",
-    icon: Heart
+    title: "Fecal Transplant (FMT)",
+    description: "Restoring gut microbiome health for chronic digestive conditions.",
+    icon: Activity
   },
   {
-    title: "Children's Wellness",
-    description: "Gentle, natural care for growing bodies, focusing on preventative health and immunity.",
+    title: "Pediatrics",
+    description: "Holistic well-child exams and treatment of common illnesses.",
     icon: Baby
+  },
+  {
+    title: "Heart Health",
+    description: "Testing, management, and prevention of heart disease and atherosclerosis.",
+    icon: HeartPulse
   }
 ];
 
 export function Services() {
   return (
-    <section id="services" className="py-24 bg-secondary/30 relative">
+    <section id="services" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <FadeIn direction="up">
-            <h2 className="font-serif text-4xl md:text-5xl mb-4">Holistic <span className="italic text-primary">Pathways</span></h2>
-            <p className="text-muted-foreground text-lg font-light">
-              We gently combine the wisdom of nature with modern understanding to support your journey to wholeness.
+            <span className="text-accent font-bold tracking-widest uppercase text-xs mb-4 block">Our Modalities</span>
+            <h2 className="font-serif text-4xl md:text-5xl mb-6">Integrative <span className="italic text-primary">Services</span></h2>
+            <p className="text-muted-foreground text-lg">
+              We strive to diagnose and treat in the least invasive and curative way, combining modern diagnostics with natural therapies.
             </p>
           </FadeIn>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <FadeIn key={index} delay={index * 0.1} direction="up">
-              <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-500 border border-white hover:border-primary/20 h-full flex flex-col items-center text-center">
-                <div className="mb-6 p-4 bg-secondary/50 rounded-full text-primary group-hover:scale-110 transition-transform duration-500">
-                  <service.icon strokeWidth={1.5} className="w-8 h-8" />
+            <FadeIn key={index} delay={index * 0.05} direction="up">
+              <div className="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/20 h-full flex flex-col text-center items-center">
+                <div className="text-primary mb-4 bg-secondary/50 w-14 h-14 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <service.icon className="w-7 h-7" />
                 </div>
-                <h3 className="font-serif text-2xl mb-3 text-foreground group-hover:text-primary transition-colors">
+                <h3 className="font-serif text-xl font-bold mb-3 text-foreground">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6 font-light flex-grow">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
-                <a href="#" className="inline-flex items-center text-xs font-bold text-accent uppercase tracking-widest hover:text-accent/80 transition-colors mt-auto border-b border-transparent hover:border-accent">
-                  Discover More
-                </a>
               </div>
             </FadeIn>
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center mt-12">
           <FadeIn delay={0.4}>
-            <Button size="lg" className="rounded-full px-10 h-14 bg-primary/90 hover:bg-primary text-white shadow-lg shadow-primary/10 transition-transform hover:scale-105">
-              Explore All Therapies
+            <Button size="lg" className="rounded-full px-10 bg-accent hover:bg-accent/90 text-white shadow-lg">
+              View Comprehensive Service List
             </Button>
           </FadeIn>
         </div>
