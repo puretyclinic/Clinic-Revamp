@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +19,10 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Doctors", href: "#doctors" },
-    { name: "Contact", href: "#contact" },
-    { name: "Blog", href: "#blog" },
-    { name: "Shop", href: "#shop" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Doctors", href: "/doctors" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -38,7 +37,6 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/">
           <a className="flex items-center gap-2 group">
-             {/* Logo text for now, could be replaced with img */}
             <div className="flex flex-col items-center md:items-start">
               <span className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-primary group-hover:text-primary/80 transition-colors">
                 PURETY
@@ -53,13 +51,18 @@ export function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors uppercase tracking-wider text-[11px]"
-            >
-              {link.name}
-            </a>
+            <Link key={link.name} href={link.href}>
+              <a
+                className={cn(
+                  "text-sm font-medium transition-colors uppercase tracking-wider text-[11px]",
+                  location === link.href 
+                    ? "text-accent font-bold" 
+                    : "text-foreground/80 hover:text-accent"
+                )}
+              >
+                {link.name}
+              </a>
+            </Link>
           ))}
           <div className="pl-4 ml-2 border-l border-gray-200">
             <Button 
@@ -82,18 +85,18 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-4 shadow-xl flex flex-col gap-4 animate-in slide-in-from-top-5">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-4 shadow-xl flex flex-col gap-4 animate-in slide-in-from-top-5 h-screen">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-lg font-serif font-medium text-foreground py-2 border-b border-gray-50"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.name}
-            </a>
+            <Link key={link.name} href={link.href}>
+              <a
+                className="text-lg font-serif font-medium text-foreground py-3 border-b border-gray-50"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </a>
+            </Link>
           ))}
-          <Button className="w-full bg-primary text-white mt-2">
+          <Button className="w-full bg-primary text-white mt-4 py-6 text-lg">
             Call Us Today
           </Button>
         </div>
