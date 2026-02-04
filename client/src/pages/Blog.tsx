@@ -4,43 +4,12 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
-
-const posts = [
-  {
-    title: "The Healing Power of Nature: Understanding Naturopathy",
-    excerpt: "Naturopathic medicine is a distinct primary health care profession, emphasizing prevention, treatment, and optimal health through the use of therapeutic methods and substances that encourage individuals’ inherent self-healing process.",
-    date: "October 12, 2023",
-    author: "Dr. Dena Birch",
-    image: "https://images.unsplash.com/photo-1544367563-12123d89a5cd?auto=format&fit=crop&q=80&w=800",
-    category: "Naturopathy"
-  },
-  {
-    title: "Regenerative Medicine: Beyond Pain Management",
-    excerpt: "Regenerative injection therapies like PRP and stem cells offer a viable alternative to surgery for chronic joint pain. Learn how we use your body's own healing factors to repair tissue.",
-    date: "September 28, 2023",
-    author: "Dr. Jonathan Birch",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800",
-    category: "Regenerative Medicine"
-  },
-  {
-    title: "Gut Health & The Microbiome Connection",
-    excerpt: "Your gut health influences everything from your immune system to your mood. Discover how restoring your microbiome can lead to profound improvements in your overall vitality.",
-    date: "August 15, 2023",
-    author: "Dr. Jonathan Birch",
-    image: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&q=80&w=800",
-    category: "Gut Health"
-  },
-  {
-    title: "Holistic Approaches to Hormonal Balance",
-    excerpt: "Feeling fatigued? Hormonal imbalances are often the culprit. We explore bioidentical hormone replacement therapy (BHRT) and natural strategies for restoring equilibrium.",
-    date: "July 30, 2023",
-    author: "Dr. Dena Birch",
-    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=800",
-    category: "Women's Health"
-  }
-];
+import { blogPosts } from "@/data/posts";
 
 export default function Blog() {
+  // Only show posts that are not hidden
+  const visiblePosts = blogPosts.filter(post => !post.hidden);
+
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
       <Navbar />
@@ -62,8 +31,8 @@ export default function Blog() {
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-              {posts.map((post, index) => (
-                <FadeIn key={index} delay={index * 0.1} direction="up">
+              {visiblePosts.map((post, index) => (
+                <FadeIn key={post.id} delay={index * 0.1} direction="up">
                   <Link href="/blog/post">
                     <a className="group cursor-pointer flex flex-col h-full block">
                       <div className="aspect-[16/9] overflow-hidden rounded-2xl mb-6 shadow-sm">
