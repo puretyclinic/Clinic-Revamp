@@ -1,0 +1,146 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Plain Light",
+      "role": "body"
+    },
+    {
+      "family": "Roboto Slab",
+      "role": "heading"
+    },
+    {
+      "family": "Montserrat",
+      "role": "unknown"
+    }
+  ],
+  "colors": {
+    "primary": "#739BA0",
+    "accent": "#BF780C",
+    "background": "#F7F7F7",
+    "textPrimary": "#000000",
+    "link": "#BF780C"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Plain Light",
+      "heading": "Roboto Slab"
+    },
+    "fontStacks": {
+      "heading": [
+        "Plain Light"
+      ],
+      "body": [
+        "Plain Light"
+      ],
+      "paragraph": [
+        "Plain Light"
+      ]
+    },
+    "fontSizes": {
+      "h1": "64px",
+      "h2": "44.8px",
+      "body": "17.6px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 10,
+    "borderRadius": "0px"
+  },
+  "components": {
+    "input": {
+      "background": "#FAFAFA",
+      "textColor": "#000000",
+      "borderColor": "#A9A9A9",
+      "borderRadius": "0px",
+      "borderRadiusCorners": {
+        "topLeft": "0px",
+        "topRight": "0px",
+        "bottomRight": "0px",
+        "bottomLeft": "0px"
+      },
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 1px"
+    },
+    "buttonPrimary": {
+      "background": "#739BA0",
+      "textColor": "#FFFFFF",
+      "borderRadius": "300px",
+      "borderRadiusCorners": {
+        "topLeft": "300px",
+        "topRight": "300px",
+        "bottomRight": "300px",
+        "bottomLeft": "300px"
+      },
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "#F7F7F7",
+      "textColor": "#000000",
+      "borderRadius": "0px",
+      "borderRadiusCorners": {
+        "topLeft": "0px",
+        "topRight": "0px",
+        "bottomRight": "0px",
+        "bottomLeft": "0px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "File saved at: attached_assets/logo.gif",
+    "favicon": "File saved at: attached_assets/favicon.webp",
+    "ogImage": "http://static1.squarespace.com/static/5e8750872ceab220c4d4f137/t/6026c30b6caed54209f96135/1613153039130/Front+walkway+to+building.jpg?format=1500w",
+    "logoHref": "File saved at: attached_assets/logoHref.html",
+    "logoAlt": "Purety Clinic"
+  },
+  "__framework_hints": [],
+  "__llm_logo_reasoning": {
+    "selectedIndex": 1,
+    "reasoning": "Selected #1 because it is visible, located in the header, has a large size, and the alt text matches the brand name 'Purety Clinic'.",
+    "confidence": 0.95,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Call: (805) 500-8300",
+      "reasoning": "Button #0 with text 'Call: (805) 500-8300' is the primary CTA due to its action-oriented text and prominent blue background color, which aligns with the brand's primary color."
+    },
+    "secondary": {
+      "index": 3,
+      "text": "No results found.\n    \n      \n      \n\n      \n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n    \n  \n\n  \n    \n  \n\n  \n    \n  \n",
+      "reasoning": "Button #3 is selected as secondary due to its different background color (#F7F7F7) and less prominent role, serving as a placeholder or informational button."
+    },
+    "confidence": 0.9
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "families seeking holistic medical care"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.9,
+    "colors": 0.95,
+    "overall": 0.925
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 1,
+        "selectedLogoReasoning": "Selected #1 because it is visible, located in the header, has a large size, and the alt text matches the brand name 'Purety Clinic'.",
+        "confidence": 0.95
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}
