@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Hero } from "@/components/home/Hero";
+import { HeroSafe } from "@/components/hero-safe";
 import { Philosophy } from "@/components/home/Philosophy";
 import { Services } from "@/components/home/Services";
 import { Doctors } from "@/components/home/Doctors";
@@ -12,7 +12,14 @@ export default function Home() {
       <Navbar />
       
       <main className="flex-grow">
-        <Hero />
+        <HeroSafe
+          badgeText="Holistic Doctor · Santa Barbara"
+          headline="Holistic, Integrative & Functional Medicine"
+          subheadline="We focus on the whole person — not just symptoms. Personalized care rooted in modern diagnostics and natural therapies."
+          primaryCta={{ label: "Book Consultation", href: "/contact" }}
+          secondaryCta={{ label: "View Services", href: "/services" }}
+          backgroundImageUrl="/images/paper-texture.jpg"
+        />
         <Philosophy />
         <Services />
         <Testimonials />

@@ -95,3 +95,51 @@ h1, h2, h3, h4, h5, h6 {
 .font-sans {
   font-family: var(--font-sans);
 }
+
+/* VISIBILITY GUARD UTILITIES - Hard overrides for legibility */
+.ui-surface {
+  @apply bg-white/95 backdrop-blur-xl shadow-[0_30px_90px_rgba(0,0,0,0.18)] rounded-2xl border border-white/20;
+}
+
+.ui-hero-overlay {
+  @apply absolute inset-0 bg-gradient-to-b from-white/10 via-white/50 to-white/90;
+}
+
+.ui-hero-overlay-dark {
+  @apply absolute inset-0 bg-black/40 backdrop-blur-[2px];
+}
+
+.ui-text-strong {
+  @apply text-slate-900 font-bold tracking-tight drop-shadow-sm;
+}
+
+.ui-text-muted {
+  @apply text-slate-600 font-medium leading-relaxed;
+}
+
+.ui-btn-primary {
+  @apply bg-primary hover:bg-primary/90 text-white font-bold shadow-lg transition-all active:scale-95;
+}
+
+.ui-btn-secondary {
+  @apply bg-white text-primary hover:bg-gray-50 font-bold border-2 border-primary/20 shadow-sm transition-all active:scale-95;
+}
+
+/* DEBUG CONTRAST MODE */
+.debug-contrast * {
+  outline: 1px solid rgba(255, 0, 0, 0.2) !important;
+}
+.debug-contrast .ui-surface {
+  outline: 3px solid green !important;
+  position: relative;
+}
+.debug-contrast .ui-surface::after {
+  content: "SAFE ZONE";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background: green;
+  color: white;
+  font-size: 10px;
+  padding: 2px 4px;
+}

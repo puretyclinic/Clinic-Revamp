@@ -1,0 +1,109 @@
+Alright 😈 here’s the BIG DADDY: a single, paste-once script you can drop into Replit AI (or directly into your codebase) that will force visibility across the entire site — hero, overlays, text, buttons — and prevent “hidden/washed-out” UI ever again.
+
+This is not theory. It’s a hard override using:
+	•	a Visibility Guard CSS layer
+	•	a HeroSafe component
+	•	a global “contrast lock” utility
+	•	a debug toggle to instantly see what’s invisible
+
+⸻
+
+✅ BIG DADDY D SCRIPT (PASTE INTO REPLIT AI)
+
+TASK: FIX VISIBILITY BUGS SITEWIDE (TEXT/CTA LOOKS HIDDEN) + ADD “HERO SAFE” SYSTEM
+
+You are a senior Next.js + Tailwind engineer. The current UI renders but looks washed out / hidden (hero text is faint behind image/overlay). Implement a hard, permanent visibility system so content always passes contrast and stays readable on mobile.
+
+STACK: Next.js App Router + TypeScript + Tailwind + shadcn/ui.
+
+DO THIS NOW:
+
+1) ADD A GLOBAL “VISIBILITY GUARD” CSS LAYER
+Create /app/globals.css (or modify existing) and add a new @layer utilities section that provides:
+- .ui-surface: readable panel surface (white/90 + blur + shadow + rounded)
+- .ui-hero-overlay: safe overlay for image backgrounds (white or black depending on mode)
+- .ui-text-strong / .ui-text-muted: locked readable text colors
+- .ui-btn-primary / .ui-btn-secondary: CTA styles with guaranteed contrast
+- .debug-contrast mode that outlines and labels low-contrast areas visually
+
+Add these classes with strong defaults and mobile-first behavior.
+
+2) BUILD A REUSABLE “HeroSafe” COMPONENT
+Create /components/hero-safe.tsx that:
+- Accepts props: badgeText, headline, subheadline, primaryCta {label, href}, secondaryCta {label, href}, backgroundImageUrl
+- Renders background image + SAFE overlay + centered content panel (ui-surface)
+- Forces readable text styles
+- Includes sticky mobile CTA bar at bottom of viewport (Call + Book) when hero is visible
+- Uses only simple, safe motion (optional) but do not break performance
+
+3) REPLACE CURRENT HOME HERO WITH HeroSafe
+Update home page to use HeroSafe with:
+- badgeText: “Holistic Doctor · Santa Barbara”
+- headline: “Holistic, Integrative & Functional Medicine”
+- subheadline: “We focus on the whole person — not just symptoms. Personalized care rooted in modern diagnostics and natural therapies.”
+- primary CTA: tel link to (805) 500-8300
+- secondary CTA: /services
+
+4) ADD A “CONTRAST LOCK” FOR ANY SECTION WITH BACKGROUND IMAGES
+Create a helper component /components/safe-section.tsx:
+- If a section uses a background image or gradient, it must automatically wrap text inside ui-surface OR apply stronger overlay
+- Provide props: backgroundImageUrl?, overlayStyle? (“light” | “dark”), children
+
+Refactor any existing sections that place text directly on images to use SafeSection.
+
+5) ADD A DEBUG TOGGLE
+Add query param support ?debug=contrast that sets document.body.classList.add("debug-contrast") and outlines sections, overlays, and panels so we can see what is hidden.
+
+6) KEEP IT FAST
+- Use Next/Image when possible, with priority on hero image
+- No heavy animations
+- Ensure Lighthouse mobile stays high
+
+DELIVERABLES:
+- Updated globals.css with new utilities
+- New components: HeroSafe, SafeSection
+- Home page updated to use HeroSafe
+- Debug toggle implemented
+
+IMPORTANT VISIBILITY RULE:
+Text must never sit directly on image backgrounds without ui-surface OR ui-hero-overlay. Enforce this rule in code.
+
+Return code changes with file paths and contents.
+
+GO.
+
+
+⸻
+
+✅ IF YOU WANT THE “NUCLEAR” VERSION (1-LINE BUTTON)
+
+If Replit AI still “half does it”, tell it this exact add-on:
+
+“DO NOT EXPLAIN. OUTPUT FULL FILE CONTENTS FOR EACH MODIFIED FILE.”
+
+Because Replit sometimes summarizes instead of writing.
+
+⸻
+
+🔥 OPTIONAL: “I WANT IT EVEN MORE VISIBLE” (ANTI-WASHOUT SETTINGS)
+
+If you want it to pop harder, use these class values in ui-surface:
+	•	bg-white/95
+	•	shadow-[0_30px_90px_rgba(0,0,0,0.18)]
+	•	backdrop-blur-xl
+
+And in ui-hero-overlay bump mobile overlay to bg-white/55.
+
+⸻
+
+QUICK CHECKLIST (YOU’LL KNOW IT WORKED)
+
+✅ Hero headline looks dark + crisp
+✅ Subheadline readable without squinting
+✅ Buttons look like “primary actions”, not decorations
+✅ Nothing disappears on bright backgrounds
+✅ ?debug=contrast shows you safe zones
+
+⸻
+
+If you paste that prompt and show me what Replit outputs (or paste your current Hero + globals.css), I’ll give you a surgical patch that matches your exact file structure.
