@@ -1,0 +1,87 @@
+import { FadeIn } from "@/components/layout/FadeIn";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { Button } from "@/components/ui/button";
+import { Flower, Sun, Heart, CheckCircle2 } from "lucide-react";
+import { Link } from "wouter";
+
+export default function HormoneReplacement() {
+  return (
+    <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
+      <Navbar />
+      
+      <main className="flex-grow">
+        <section className="relative py-24 bg-primary text-white flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/images/paper-texture.jpg')] opacity-10 mix-blend-overlay" />
+          <div className="container px-4 text-center relative z-10">
+            <FadeIn>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-wider mb-6 border border-white/20">
+                <Flower className="w-4 h-4" />
+                <span>Bioidentical Hormone Replacement</span>
+              </div>
+              <h1 className="font-serif text-5xl md:text-7xl mb-6">Balance & <span className="italic text-accent">Vitality</span></h1>
+              <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+                Restore optimal hormone levels safely with natural, bioidentical hormones. For Men and Women.
+              </p>
+            </FadeIn>
+          </div>
+        </section>
+
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
+              <FadeIn direction="right">
+                <h2 className="font-serif text-3xl md:text-4xl mb-6">Why Bioidentical?</h2>
+                <div className="prose prose-lg text-muted-foreground leading-relaxed">
+                  <p>
+                    Bioidentical hormones are molecularly identical to the hormones your body produces naturally. Unlike synthetic hormones (which can cause unwanted side effects), bioidenticals fit your hormone receptors perfectly.
+                  </p>
+                  <p>
+                    We use comprehensive DUTCH testing and blood work to prescribe precise doses of Estrogen, Progesterone, Testosterone, DHEA, and Thyroid hormone tailored to your unique physiology.
+                  </p>
+                </div>
+              </FadeIn>
+              
+              <div className="space-y-6">
+                 <FadeIn delay={0.1} className="bg-pink-50 p-8 rounded-3xl border border-pink-100">
+                   <h3 className="font-bold text-xl mb-4 text-pink-900 flex items-center gap-2"><Heart className="w-5 h-5"/> Women's Health</h3>
+                   <ul className="space-y-2 text-pink-800/80 text-sm">
+                     <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4"/> Relief from hot flashes & night sweats</li>
+                     <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4"/> Improved mood & sleep</li>
+                     <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4"/> Enhanced libido & energy</li>
+                     <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4"/> Prevention of osteoporosis</li>
+                   </ul>
+                 </FadeIn>
+
+                 <FadeIn delay={0.2} className="bg-blue-50 p-8 rounded-3xl border border-blue-100">
+                   <h3 className="font-bold text-xl mb-4 text-blue-900 flex items-center gap-2"><Sun className="w-5 h-5"/> Men's Health</h3>
+                   <ul className="space-y-2 text-blue-800/80 text-sm">
+                     <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4"/> Increased muscle mass & strength</li>
+                     <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4"/> Sharper mental focus</li>
+                     <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4"/> Cardiovascular protection</li>
+                     <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4"/> Improved drive & performance</li>
+                   </ul>
+                 </FadeIn>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 bg-accent/10 text-center">
+           <div className="container mx-auto px-4 max-w-2xl">
+             <h2 className="font-serif text-4xl mb-6">Feel Like Yourself Again</h2>
+             <p className="text-muted-foreground mb-8">
+               Aging is inevitable, but suffering is optional. Let's find your balance.
+             </p>
+             <Link href="/contact">
+               <Button size="lg" className="rounded-full px-10 bg-primary hover:bg-primary/90 text-white shadow-lg">
+                 Schedule Hormone Evaluation
+               </Button>
+             </Link>
+           </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}

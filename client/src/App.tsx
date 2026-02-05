@@ -19,6 +19,14 @@ import CancerSupport from "@/pages/services/CancerSupport";
 import BlogPost from "@/pages/blog/BlogPost";
 import ProductDetail from "@/pages/shop/ProductDetail";
 
+import OzoneTherapy from "@/pages/services/OzoneTherapy";
+import HormoneReplacement from "@/pages/services/HormoneReplacement";
+import PlasmaExchange from "@/pages/services/PlasmaExchange";
+import NatureTherapies from "@/pages/services/NatureTherapies";
+import LocationPage from "@/pages/LocationPage";
+import Testimonials from "@/pages/Testimonials";
+import FAQ from "@/pages/FAQ";
+
 function Router() {
   return (
     <Switch>
@@ -30,6 +38,15 @@ function Router() {
       <Route path="/services/naturopathic" component={NaturopathicMedicine} />
       <Route path="/services/fmt" component={FMT} />
       <Route path="/services/cancer-support" component={CancerSupport} />
+      <Route path="/services/ozone-therapy" component={OzoneTherapy} />
+      <Route path="/services/hormone-replacement" component={HormoneReplacement} />
+      <Route path="/services/plasma-exchange" component={PlasmaExchange} />
+      <Route path="/services/nature-therapies" component={NatureTherapies} />
+      
+      <Route path="/locations/:city" component={LocationPage} />
+      <Route path="/testimonials" component={Testimonials} />
+      <Route path="/faqs" component={FAQ} />
+
       <Route path="/doctors" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/blog" component={Blog} />

@@ -1,0 +1,220 @@
+Here you go — ONE MASSIVE “MAKE IT WORK” REPLIT AI APP BUILDER SCRIPT that rebuilds PuretyClinic.com as a badass, modern, conversion-heavy, SEO-dominating clinic site with full keyword targeting across all their services (FMT, IV/IM, regenerative ortho, ozone, HRT, pediatrics, TPE, integrative oncology, etc.). The prompt is grounded in what Purety already lists on their site (services + conditions + Santa Barbara focus).  ￼
+
+Copy/paste the whole thing into Replit AI App Builder:
+
+BUILD A FULL-STACK, SEO-FIRST WEBSITE + CONTENT ENGINE FOR “PURETY CLINIC” (puretyclinic.com REBUILD) — MAKE IT LOOK PREMIUM + FUTURISTIC, AND RANK FOR ALL TARGET KEYWORDS.
+
+ROLE
+You are a senior Next.js engineer + technical SEO lead + conversion copywriter. Build a production-ready web app that:
+1) Looks unbelievably premium (modern 2026/2030 medical aesthetic: clean, confident, innovative, calming).
+2) Ships with a complete sitemap + service pages + location SEO pages + schema.
+3) Generates/maintains keyword-targeted copy safely (medical compliance tone; no miracle claims).
+4) Is fast, mobile-first, and converts.
+
+PRIMARY GOAL
+Replace the current marketing website with a better performing version that:
+- Preserves core services + message:
+  - Holistic medical consultations / holistic healing of illness & disease
+  - Fecal Microbiota Transplant (FMT)
+  - IV drip + IM therapies (nutrients, chelation, Plaquex, growth factors)
+  - Regenerative orthopedic injections (PRP, stem cell matrix, prolotherapy/prolozone)
+  - Ozone therapy (EBO2 + Ten Pass / multipass)
+  - Bioidentical HRT (women’s/men’s health)
+  - Holistic pediatrics
+  - Nature therapies
+  - Therapeutic Plasma Exchange (TPE)
+  - Integrative oncology / holistic cancer center support
+  - Testimonials + FAQ + Blog + Contact
+- Targets Santa Barbara, CA + nearby intent.
+- Improves readability, trust signals, booking flow, and SEO architecture.
+
+TECH STACK (USE THIS EXACT STACK)
+- Next.js 14+ App Router + TypeScript
+- TailwindCSS + shadcn/ui components
+- Prisma + SQLite (easy env switch to Postgres)
+- Content system: “Hybrid CMS”
+  - Primary content in database (editable via /admin)
+  - Optional MDX for blog posts if needed, but DB-first preferred
+- Forms: server actions + Zod validation
+- Email: Resend (or Nodemailer SMTP with env vars); store leads in DB
+- Analytics: simple event tracking abstraction (no external required, but allow easy plug-in)
+- Sitemap + robots + RSS for blog
+
+NON-NEGOTIABLES
+- 95+ Lighthouse Performance on mobile (optimize images, fonts, minimal JS, server components)
+- Fully responsive, ADA-friendly (semantic headings, contrast, focus states)
+- SEO best practices:
+  - One H1 per page
+  - Clean URL structure
+  - Canonicals
+  - JSON-LD schema for: MedicalClinic/LocalBusiness, Physician (if names included), Service, FAQPage, BreadcrumbList, Article
+  - OpenGraph + Twitter cards
+  - Internal linking + related services + FAQ blocks
+- MEDICAL COMPLIANCE:
+  - No guaranteed outcomes, no “cure” claims
+  - Add clear disclaimer sitewide: “Information is educational and not medical advice. Call 911 for emergencies.”
+  - Encourage consultation; be careful with sensitive conditions language
+
+DESIGN DIRECTION (MAKE IT BADASS)
+- Visual identity: “Clinical-futurist” (white/near-white base, deep charcoal text, subtle gradient accents, glassmorphism cards, soft shadows, tasteful motion)
+- Hero: bold statement + subhead + two CTAs (Book Consultation / Call Now)
+- Add trust strip: “Naturopathic/holistic care • Advanced procedures • Santa Barbara”
+- Add “Signature Treatments” cards with icons
+- Add “How it Works” 3-step (Assess → Plan → Treat)
+- Add a “Condition Navigator” section (gut, fatigue, autoimmune, pain, hormones, pediatrics, oncology support)
+- Add “Why Purety” proof points (experience, personalization, advanced therapies, compassionate care)
+- Add testimonials carousel with structured snippets
+- Sticky bottom mobile CTA bar (Call + Book)
+- Micro-interactions (subtle animations; prefer framer-motion minimal)
+
+INFORMATION ARCHITECTURE (BUILD THESE PAGES)
+1) Home: /
+2) About: /about
+3) Services index: /services
+4) Individual service pages:
+   - /services/fecal-microbiota-transplant-fmt
+   - /services/iv-drip-im-therapies
+   - /services/regenerative-orthopedic-injections
+   - /services/ozone-therapy
+   - /services/bioidentical-hormone-replacement-hrt
+   - /services/holistic-healing-illness-disease
+   - /services/holistic-pediatrics
+   - /services/nature-therapies
+   - /services/therapeutic-plasma-exchange-tpe
+   - /services/integrative-oncology-support (holistic cancer center support)
+5) Testimonials: /testimonials
+6) FAQ: /faq
+7) Blog:
+   - /blog (index)
+   - /blog/[slug]
+8) Contact: /contact
+9) Location SEO pages (PROGRAMMATIC):
+   - /locations/santa-barbara-ca (primary)
+   - /locations/goleta-ca
+   - /locations/montecito-ca
+   - /locations/carpinteria-ca
+   - /locations/ventura-ca
+   - /locations/ojai-ca
+(Use a “LocationPage” template with unique copy blocks, FAQs, driving directions section, and internal links to services.)
+
+DATABASE MODELS (PRISMA)
+- Page (id, slug, title, metaTitle, metaDescription, ogImage, heroHeadline, heroSubhead, sections JSON, published)
+- Service (id, slug, name, summary, longContent JSON, faq JSON, indications/tags, relatedServices)
+- Location (id, slug, city, state, intro, drivingDirections, faq JSON, nearbyCities JSON)
+- Testimonial (id, name, initials, conditionTag, quote, approved, sortOrder)
+- Post (id, slug, title, excerpt, content, author, publishedAt, tags, metaTitle, metaDescription)
+- Lead (id, name, email, phone, reason, pageSource, createdAt)
+- Redirect (id, from, to, statusCode) for preserving legacy URLs
+
+ADMIN
+Build a simple admin dashboard at /admin with basic auth (single password in env or magic link):
+- CRUD for Services, Posts, Testimonials, Locations
+- WYSIWYG-lite editor: use a JSON “section builder” (hero, richText, featureGrid, faq, testimonials, CTA banner)
+- Preview mode + publish toggles
+
+SEO KEYWORD ENGINE (CRITICAL)
+Inside the codebase, create:
+- /lib/seo/keywordMap.ts
+- /lib/seo/pageSeo.ts
+- A keyword mapping object that covers:
+  A) Core “Holistic / Integrative / Functional / Naturopathic Doctor” terms
+  B) Service terms (FMT, fecal microbiota transplant, IV nutrient therapy, regenerative injections, PRP, prolotherapy, ozone therapy EBO2 ten pass, bioidentical hormones)
+  C) Condition intent (Crohn’s / IBS / C diff / autoimmune / chronic fatigue / fibromyalgia / hormone imbalance / men’s health / women’s health / digestive issues)
+  D) Local intent (Santa Barbara, Goleta, Montecito, Ventura, etc.)
+Use this map to auto-generate:
+- Meta titles/descriptions within safe character limits
+- H1 + H2 suggestions
+- FAQ suggestions per page
+
+COPY GENERATION (WRITE IT IN THE APP, DO NOT REQUIRE EXTERNAL API)
+Ship the site with strong default copy (handwritten by you now). It must:
+- Be premium, confident, compassionate
+- Explain “what it is / who it’s for / what to expect / risks & eligibility / why choose us”
+- Include a “Process” section per service
+- Include a “FAQ” section per service (5-8 questions)
+- Include internal links: each service links to 2-4 related services + 2 blog posts
+- Add disclaimers + encourage consultation
+
+IMPORTANT: Use existing known service set from Purety Clinic pages (FMT, IV/IM therapies, regenerative ortho injections, holistic healing, pediatrics, nature therapies, TPE, integrative oncology support). Make the copy original, not copied verbatim.
+
+CONVERSION FEATURES
+- Prominent CTAs:
+  - “Book a Consultation” (primary)
+  - “Call Now” (secondary, phone displayed)
+- Contact form with:
+  - Reason dropdown (Gut Health/FMT, IV Therapy, Pain/Injections, Hormones, Pediatrics, Oncology Support, General)
+  - Phone optional
+  - Consent checkbox
+- After submit: success page + “What happens next” timeline
+- Add “Insurance / payment” section with careful wording (no promises)
+
+TECHNICAL SEO
+- Generate:
+  - /sitemap.xml (dynamic)
+  - /robots.txt
+  - canonical URLs
+  - breadcrumbs
+  - schema per page type
+- Add redirects from likely old slugs:
+  - /fecal-transplant -> /services/fecal-microbiota-transplant-fmt
+  - /iv-drip-and-im-therapies -> /services/iv-drip-im-therapies
+  - /regenerative-orthopedic-injections -> /services/regenerative-orthopedic-injections
+  - /holistic-healing-of-illness-and-disease1 -> /services/holistic-healing-illness-disease
+  - /holistic-cancer-center-of-santa-barbara -> /services/integrative-oncology-support
+  - /testimonials -> /testimonials
+  - /about -> /about
+
+CONTENT PLAN (SEED BLOG POSTS)
+Create 12 starter blog posts optimized for long-tail searches, each with:
+- Title, slug, excerpt, content, FAQs, schema
+Examples:
+- “FMT for Recurrent C. diff: What to Know”
+- “IV Nutrient Therapy: Who Benefits?”
+- “PRP vs Prolotherapy: What’s the Difference?”
+- “Ozone Therapy (EBO2 / Ten Pass): Common Questions”
+- “Bioidentical Hormones for Menopause Support”
+- “Gut Health: IBS, Bloating, Food Sensitivities”
+- “Integrative Oncology Support: Adjunctive Care Basics”
+Keep it educational and safe.
+
+BUILD STEPS (DO THIS)
+1) Initialize Next.js app router + Tailwind + shadcn/ui
+2) Setup Prisma + SQLite + migrations + seed script
+3) Implement data access layer + server actions
+4) Build UI pages + templates + components
+5) Implement SEO system + schemas + sitemap/robots
+6) Seed DB with:
+   - Services
+   - Santa Barbara + other location pages
+   - Testimonials placeholders
+   - 12 blog posts
+7) Add admin + auth + CRUD
+8) Ensure build passes + no TypeScript errors
+
+DELIVERABLES
+- Working website with all pages
+- Admin dashboard
+- Seeded content
+- Excellent design
+- SEO-ready
+- Deployed-ready (env sample + README)
+
+OUTPUT FORMAT
+Return the full project code (files + structure) and a clear README with:
+- How to run
+- Env vars
+- How to edit content
+- How to deploy
+- Where to change phone/address and clinic details
+
+GO HARD ON QUALITY. MAKE IT LOOK LIKE A TOP-TIER MODERN MEDICAL BRAND SITE.
+
+If you want the “extra unfair advantage”
+
+Say: “Add an SEO audit crawler” and I’ll extend this prompt to include a built-in scanner that checks every page for:
+	•	missing H1s, thin content, broken internal links
+	•	meta length + duplicates
+	•	schema validation
+	•	keyword coverage per page
+
+And we’ll turn the site into a self-improving SEO machine.
