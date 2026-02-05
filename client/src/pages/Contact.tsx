@@ -68,7 +68,7 @@ export default function Contact() {
                       <div>
                         <h3 className="font-bold text-foreground mb-1">Email</h3>
                         <p className="text-muted-foreground">
-                          info@puretyclinic.com
+                          dr@puretyclinic.com
                         </p>
                       </div>
                     </div>
@@ -81,7 +81,7 @@ export default function Contact() {
                         <h3 className="font-bold text-foreground mb-1">Hours</h3>
                         <ul className="text-muted-foreground text-sm space-y-1">
                           <li className="flex justify-between w-40"><span>Mon - Fri</span> <span>9:00 - 5:00</span></li>
-                          <li className="flex justify-between w-40"><span>Saturday</span> <span>By Appt</span></li>
+                          <li className="flex justify-between w-40"><span>Saturday</span> <span>Closed</span></li>
                           <li className="flex justify-between w-40"><span>Sunday</span> <span>Closed</span></li>
                         </ul>
                       </div>

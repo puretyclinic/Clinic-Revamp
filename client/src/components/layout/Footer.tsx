@@ -81,7 +81,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary" />
-                <span>info@puretyclinic.com</span>
+                <span>dr@puretyclinic.com</span>
               </li>
             </ul>
           </div>
@@ -95,7 +95,7 @@ export function Footer() {
               </li>
               <li className="flex justify-between border-b border-white/10 pb-2 pt-2">
                 <span>Saturday</span>
-                <span>By Appointment</span>
+                <span>Closed</span>
               </li>
               <li className="flex justify-between pt-2">
                 <span>Sunday</span>
