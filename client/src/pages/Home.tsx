@@ -18,7 +18,7 @@ export default function Home() {
           subheadline="We focus on the whole person — not just symptoms. Personalized care rooted in modern diagnostics and natural therapies."
           primaryCta={{ label: "Book Consultation", href: "/contact" }}
           secondaryCta={{ label: "View Services", href: "/services" }}
-          backgroundImageUrl="/images/paper-texture.jpg"
+          backgroundImageUrl="/images/hero-nature.jpg"
         />
         <Philosophy />
         <Services />
