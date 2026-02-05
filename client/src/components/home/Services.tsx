@@ -31,7 +31,7 @@ const services = [
   {
     title: "Fecal Transplant (FMT)",
     description: "Restoring gut microbiome health for chronic digestive conditions.",
-    icon: Activity
+    icon: () => <span className="text-2xl leading-none">💩</span>
   },
   {
     title: "Pediatrics",

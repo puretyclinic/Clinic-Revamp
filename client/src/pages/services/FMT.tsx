@@ -30,7 +30,7 @@ export default function FMT() {
           <div className="container px-4 text-center relative z-10">
             <FadeIn>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-wider mb-6 border border-white/20">
-                <ShieldCheck className="w-4 h-4" />
+                <span className="text-lg leading-none">💩</span>
                 <span>California's Leading FMT Specialists</span>
               </div>
               <h1 className="font-serif text-5xl md:text-7xl mb-6">Fecal Microbiota <span className="italic text-accent">Transplant</span></h1>
