@@ -7,40 +7,142 @@ import { Link } from "wouter";
 
 const products = [
   {
-    name: "Purety Immune Support",
-    price: "$45.00",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
+    name: "Supreme Magnesium Neuro Powder",
+    price: "$74.99",
+    image: "https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&q=80&w=800",
     category: "Supplements"
   },
   {
-    name: "Gut Restore Probiotic",
-    price: "$58.00",
-    image: "https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&q=80&w=800",
-    category: "Digestion"
-  },
-  {
-    name: "Organic Vitamin D3 + K2",
-    price: "$32.00",
+    name: "Purety D3K2 60 Capsules",
+    price: "$39.99",
     image: "https://images.unsplash.com/photo-1624454002302-36b824d7bd0a?auto=format&fit=crop&q=80&w=800",
     category: "Vitamins"
   },
   {
-    name: "Adrenal Calm Complex",
-    price: "$42.00",
-    image: "https://images.unsplash.com/photo-1577401239170-89794129669e?auto=format&fit=crop&q=80&w=800",
-    category: "Stress Support"
+    name: "Supreme Magnesium 240 Capsules",
+    price: "$54.99",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
+    category: "Supplements"
   },
   {
-    name: "Collagen Peptides",
-    price: "$55.00",
-    image: "https://images.unsplash.com/photo-1594391629853-9bc6c93433a7?auto=format&fit=crop&q=80&w=800",
-    category: "Beauty & Joints"
+    name: "Fish Oil",
+    price: "$40.00",
+    image: "https://images.unsplash.com/photo-1599447332306-0b1a030018d0?auto=format&fit=crop&q=80&w=800",
+    category: "Supplements"
   },
   {
-    name: "Magnesium Glycinate",
-    price: "$28.00",
+    name: "2-Step Superheal® Anti-Aging System",
+    price: "$238.00",
+    image: "https://images.unsplash.com/photo-1556228552-523de138307f?auto=format&fit=crop&q=80&w=800",
+    category: "Skincare"
+  },
+  {
+    name: "Supreme Daily Probiotic",
+    price: "$71.99",
+    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=800",
+    category: "Digestion"
+  },
+  {
+    name: "Terra Superfood",
+    price: "$59.97",
+    image: "https://images.unsplash.com/photo-1610725664285-7c57e6eeac3f?auto=format&fit=crop&q=80&w=800",
+    category: "Supplements"
+  },
+  {
+    name: "Optimal Prenatal",
+    price: "$65.00",
+    image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=800",
+    category: "Vitamins"
+  },
+  {
+    name: "Multivitamin One",
+    price: "$35.00",
+    image: "https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&q=80&w=800",
+    category: "Vitamins"
+  },
+  {
+    name: "Homocysteine Nutrients",
+    price: "$35.00",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
+    category: "Supplements"
+  },
+  {
+    name: "Optimal Multivitamin",
+    price: "$76.00",
     image: "https://images.unsplash.com/photo-1551241655-2665a929f271?auto=format&fit=crop&q=80&w=800",
+    category: "Vitamins"
+  },
+  {
+    name: "Supreme Minerals 120 Capsules",
+    price: "$46.99",
+    image: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=800",
     category: "Minerals"
+  },
+  {
+    name: "Clean Whey Goat Protein (5lbs)",
+    price: "$199.00",
+    image: "https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?auto=format&fit=crop&q=80&w=800",
+    category: "Supplements"
+  },
+  {
+    name: "Robert's Formula 2 oz.",
+    price: "$40.00",
+    image: "https://images.unsplash.com/photo-1615486511484-92e172cc416d?auto=format&fit=crop&q=80&w=800",
+    category: "Herbal Formulas"
+  },
+  {
+    name: "Urisept (Urinary Antiseptic)",
+    price: "$40.00",
+    image: "https://images.unsplash.com/photo-1629198774783-6b8026131c77?auto=format&fit=crop&q=80&w=800",
+    category: "Herbal Formulas"
+  },
+  {
+    name: "Bitters 2 oz.",
+    price: "$40.00",
+    image: "https://images.unsplash.com/photo-1615486511484-92e172cc416d?auto=format&fit=crop&q=80&w=800",
+    category: "Herbal Formulas"
+  },
+  {
+    name: "Active Advanced Serum",
+    price: "$139.00",
+    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800",
+    category: "Skincare"
+  },
+  {
+    name: "Bacteriology Culture Stool Test",
+    price: "$140.00",
+    image: "https://images.unsplash.com/photo-1576091160550-2187d8001889?auto=format&fit=crop&q=80&w=800",
+    category: "Medical Tests"
+  },
+  {
+    name: "Berberine DHB",
+    price: "$49.99",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
+    category: "Supplements"
+  },
+  {
+    name: "Biocidin® Liquid",
+    price: "$63.97",
+    image: "https://images.unsplash.com/photo-1629198774783-6b8026131c77?auto=format&fit=crop&q=80&w=800",
+    category: "Herbal Formulas"
+  },
+  {
+    name: "Biotics Dysbiocide",
+    price: "$36.60",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
+    category: "Herbal Formulas"
+  },
+  {
+    name: "Biotics FC-Cidal™",
+    price: "$39.60",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
+    category: "Herbal Formulas"
+  },
+  {
+    name: "Biotics Pregnenolone 25",
+    price: "$26.50",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
+    category: "Supplements"
   }
 ];
 
@@ -68,7 +170,7 @@ export default function Shop() {
           <div className="container mx-auto px-4">
             {/* Filters */}
             <div className="flex flex-wrap justify-center gap-4 mb-16">
-              {["All", "Supplements", "Digestion", "Vitamins", "Stress Support"].map((filter, i) => (
+              {["All", "Supplements", "Vitamins", "Herbal Formulas", "Skincare", "Digestion", "Medical Tests"].map((filter, i) => (
                 <button 
                   key={i}
                   className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all ${i === 0 ? 'bg-primary text-white' : 'bg-gray-100 text-muted-foreground hover:bg-gray-200'}`}
