@@ -10,6 +10,7 @@ import Services from "@/pages/Services";
 import Contact from "@/pages/Contact";
 import Blog from "@/pages/Blog";
 import Shop from "@/pages/Shop";
+import ProductDetail from "@/pages/ProductDetail";
 import ClaimPreview from "@/pages/ClaimPreview";
 import RegenerativeMedicine from "@/pages/services/RegenerativeMedicine";
 import IVTherapy from "@/pages/services/IVTherapy";
@@ -17,7 +18,6 @@ import NaturopathicMedicine from "@/pages/services/NaturopathicMedicine";
 import FMT from "@/pages/services/FMT";
 import CancerSupport from "@/pages/services/CancerSupport";
 import BlogPost from "@/pages/blog/BlogPost";
-import ProductDetail from "@/pages/shop/ProductDetail";
 
 import OzoneTherapy from "@/pages/services/OzoneTherapy";
 import HormoneReplacement from "@/pages/services/HormoneReplacement";
@@ -52,7 +52,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/blog/post" component={BlogPost} /> {/* Demo single post route */}
       <Route path="/shop" component={Shop} />
-      <Route path="/shop/product" component={ProductDetail} /> {/* Demo single product route */}
+      <Route path="/shop/product/:slug" component={ProductDetail} />
       <Route path="/claim" component={ClaimPreview} />
       <Route component={NotFound} />
     </Switch>

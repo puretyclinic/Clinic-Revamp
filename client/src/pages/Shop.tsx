@@ -4,147 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag, Star, CheckCircle } from "lucide-react";
 import { Link } from "wouter";
-
-const products = [
-  {
-    name: "Supreme Magnesium Neuro Powder",
-    price: "$74.99",
-    image: "https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&q=80&w=800",
-    category: "Supplements"
-  },
-  {
-    name: "Purety D3K2 60 Capsules",
-    price: "$39.99",
-    image: "https://images.unsplash.com/photo-1624454002302-36b824d7bd0a?auto=format&fit=crop&q=80&w=800",
-    category: "Vitamins"
-  },
-  {
-    name: "Supreme Magnesium 240 Capsules",
-    price: "$54.99",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
-    category: "Supplements"
-  },
-  {
-    name: "Fish Oil",
-    price: "$40.00",
-    image: "https://images.unsplash.com/photo-1599447332306-0b1a030018d0?auto=format&fit=crop&q=80&w=800",
-    category: "Supplements"
-  },
-  {
-    name: "2-Step Superheal® Anti-Aging System",
-    price: "$238.00",
-    image: "https://images.unsplash.com/photo-1556228552-523de138307f?auto=format&fit=crop&q=80&w=800",
-    category: "Skincare"
-  },
-  {
-    name: "Supreme Daily Probiotic",
-    price: "$71.99",
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=800",
-    category: "Digestion"
-  },
-  {
-    name: "Terra Superfood",
-    price: "$59.97",
-    image: "https://images.unsplash.com/photo-1610725664285-7c57e6eeac3f?auto=format&fit=crop&q=80&w=800",
-    category: "Supplements"
-  },
-  {
-    name: "Optimal Prenatal",
-    price: "$65.00",
-    image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=800",
-    category: "Vitamins"
-  },
-  {
-    name: "Multivitamin One",
-    price: "$35.00",
-    image: "https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&q=80&w=800",
-    category: "Vitamins"
-  },
-  {
-    name: "Homocysteine Nutrients",
-    price: "$35.00",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
-    category: "Supplements"
-  },
-  {
-    name: "Optimal Multivitamin",
-    price: "$76.00",
-    image: "https://images.unsplash.com/photo-1551241655-2665a929f271?auto=format&fit=crop&q=80&w=800",
-    category: "Vitamins"
-  },
-  {
-    name: "Supreme Minerals 120 Capsules",
-    price: "$46.99",
-    image: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=800",
-    category: "Minerals"
-  },
-  {
-    name: "Clean Whey Goat Protein (5lbs)",
-    price: "$199.00",
-    image: "https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?auto=format&fit=crop&q=80&w=800",
-    category: "Supplements"
-  },
-  {
-    name: "Robert's Formula 2 oz.",
-    price: "$40.00",
-    image: "https://images.unsplash.com/photo-1615486511484-92e172cc416d?auto=format&fit=crop&q=80&w=800",
-    category: "Herbal Formulas"
-  },
-  {
-    name: "Urisept (Urinary Antiseptic)",
-    price: "$40.00",
-    image: "https://images.unsplash.com/photo-1629198774783-6b8026131c77?auto=format&fit=crop&q=80&w=800",
-    category: "Herbal Formulas"
-  },
-  {
-    name: "Bitters 2 oz.",
-    price: "$40.00",
-    image: "https://images.unsplash.com/photo-1615486511484-92e172cc416d?auto=format&fit=crop&q=80&w=800",
-    category: "Herbal Formulas"
-  },
-  {
-    name: "Active Advanced Serum",
-    price: "$139.00",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800",
-    category: "Skincare"
-  },
-  {
-    name: "Bacteriology Culture Stool Test",
-    price: "$140.00",
-    image: "https://images.unsplash.com/photo-1576091160550-2187d8001889?auto=format&fit=crop&q=80&w=800",
-    category: "Medical Tests"
-  },
-  {
-    name: "Berberine DHB",
-    price: "$49.99",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
-    category: "Supplements"
-  },
-  {
-    name: "Biocidin® Liquid",
-    price: "$63.97",
-    image: "https://images.unsplash.com/photo-1629198774783-6b8026131c77?auto=format&fit=crop&q=80&w=800",
-    category: "Herbal Formulas"
-  },
-  {
-    name: "Biotics Dysbiocide",
-    price: "$36.60",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
-    category: "Herbal Formulas"
-  },
-  {
-    name: "Biotics FC-Cidal™",
-    price: "$39.60",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
-    category: "Herbal Formulas"
-  },
-  {
-    name: "Biotics Pregnenolone 25",
-    price: "$26.50",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
-    category: "Supplements"
-  }
-];
+import { products } from "@/data/products";
 
 export default function Shop() {
   return (
@@ -181,15 +41,15 @@ export default function Shop() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {products.map((product, index) => (
-                <FadeIn key={index} delay={index * 0.05} direction="up">
-                  <Link href="/shop/product">
+              {products.map((product) => (
+                <FadeIn key={product.id} delay={0.1} direction="up">
+                  <Link href={`/shop/product/${product.id}`}>
                     <a className="group block h-full">
-                      <div className="aspect-square bg-gray-50 rounded-2xl mb-6 relative overflow-hidden">
+                      <div className="aspect-square bg-gray-50 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center p-6">
                         <img 
                           src={product.image} 
                           alt={product.name}
-                          className="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                           <Button className="bg-white text-primary hover:bg-white/90 rounded-full font-bold">
