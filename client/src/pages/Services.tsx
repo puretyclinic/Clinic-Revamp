@@ -2,7 +2,7 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Syringe, Wind, Droplet, Flower, Activity, Baby, HeartPulse, Brain, Bone, Leaf, Pill, ArrowRight } from "lucide-react";
+import { Syringe, Wind, Droplet, Flower, Activity, Baby, HeartPulse, Brain, Bone, Leaf, Pill, ArrowRight, RefreshCw } from "lucide-react";
 import { Link } from "wouter";
 
 const services = [
@@ -72,6 +72,12 @@ const services = [
         title: "Bioidentical HRT",
         description: "Natural hormone replacement for Men and Women.",
         icon: Flower
+      },
+      {
+        title: "Therapeutic Plasma Exchange",
+        description: "Advanced apheresis therapy for detoxification and blood rejuvenation.",
+        icon: RefreshCw,
+        customLink: "/services/plasma-exchange"
       }
     ]
   }

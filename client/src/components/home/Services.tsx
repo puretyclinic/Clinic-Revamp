@@ -1,6 +1,6 @@
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Button } from "@/components/ui/button";
-import { Syringe, Wind, Droplet, Flower, Activity, Baby, HeartPulse, Brain } from "lucide-react";
+import { Syringe, Wind, Droplet, Flower, Activity, Baby, RefreshCw, Brain } from "lucide-react";
 
 const services = [
   {
@@ -39,9 +39,9 @@ const services = [
     icon: Baby
   },
   {
-    title: "Heart Health",
-    description: "Testing, management, and prevention of heart disease and atherosclerosis.",
-    icon: HeartPulse
+    title: "Therapeutic Plasma Exchange",
+    description: "Detoxification and blood rejuvenation by removing harmful substances from the bloodstream.",
+    icon: RefreshCw
   }
 ];
 
