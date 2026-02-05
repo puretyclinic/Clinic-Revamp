@@ -51,7 +51,7 @@ export default function FMT() {
               
               <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed mb-12">
                  <p className="mb-4">
-                   If you are looking for a fecal transplant (FMT), look no further. We have helped hundreds of people since 2015 achieve excellent results with our small batch microbiome transfer program using <a href="#" className="text-primary hover:underline">superior donors</a>. Enemas, capsules, oral liquid, and colonoscopy are the best options.
+                   If you are looking for a fecal transplant (FMT), look no further. We have helped hundreds of people since 2015 achieve excellent results with our small batch microbiome transfer program using <a href="https://static1.squarespace.com/static/5e8750872ceab220c4d4f137/t/670ee470c3b707053be6ff95/1729029233938/Purety+Clinic+Clinical+Considerations+for+Donor+Selection+and+Screening+.pdf" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">superior donors</a>. Enemas, capsules, oral liquid, and colonoscopy are the best options.
                  </p>
                  <p className="mb-4">
                    Safety, quality and efficacy is our focus for you.
