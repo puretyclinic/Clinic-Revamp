@@ -5,27 +5,67 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { ShieldCheck, CheckCircle2, ArrowRight, Cloud, Mail } from "lucide-react"; // Microclimatology as abstract for microbiome
+import { ShieldCheck, CheckCircle2, ArrowRight, Cloud, Mail, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import * as gtag from "@/lib/gtag";
+import { useState } from "react";
 
 export default function FMT() {
   const { toast } = useToast();
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Track conversion
-    gtag.event({
-      action: "submit_form",
-      category: "Contact",
-      label: "FMT Inquiry",
-    });
+    setSending(true);
 
-    toast({
-      title: "Message Sent",
-      description: "Dr. Jonathan will review your message shortly. (Sent to drjonathan@puretyclinic.com)",
-    });
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: formData.get("firstName"),
+          lastName: formData.get("lastName"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
+          formSource: "FMT",
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        gtag.event({
+          action: "submit_form",
+          category: "Contact",
+          label: "FMT Inquiry",
+        });
+
+        toast({
+          title: "Message Sent!",
+          description: "Dr. Jonathan will review your message shortly.",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Error",
+          description: data.error || "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch {
+      toast({
+        title: "Error",
+        description: "Could not send message. Please call us at (805) 500-8300.",
+        variant: "destructive",
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -82,35 +122,37 @@ export default function FMT() {
                    <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name (required)</Label>
-                        <Input id="firstName" required className="bg-white" />
+                        <Input id="firstName" name="firstName" required className="bg-white" data-testid="input-fmt-firstName" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName">Last Name (required)</Label>
-                        <Input id="lastName" required className="bg-white" />
+                        <Input id="lastName" name="lastName" required className="bg-white" data-testid="input-fmt-lastName" />
                       </div>
                    </div>
                    
                    <div className="space-y-2">
                      <Label htmlFor="email">Email (required)</Label>
-                     <Input id="email" type="email" required className="bg-white" />
+                     <Input id="email" name="email" type="email" required className="bg-white" data-testid="input-fmt-email" />
                    </div>
                    
                    <div className="space-y-2">
                      <Label htmlFor="phone">Phone (required)</Label>
-                     <Input id="phone" type="tel" required className="bg-white" />
+                     <Input id="phone" name="phone" type="tel" required className="bg-white" data-testid="input-fmt-phone" />
                    </div>
                    
                    <div className="space-y-2">
                      <Label htmlFor="subject">Subject (required)</Label>
-                     <Input id="subject" required className="bg-white" />
+                     <Input id="subject" name="subject" required className="bg-white" data-testid="input-fmt-subject" />
                    </div>
                    
                    <div className="space-y-2">
                      <Label htmlFor="message">Message (required)</Label>
-                     <Textarea id="message" required className="bg-white min-h-[150px]" />
+                     <Textarea id="message" name="message" required className="bg-white min-h-[150px]" data-testid="input-fmt-message" />
                    </div>
                    
-                   <Button type="submit" size="lg" className="w-full md:w-auto px-8">Submit</Button>
+                   <Button type="submit" size="lg" disabled={sending} className="w-full md:w-auto px-8" data-testid="button-fmt-submit">
+                     {sending ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...</> : "Submit"}
+                   </Button>
                  </form>
               </div>
 
@@ -120,47 +162,47 @@ export default function FMT() {
                  
                  <div className="space-y-8">
                    <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">“I am eternally grateful for these guys. I was dealing with an extremely drug induced panic disorder (PFS). These people gave me my life back!”</p>
+                     <p className="italic text-gray-700 mb-2">"I am eternally grateful for these guys. I was dealing with an extremely drug induced panic disorder (PFS). These people gave me my life back!"</p>
                      <footer className="font-bold text-sm text-gray-500">- SH</footer>
                    </blockquote>
 
                    <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">“I am tremendously grateful for what Dr. Birch has done for me. Before undergoing his FMT protocol, I had severe eczema that covered nearly every part of my body, and extreme gastrointestinal issues. Six months following the FMT, my skin is 90% better and I have had gastrointestinal improvements as well. I continue to get better and I sincerely believe it is due to the skill and expertise of Dr. Birch.”</p>
+                     <p className="italic text-gray-700 mb-2">"I am tremendously grateful for what Dr. Birch has done for me. Before undergoing his FMT protocol, I had severe eczema that covered nearly every part of my body, and extreme gastrointestinal issues. Six months following the FMT, my skin is 90% better and I have had gastrointestinal improvements as well. I continue to get better and I sincerely believe it is due to the skill and expertise of Dr. Birch."</p>
                      <footer className="font-bold text-sm text-gray-500">- JB</footer>
                    </blockquote>
                    
                    <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">“I have been seeing Dr. Birch for eight years and can confidently say his combination of expertise, extensive knowledge, patience, and understanding makes him an outstanding doctor. 1.5 years ago, I was hospitalized for 17 days due severe Ulcerative Colitis symptoms, nearly experiencing colon rupture. I was told I would have to be on a chemo drug the rest of my life at only 31 years old. When I came out of the hospital I met with Dr. Birch and he created a plan to fully heal my body. In only three months after being hospitalized, the inflammation in the colon returned to normal, I was symptom-free, and made a full recovery. In less than six months from being hospitalized I was completely free of all medication and haven’t needed any since.”</p>
+                     <p className="italic text-gray-700 mb-2">"I have been seeing Dr. Birch for eight years and can confidently say his combination of expertise, extensive knowledge, patience, and understanding makes him an outstanding doctor. 1.5 years ago, I was hospitalized for 17 days due severe Ulcerative Colitis symptoms, nearly experiencing colon rupture. I was told I would have to be on a chemo drug the rest of my life at only 31 years old. When I came out of the hospital I met with Dr. Birch and he created a plan to fully heal my body. In only three months after being hospitalized, the inflammation in the colon returned to normal, I was symptom-free, and made a full recovery. In less than six months from being hospitalized I was completely free of all medication and haven't needed any since."</p>
                      <footer className="font-bold text-sm text-gray-500">- JC</footer>
                    </blockquote>
 
                    <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">“I had been suffering with diarrhea for 9 months when finally got a diagnosis of c-diff. I was referred to Dr. Birch. I wanted to avoid the harsh antibiotics that kill off everything in the gut. He guided me through the FMT process and I have had very good results. The diarrhea ended with 6 weeks and my stools were back to normal within a few months. My energy is excellent! The results were so good that if I had to do it again, I wouldn't think twice. Dr. Birch and the clinic are kind, compassionate, and very responsive.”</p>
+                     <p className="italic text-gray-700 mb-2">"I had been suffering with diarrhea for 9 months when finally got a diagnosis of c-diff. I was referred to Dr. Birch. I wanted to avoid the harsh antibiotics that kill off everything in the gut. He guided me through the FMT process and I have had very good results. The diarrhea ended with 6 weeks and my stools were back to normal within a few months. My energy is excellent! The results were so good that if I had to do it again, I wouldn't think twice. Dr. Birch and the clinic are kind, compassionate, and very responsive."</p>
                      <footer className="font-bold text-sm text-gray-500">- AA</footer>
                    </blockquote>
 
                    <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">”Dr. Jonathan Birch changed my life. I highly recommend consulting with him if you have c diff, or a gut microbiome dysregulation issue. Under his care I was able to treat the c diff infection AND stop taking all medicine related to Inflammatory Bowel disease... So far it has been 18 months since my first FMT treatment (I had two, approximately 10 months apart) and 9 months since my last dose of biologics. I feel great with no IBD issues - no diarrhea, cramping, or pain!”</p>
+                     <p className="italic text-gray-700 mb-2">"Dr. Jonathan Birch changed my life. I highly recommend consulting with him if you have c diff, or a gut microbiome dysregulation issue. Under his care I was able to treat the c diff infection AND stop taking all medicine related to Inflammatory Bowel disease... So far it has been 18 months since my first FMT treatment (I had two, approximately 10 months apart) and 9 months since my last dose of biologics. I feel great with no IBD issues - no diarrhea, cramping, or pain!"</p>
                      <footer className="font-bold text-sm text-gray-500">- PM</footer>
                    </blockquote>
                    
                    <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">“I would like to thank Dr. Jonathan Birch and all the staff at Purety Clinic for the kind and careful treatment of the FMT I had in early 2022. I am doing very well. The FMT procedure was very successful - the infection is gone, and after my recent colonoscopy, the doctor told me I was in complete remission with no sign of UC. I am very grateful to Dr. Birch and all the staff who helped to make this procedure possible! Thank you all so very much!“</p>
+                     <p className="italic text-gray-700 mb-2">"I would like to thank Dr. Jonathan Birch and all the staff at Purety Clinic for the kind and careful treatment of the FMT I had in early 2022. I am doing very well. The FMT procedure was very successful - the infection is gone, and after my recent colonoscopy, the doctor told me I was in complete remission with no sign of UC. I am very grateful to Dr. Birch and all the staff who helped to make this procedure possible! Thank you all so very much!"</p>
                      <footer className="font-bold text-sm text-gray-500">- KS</footer>
                    </blockquote>
 
                    <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">“Thank you so very much!!! I have been doing great after treatment, many symptoms and body pains have gone down and no gut pain! Thank you from the bottom of my heart, I am so grateful!“</p>
+                     <p className="italic text-gray-700 mb-2">"Thank you so very much!!! I have been doing great after treatment, many symptoms and body pains have gone down and no gut pain! Thank you from the bottom of my heart, I am so grateful!"</p>
                      <footer className="font-bold text-sm text-gray-500">- KBS</footer>
                    </blockquote>
                    
                    <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">‘It has just been a few days and I am feeling SO much better. Wow! A HUGE improvement.’</p>
+                     <p className="italic text-gray-700 mb-2">'It has just been a few days and I am feeling SO much better. Wow! A HUGE improvement.'</p>
                      <footer className="font-bold text-sm text-gray-500">- TD</footer>
                    </blockquote>
 
                    <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">“It has been a long time since we have communicated but I wanted to reach out and tell you how successful my FMT last September was. I went from a starch free diet, back pain, knuckle pain, serious brain fog, shoulder pain, and achilles issues that limited runs to less than three miles, to almost a full (albiet still quite healthy) diet and pain/brain fog free. I have even been running 10+ mile runs pain free. I tell people that I feel like I did when I was in my 20's (I'm now 37). Thank you”</p>
+                     <p className="italic text-gray-700 mb-2">"It has been a long time since we have communicated but I wanted to reach out and tell you how successful my FMT last September was. I went from a starch free diet, back pain, knuckle pain, serious brain fog, shoulder pain, and achilles issues that limited runs to less than three miles, to almost a full (albiet still quite healthy) diet and pain/brain fog free. I have even been running 10+ mile runs pain free. I tell people that I feel like I did when I was in my 20's (I'm now 37). Thank you"</p>
                      <footer className="font-bold text-sm text-gray-500">- MH</footer>
                    </blockquote>
                  </div>
@@ -171,10 +213,10 @@ export default function FMT() {
                    Since 2014, Dr Birch has been beyond grateful to help hundreds of patients achieve amazing recoveries using FMT. He is known as one of the leading fecal transplant doctors in the country and in the meantime has become an expert in gastrointestinal conditions. His goal is to create an ideal protocol during the initial consultation and figure out a plan with you to optimize lasting results. <a href="/contact" className="text-primary hover:underline font-bold">Contact us today</a> to discuss if you may be eligible.
                  </p>
                  <p>
-                   The FMT treatment is performed with an extract of the stool of an extensively screened ‘super’ donor is suspended in solution and delivered to the patient via enema, which is then retained by the patient for at least 30 minutes yet usually hours as it comes out with the next bowel movement, or it is further concentrated and triple encapsulated for oral consumption. The protocol and dose amount depends on the specific patient. Another option is to have it implanted throughout the large intestine by colonoscopy here in Southern California. This treatment delivers the complete flora of a perfectly healthy, vital, healthy metabolic individual.
+                   The FMT treatment is performed with an extract of the stool of an extensively screened 'super' donor is suspended in solution and delivered to the patient via enema, which is then retained by the patient for at least 30 minutes yet usually hours as it comes out with the next bowel movement, or it is further concentrated and triple encapsulated for oral consumption. The protocol and dose amount depends on the specific patient. Another option is to have it implanted throughout the large intestine by colonoscopy here in Southern California. This treatment delivers the complete flora of a perfectly healthy, vital, healthy metabolic individual.
                  </p>
                  <p className="font-bold text-foreground mt-8 mb-4">
-                   Fecal Microbiota Transplantion, also known as FMT, human probiotic infusion, bacteriotherapy, and fecal transplant, is a powerful infusion of healthy colon flora which has been used historically to treat patients with clostridium difficile, aka C difficile infection, inflammatory bowel disease ( crohn’s disease and ulcerative colitis ), irritable bowel syndrome, autoimmune disease, dysbiotic gut flora as well as other conditions.
+                   Fecal Microbiota Transplantion, also known as FMT, human probiotic infusion, bacteriotherapy, and fecal transplant, is a powerful infusion of healthy colon flora which has been used historically to treat patients with clostridium difficile, aka C difficile infection, inflammatory bowel disease ( crohn's disease and ulcerative colitis ), irritable bowel syndrome, autoimmune disease, dysbiotic gut flora as well as other conditions.
                  </p>
                  
                  <div className="bg-primary/5 p-6 rounded-xl my-8">
@@ -192,7 +234,7 @@ export default function FMT() {
 
                  <h3 className="text-2xl font-serif font-bold text-primary mt-12 mb-6">Fecal Microbiota Transplantation History</h3>
                  <p>
-                   Fecal transplantion has proven to successfully re-establish a healthy gut flora in the recipient of healthy donor stool. In the Journal of Clinical Gastroenterology in September 2010, the Gastroenterology Department in New South Wales, Australia showed a <a href="#" className="text-primary hover:underline">durable alteration of the colonic microbiota by the administration of donor fecal flora</a>. At 24 weeks after a fecal microbiota transplant procedure, bacterial populations in patients’ fecal samples consisted predominantly of bacteria derived from healthy donor samples. Similar comparisons were made and each recipient’s baseline sample was statistically significant with a Friedman test.
+                   Fecal transplantion has proven to successfully re-establish a healthy gut flora in the recipient of healthy donor stool. In the Journal of Clinical Gastroenterology in September 2010, the Gastroenterology Department in New South Wales, Australia showed a <a href="#" className="text-primary hover:underline">durable alteration of the colonic microbiota by the administration of donor fecal flora</a>. At 24 weeks after a fecal microbiota transplant procedure, bacterial populations in patients' fecal samples consisted predominantly of bacteria derived from healthy donor samples. Similar comparisons were made and each recipient's baseline sample was statistically significant with a Friedman test.
                  </p>
                  
                  <ul className="list-disc pl-6 space-y-4 my-6">
@@ -213,7 +255,7 @@ export default function FMT() {
 
                  <h3 className="text-2xl font-serif font-bold text-primary mt-12 mb-6">Donor Screening is of utmost importance</h3>
                  <p>
-                   We pride ourselves on going above and beyond the screening guidelines in the United States to ensure that the fecal matter transplantion samples are of the absolute highest quality standards. Only a small handful of donors are used because of this as well as it allows for frequent screening. The donors we use are considered ‘super donors’ , extremely healthy in every possible way.
+                   We pride ourselves on going above and beyond the screening guidelines in the United States to ensure that the fecal matter transplantion samples are of the absolute highest quality standards. Only a small handful of donors are used because of this as well as it allows for frequent screening. The donors we use are considered 'super donors' , extremely healthy in every possible way.
                  </p>
                  
                  <h4 className="text-xl font-bold mt-8 mb-4">All stool donor meet the following criteria:</h4>

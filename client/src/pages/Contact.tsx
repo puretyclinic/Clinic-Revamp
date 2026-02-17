@@ -5,27 +5,66 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import * as gtag from "@/lib/gtag";
+import { useState } from "react";
 
 export default function Contact() {
   const { toast } = useToast();
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSending(true);
 
-    // Track conversion
-    gtag.event({
-      action: "submit_form",
-      category: "Contact",
-      label: "General Inquiry",
-    });
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
-    toast({
-      title: "Message Sent",
-      description: "We've received your message and will get back to you shortly.",
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: formData.get("firstName"),
+          lastName: formData.get("lastName"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          message: formData.get("message"),
+          formSource: "Contact",
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        gtag.event({
+          action: "submit_form",
+          category: "Contact",
+          label: "General Inquiry",
+        });
+
+        toast({
+          title: "Message Sent!",
+          description: "We've received your message and will get back to you shortly.",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Error",
+          description: data.error || "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch {
+      toast({
+        title: "Error",
+        description: "Could not send message. Please call us at (805) 500-8300.",
+        variant: "destructive",
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -120,31 +159,31 @@ export default function Contact() {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
-                        <Input id="firstName" placeholder="Jane" className="bg-gray-50 border-gray-200 h-12" />
+                        <Input id="firstName" name="firstName" placeholder="Jane" required className="bg-gray-50 border-gray-200 h-12" data-testid="input-firstName" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName">Last Name</Label>
-                        <Input id="lastName" placeholder="Doe" className="bg-gray-50 border-gray-200 h-12" />
+                        <Input id="lastName" name="lastName" placeholder="Doe" required className="bg-gray-50 border-gray-200 h-12" data-testid="input-lastName" />
                       </div>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" placeholder="jane@example.com" className="bg-gray-50 border-gray-200 h-12" />
+                      <Input id="email" name="email" type="email" placeholder="jane@example.com" required className="bg-gray-50 border-gray-200 h-12" data-testid="input-email" />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone</Label>
-                      <Input id="phone" type="tel" placeholder="(555) 123-4567" className="bg-gray-50 border-gray-200 h-12" />
+                      <Input id="phone" name="phone" type="tel" placeholder="(555) 123-4567" required className="bg-gray-50 border-gray-200 h-12" data-testid="input-phone" />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="message">How can we help?</Label>
-                      <Textarea id="message" placeholder="Tell us about your health goals..." className="bg-gray-50 border-gray-200 min-h-[150px]" />
+                      <Textarea id="message" name="message" placeholder="Tell us about your health goals..." required className="bg-gray-50 border-gray-200 min-h-[150px]" data-testid="input-message" />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg">
-                      Send Message
+                    <Button type="submit" size="lg" disabled={sending} className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg" data-testid="button-submit">
+                      {sending ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...</> : "Send Message"}
                     </Button>
                   </form>
                 </div>
