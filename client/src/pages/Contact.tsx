@@ -6,8 +6,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Message Sent",
+      description: "We've received your message and will get back to you shortly.",
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
       <Navbar />
@@ -96,7 +107,7 @@ export default function Contact() {
                   <h2 className="font-serif text-3xl mb-2">Send a Message</h2>
                   <p className="text-muted-foreground mb-8">Fill out the form below and we'll get back to you shortly.</p>
                   
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
@@ -123,7 +134,7 @@ export default function Contact() {
                       <Textarea id="message" placeholder="Tell us about your health goals..." className="bg-gray-50 border-gray-200 min-h-[150px]" />
                     </div>
 
-                    <Button size="lg" className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg">
+                    <Button type="submit" size="lg" className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg">
                       Send Message
                     </Button>
                   </form>
