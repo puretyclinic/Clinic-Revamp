@@ -22,22 +22,26 @@ export default function Contact() {
     const formData = new FormData(form);
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formsubmit.co/ajax/rebootbase@icloud.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
         body: JSON.stringify({
-          firstName: formData.get("firstName"),
-          lastName: formData.get("lastName"),
+          name: `${formData.get("firstName")} ${formData.get("lastName")}`,
           email: formData.get("email"),
           phone: formData.get("phone"),
           message: formData.get("message"),
-          formSource: "Contact",
+          _subject: `New Contact Form: ${formData.get("firstName")} ${formData.get("lastName")}`,
+          _cc: "dr@puretyclinic.com",
+          _template: "table",
         }),
       });
 
       const data = await res.json();
 
-      if (res.ok) {
+      if (data.success === "true" || data.success === true) {
         gtag.event({
           action: "submit_form",
           category: "Contact",
@@ -52,7 +56,7 @@ export default function Contact() {
       } else {
         toast({
           title: "Error",
-          description: data.error || "Something went wrong. Please try again.",
+          description: "Something went wrong. Please try again.",
           variant: "destructive",
         });
       }
