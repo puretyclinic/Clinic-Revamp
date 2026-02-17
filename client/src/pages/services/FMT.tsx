@@ -7,12 +7,21 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { ShieldCheck, CheckCircle2, ArrowRight, Cloud, Mail } from "lucide-react"; // Microclimatology as abstract for microbiome
 import { useToast } from "@/hooks/use-toast";
+import * as gtag from "@/lib/gtag";
 
 export default function FMT() {
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Track conversion
+    gtag.event({
+      action: "submit_form",
+      category: "Contact",
+      label: "FMT Inquiry",
+    });
+
     toast({
       title: "Message Sent",
       description: "Dr. Jonathan will review your message shortly. (Sent to drjonathan@puretyclinic.com)",

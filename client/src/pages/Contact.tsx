@@ -7,12 +7,21 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import * as gtag from "@/lib/gtag";
 
 export default function Contact() {
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Track conversion
+    gtag.event({
+      action: "submit_form",
+      category: "Contact",
+      label: "General Inquiry",
+    });
+
     toast({
       title: "Message Sent",
       description: "We've received your message and will get back to you shortly.",
