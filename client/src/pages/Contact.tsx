@@ -22,7 +22,7 @@ export default function Contact() {
     const formData = new FormData(form);
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/rebootbase@icloud.com", {
+      const res = await fetch("https://formsubmit.co/ajax/drjonathan@puretyclinic.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,7 +35,6 @@ export default function Contact() {
           Message: formData.get("message"),
           _subject: `Purety Clinic Website - New Contact from ${formData.get("firstName")} ${formData.get("lastName")}`,
           _replyto: formData.get("email"),
-          _cc: "Drjonathan@puretyclinic.com",
           _template: "table",
         }),
       });
