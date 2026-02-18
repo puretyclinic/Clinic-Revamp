@@ -277,7 +277,7 @@ export default function FMT() {
           <div className="container mx-auto px-4 max-w-5xl">
             <FadeIn>
               <div className="text-center mb-14">
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Choose Your Treatment Path</h2>
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Our Treatment Path Options</h2>
                 <p className="text-muted-foreground text-lg">Non-invasive options tailored to your needs. No hospital stay required.</p>
               </div>
             </FadeIn>
