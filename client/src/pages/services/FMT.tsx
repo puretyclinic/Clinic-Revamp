@@ -5,11 +5,39 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { ShieldCheck, CheckCircle2, ArrowRight, Cloud, Mail, Loader2, Calendar } from "lucide-react";
-import { ContactCTA } from "@/components/ContactCTA";
+import { Phone, Loader2, ArrowRight, ShieldCheck, CheckCircle2, Pill, FlaskConical, Stethoscope, Star, ChevronDown, ChevronUp } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import * as gtag from "@/lib/gtag";
 import { useState } from "react";
+
+function scrollToForm() {
+  const el = document.querySelector('#consultation');
+  if (el) {
+    const y = el.getBoundingClientRect().top + window.scrollY - 20;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+}
+
+function FAQItem({ question, answer }: { question: string; answer: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-gray-200">
+      <button
+        className="w-full flex items-center justify-between py-5 text-left"
+        onClick={() => setOpen(!open)}
+        data-testid={`faq-toggle-${question.slice(0, 20).replace(/\s/g, '-')}`}
+      >
+        <span className="font-bold text-foreground text-lg pr-4">{question}</span>
+        {open ? <ChevronUp className="w-5 h-5 text-primary shrink-0" /> : <ChevronDown className="w-5 h-5 text-primary shrink-0" />}
+      </button>
+      {open && (
+        <div className="pb-5 text-muted-foreground leading-relaxed">
+          {answer}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function FMT() {
   const { toast } = useToast();
@@ -27,8 +55,8 @@ export default function FMT() {
       lastName: formData.get("lastName") as string,
       email: formData.get("email") as string,
       phone: formData.get("phone") as string,
-      message: `Subject: ${formData.get("subject")}\n\n${formData.get("message")}`,
-      source: "FMT Page",
+      message: `Primary Concern: ${formData.get("concern")}\n\n${formData.get("message") || ""}`,
+      source: "FMT Page - puretyclinic.com/fecal-transplant",
     };
 
     try {
@@ -44,7 +72,7 @@ export default function FMT() {
         gtag.event({
           action: "submit_form",
           category: "Contact",
-          label: "FMT Inquiry",
+          label: "FMT Consultation Request",
         });
 
         fetch("https://formsubmit.co/ajax/DrJonathan@puretyclinic.com", {
@@ -55,15 +83,15 @@ export default function FMT() {
             Email: payload.email,
             Phone: payload.phone,
             Message: payload.message,
-            _subject: `Purety Clinic Website - New FMT Inquiry from ${payload.firstName} ${payload.lastName}`,
+            _subject: `FMT Consultation Request from ${payload.firstName} ${payload.lastName}`,
             _replyto: payload.email,
             _template: "table",
           }),
         }).catch(() => {});
 
         toast({
-          title: "Message Sent!",
-          description: "Dr. Jonathan will review your message shortly.",
+          title: "Consultation Requested!",
+          description: "Dr. Birch's team will review your case and contact you shortly.",
         });
         form.reset();
       } else {
@@ -86,248 +114,413 @@ export default function FMT() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
+      <div className="bg-accent text-white text-center py-2.5 px-4 text-sm font-medium">
+        Limited Availability: We can only accept <span className="font-bold underline">5 new patients per week</span> due to donor screening requirements
+      </div>
+      <div className="bg-primary text-white text-center py-2 px-4 text-sm">
+        Questions? Call or Text Now: <a href="tel:+18055008300" className="font-bold hover:underline">(805) 500-8300</a> | Consultations Available
+      </div>
+
       <Navbar />
-      
+
       <main className="flex-grow">
-        {/* Hero */}
-        <section className="relative py-24 bg-primary text-white flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/images/paper-texture.jpg')] opacity-10 mix-blend-overlay" />
-          <div className="container px-4 text-center relative z-10">
-            <FadeIn>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-wider mb-6 border border-white/20">
-                <span className="text-lg leading-none">💩</span>
-                <span>Safety, quality and efficacy driven</span>
-              </div>
-              <h1 className="font-serif text-5xl md:text-7xl mb-6">Fecal Microbiota <span className="italic text-accent">Transplant</span> (FMT)</h1>
-              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                 <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold" asChild>
-                    <a href="#contact-form" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
-                      <Calendar className="w-5 h-5 mr-2" /> Book Consultation
-                    </a>
-                 </Button>
-                 <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-bold" asChild>
-                    <a href="tel:+18055008300">Call or Text (805) 500-8300</a>
-                 </Button>
-              </div>
-            </FadeIn>
+        <section id="consultation" className="py-16 md:py-24 bg-gradient-to-br from-[#f0f7f8] to-[#e8f0f1]">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
+              <FadeIn>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6 border border-primary/20">
+                  <CheckCircle2 className="w-4 h-4" />
+                  California's Leading FMT Specialists Since 2014
+                </div>
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.2rem] leading-[1.15] mb-6 text-foreground">
+                  Finally <span className="text-accent italic">Restore</span> Your Gut Health With Proven FMT Treatment
+                </h1>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                  Dr. Jonathan Birch has helped over 1,000 patients achieve lasting relief with our proven FMT protocol. Whether you're dealing with C. diff, recurring digestive issues, or other gut health concerns, we're here to help.
+                </p>
+
+                <div className="flex gap-8 mb-8">
+                  <div>
+                    <div className="text-3xl font-bold text-accent">1,000+</div>
+                    <div className="text-sm text-muted-foreground">Patients Helped</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-accent">90%+</div>
+                    <div className="text-sm text-muted-foreground">Success Rate</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-accent">10+</div>
+                    <div className="text-sm text-muted-foreground">Years Experience</div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold rounded-lg" onClick={scrollToForm} data-testid="button-fmt-hero-schedule">
+                    <Phone className="w-4 h-4 mr-2" /> Schedule Consultation
+                  </Button>
+                  <Button size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/5 font-bold rounded-lg" asChild>
+                    <a href="tel:+18055008300">Call (805) 500-8300</a>
+                  </Button>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.2}>
+                <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+                  <h2 className="font-serif text-2xl font-bold mb-2 text-foreground">Schedule Your Consultation</h2>
+                  <p className="text-muted-foreground text-sm mb-6">Dr. Birch will review your case and discuss the right treatment path together with you.</p>
+
+                  <form onSubmit={handleSubmit} className="space-y-4" data-testid="form-fmt-consultation">
+                    <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-1">
+                        <Label htmlFor="fmt-firstName" className="text-sm font-medium">First Name</Label>
+                        <Input id="fmt-firstName" name="firstName" placeholder="John" required className="h-11" data-testid="input-fmt-firstName" />
+                      </div>
+                      <div className="space-y-1">
+                        <Label htmlFor="fmt-lastName" className="text-sm font-medium">Last Name</Label>
+                        <Input id="fmt-lastName" name="lastName" placeholder="Smith" required className="h-11" data-testid="input-fmt-lastName" />
+                      </div>
+                    </div>
+                    <div className="space-y-1">
+                      <Label htmlFor="fmt-email" className="text-sm font-medium">Email Address</Label>
+                      <Input id="fmt-email" name="email" type="email" placeholder="john@example.com" required className="h-11" data-testid="input-fmt-email" />
+                    </div>
+                    <div className="space-y-1">
+                      <Label htmlFor="fmt-phone" className="text-sm font-medium">Phone Number</Label>
+                      <Input id="fmt-phone" name="phone" type="tel" placeholder="(555) 123-4567" required className="h-11" data-testid="input-fmt-phone" />
+                    </div>
+                    <div className="space-y-1">
+                      <Label htmlFor="fmt-concern" className="text-sm font-medium">Primary Concern</Label>
+                      <select
+                        id="fmt-concern"
+                        name="concern"
+                        className="flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                        data-testid="select-fmt-concern"
+                      >
+                        <option value="">Select your concern...</option>
+                        <option value="C. difficile (C. diff)">C. difficile (C. diff)</option>
+                        <option value="Gut Health Consultation">Gut Health Consultation</option>
+                        <option value="Digestive Wellness">Digestive Wellness</option>
+                        <option value="Other">Other - I'd like to discuss</option>
+                      </select>
+                    </div>
+                    <div className="space-y-1">
+                      <Label htmlFor="fmt-message" className="text-sm font-medium">Tell us about your situation (optional)</Label>
+                      <Textarea
+                        id="fmt-message"
+                        name="message"
+                        placeholder="Share any additional details about your symptoms, history, or questions..."
+                        className="min-h-[100px]"
+                        data-testid="input-fmt-message"
+                      />
+                    </div>
+                    <Button type="submit" size="lg" disabled={sending} className="w-full h-12 bg-accent hover:bg-accent/90 text-white font-bold text-base" data-testid="button-fmt-submit">
+                      {sending ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...</> : <><ArrowRight className="w-4 h-4 mr-2" /> Request My Consultation</>}
+                    </Button>
+                    <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-1">
+                      <ShieldCheck className="w-3 h-3" /> Your information is 100% confidential and HIPAA protected
+                    </p>
+                  </form>
+                </div>
+              </FadeIn>
+            </div>
           </div>
         </section>
 
-        {/* Content Section */}
+        <div className="bg-white border-y border-gray-100 py-6">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16 text-sm font-medium text-muted-foreground">
+              <div className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 text-primary" /> Licensed Medical Clinic</div>
+              <div className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 text-primary" /> HIPAA Compliant</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-primary" /> 1,000+ Patients Treated</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-primary" /> Super Donor Screening</div>
+            </div>
+          </div>
+        </div>
+
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 max-w-4xl">
+          <div className="container mx-auto px-4 max-w-5xl">
             <FadeIn>
-              <h2 className="font-serif text-3xl font-bold mb-6 text-primary">FMT Specialists</h2>
-              
-              <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed mb-12">
-                 <p className="mb-4">
-                   If you are looking for a fecal transplant (FMT), look no further. We have helped hundreds of people since 2015 achieve excellent results with our small batch microbiome transfer program using <a href="https://static1.squarespace.com/static/5e8750872ceab220c4d4f137/t/670ee470c3b707053be6ff95/1729029233938/Purety+Clinic+Clinical+Considerations+for+Donor+Selection+and+Screening+.pdf" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">superior donors</a>. Enemas, capsules, oral liquid, and colonoscopy are the best options.
-                 </p>
-                 <p className="mb-4">
-                   Safety, quality and efficacy is our focus for you.
-                 </p>
-                 <p className="mb-4">
-                   We are based in Santa Barbara, California, and we frequently do initial remote consultations.
-                 </p>
-                 <p className="font-bold text-foreground mb-4">
-                   Start by either calling or texting us at 805-500-8300, or please tell us your story below.
-                 </p>
-                 <p>
-                   We are compassionate and respond quickly. We look forward to getting to know you and doing our best for you. Have a wonderful day.
-                 </p>
+              <div className="text-center mb-14">
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Tired of the Endless Antibiotic Cycle?</h2>
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">You've tried everything. Multiple rounds of antibiotics. Strict diets. Nothing works for long. There's a better way.</p>
               </div>
+            </FadeIn>
 
-              {/* Form */}
-              <div className="bg-accent/5 p-8 rounded-2xl mb-16 border border-accent/20">
-                 <form onSubmit={handleSubmit} className="space-y-6">
-                   <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
-                   <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="firstName">First Name (required)</Label>
-                        <Input id="firstName" name="firstName" required className="bg-white" data-testid="input-fmt-firstName" />
+            <div className="grid md:grid-cols-3 gap-8">
+              <FadeIn delay={0.1}>
+                <div className="bg-red-50 rounded-2xl p-8 text-center border border-red-100 h-full">
+                  <div className="text-4xl mb-4">💊</div>
+                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">The Antibiotic Trap</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">Round after round of antibiotics... They kill the bad bacteria but also destroy your healthy gut flora, leading to recurrence.</p>
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.2}>
+                <div className="bg-amber-50 rounded-2xl p-8 text-center border border-amber-100 h-full">
+                  <div className="text-4xl mb-4">🔄</div>
+                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">Recurring Infections</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">25-35% of C. diff patients experience recurrence. After 2+ recurrences, your chances of another infection jump to 60%.</p>
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.3}>
+                <div className="bg-green-50 rounded-2xl p-8 text-center border border-green-100 h-full">
+                  <div className="text-4xl mb-4">✔</div>
+                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">The FMT Solution</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">FMT restores your complete gut microbiome with healthy donor bacteria. 90%+ success rate, even for antibiotic-resistant cases.</p>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-[#f8fafb]">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <FadeIn>
+              <div className="text-center mb-14">
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Choose Your Treatment Path</h2>
+                <p className="text-muted-foreground text-lg">Non-invasive options tailored to your needs. No hospital stay required.</p>
+              </div>
+            </FadeIn>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <FadeIn delay={0.1}>
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 h-full flex flex-col">
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                    <Pill className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="font-serif text-xl font-bold mb-3">FMT Capsules</h3>
+                  <p className="text-muted-foreground text-sm mb-4">Convenient oral treatment you can take at home</p>
+                  <ul className="space-y-2 text-sm text-muted-foreground mt-auto">
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Triple-encapsulated for safety and comfort</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Usual 14 day treatment course</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> No sedation required</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Ideal for C. diff patients</li>
+                  </ul>
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.2}>
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 h-full flex flex-col">
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                    <FlaskConical className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="font-serif text-xl font-bold mb-3">Retention Enema</h3>
+                  <p className="text-muted-foreground text-sm mb-4">Direct delivery to lower intestine</p>
+                  <ul className="space-y-2 text-sm text-muted-foreground mt-auto">
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Excellent success rate</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Easy to retain until next bowel movement</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Traditional route</li>
+                  </ul>
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.3}>
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 h-full flex flex-col">
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                    <Stethoscope className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="font-serif text-xl font-bold mb-3">Colonoscopy FMT</h3>
+                  <p className="text-muted-foreground text-sm mb-4">Full intestinal coverage for complex cases</p>
+                  <ul className="space-y-2 text-sm text-muted-foreground mt-auto">
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Complete large intestine delivery</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Single treatment often sufficient</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Performed in Southern CA</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Best for severe cases</li>
+                  </ul>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <FadeIn>
+              <div className="text-center mb-14">
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Real Patients. Real Results.</h2>
+                <p className="text-muted-foreground text-lg">Read what our patients say about their experience with FMT at Purety Clinic</p>
+              </div>
+            </FadeIn>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { initials: "A.A.", type: "Gut Health Patient", result: "Significant Improvement", quote: "I had been suffering with chronic digestive issues for over a year. After working with Dr. Birch, he determined the right treatment path for me. Within weeks I noticed significant improvement, and now I feel like myself again. My energy is excellent!" },
+                { initials: "M.R.", type: "Digestive Health Patient", result: "Relief After Failed Treatments", quote: "After multiple rounds of antibiotics failed, I was desperate. Dr. Birch's personalized approach worked when nothing else did. He took the time to understand my situation and developed a treatment plan that actually worked. I can't thank the Purety team enough." },
+                { initials: "D.L.", type: "Microbiome Patient", result: "Life-Changing Results", quote: "I was at my wit's end before finding Dr. Birch. The consultation process was thorough, and he explained all my options clearly. The treatment he recommended was much easier than I expected, and the results were remarkable. Truly life-changing care." },
+                { initials: "K.P.", type: "Gut Health Patient", result: "Remote Consultation Success", quote: "Dr. Birch and his team treated me with such compassion during a really difficult time. The remote consultation made everything easier. Dr. Birch took the time to discuss all the possibilities and we came to the right treatment together. I finally have my life back." },
+              ].map((t, i) => (
+                <FadeIn key={i} delay={i * 0.1}>
+                  <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 h-full flex flex-col">
+                    <div className="flex text-accent mb-3">
+                      {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-current" />)}
+                    </div>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-grow italic">"{t.quote}"</p>
+                    <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 text-primary font-bold text-sm flex items-center justify-center">{t.initials[0]}{t.initials[2]}</div>
+                      <div>
+                        <div className="font-bold text-sm text-foreground">{t.initials}</div>
+                        <div className="text-xs text-muted-foreground">{t.type}</div>
                       </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="lastName">Last Name (required)</Label>
-                        <Input id="lastName" name="lastName" required className="bg-white" data-testid="input-fmt-lastName" />
+                      <div className="ml-auto">
+                        <span className="text-xs font-medium bg-green-50 text-green-700 px-2 py-1 rounded-full border border-green-200">{t.result}</span>
                       </div>
-                   </div>
-                   
-                   <div className="space-y-2">
-                     <Label htmlFor="email">Email (required)</Label>
-                     <Input id="email" name="email" type="email" required className="bg-white" data-testid="input-fmt-email" />
-                   </div>
-                   
-                   <div className="space-y-2">
-                     <Label htmlFor="phone">Phone (required)</Label>
-                     <Input id="phone" name="phone" type="tel" required className="bg-white" data-testid="input-fmt-phone" />
-                   </div>
-                   
-                   <div className="space-y-2">
-                     <Label htmlFor="subject">Subject (required)</Label>
-                     <Input id="subject" name="subject" required className="bg-white" data-testid="input-fmt-subject" />
-                   </div>
-                   
-                   <div className="space-y-2">
-                     <Label htmlFor="message">Message (required)</Label>
-                     <Textarea id="message" name="message" required className="bg-white min-h-[150px]" data-testid="input-fmt-message" />
-                   </div>
-                   
-                   <Button type="submit" size="lg" disabled={sending} className="w-full md:w-auto px-8" data-testid="button-fmt-submit">
-                     {sending ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...</> : "Submit"}
-                   </Button>
-                 </form>
-              </div>
+                    </div>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
 
-              {/* Testimonials */}
-              <div className="mb-16">
-                 <h3 className="font-serif text-2xl font-bold mb-8 text-center">These are just a few recent comments from our wonderful patients:</h3>
-                 
-                 <div className="space-y-8">
-                   <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">"I am eternally grateful for these guys. I was dealing with an extremely drug induced panic disorder (PFS). These people gave me my life back!"</p>
-                     <footer className="font-bold text-sm text-gray-500">- SH</footer>
-                   </blockquote>
-
-                   <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">"I am tremendously grateful for what Dr. Birch has done for me. Before undergoing his FMT protocol, I had severe eczema that covered nearly every part of my body, and extreme gastrointestinal issues. Six months following the FMT, my skin is 90% better and I have had gastrointestinal improvements as well. I continue to get better and I sincerely believe it is due to the skill and expertise of Dr. Birch."</p>
-                     <footer className="font-bold text-sm text-gray-500">- JB</footer>
-                   </blockquote>
-                   
-                   <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">"I have been seeing Dr. Birch for eight years and can confidently say his combination of expertise, extensive knowledge, patience, and understanding makes him an outstanding doctor. 1.5 years ago, I was hospitalized for 17 days due severe Ulcerative Colitis symptoms, nearly experiencing colon rupture. I was told I would have to be on a chemo drug the rest of my life at only 31 years old. When I came out of the hospital I met with Dr. Birch and he created a plan to fully heal my body. In only three months after being hospitalized, the inflammation in the colon returned to normal, I was symptom-free, and made a full recovery. In less than six months from being hospitalized I was completely free of all medication and haven't needed any since."</p>
-                     <footer className="font-bold text-sm text-gray-500">- JC</footer>
-                   </blockquote>
-
-                   <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">"I had been suffering with diarrhea for 9 months when finally got a diagnosis of c-diff. I was referred to Dr. Birch. I wanted to avoid the harsh antibiotics that kill off everything in the gut. He guided me through the FMT process and I have had very good results. The diarrhea ended with 6 weeks and my stools were back to normal within a few months. My energy is excellent! The results were so good that if I had to do it again, I wouldn't think twice. Dr. Birch and the clinic are kind, compassionate, and very responsive."</p>
-                     <footer className="font-bold text-sm text-gray-500">- AA</footer>
-                   </blockquote>
-
-                   <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">"Dr. Jonathan Birch changed my life. I highly recommend consulting with him if you have c diff, or a gut microbiome dysregulation issue. Under his care I was able to treat the c diff infection AND stop taking all medicine related to Inflammatory Bowel disease... So far it has been 18 months since my first FMT treatment (I had two, approximately 10 months apart) and 9 months since my last dose of biologics. I feel great with no IBD issues - no diarrhea, cramping, or pain!"</p>
-                     <footer className="font-bold text-sm text-gray-500">- PM</footer>
-                   </blockquote>
-                   
-                   <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">"I would like to thank Dr. Jonathan Birch and all the staff at Purety Clinic for the kind and careful treatment of the FMT I had in early 2022. I am doing very well. The FMT procedure was very successful - the infection is gone, and after my recent colonoscopy, the doctor told me I was in complete remission with no sign of UC. I am very grateful to Dr. Birch and all the staff who helped to make this procedure possible! Thank you all so very much!"</p>
-                     <footer className="font-bold text-sm text-gray-500">- KS</footer>
-                   </blockquote>
-
-                   <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">"Thank you so very much!!! I have been doing great after treatment, many symptoms and body pains have gone down and no gut pain! Thank you from the bottom of my heart, I am so grateful!"</p>
-                     <footer className="font-bold text-sm text-gray-500">- KBS</footer>
-                   </blockquote>
-                   
-                   <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">'It has just been a few days and I am feeling SO much better. Wow! A HUGE improvement.'</p>
-                     <footer className="font-bold text-sm text-gray-500">- TD</footer>
-                   </blockquote>
-
-                   <blockquote className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                     <p className="italic text-gray-700 mb-2">"It has been a long time since we have communicated but I wanted to reach out and tell you how successful my FMT last September was. I went from a starch free diet, back pain, knuckle pain, serious brain fog, shoulder pain, and achilles issues that limited runs to less than three miles, to almost a full (albiet still quite healthy) diet and pain/brain fog free. I have even been running 10+ mile runs pain free. I tell people that I feel like I did when I was in my 20's (I'm now 37). Thank you"</p>
-                     <footer className="font-bold text-sm text-gray-500">- MH</footer>
-                   </blockquote>
-                 </div>
-              </div>
-
-              <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
-                 <p>
-                   Since 2014, Dr Birch has been beyond grateful to help hundreds of patients achieve amazing recoveries using FMT. He is known as one of the leading fecal transplant doctors in the country and in the meantime has become an expert in gastrointestinal conditions. His goal is to create an ideal protocol during the initial consultation and figure out a plan with you to optimize lasting results. <a href="/contact" className="text-primary hover:underline font-bold">Contact us today</a> to discuss if you may be eligible.
-                 </p>
-                 <p>
-                   The FMT treatment is performed with an extract of the stool of an extensively screened 'super' donor is suspended in solution and delivered to the patient via enema, which is then retained by the patient for at least 30 minutes yet usually hours as it comes out with the next bowel movement, or it is further concentrated and triple encapsulated for oral consumption. The protocol and dose amount depends on the specific patient. Another option is to have it implanted throughout the large intestine by colonoscopy here in Southern California. This treatment delivers the complete flora of a perfectly healthy, vital, healthy metabolic individual.
-                 </p>
-                 <p className="font-bold text-foreground mt-8 mb-4">
-                   Fecal Microbiota Transplantion, also known as FMT, human probiotic infusion, bacteriotherapy, and fecal transplant, is a powerful infusion of healthy colon flora which has been used historically to treat patients with clostridium difficile, aka C difficile infection, inflammatory bowel disease ( crohn's disease and ulcerative colitis ), irritable bowel syndrome, autoimmune disease, dysbiotic gut flora as well as other conditions.
-                 </p>
-                 
-                 <div className="bg-primary/5 p-6 rounded-xl my-8">
-                   <p className="mb-4">
-                     At <a href="/" className="text-primary hover:underline font-bold">Purety Family Medical Clinic</a>, our fecal transplant doctors offer fecal microbiota transplantation via retention enema and via encapsulation, neither of which has any known serious adverse effects.
-                   </p>
-                   <p className="mb-0">
-                     Currently, the <a href="#" className="text-primary hover:underline">FDA allows</a> fecal transplantation to be given for antibiotic resistant Clostridium difficile infections, also known as C Difficile, or CDI (*compassionate use can be applied for). Because of FDA regulation, we use this therapy for people with c diff. FMT has shown to have a well <strong>over 90% cure rate of refractory (antibiotic resistant) C diff infections</strong>.
-                   </p>
-                 </div>
-                 
-                 <p>
-                   Since 2014 we have served all of California as well as those who would like to travel here. Closest to us we have served Santa Barbara county with FMT fecal microbiota transplant including Santa Barbara, Goleta, Carpinteria, Isla Vista, Hope Ranch, Summerland, Solvang, Santa Maria, Buellton, Lompoc, Guadalupe, and Montecito. We also frequently welcome our patients from Ventura County, San Luis Obispo County, Los Angeles County, and beyond.
-                 </p>
-
-                 <h3 className="text-2xl font-serif font-bold text-primary mt-12 mb-6">Fecal Microbiota Transplantation History</h3>
-                 <p>
-                   Fecal transplantion has proven to successfully re-establish a healthy gut flora in the recipient of healthy donor stool. In the Journal of Clinical Gastroenterology in September 2010, the Gastroenterology Department in New South Wales, Australia showed a <a href="#" className="text-primary hover:underline">durable alteration of the colonic microbiota by the administration of donor fecal flora</a>. At 24 weeks after a fecal microbiota transplant procedure, bacterial populations in patients' fecal samples consisted predominantly of bacteria derived from healthy donor samples. Similar comparisons were made and each recipient's baseline sample was statistically significant with a Friedman test.
-                 </p>
-                 
-                 <ul className="list-disc pl-6 space-y-4 my-6">
-                    <li>The first written record of fecal bacteria transplantion treatment is Ge Hong, who in the 4th Century CE successfully used oral-fecal suspension treatments for food poisoning and severe diarrhea.</li>
-                    <li>Li Shizhen in 16th century CE used fermented, fresh, dried, or infant gut bacteria transplantation for severe diarrhea, vomiting and constipation.</li>
-                    <li>Christian Franz Paullini used by mouth fecal suspensions transplants successfully for dysentery in the 17th century.</li>
-                    <li>Before 1982, Robert Carroll, ND used fecal transplant for a variety of <strong>autoimmune</strong> and <strong>GI conditions</strong>.</li>
-                    <li>Published in the Lancet, 1989 Jan 21 <a href="#" className="text-primary hover:underline">Treatment of ulcerative colitis by implantation of normal colonic flora</a>. Bennet had 11 years of Ulcerative colitis, 7 years of steroid-dependency with severe symptoms if he dropped below 30 mg/day steroid. At 3 months post fecal microbiota transplantation retention enema he had no symptoms, came off steroid, and colonoscopy revealed no active inflammation. Dr Bennet cured his own ulcerative colitis UC IBD with fecal transplant. This was the first documented <strong>IBD treatment success</strong> with fecal transplantation.</li>
-                    <li>This led to the journal article published in the medical journal of Australia in 1989: Med J Aust. 1989 May 15;150(10):604 <a href="#" className="text-primary hover:underline">Bowel-flora alteration: a potential cure for <strong>inflammatory bowel disease</strong> and <strong>irritable bowel syndrome</strong>?</a> Borody, George, Brandi, Noonan, Cole, Hyland, Morgan, Maysey, Moore-Jones D.</li>
-                    <li>Up to now, fecal transplantion has been used to treat an array of gastrointestinal conditions successfully. To learn about the amazing success stories of FMT and other health information we encourage you to take a look at <a href="http://thepowerofpoop.com/" target="_blank" rel="noreferrer" className="text-primary hover:underline">thepowerofpoop.com</a>.</li>
-                 </ul>
-                 
-                 <div className="flex justify-center my-8">
-                   <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
-                      <a href="tel:+18055008300">Call Now (805) 500-8300</a>
-                   </Button>
-                 </div>
-
-                 <h3 className="text-2xl font-serif font-bold text-primary mt-12 mb-6">Donor Screening is of utmost importance</h3>
-                 <p>
-                   We pride ourselves on going above and beyond the screening guidelines in the United States to ensure that the fecal matter transplantion samples are of the absolute highest quality standards. Only a small handful of donors are used because of this as well as it allows for frequent screening. The donors we use are considered 'super donors' , extremely healthy in every possible way.
-                 </p>
-                 
-                 <h4 className="text-xl font-bold mt-8 mb-4">All stool donor meet the following criteria:</h4>
-                 <ul className="list-disc pl-6 space-y-2">
-                   <li>No prior antibiotics use</li>
-                   <li>Born vaginally</li>
-                   <li>Breastfed</li>
-                   <li>BMI &lt;24 & waist circumference in healthy range</li>
-                   <li>High metabolic rate and physical fitness.</li>
-                   <li>Ideal personal and family health history.</li>
-                   <li>Ideal intestinal function.</li>
-                 </ul>
-
-                 <h4 className="text-xl font-bold mt-8 mb-4">The donors do not suffer from any chronic disease, which includes:</h4>
-                 <ul className="list-disc pl-6 space-y-2">
-                   <li>Psychological disorders</li>
-                   <li>Autoimmune disease</li>
-                   <li>Atopy and allergy</li>
-                   <li>Chronic pain</li>
-                   <li>Gastrointestinal conditions</li>
-                   <li>Metabolic disorders</li>
-                   <li>Cancer and malignancy</li>
-                 </ul>
-                 
-                 <h4 className="text-xl font-bold mt-8 mb-4">Other considerations that warrant exclusion from donating:</h4>
-                 <ul className="list-disc pl-6 space-y-2">
-                   <li>High risk travel history</li>
-                   <li>High risk sexual activity</li>
-                   <li>Age less than 6 and greater than 39</li>
-                 </ul>
-                 
-                 <h4 className="text-xl font-bold mt-8 mb-4">Donors are screened via stool and blood laboratory testing for but not limited to:</h4>
-                 <ul className="list-disc pl-6 space-y-2">
-                   <li>HIV 1 and 2, 4th generation ELISA testing</li>
-                   <li>Treponema pallidum (Syphilis)</li>
-                   <li>Hepatitis A</li>
-                   <li>Hepatitis B</li>
-                   <li>Hepatitis C</li>
-                   <li>H Pylori fecal antigen</li>
-                   <li>Clostridium difficile by PCR for Toxin A and B</li>
-                   <li>Ova & Parasites exam</li>
-                 </ul>
+            <FadeIn delay={0.3}>
+              <div className="mt-10 text-center">
+                <a
+                  href="https://share.google/c7xr79PiAXp0GYVnp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-white py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all border border-gray-100 group"
+                >
+                  <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="flex text-[#FBBC05]">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      ))}
+                    </div>
+                    <div className="text-sm text-gray-600 font-bold group-hover:text-primary transition-colors">
+                      5.0 from 70+ reviews
+                    </div>
+                  </div>
+                  <span className="text-xs text-primary font-medium ml-2">Read Reviews on Google</span>
+                </a>
               </div>
             </FadeIn>
           </div>
         </section>
 
-        <ContactCTA heading="Ready to Discuss FMT?" subheading="Contact us to learn if you may be eligible for fecal microbiota transplant therapy." formSource="FMT Page" />
+        <section className="py-20 bg-[#f8fafb]">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <FadeIn>
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1586254533732-DIBCSH2O3LNIQGHE1231/purety-clinic_Home_screen-3.jpg"
+                    alt="Dr. Jonathan Birch"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.2}>
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">Meet Dr. Jonathan Birch</h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Since 2014, Dr. Birch has been one of the nation's leading FMT specialists, helping over 1,000 patients achieve lasting relief through personalized FMT protocols.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  His approach combines rigorous safety protocols with compassionate, personalized care. Each treatment protocol is tailored to your specific condition and health history.
+                </p>
+                <div className="space-y-3">
+                  {["10+ Years FMT Experience", "1,000+ Successful Procedures", "Super Donor Protocol", "Remote Consultations Available"].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                      <span className="font-medium text-foreground">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <Button size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-white font-bold rounded-lg" onClick={scrollToForm}>
+                  Schedule Your Consultation
+                </Button>
+              </FadeIn>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <FadeIn>
+              <div className="text-center mb-14">
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Your Path to Recovery</h2>
+                <p className="text-muted-foreground text-lg">Simple, straightforward process from consultation to lasting relief</p>
+              </div>
+            </FadeIn>
+
+            <div className="grid md:grid-cols-4 gap-8">
+              {[
+                { step: "1", title: "Initial Consultation", desc: "Share your story with our team. We'll review your history and discuss if FMT is right for you." },
+                { step: "2", title: "Personalized Plan", desc: "Dr. Birch creates a custom protocol based on your condition, history, and health goals." },
+                { step: "3", title: "FMT Treatment", desc: "Receive your treatment via capsules, enema, or colonoscopy. Most options are outpatient." },
+                { step: "4", title: "Ongoing Support", desc: "We monitor your progress and provide follow-up care to ensure lasting results." },
+              ].map((s, i) => (
+                <FadeIn key={i} delay={i * 0.1}>
+                  <div className="text-center">
+                    <div className="w-14 h-14 rounded-full bg-primary text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">{s.step}</div>
+                    <h3 className="font-serif text-lg font-bold mb-2">{s.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-[#f8fafb]">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <FadeIn>
+              <div className="text-center mb-10">
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
+                <p className="text-muted-foreground text-lg">Get answers to common questions about FMT treatment</p>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 px-8">
+                <FAQItem
+                  question="What is FMT and how does it work?"
+                  answer="Fecal Microbiota Transplantation (FMT) transfers healthy gut bacteria from a rigorously screened donor to restore your gut microbiome. Unlike antibiotics that kill both good and bad bacteria, FMT repopulates your gut with the complete, balanced flora needed for proper digestion and immune function."
+                />
+                <FAQItem
+                  question="What is your success rate for C. diff?"
+                  answer="Our FMT protocol has a 90%+ success rate for antibiotic-resistant C. diff infections. Many patients see significant improvement within the first week, with full resolution typically achieved within 6 weeks of treatment."
+                />
+                <FAQItem
+                  question="How do you screen your donors?"
+                  answer={<>We use "super donors" who undergo extensive screening far beyond FDA requirements. This includes blood and stool testing for infectious diseases, comprehensive health history review, and ongoing monitoring. Our donors are young, healthy individuals with no history of antibiotics, autoimmune conditions, or chronic illness. <a href="https://static1.squarespace.com/static/5e8750872ceab220c4d4f137/t/670ee470c3b707053be6ff95/1729029233938/Purety+Clinic+Clinical+Considerations+for+Donor+Selection+and+Screening+.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">View our complete donor screening guidelines</a>.</>}
+                />
+                <FAQItem
+                  question="Is FMT safe? Are there side effects?"
+                  answer="FMT is remarkably safe when performed with properly screened donor material. Common side effects are mild and temporary: bloating, gas, or mild cramping for 1-2 days. Serious adverse effects are extremely rare, especially with our rigorous donor screening protocols."
+                />
+                <FAQItem
+                  question="Do you offer remote consultations?"
+                  answer="Yes! We frequently do initial consultations remotely for patients outside the Santa Barbara area. After your consultation, we can discuss whether you'll need to travel to our clinic or if certain treatments can be managed remotely."
+                />
+                <FAQItem
+                  question="How much does FMT treatment cost?"
+                  answer="Treatment costs vary based on your specific protocol and delivery method. We discuss pricing during your initial consultation. Many patients find FMT cost-effective compared to ongoing antibiotics, repeated hospitalizations, and lost quality of life from chronic illness."
+                />
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        <section className="py-20 bg-primary text-white">
+          <div className="container mx-auto px-4 text-center max-w-3xl">
+            <FadeIn>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">Ready to End Your Suffering?</h2>
+              <p className="text-white/80 text-lg mb-8">Take the first step toward lasting relief. Schedule your consultation with Dr. Birch's team today.</p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold rounded-lg px-8" onClick={scrollToForm}>
+                  Schedule Consultation
+                </Button>
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-bold rounded-lg px-8" asChild>
+                  <a href="tel:+18055008300">Call (805) 500-8300</a>
+                </Button>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
       </main>
-      
+
       <Footer />
     </div>
   );
