@@ -26,6 +26,7 @@ import NatureTherapies from "@/pages/services/NatureTherapies";
 import LocationPage from "@/pages/LocationPage";
 import Testimonials from "@/pages/Testimonials";
 import FAQ from "@/pages/FAQ";
+import { CookieConsent } from "@/components/CookieConsent";
 
 function Router() {
   return (
@@ -65,6 +66,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+        <CookieConsent />
       </TooltipProvider>
     </QueryClientProvider>
   );
