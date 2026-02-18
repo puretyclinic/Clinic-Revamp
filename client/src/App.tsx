@@ -26,6 +26,7 @@ import NatureTherapies from "@/pages/services/NatureTherapies";
 import LocationPage from "@/pages/LocationPage";
 import Testimonials from "@/pages/Testimonials";
 import FAQ from "@/pages/FAQ";
+import Admin from "@/pages/Admin";
 import { CookieConsent } from "@/components/CookieConsent";
 
 function Router() {
@@ -55,6 +56,7 @@ function Router() {
       <Route path="/shop" component={Shop} />
       <Route path="/shop/product/:slug" component={ProductDetail} />
       <Route path="/claim" component={ClaimPreview} />
+      <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>
   );

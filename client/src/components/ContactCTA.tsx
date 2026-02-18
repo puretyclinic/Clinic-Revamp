@@ -29,27 +29,25 @@ export function ContactCTA({
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    const payload = {
+      firstName: formData.get("firstName") as string,
+      lastName: formData.get("lastName") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      message: formData.get("message") as string,
+      source: formSource,
+    };
+
     try {
-      const res = await fetch("https://formsubmit.co/ajax/drjonathan@puretyclinic.com", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        body: JSON.stringify({
-          Name: `${formData.get("firstName")} ${formData.get("lastName")}`,
-          Email: formData.get("email"),
-          Phone: formData.get("phone"),
-          Message: formData.get("message"),
-          _subject: `Purety Clinic Website - ${formSource}: ${formData.get("firstName")} ${formData.get("lastName")}`,
-          _replyto: formData.get("email"),
-          _template: "table",
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
       const data = await res.json();
 
-      if (data.success === "true" || data.success === true) {
+      if (data.success) {
         gtag.event({
           action: "submit_form",
           category: "Contact",
@@ -60,10 +58,24 @@ export function ContactCTA({
           description: "We've received your message and will get back to you shortly.",
         });
         form.reset();
+
+        fetch("https://formsubmit.co/ajax/drjonathan@puretyclinic.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            Name: `${payload.firstName} ${payload.lastName}`,
+            Email: payload.email,
+            Phone: payload.phone,
+            Message: payload.message,
+            _subject: `Purety Clinic Website - ${formSource}: ${payload.firstName} ${payload.lastName}`,
+            _replyto: payload.email,
+            _template: "table",
+          }),
+        }).catch(() => {});
       } else {
         toast({
           title: "Error",
-          description: "Something went wrong. Please try again.",
+          description: data.message || "Something went wrong. Please try again.",
           variant: "destructive",
         });
       }

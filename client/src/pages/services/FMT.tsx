@@ -21,33 +21,44 @@ export default function FMT() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    const payload = {
+      firstName: formData.get("firstName") as string,
+      lastName: formData.get("lastName") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      message: `Subject: ${formData.get("subject")}\n\n${formData.get("message")}`,
+      source: "FMT Page",
+    };
+
     try {
-      const res = await fetch("https://formsubmit.co/ajax/drjonathan@puretyclinic.com", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        body: JSON.stringify({
-          Name: `${formData.get("firstName")} ${formData.get("lastName")}`,
-          Email: formData.get("email"),
-          Phone: formData.get("phone"),
-          Subject: formData.get("subject"),
-          Message: formData.get("message"),
-          _subject: `Purety Clinic Website - New FMT Inquiry from ${formData.get("firstName")} ${formData.get("lastName")}`,
-          _replyto: formData.get("email"),
-          _template: "table",
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
       const data = await res.json();
 
-      if (data.success === "true" || data.success === true) {
+      if (data.success) {
         gtag.event({
           action: "submit_form",
           category: "Contact",
           label: "FMT Inquiry",
         });
+
+        fetch("https://formsubmit.co/ajax/drjonathan@puretyclinic.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            Name: `${payload.firstName} ${payload.lastName}`,
+            Email: payload.email,
+            Phone: payload.phone,
+            Message: payload.message,
+            _subject: `Purety Clinic Website - New FMT Inquiry from ${payload.firstName} ${payload.lastName}`,
+            _replyto: payload.email,
+            _template: "table",
+          }),
+        }).catch(() => {});
 
         toast({
           title: "Message Sent!",
