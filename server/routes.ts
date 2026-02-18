@@ -30,8 +30,8 @@ async function sendEmailNotification(data: {
 
   try {
     const resend = new Resend(apiKey);
-    await resend.emails.send({
-      from: "Purety Clinic Website <website@puretyclinic.com>",
+    const result = await resend.emails.send({
+      from: "Purety Clinic <onboarding@resend.dev>",
       to: "drjonathan@puretyclinic.com",
       subject: `New ${data.source} Submission: ${data.firstName} ${data.lastName}`,
       html: `
@@ -64,9 +64,10 @@ async function sendEmailNotification(data: {
         </div>
       `,
     });
-    console.log("Email notification sent successfully");
-  } catch (error) {
-    console.error("Failed to send email notification:", error);
+    console.log("Email notification result:", JSON.stringify(result));
+  } catch (error: any) {
+    console.error("Failed to send email notification:", JSON.stringify(error, null, 2));
+    if (error?.message) console.error("Error message:", error.message);
   }
 }
 
