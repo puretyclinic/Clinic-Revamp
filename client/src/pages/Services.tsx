@@ -54,6 +54,12 @@ const services = [
     link: "/services/iv-therapy",
     items: [
       {
+        title: "Fecal Transplant (FMT)",
+        description: "Microbiome restoration for gut health and C. diff.",
+        icon: () => <span className="text-2xl leading-none">💩</span>,
+        customLink: "/services/fmt"
+      },
+      {
         title: "Ozone Therapy",
         description: "EBO2, Ten Pass, and Multipass treatments for immune modulation.",
         icon: Wind
@@ -62,12 +68,6 @@ const services = [
         title: "IV Nutrient Therapy",
         description: "High-dose Vitamin C, Glutathione, Chelation, and Plaquex.",
         icon: Droplet
-      },
-      {
-        title: "Fecal Transplant (FMT)",
-        description: "Microbiome restoration for gut health and C. diff.",
-        icon: () => <span className="text-2xl leading-none">💩</span>,
-        customLink: "/services/fmt"
       },
       {
         title: "Bioidentical HRT",
