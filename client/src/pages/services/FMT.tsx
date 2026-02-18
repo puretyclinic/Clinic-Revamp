@@ -266,7 +266,7 @@ export default function FMT() {
                 <div className="bg-green-50 rounded-2xl p-8 text-center border border-green-100 h-full">
                   <div className="text-4xl mb-4">✔</div>
                   <h3 className="font-serif text-xl font-bold mb-3 text-foreground">The FMT Solution</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">FMT restores your complete gut microbiome with healthy donor bacteria. 90%+ success rate, even for antibiotic-resistant cases.</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">FMT restores your complete gut microbiome with healthy donor bacteria. 90%+ success rate for recurrent C. diff, even for antibiotic-resistant cases.</p>
                 </div>
               </FadeIn>
             </div>
