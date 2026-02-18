@@ -29,13 +29,16 @@ export default function Contact() {
           "Accept": "application/json",
         },
         body: JSON.stringify({
-          name: `${formData.get("firstName")} ${formData.get("lastName")}`,
-          email: formData.get("email"),
-          phone: formData.get("phone"),
-          message: formData.get("message"),
-          _subject: `New Contact Form: ${formData.get("firstName")} ${formData.get("lastName")}`,
+          Name: `${formData.get("firstName")} ${formData.get("lastName")}`,
+          Email: formData.get("email"),
+          Phone: formData.get("phone"),
+          Message: formData.get("message"),
+          _subject: `Purety Clinic Website - New Contact from ${formData.get("firstName")} ${formData.get("lastName")}`,
+          _replyto: formData.get("email"),
           _cc: "dr@puretyclinic.com",
           _template: "table",
+          _captcha: "false",
+          _honey: "",
         }),
       });
 
@@ -196,16 +199,15 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* Google Map */}
+        {/* Map */}
         <section className="h-[400px] relative overflow-hidden">
            <iframe
-             src="https://www.google.com/maps?q=2323+Oak+Park+Lane+Suite+102,+Santa+Barbara,+CA+93105&output=embed"
+             src="https://www.openstreetmap.org/export/embed.html?bbox=-119.7335%2C34.4370%2C-119.7235%2C34.4440&layer=mapnik&marker=34.4408%2C-119.7285"
              width="100%"
              height="100%"
              style={{ border: 0 }}
              allowFullScreen
              loading="lazy"
-             referrerPolicy="no-referrer-when-downgrade"
              title="Purety Family Medical Clinic - 2323 Oak Park Lane Suite 102, Santa Barbara, CA 93105"
            />
         </section>

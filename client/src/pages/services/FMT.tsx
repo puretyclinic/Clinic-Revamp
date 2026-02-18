@@ -29,14 +29,17 @@ export default function FMT() {
           "Accept": "application/json",
         },
         body: JSON.stringify({
-          name: `${formData.get("firstName")} ${formData.get("lastName")}`,
-          email: formData.get("email"),
-          phone: formData.get("phone"),
-          subject: formData.get("subject"),
-          message: formData.get("message"),
-          _subject: `New FMT Inquiry: ${formData.get("firstName")} ${formData.get("lastName")}`,
+          Name: `${formData.get("firstName")} ${formData.get("lastName")}`,
+          Email: formData.get("email"),
+          Phone: formData.get("phone"),
+          Subject: formData.get("subject"),
+          Message: formData.get("message"),
+          _subject: `Purety Clinic Website - New FMT Inquiry from ${formData.get("firstName")} ${formData.get("lastName")}`,
+          _replyto: formData.get("email"),
           _cc: "dr@puretyclinic.com",
           _template: "table",
+          _captcha: "false",
+          _honey: "",
         }),
       });
 
