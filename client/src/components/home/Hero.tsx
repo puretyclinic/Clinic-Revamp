@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/layout/FadeIn";
-import heroBg from "@assets/image0_(2)_1771385063606.jpeg";
+import heroBg from "@/assets/images/hero-ocean.jpg";
 
 export function Hero() {
   return (
