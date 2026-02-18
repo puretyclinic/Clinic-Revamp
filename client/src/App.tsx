@@ -27,7 +27,6 @@ import LocationPage from "@/pages/LocationPage";
 import Testimonials from "@/pages/Testimonials";
 import FAQ from "@/pages/FAQ";
 import Admin from "@/pages/Admin";
-import { CookieConsent } from "@/components/CookieConsent";
 
 function Router() {
   return (
@@ -69,7 +68,6 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
-        <CookieConsent />
       </TooltipProvider>
     </QueryClientProvider>
   );
