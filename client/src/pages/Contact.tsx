@@ -52,7 +52,7 @@ export default function Contact() {
         });
         form.reset();
 
-        fetch("https://formsubmit.co/ajax/drjonathan@puretyclinic.com", {
+        fetch("https://formsubmit.co/ajax/DrJonathan@puretyclinic.com", {
           method: "POST",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify({
@@ -143,7 +143,7 @@ export default function Contact() {
                       <div>
                         <h3 className="font-bold text-foreground mb-1">Email</h3>
                         <p className="text-muted-foreground">
-                          drjonathan@puretyclinic.com
+                          DrJonathan@puretyclinic.com
                         </p>
                       </div>
                     </div>

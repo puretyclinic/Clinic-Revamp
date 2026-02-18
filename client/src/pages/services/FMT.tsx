@@ -46,7 +46,7 @@ export default function FMT() {
           label: "FMT Inquiry",
         });
 
-        fetch("https://formsubmit.co/ajax/drjonathan@puretyclinic.com", {
+        fetch("https://formsubmit.co/ajax/DrJonathan@puretyclinic.com", {
           method: "POST",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify({
