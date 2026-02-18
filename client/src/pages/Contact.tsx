@@ -196,12 +196,18 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* Map Placeholder */}
-        <section className="h-[400px] bg-gray-200 flex items-center justify-center relative overflow-hidden">
-           <div className="absolute inset-0 bg-gray-300 animate-pulse" />
-           <p className="relative z-10 font-bold text-gray-500 flex items-center gap-2">
-             <MapPin className="w-6 h-6" /> Google Maps Integration
-           </p>
+        {/* Google Map */}
+        <section className="h-[400px] relative overflow-hidden">
+           <iframe
+             src="https://www.google.com/maps?q=2323+Oak+Park+Lane+Suite+102,+Santa+Barbara,+CA+93105&output=embed"
+             width="100%"
+             height="100%"
+             style={{ border: 0 }}
+             allowFullScreen
+             loading="lazy"
+             referrerPolicy="no-referrer-when-downgrade"
+             title="Purety Family Medical Clinic - 2323 Oak Park Lane Suite 102, Santa Barbara, CA 93105"
+           />
         </section>
       </main>
       
