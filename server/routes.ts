@@ -31,8 +31,8 @@ async function sendEmailNotification(data: {
   try {
     const resend = new Resend(apiKey);
     await resend.emails.send({
-      from: "Purety Clinic Website <onboarding@resend.dev>",
-      to: "DrJonathan@puretyclinic.com",
+      from: "Purety Clinic Website <website@puretyclinic.com>",
+      to: "drjonathan@puretyclinic.com",
       subject: `New ${data.source} Submission: ${data.firstName} ${data.lastName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
