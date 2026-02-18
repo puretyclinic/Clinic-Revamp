@@ -2,7 +2,7 @@ import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema } from "@shared/schema";
-import { Resend } from "resend";
+import { google } from "googleapis";
 
 const ADMIN_KEY = process.env.ADMIN_KEY || "purety2026admin";
 
@@ -14,6 +14,50 @@ function requireAdmin(req: Request, res: Response, next: NextFunction) {
   next();
 }
 
+// Gmail integration via Replit connector
+let connectionSettings: any;
+
+async function getAccessToken() {
+  if (connectionSettings && connectionSettings.settings.expires_at && new Date(connectionSettings.settings.expires_at).getTime() > Date.now()) {
+    return connectionSettings.settings.access_token;
+  }
+
+  const hostname = process.env.REPLIT_CONNECTORS_HOSTNAME;
+  const xReplitToken = process.env.REPL_IDENTITY
+    ? 'repl ' + process.env.REPL_IDENTITY
+    : process.env.WEB_REPL_RENEWAL
+    ? 'depl ' + process.env.WEB_REPL_RENEWAL
+    : null;
+
+  if (!xReplitToken) {
+    throw new Error('X_REPLIT_TOKEN not found');
+  }
+
+  connectionSettings = await fetch(
+    'https://' + hostname + '/api/v2/connection?include_secrets=true&connector_names=google-mail',
+    {
+      headers: {
+        'Accept': 'application/json',
+        'X_REPLIT_TOKEN': xReplitToken
+      }
+    }
+  ).then(res => res.json()).then(data => data.items?.[0]);
+
+  const accessToken = connectionSettings?.settings?.access_token || connectionSettings.settings?.oauth?.credentials?.access_token;
+
+  if (!connectionSettings || !accessToken) {
+    throw new Error('Gmail not connected');
+  }
+  return accessToken;
+}
+
+async function getGmailClient() {
+  const accessToken = await getAccessToken();
+  const oauth2Client = new google.auth.OAuth2();
+  oauth2Client.setCredentials({ access_token: accessToken });
+  return google.gmail({ version: 'v1', auth: oauth2Client });
+}
+
 async function sendEmailNotification(data: {
   firstName: string;
   lastName: string;
@@ -22,52 +66,66 @@ async function sendEmailNotification(data: {
   message: string;
   source: string;
 }) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.log("No RESEND_API_KEY set, skipping email notification");
-    return;
-  }
-
   try {
-    const resend = new Resend(apiKey);
-    const result = await resend.emails.send({
-      from: "Purety Clinic <onboarding@resend.dev>",
-      to: "drjonathan@puretyclinic.com",
-      subject: `New ${data.source} Submission: ${data.firstName} ${data.lastName}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background: #5A8085; color: white; padding: 20px; border-radius: 8px 8px 0 0;">
-            <h2 style="margin: 0;">New Contact Form Submission</h2>
-            <p style="margin: 5px 0 0; opacity: 0.8;">From: ${data.source}</p>
-          </div>
-          <div style="border: 1px solid #e5e5e5; border-top: none; padding: 20px; border-radius: 0 0 8px 8px;">
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr>
-                <td style="padding: 8px 0; font-weight: bold; color: #555; width: 100px;">Name:</td>
-                <td style="padding: 8px 0;">${data.firstName} ${data.lastName}</td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; font-weight: bold; color: #555;">Email:</td>
-                <td style="padding: 8px 0;"><a href="mailto:${data.email}">${data.email}</a></td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; font-weight: bold; color: #555;">Phone:</td>
-                <td style="padding: 8px 0;"><a href="tel:${data.phone}">${data.phone}</a></td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; font-weight: bold; color: #555; vertical-align: top;">Message:</td>
-                <td style="padding: 8px 0; white-space: pre-wrap;">${data.message}</td>
-              </tr>
-            </table>
-          </div>
-          <p style="color: #999; font-size: 12px; margin-top: 15px;">Sent from Purety Clinic Website</p>
+    const gmail = await getGmailClient();
+
+    const subject = `New ${data.source} Submission: ${data.firstName} ${data.lastName}`;
+    const htmlBody = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background: #5A8085; color: white; padding: 20px; border-radius: 8px 8px 0 0;">
+          <h2 style="margin: 0;">New Contact Form Submission</h2>
+          <p style="margin: 5px 0 0; opacity: 0.8;">From: ${data.source}</p>
         </div>
-      `,
+        <div style="border: 1px solid #e5e5e5; border-top: none; padding: 20px; border-radius: 0 0 8px 8px;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555; width: 100px;">Name:</td>
+              <td style="padding: 8px 0;">${data.firstName} ${data.lastName}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Email:</td>
+              <td style="padding: 8px 0;"><a href="mailto:${data.email}">${data.email}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Phone:</td>
+              <td style="padding: 8px 0;"><a href="tel:${data.phone}">${data.phone}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555; vertical-align: top;">Message:</td>
+              <td style="padding: 8px 0; white-space: pre-wrap;">${data.message}</td>
+            </tr>
+          </table>
+        </div>
+        <p style="color: #999; font-size: 12px; margin-top: 15px;">Sent from Purety Clinic Website</p>
+      </div>
+    `;
+
+    const to = "drjonathan@puretyclinic.com";
+    const rawMessage = [
+      `To: ${to}`,
+      `Subject: ${subject}`,
+      `MIME-Version: 1.0`,
+      `Content-Type: text/html; charset=UTF-8`,
+      ``,
+      htmlBody,
+    ].join("\r\n");
+
+    const encodedMessage = Buffer.from(rawMessage)
+      .toString("base64")
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=+$/, "");
+
+    const result = await gmail.users.messages.send({
+      userId: "me",
+      requestBody: {
+        raw: encodedMessage,
+      },
     });
-    console.log("Email notification result:", JSON.stringify(result));
+
+    console.log("Gmail notification sent successfully, message ID:", result.data.id);
   } catch (error: any) {
-    console.error("Failed to send email notification:", JSON.stringify(error, null, 2));
-    if (error?.message) console.error("Error message:", error.message);
+    console.error("Failed to send Gmail notification:", error?.message || error);
   }
 }
 
