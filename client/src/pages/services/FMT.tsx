@@ -133,7 +133,7 @@ export default function FMT() {
                   California's Leading FMT Specialists Since 2014
                 </div>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.2rem] leading-[1.15] mb-6 text-foreground">
-                  Finally <span className="text-accent italic">Restore</span> Your Gut Health With Proven FMT Treatment
+                  Finally <span className="text-accent italic">Restore</span> Your Gut Health With FMT Treatment
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                   Dr. Jonathan Birch has helped over 1,000 patients achieve lasting relief with our proven FMT protocol. Whether you're dealing with C. diff, recurring digestive issues, or other gut health concerns, we're here to help.
