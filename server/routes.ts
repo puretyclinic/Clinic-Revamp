@@ -1,7 +1,17 @@
-import type { Express } from "express";
+import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema } from "@shared/schema";
+
+const ADMIN_KEY = process.env.ADMIN_KEY || "purety2026admin";
+
+function requireAdmin(req: Request, res: Response, next: NextFunction) {
+  const key = (req.headers["x-admin-key"] as string) || (req.query.key as string);
+  if (key !== ADMIN_KEY) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+  next();
+}
 
 export async function registerRoutes(
   httpServer: Server,
@@ -23,7 +33,7 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/contact", async (_req, res) => {
+  app.get("/api/contact", requireAdmin, async (_req, res) => {
     try {
       const submissions = await storage.getContacts();
       return res.json(submissions);
@@ -33,7 +43,7 @@ export async function registerRoutes(
     }
   });
 
-  app.patch("/api/contact/:id/read", async (req, res) => {
+  app.patch("/api/contact/:id/read", requireAdmin, async (req, res) => {
     try {
       await storage.markContactRead(req.params.id);
       return res.json({ success: true });

@@ -3,16 +3,87 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Clock, CheckCircle2, Eye } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Mail, Phone, Clock, CheckCircle2, Eye, Lock } from "lucide-react";
 import type { ContactSubmission } from "@shared/schema";
+import { useState } from "react";
+
+function AdminLogin({ onLogin }: { onLogin: (key: string) => void }) {
+  const [key, setKey] = useState("");
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const res = await fetch(`/api/contact`, {
+      headers: { "x-admin-key": key },
+    });
+    if (res.ok) {
+      onLogin(key);
+    } else {
+      setError(true);
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col bg-background font-sans">
+      <Navbar />
+      <main className="flex-grow flex items-center justify-center">
+        <div className="max-w-sm w-full p-8 bg-white rounded-2xl shadow-lg border">
+          <div className="text-center mb-6">
+            <Lock className="w-10 h-10 text-primary mx-auto mb-3" />
+            <h1 className="font-serif text-2xl" data-testid="text-admin-login-title">Admin Access</h1>
+            <p className="text-muted-foreground text-sm mt-1">Enter your admin password to view submissions.</p>
+          </div>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="admin-key">Password</Label>
+              <Input
+                id="admin-key"
+                type="password"
+                value={key}
+                onChange={(e) => { setKey(e.target.value); setError(false); }}
+                required
+                className="h-11"
+                data-testid="input-admin-key"
+              />
+              {error && <p className="text-destructive text-sm">Incorrect password.</p>}
+            </div>
+            <Button type="submit" className="w-full h-11" data-testid="button-admin-login">Sign In</Button>
+          </form>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+}
 
 export default function Admin() {
+  const [adminKey, setAdminKey] = useState<string | null>(
+    sessionStorage.getItem("adminKey")
+  );
+
+  const handleLogin = (key: string) => {
+    sessionStorage.setItem("adminKey", key);
+    setAdminKey(key);
+  };
+
+  if (!adminKey) {
+    return <AdminLogin onLogin={handleLogin} />;
+  }
+
+  return <AdminDashboard adminKey={adminKey} />;
+}
+
+function AdminDashboard({ adminKey }: { adminKey: string }) {
   const queryClient = useQueryClient();
 
   const { data: submissions = [], isLoading } = useQuery<ContactSubmission[]>({
     queryKey: ["/api/contact"],
     queryFn: async () => {
-      const res = await fetch("/api/contact");
+      const res = await fetch("/api/contact", {
+        headers: { "x-admin-key": adminKey },
+      });
       if (!res.ok) throw new Error("Failed to fetch");
       return res.json();
     },
@@ -20,7 +91,10 @@ export default function Admin() {
 
   const markRead = useMutation({
     mutationFn: async (id: string) => {
-      await fetch(`/api/contact/${id}/read`, { method: "PATCH" });
+      await fetch(`/api/contact/${id}/read`, {
+        method: "PATCH",
+        headers: { "x-admin-key": adminKey },
+      });
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/contact"] });
