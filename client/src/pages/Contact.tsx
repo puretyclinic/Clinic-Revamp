@@ -35,7 +35,7 @@ export default function Contact() {
           Message: formData.get("message"),
           _subject: `Purety Clinic Website - New Contact from ${formData.get("firstName")} ${formData.get("lastName")}`,
           _replyto: formData.get("email"),
-          _cc: "dr@puretyclinic.com",
+          _cc: "Drjonathan@puretyclinic.com",
           _template: "table",
         }),
       });
