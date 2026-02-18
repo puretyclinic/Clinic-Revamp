@@ -1,3 +1,4 @@
+import React from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -23,6 +24,16 @@ export default function NaturopathicMedicine() {
               <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
                 A holistic approach to primary care, focusing on prevention, nutrition, and natural therapies for the whole family.
               </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold" asChild>
+                  <a href="#contact-form" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
+                    Book Consultation
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-bold" asChild>
+                  <a href="tel:+18055008300">Call (805) 500-8300</a>
+                </Button>
+              </div>
             </FadeIn>
           </div>
         </section>

@@ -1,9 +1,9 @@
+import React from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { storedPages } from "@/data/stored_pages";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
 
 export default function Testimonials() {
@@ -21,6 +21,16 @@ export default function Testimonials() {
               <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
                 {pageData?.description}
               </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold" asChild>
+                  <a href="#contact-form" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
+                    Book Consultation
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-bold" asChild>
+                  <a href="tel:+18055008300">Call (805) 500-8300</a>
+                </Button>
+              </div>
             </FadeIn>
           </div>
         </section>
@@ -44,11 +54,11 @@ export default function Testimonials() {
         <section className="py-24 bg-accent/10 text-center">
            <div className="container mx-auto px-4 max-w-2xl">
              <h2 className="font-serif text-3xl mb-6">Start Your Own Success Story</h2>
-             <Link href="/contact">
-               <Button size="lg" className="rounded-full px-10 bg-primary hover:bg-primary/90 text-white shadow-lg">
+             <Button size="lg" className="rounded-full px-10 bg-primary hover:bg-primary/90 text-white shadow-lg" asChild>
+               <a href="#contact-form" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
                  Schedule Consultation
-               </Button>
-             </Link>
+               </a>
+             </Button>
            </div>
         </section>
         <ContactCTA heading="Ready to Experience the Difference?" subheading="Join our family of patients and start your healing journey today." formSource="Testimonials Page" />

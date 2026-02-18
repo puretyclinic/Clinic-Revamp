@@ -1,6 +1,8 @@
+import React from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
 
@@ -18,6 +20,16 @@ export default function About() {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 Founded on the belief that the body has an innate ability to heal itself when given the right support.
               </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <Button size="lg" className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8" asChild>
+                  <a href="#contact-form" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
+                    Book Consultation
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/10 font-bold rounded-full px-8" asChild>
+                  <a href="tel:+18055008300">Call (805) 500-8300</a>
+                </Button>
+              </div>
             </FadeIn>
           </div>
         </section>

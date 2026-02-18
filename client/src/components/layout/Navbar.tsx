@@ -37,43 +37,42 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/">
-          <a className="flex items-center gap-2 group">
-             <img 
-               src="/images/logo.gif" 
-               alt="Purety Family Medical Clinic" 
-               className="h-12 md:h-16 w-auto object-contain"
-             />
-          </a>
+        <Link href="/" className="flex items-center gap-2 group">
+           <img 
+             src="/images/logo.gif" 
+             alt="Purety Family Medical Clinic" 
+             className="h-12 md:h-16 w-auto object-contain"
+           />
         </Link>
 
-        {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href}>
-              <a
-                className={cn(
-                  "text-sm font-medium transition-colors uppercase tracking-wider text-[11px]",
-                  location === link.href 
-                    ? "text-accent font-bold" 
-                    : "text-foreground/80 hover:text-accent"
-                )}
-              >
-                {link.name}
-              </a>
+            <Link
+              key={link.name}
+              href={link.href}
+              className={cn(
+                "text-sm font-medium transition-colors uppercase tracking-wider text-[11px]",
+                location === link.href 
+                  ? "text-accent font-bold" 
+                  : "text-foreground/80 hover:text-accent"
+              )}
+            >
+              {link.name}
             </Link>
           ))}
           <div className="pl-4 ml-2 border-l border-gray-200">
             <Button 
               className="rounded-full bg-primary hover:bg-primary/90 text-white px-6 font-medium shadow-md"
+              asChild
             >
-              <Phone className="w-4 h-4 mr-2" />
-              (805) 500-8300
+              <a href="tel:+18055008300">
+                <Phone className="w-4 h-4 mr-2" />
+                (805) 500-8300
+              </a>
             </Button>
           </div>
         </div>
 
-        {/* Mobile Toggle */}
         <button
           className="lg:hidden p-2 text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -82,21 +81,20 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-4 shadow-xl flex flex-col gap-4 animate-in slide-in-from-top-5 h-screen">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href}>
-              <a
-                className="text-lg font-serif font-medium text-foreground py-3 border-b border-gray-50"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-lg font-serif font-medium text-foreground py-3 border-b border-gray-50"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {link.name}
             </Link>
           ))}
-          <Button className="w-full bg-primary text-white mt-4 py-6 text-lg">
-            Call Us Today
+          <Button className="w-full bg-primary text-white mt-4 py-6 text-lg" asChild>
+            <a href="tel:+18055008300">Call Us Today</a>
           </Button>
         </div>
       )}

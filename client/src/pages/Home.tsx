@@ -17,8 +17,8 @@ export default function Home() {
           badgeText="Holistic Doctor · Santa Barbara"
           headline="Holistic, Integrative & Functional Medicine"
           subheadline="We focus on the whole person — not just symptoms. Personalized care rooted in modern diagnostics and natural therapies."
-          primaryCta={{ label: "Book Consultation", href: "/contact" }}
-          secondaryCta={{ label: "View Services", href: "/services" }}
+          primaryCta={{ label: "Book Consultation", href: "#contact-form" }}
+          secondaryCta={{ label: "Call (805) 500-8300", href: "tel:+18055008300" }}
           backgroundImageUrl="/images/hero-nature-immersive.jpg"
         />
         <Philosophy />

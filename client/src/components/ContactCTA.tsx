@@ -91,7 +91,7 @@ export function ContactCTA({
   };
 
   return (
-    <section className="py-20 bg-primary text-white">
+    <section id="contact-form" className="py-20 bg-primary text-white">
       <div className="container mx-auto px-4">
         <FadeIn>
           <div className="text-center mb-12">

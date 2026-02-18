@@ -112,24 +112,20 @@ export default function Services() {
                   <h2 className="font-serif text-3xl text-foreground">
                     {section.category}
                   </h2>
-                  <Link href={section.link}>
-                    <a className="text-sm font-bold text-primary uppercase tracking-wider flex items-center hover:translate-x-1 transition-transform">
-                      Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                    </a>
+                  <Link href={section.link} className="text-sm font-bold text-primary uppercase tracking-wider flex items-center hover:translate-x-1 transition-transform">
+                    Learn More <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
                 </FadeIn>
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {section.items.map((item, i) => (
                     <FadeIn key={i} delay={i * 0.1} direction="up">
-                      <Link href={item.customLink || section.link}>
-                        <a className="group p-8 rounded-2xl bg-muted/20 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10 h-full flex flex-col block">
+                      <Link href={item.customLink || section.link} className="group p-8 rounded-2xl bg-muted/20 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10 h-full flex flex-col block">
                           <div className="w-12 h-12 rounded-full bg-white text-primary flex items-center justify-center shadow-sm mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                             <item.icon className="w-6 h-6" />
                           </div>
                           <h3 className="font-serif text-xl font-bold text-foreground mb-3">{item.title}</h3>
                           <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                        </a>
                       </Link>
                     </FadeIn>
                   ))}

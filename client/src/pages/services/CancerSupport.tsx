@@ -1,3 +1,4 @@
+import React from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -23,6 +24,16 @@ export default function CancerSupport() {
               <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
                 Complementary therapies to strengthen the body, reduce side effects, and improve quality of life during and after conventional treatment.
               </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold" asChild>
+                  <a href="#contact-form" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
+                    Book Consultation
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-bold" asChild>
+                  <a href="tel:+18055008300">Call (805) 500-8300</a>
+                </Button>
+              </div>
             </FadeIn>
           </div>
         </section>
@@ -107,8 +118,10 @@ export default function CancerSupport() {
              <p className="text-muted-foreground mb-8">
                Let us build a comprehensive support plan to walk with you through your healing journey.
              </p>
-             <Button size="lg" className="rounded-full px-10 bg-primary hover:bg-primary/90 text-white shadow-lg">
-               Consult with Dr. Birch
+             <Button size="lg" className="rounded-full px-10 bg-primary hover:bg-primary/90 text-white shadow-lg" asChild>
+               <a href="#contact-form" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
+                 Consult with Dr. Birch
+               </a>
              </Button>
            </div>
         </section>

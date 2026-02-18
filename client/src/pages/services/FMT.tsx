@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { ShieldCheck, CheckCircle2, ArrowRight, Cloud, Mail, Loader2 } from "lucide-react";
+import { ShieldCheck, CheckCircle2, ArrowRight, Cloud, Mail, Loader2, Calendar } from "lucide-react";
+import { ContactCTA } from "@/components/ContactCTA";
 import { useToast } from "@/hooks/use-toast";
 import * as gtag from "@/lib/gtag";
 import { useState } from "react";
@@ -98,8 +99,13 @@ export default function FMT() {
                 <span>Safety, quality and efficacy driven</span>
               </div>
               <h1 className="font-serif text-5xl md:text-7xl mb-6">Fecal Microbiota <span className="italic text-accent">Transplant</span> (FMT)</h1>
-              <div className="flex justify-center gap-4 mt-8">
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                  <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold" asChild>
+                    <a href="#contact-form" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
+                      <Calendar className="w-5 h-5 mr-2" /> Book Consultation
+                    </a>
+                 </Button>
+                 <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-bold" asChild>
                     <a href="tel:+18055008300">Call or Text (805) 500-8300</a>
                  </Button>
               </div>
@@ -318,6 +324,8 @@ export default function FMT() {
             </FadeIn>
           </div>
         </section>
+
+        <ContactCTA heading="Ready to Discuss FMT?" subheading="Contact us to learn if you may be eligible for fecal microbiota transplant therapy." formSource="FMT Page" />
       </main>
       
       <Footer />

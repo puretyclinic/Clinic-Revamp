@@ -86,10 +86,8 @@ export default function LocationPage({ params }: { params: { city: string } }) {
                  </div>
               </div>
 
-              <Link href="/contact">
-                <a className="inline-flex items-center text-primary font-bold hover:underline">
-                  Get Directions from {location.city} <ArrowRight className="ml-2 w-4 h-4" />
-                </a>
+              <Link href="/contact" className="inline-flex items-center text-primary font-bold hover:underline">
+                Get Directions from {location.city} <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </FadeIn>
           </div>

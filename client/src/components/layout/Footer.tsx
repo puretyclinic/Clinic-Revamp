@@ -7,15 +7,13 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
-            <Link href="/">
-              <a className="block mb-6">
-                <span className="font-serif text-3xl font-bold tracking-tight text-white">
-                  PURETY
-                </span>
-                <span className="block text-[0.6rem] uppercase tracking-[0.25em] text-white/60">
-                  Family Medical Clinic
-                </span>
-              </a>
+            <Link href="/" className="block mb-6">
+              <span className="font-serif text-3xl font-bold tracking-tight text-white">
+                PURETY
+              </span>
+              <span className="block text-[0.6rem] uppercase tracking-[0.25em] text-white/60">
+                Family Medical Clinic
+              </span>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               Holistic, integrative, and functional medicine in Santa Barbara, CA. 

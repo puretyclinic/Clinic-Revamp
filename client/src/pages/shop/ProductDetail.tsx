@@ -18,10 +18,8 @@ export default function ProductDetail() {
           <div className="container mx-auto px-4">
             
             <div className="mb-8">
-               <Link href="/shop">
-                 <a className="inline-flex items-center text-sm font-bold text-muted-foreground hover:text-primary transition-colors">
-                   <ArrowLeft className="w-4 h-4 mr-2" /> Back to Shop
-                 </a>
+               <Link href="/shop" className="inline-flex items-center text-sm font-bold text-muted-foreground hover:text-primary transition-colors">
+                 <ArrowLeft className="w-4 h-4 mr-2" /> Back to Shop
                </Link>
             </div>
 

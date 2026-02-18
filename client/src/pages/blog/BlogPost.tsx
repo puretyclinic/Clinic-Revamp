@@ -99,10 +99,8 @@ export default function BlogPost() {
             
             {/* Back to Blog */}
             <div className="mt-12">
-               <Link href="/blog">
-                 <a className="inline-flex items-center font-bold text-primary hover:text-accent transition-colors">
-                   <ArrowLeft className="w-4 h-4 mr-2" /> Back to All Articles
-                 </a>
+               <Link href="/blog" className="inline-flex items-center font-bold text-primary hover:text-accent transition-colors">
+                 <ArrowLeft className="w-4 h-4 mr-2" /> Back to All Articles
                </Link>
             </div>
           </div>

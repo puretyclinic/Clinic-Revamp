@@ -1,3 +1,4 @@
+import React from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -24,6 +25,16 @@ export default function Blog() {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Articles, news, and holistic health tips from our doctors.
               </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <Button size="lg" className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8" asChild>
+                  <a href="#contact-form" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
+                    Book Consultation
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/10 font-bold rounded-full px-8" asChild>
+                  <a href="tel:+18055008300">Call (805) 500-8300</a>
+                </Button>
+              </div>
             </FadeIn>
           </div>
         </section>
@@ -34,8 +45,7 @@ export default function Blog() {
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
               {visiblePosts.map((post, index) => (
                 <FadeIn key={post.id} delay={index * 0.1} direction="up">
-                  <Link href="/blog/post">
-                    <a className="group cursor-pointer flex flex-col h-full block">
+                  <Link href="/blog/post" className="group cursor-pointer flex flex-col h-full block">
                       <div className="aspect-[16/9] overflow-hidden rounded-2xl mb-6 shadow-sm">
                         <img 
                           src={post.image} 
@@ -62,7 +72,6 @@ export default function Blog() {
                           Read Article <ArrowRight className="w-4 h-4" />
                         </span>
                       </div>
-                    </a>
                   </Link>
                 </FadeIn>
               ))}

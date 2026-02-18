@@ -19,26 +19,31 @@ interface HeroSafeProps {
   backgroundImageUrl?: string;
 }
 
+function scrollToForm(e: React.MouseEvent, selector: string) {
+  e.preventDefault();
+  const el = document.querySelector(selector);
+  if (el) {
+    const y = el.getBoundingClientRect().top + window.scrollY - 20;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+}
+
 export function HeroSafe({
   badgeText,
   headline,
   subheadline,
   primaryCta,
   secondaryCta,
-  backgroundImageUrl = "/images/paper-texture.jpg" // Default fallback
+  backgroundImageUrl = "/images/paper-texture.jpg"
 }: HeroSafeProps) {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pb-20 pt-32">
-      {/* 1. Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{ backgroundImage: `url('${backgroundImageUrl}')` }}
       />
-
-      {/* 2. Visibility Overlay (The Guard) */}
       <div className="ui-hero-overlay z-10" />
 
-      {/* 3. Content Panel (The Safe Zone) */}
       <div className="container px-4 relative z-20">
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center ui-surface p-8 md:p-12">
@@ -57,36 +62,58 @@ export function HeroSafe({
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href={primaryCta.href}>
-                <Button size="lg" className="w-full sm:w-auto h-14 px-8 rounded-full text-lg ui-btn-primary">
+              {primaryCta.href.startsWith("#") ? (
+                <Button size="lg" className="w-full sm:w-auto h-14 px-8 rounded-full text-lg ui-btn-primary" onClick={(e) => scrollToForm(e, primaryCta.href)}>
                   <Calendar className="w-5 h-5 mr-2" />
                   {primaryCta.label}
                 </Button>
-              </Link>
+              ) : (
+                <Button size="lg" className="w-full sm:w-auto h-14 px-8 rounded-full text-lg ui-btn-primary" asChild>
+                  <a href={primaryCta.href}>
+                    <Calendar className="w-5 h-5 mr-2" />
+                    {primaryCta.label}
+                  </a>
+                </Button>
+              )}
               
-              <Link href={secondaryCta.href}>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 rounded-full text-lg ui-btn-secondary">
+              {secondaryCta.href.startsWith("tel:") ? (
+                <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 rounded-full text-lg ui-btn-secondary" asChild>
+                  <a href={secondaryCta.href}>
+                    <Phone className="w-5 h-5 mr-2" />
+                    {secondaryCta.label}
+                  </a>
+                </Button>
+              ) : secondaryCta.href.startsWith("#") ? (
+                <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 rounded-full text-lg ui-btn-secondary" onClick={(e) => scrollToForm(e, secondaryCta.href)}>
                   <Phone className="w-5 h-5 mr-2" />
                   {secondaryCta.label}
                 </Button>
-              </Link>
+              ) : (
+                <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 rounded-full text-lg ui-btn-secondary" asChild>
+                  <Link href={secondaryCta.href}>
+                    <Phone className="w-5 h-5 mr-2" />
+                    {secondaryCta.label}
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
         </FadeIn>
       </div>
 
-      {/* 4. Sticky Mobile Bar (Bottom of viewport) */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200 z-50 md:hidden flex gap-3 shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
-        <Link href={secondaryCta.href}>
-           <Button variant="outline" className="flex-1 ui-btn-secondary h-12">
-             Call
-           </Button>
-        </Link>
-        <Link href={primaryCta.href}>
-           <Button className="flex-1 ui-btn-primary h-12">
-             Book Now
-           </Button>
-        </Link>
+        <Button variant="outline" className="flex-1 ui-btn-secondary h-12" asChild>
+          <a href="tel:+18055008300">Call</a>
+        </Button>
+        {primaryCta.href.startsWith("#") ? (
+          <Button className="flex-1 ui-btn-primary h-12" onClick={(e) => scrollToForm(e, primaryCta.href)}>
+            Book Now
+          </Button>
+        ) : (
+          <Button className="flex-1 ui-btn-primary h-12" asChild>
+            <a href={primaryCta.href}>Book Now</a>
+          </Button>
+        )}
       </div>
     </section>
   );

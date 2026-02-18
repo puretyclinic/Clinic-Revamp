@@ -1,9 +1,9 @@
+import React from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Flower, Sun, Heart, CheckCircle2 } from "lucide-react";
-import { Link } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
 
 export default function HormoneReplacement() {
@@ -24,6 +24,14 @@ export default function HormoneReplacement() {
               <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
                 Restore optimal hormone levels safely with natural, bioidentical hormones. For Men and Women.
               </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
+                  Book Consultation
+                </Button>
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-bold" asChild>
+                  <a href="tel:+18055008300">Call (805) 500-8300</a>
+                </Button>
+              </div>
             </FadeIn>
           </div>
         </section>
@@ -74,11 +82,11 @@ export default function HormoneReplacement() {
              <p className="text-muted-foreground mb-8">
                Aging is inevitable, but suffering is optional. Let's find your balance.
              </p>
-             <Link href="/contact">
-               <Button size="lg" className="rounded-full px-10 bg-primary hover:bg-primary/90 text-white shadow-lg">
+             <Button size="lg" className="rounded-full px-10 bg-primary hover:bg-primary/90 text-white shadow-lg" asChild>
+               <a href="#contact-form" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
                  Schedule Hormone Evaluation
-               </Button>
-             </Link>
+               </a>
+             </Button>
            </div>
         </section>
         <ContactCTA heading="Interested in Hormone Replacement?" subheading="Contact us to learn how bioidentical HRT can restore your vitality." formSource="Hormone Replacement Page" />

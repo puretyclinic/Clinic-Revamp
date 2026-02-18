@@ -16,9 +16,9 @@ export default function ProductDetail() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center">
         <h1 className="text-2xl font-serif mb-4">Product Not Found</h1>
-        <Link href="/shop">
-          <Button>Return to Shop</Button>
-        </Link>
+        <Button asChild>
+          <Link href="/shop">Return to Shop</Link>
+        </Button>
       </div>
     );
   }
@@ -29,11 +29,9 @@ export default function ProductDetail() {
 
       <main className="flex-grow pt-32 pb-24">
         <div className="container mx-auto px-4">
-          <Link href="/shop">
-            <a className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-8 group">
-              <ChevronLeft className="w-4 h-4 mr-1 group-hover:-translate-x-1 transition-transform" />
-              Back to Shop
-            </a>
+          <Link href="/shop" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-8 group">
+            <ChevronLeft className="w-4 h-4 mr-1 group-hover:-translate-x-1 transition-transform" />
+            Back to Shop
           </Link>
 
           <div className="grid lg:grid-cols-2 gap-16">

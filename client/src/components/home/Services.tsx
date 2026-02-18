@@ -71,8 +71,7 @@ export function Services() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <FadeIn key={index} delay={index * 0.05} direction="up">
-              <Link href={service.link}>
-                <a className="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/20 h-full flex flex-col text-center items-center cursor-pointer">
+              <Link href={service.link} className="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/20 h-full flex flex-col text-center items-center cursor-pointer">
                   <div className="text-primary mb-4 bg-secondary/50 w-14 h-14 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                     <service.icon className="w-7 h-7" />
                   </div>
@@ -82,7 +81,6 @@ export function Services() {
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>
-                </a>
               </Link>
             </FadeIn>
           ))}
@@ -90,11 +88,11 @@ export function Services() {
 
         <div className="text-center mt-12">
           <FadeIn delay={0.4}>
-            <Link href="/services">
-              <Button size="lg" className="rounded-full px-10 bg-accent hover:bg-accent/90 text-white shadow-lg">
+            <Button size="lg" className="rounded-full px-10 bg-accent hover:bg-accent/90 text-white shadow-lg" asChild>
+              <Link href="/services">
                 View Comprehensive Service List
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </FadeIn>
         </div>
       </div>

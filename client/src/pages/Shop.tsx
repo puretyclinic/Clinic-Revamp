@@ -1,3 +1,4 @@
+import React from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -22,6 +23,16 @@ export default function Shop() {
               <p className="text-xl text-white/80 max-w-2xl mx-auto">
                 Physician-grade supplements and holistic wellness products curated by our doctors.
               </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold" asChild>
+                  <a href="#contact-form" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
+                    Book Consultation
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-bold" asChild>
+                  <a href="tel:+18055008300">Call (805) 500-8300</a>
+                </Button>
+              </div>
             </FadeIn>
           </div>
         </section>
@@ -44,8 +55,7 @@ export default function Shop() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {products.map((product) => (
                 <FadeIn key={product.id} delay={0.1} direction="up">
-                  <Link href={`/shop/product/${product.id}`}>
-                    <a className="group block h-full">
+                  <Link href={`/shop/product/${product.id}`} className="group block h-full">
                       <div className="aspect-square bg-gray-50 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center p-6">
                         <img 
                           src={product.image} 
@@ -73,7 +83,6 @@ export default function Shop() {
                           <ShoppingBag className="w-4 h-4 mr-2" /> Add
                         </Button>
                       </div>
-                    </a>
                   </Link>
                 </FadeIn>
               ))}
