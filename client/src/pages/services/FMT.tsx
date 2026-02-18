@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Loader2, ArrowRight, ShieldCheck, CheckCircle2, Pill, FlaskConical, Stethoscope, Star, ChevronDown, ChevronUp } from "lucide-react";
+import { Phone, Loader2, ArrowRight, ShieldCheck, CheckCircle2, Pill, FlaskConical, Stethoscope, Droplets, Star, ChevronDown, ChevronUp } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import * as gtag from "@/lib/gtag";
 import { useState } from "react";
@@ -282,7 +282,7 @@ export default function FMT() {
               </div>
             </FadeIn>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <FadeIn delay={0.1}>
                 <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 h-full flex flex-col">
                   <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
@@ -295,6 +295,21 @@ export default function FMT() {
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Usual 14 day treatment course</li>
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> No sedation required</li>
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Ideal for C. diff patients</li>
+                  </ul>
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.15}>
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 h-full flex flex-col">
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+                    <Droplets className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="font-serif text-xl font-bold mb-3">Oral Liquid FMT</h3>
+                  <p className="text-muted-foreground text-sm mb-4">Great option for those who can't swallow capsules</p>
+                  <ul className="space-y-2 text-sm text-muted-foreground mt-auto">
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Easy-to-take liquid form</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> No capsules to swallow</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Same effective donor material</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Suitable for all ages</li>
                   </ul>
                 </div>
               </FadeIn>
