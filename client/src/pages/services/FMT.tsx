@@ -38,8 +38,6 @@ export default function FMT() {
           _replyto: formData.get("email"),
           _cc: "dr@puretyclinic.com",
           _template: "table",
-          _captcha: "false",
-          _honey: "",
         }),
       });
 
@@ -126,6 +124,7 @@ export default function FMT() {
               {/* Form */}
               <div className="bg-accent/5 p-8 rounded-2xl mb-16 border border-accent/20">
                  <form onSubmit={handleSubmit} className="space-y-6">
+                   <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
                    <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name (required)</Label>

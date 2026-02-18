@@ -37,8 +37,6 @@ export default function Contact() {
           _replyto: formData.get("email"),
           _cc: "dr@puretyclinic.com",
           _template: "table",
-          _captcha: "false",
-          _honey: "",
         }),
       });
 
@@ -163,6 +161,7 @@ export default function Contact() {
                   <p className="text-muted-foreground mb-8">Fill out the form below and we'll get back to you shortly.</p>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
