@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Heart, Sun, Leaf, Shield, AlertCircle } from "lucide-react";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function CancerSupport() {
   return (
@@ -111,6 +112,7 @@ export default function CancerSupport() {
              </Button>
            </div>
         </section>
+        <ContactCTA heading="Interested in Integrative Cancer Support?" subheading="Contact us to learn how we can support your cancer treatment journey." formSource="Cancer Support Page" />
       </main>
       
       <Footer />

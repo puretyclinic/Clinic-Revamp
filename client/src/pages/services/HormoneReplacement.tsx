@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Flower, Sun, Heart, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function HormoneReplacement() {
   return (
@@ -80,6 +81,7 @@ export default function HormoneReplacement() {
              </Link>
            </div>
         </section>
+        <ContactCTA heading="Interested in Hormone Replacement?" subheading="Contact us to learn how bioidentical HRT can restore your vitality." formSource="Hormone Replacement Page" />
       </main>
       <Footer />
     </div>

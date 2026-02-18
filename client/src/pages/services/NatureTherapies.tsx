@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Leaf, Sun, Droplets, Mountain } from "lucide-react";
 import { Link } from "wouter";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function NatureTherapies() {
   return (
@@ -88,6 +89,7 @@ export default function NatureTherapies() {
              </Link>
            </div>
         </section>
+        <ContactCTA heading="Interested in Nature Therapies?" subheading="Contact us to learn how natural healing therapies can benefit you." formSource="Nature Therapies Page" />
       </main>
       <Footer />
     </div>

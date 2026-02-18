@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Baby, Flower, Heart, CheckCircle2 } from "lucide-react";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function NaturopathicMedicine() {
   return (
@@ -93,6 +94,7 @@ export default function NaturopathicMedicine() {
           </div>
         </section>
 
+        <ContactCTA heading="Interested in Naturopathic Medicine?" subheading="Contact us to learn how naturopathic approaches can improve your health." formSource="Naturopathic Medicine Page" />
       </main>
       
       <Footer />

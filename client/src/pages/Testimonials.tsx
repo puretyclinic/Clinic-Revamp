@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { storedPages } from "@/data/stored_pages";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function Testimonials() {
   const pageData = storedPages.find(p => p.id === "testimonials-page");
@@ -50,6 +51,7 @@ export default function Testimonials() {
              </Link>
            </div>
         </section>
+        <ContactCTA heading="Ready to Experience the Difference?" subheading="Join our family of patients and start your healing journey today." formSource="Testimonials Page" />
       </main>
       <Footer />
     </div>

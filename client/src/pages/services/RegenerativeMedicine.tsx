@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Syringe, Activity, Bone, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function RegenerativeMedicine() {
   return (
@@ -112,6 +113,7 @@ export default function RegenerativeMedicine() {
              </Button>
            </div>
         </section>
+        <ContactCTA heading="Interested in Regenerative Medicine?" subheading="Contact us to learn how PRP and stem cell therapy can help you heal." formSource="Regenerative Medicine Page" />
       </main>
       
       <Footer />

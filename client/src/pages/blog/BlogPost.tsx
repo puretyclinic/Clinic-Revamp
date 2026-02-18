@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowLeft, Share2, Clock } from "lucide-react";
 import { Link } from "wouter";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function BlogPost() {
   return (
@@ -107,6 +108,7 @@ export default function BlogPost() {
           </div>
         </section>
 
+        <ContactCTA heading="Have Questions About Your Health?" formSource="Blog Post" />
       </main>
       
       <Footer />

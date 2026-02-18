@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { blogPosts } from "@/data/posts";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function Blog() {
   // Only show posts that are not hidden
@@ -74,6 +75,7 @@ export default function Blog() {
             </div>
           </div>
         </section>
+        <ContactCTA heading="Have Questions About Your Health?" formSource="Blog Page" />
       </main>
 
       <Footer />

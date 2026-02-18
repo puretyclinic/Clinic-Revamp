@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Syringe, Wind, Droplet, Flower, Activity, Baby, HeartPulse, Brain, Bone, Leaf, Pill, ArrowRight, RefreshCw } from "lucide-react";
 import { Link } from "wouter";
+import { ContactCTA } from "@/components/ContactCTA";
 
 const services = [
   {
@@ -152,6 +153,7 @@ export default function Services() {
              </FadeIn>
            </div>
         </section>
+        <ContactCTA heading="Which Service Is Right for You?" subheading="Contact us to discuss which treatments may benefit you." formSource="Services Page" />
       </main>
       
       <Footer />

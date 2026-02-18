@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ShoppingBag, Star, CheckCircle } from "lucide-react";
 import { Link } from "wouter";
 import { products } from "@/data/products";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function Shop() {
   return (
@@ -105,6 +106,7 @@ export default function Shop() {
               </div>
            </div>
         </section>
+        <ContactCTA heading="Need Help Choosing the Right Supplement?" subheading="Our doctors can help recommend the best products for your needs." formSource="Shop Page" />
       </main>
 
       <Footer />

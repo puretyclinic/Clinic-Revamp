@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MapPin, ArrowRight } from "lucide-react";
 import { Link, useRoute } from "wouter";
+import { ContactCTA } from "@/components/ContactCTA";
 
 const locations = {
   "santa-barbara": {
@@ -93,6 +94,7 @@ export default function LocationPage({ params }: { params: { city: string } }) {
             </FadeIn>
           </div>
         </section>
+        <ContactCTA heading="Schedule Your Visit" formSource="Location Page" />
       </main>
       <Footer />
     </div>

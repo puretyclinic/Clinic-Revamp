@@ -6,6 +6,7 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag, ChevronLeft, Star, Check, Truck, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -138,6 +139,7 @@ export default function ProductDetail() {
             </FadeIn>
           </div>
         </div>
+        <ContactCTA heading="Questions About This Product?" subheading="Our doctors can help you determine if this supplement is right for you." formSource="Product Page" />
       </main>
 
       <Footer />

@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Droplet, Wind, Zap, CheckCircle2 } from "lucide-react";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function IVTherapy() {
   return (
@@ -101,6 +102,7 @@ export default function IVTherapy() {
           </div>
         </section>
 
+        <ContactCTA heading="Interested in IV Therapy?" subheading="Contact us to learn how IV therapy can benefit your health." formSource="IV Therapy Page" />
       </main>
       
       <Footer />

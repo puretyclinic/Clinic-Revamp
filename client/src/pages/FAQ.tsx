@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { storedPages } from "@/data/stored_pages";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function FAQ() {
   const pageData = storedPages.find(p => p.id === "faq-page");
@@ -39,6 +40,7 @@ export default function FAQ() {
             </FadeIn>
           </div>
         </section>
+        <ContactCTA heading="Still Have Questions?" subheading="We're here to help. Reach out and we'll get back to you quickly." formSource="FAQ Page" />
       </main>
       <Footer />
     </div>

@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Wind, Activity, Zap, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function OzoneTherapy() {
   return (
@@ -110,6 +111,7 @@ export default function OzoneTherapy() {
              </Link>
            </div>
         </section>
+        <ContactCTA heading="Interested in Ozone Therapy?" subheading="Contact us to learn how ozone therapy can benefit your health." formSource="Ozone Therapy Page" />
       </main>
       <Footer />
     </div>

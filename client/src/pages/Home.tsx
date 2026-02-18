@@ -5,6 +5,7 @@ import { Services } from "@/components/home/Services";
 import { Doctors } from "@/components/home/Doctors";
 import { Testimonials } from "@/components/home/Testimonials";
 import { Footer } from "@/components/layout/Footer";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function Home() {
   return (
@@ -47,6 +48,7 @@ export default function Home() {
              </div>
           </div>
         </section>
+        <ContactCTA heading="Ready to Start Your Healing Journey?" formSource="Home Page" />
       </main>
 
       <Footer />

@@ -2,6 +2,7 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CheckCircle2 } from "lucide-react";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export default function About() {
   return (
@@ -143,6 +144,7 @@ export default function About() {
 
           </div>
         </section>
+        <ContactCTA heading="Meet Our Doctors" subheading="Schedule a consultation with Dr. Jonathan or Dr. Dena Birch." formSource="About Page" />
       </main>
       
       <Footer />
