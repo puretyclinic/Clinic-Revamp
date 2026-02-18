@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/layout/FadeIn";
+import heroBg from "@assets/image0_(2)_1771385063606.jpeg";
 
 export function Hero() {
   return (
@@ -8,7 +9,7 @@ export function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/hero-bg.jpg"
+          src={heroBg}
           alt="Peaceful Clinic Interior"
           className="w-full h-full object-cover"
         />
