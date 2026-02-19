@@ -1,5 +1,5 @@
 export const GA_ADS_ID = "AW-11190214934";
-export const GA4_ID = ""; // Will be populated once user provides GA4 Measurement ID
+export const GA4_ID = "";
 
 declare global {
   interface Window {
@@ -29,10 +29,6 @@ export const event = ({ action, category, label, value }: { action: string; cate
 
 export const trackFormSubmission = (formSource: string) => {
   if (typeof window.gtag !== "undefined") {
-    window.gtag("event", "conversion", {
-      send_to: `${GA_ADS_ID}/form_submit`,
-    });
-
     window.gtag("event", "generate_lead", {
       event_category: "Contact",
       event_label: formSource,
@@ -44,13 +40,21 @@ export const trackFormSubmission = (formSource: string) => {
       event_category: "Contact",
       event_label: formSource,
     });
+
+    window.gtag("event", "contact", {
+      event_category: "Contact",
+      event_label: formSource,
+    });
   }
 };
 
 export const trackPhoneClick = (source: string) => {
   if (typeof window.gtag !== "undefined") {
-    window.gtag("event", "conversion", {
-      send_to: `${GA_ADS_ID}/phone_click`,
+    window.gtag("event", "generate_lead", {
+      event_category: "Phone",
+      event_label: source,
+      value: 50,
+      currency: "USD",
     });
 
     window.gtag("event", "click_to_call", {

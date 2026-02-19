@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Phone, Loader2, ArrowRight, ShieldCheck, CheckCircle2, Pill, FlaskConical, Stethoscope, Droplets, Star, ChevronDown, ChevronUp } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import * as gtag from "@/lib/gtag";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function scrollToForm() {
   const el = document.querySelector('#consultation');
@@ -39,9 +39,61 @@ function FAQItem({ question, answer }: { question: string; answer: React.ReactNo
   );
 }
 
+const fmtStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Purety Family Medical Clinic - FMT Treatment",
+  "description": "California's leading FMT (Fecal Microbiota Transplant) specialists since 2014. Over 1,000 patients treated with 90%+ success rate for C. diff.",
+  "url": "https://puretyclinic.com/fecal-transplant",
+  "telephone": "+1-805-500-8300",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1525 State St Suite 12",
+    "addressLocality": "Santa Barbara",
+    "addressRegion": "CA",
+    "postalCode": "93101",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.4208,
+    "longitude": -119.6982
+  },
+  "medicalSpecialty": "Gastroenterology",
+  "availableService": {
+    "@type": "MedicalProcedure",
+    "name": "Fecal Microbiota Transplant (FMT)",
+    "procedureType": "Therapeutic",
+    "description": "Non-invasive FMT treatment options including capsules, oral liquid, retention enema, and colonoscopy delivery. 90%+ success rate for recurrent C. diff infections."
+  },
+  "physician": {
+    "@type": "Physician",
+    "name": "Dr. Jonathan Birch",
+    "medicalSpecialty": "Naturopathic Medicine"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "70",
+    "bestRating": "5"
+  }
+};
+
 export default function FMT() {
   const { toast } = useToast();
   const [sending, setSending] = useState(false);
+
+  useEffect(() => {
+    document.title = "FMT Treatment | Fecal Microbiota Transplant | Dr. Jonathan Birch | Purety Clinic";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Leading FMT specialists since 2014. 90%+ success rate for C. diff. Multiple treatment options: capsules, oral, enema, colonoscopy. Schedule your consultation with Dr. Birch today. (805) 500-8300");
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.text = JSON.stringify(fmtStructuredData);
+    document.head.appendChild(script);
+    return () => { document.head.removeChild(script); };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

@@ -1,8 +1,10 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { useEffect } from "react";
+import * as gtag from "@/lib/gtag";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
@@ -62,11 +64,20 @@ function Router() {
   );
 }
 
+function PageviewTracker() {
+  const [location] = useLocation();
+  useEffect(() => {
+    gtag.pageview(location);
+  }, [location]);
+  return null;
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
+        <PageviewTracker />
         <Router />
       </TooltipProvider>
     </QueryClientProvider>

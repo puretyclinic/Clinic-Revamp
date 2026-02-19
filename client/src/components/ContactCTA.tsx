@@ -97,6 +97,7 @@ export function ContactCTA({
               href="tel:+18055008300"
               className="inline-flex items-center gap-2 mt-6 text-xl font-bold text-accent hover:text-accent/80 transition-colors"
               data-testid="link-cta-phone"
+              onClick={() => gtag.trackPhoneClick(formSource)}
             >
               <Phone className="w-5 h-5" />
               (805) 500-8300

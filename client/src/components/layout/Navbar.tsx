@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import * as gtag from "@/lib/gtag";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,7 +78,7 @@ export function Navbar() {
               className="rounded-full bg-primary hover:bg-primary/90 text-white px-6 font-medium shadow-md"
               asChild
             >
-              <a href="tel:+18055008300">
+              <a href="tel:+18055008300" onClick={() => gtag.trackPhoneClick("Navbar")}>
                 <Phone className="w-4 h-4 mr-2" />
                 (805) 500-8300
               </a>
@@ -119,7 +120,7 @@ export function Navbar() {
             )
           )}
           <Button className="w-full bg-primary text-white mt-4 py-6 text-lg" asChild>
-            <a href="tel:+18055008300">Call Us Today</a>
+            <a href="tel:+18055008300" onClick={() => gtag.trackPhoneClick("Navbar Mobile")}>Call Us Today</a>
           </Button>
         </div>
       )}
