@@ -170,27 +170,27 @@ export default function FMT() {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-1">
                         <Label htmlFor="fmt-firstName" className="text-sm font-medium">First Name</Label>
-                        <Input id="fmt-firstName" name="firstName" placeholder="John" required className="h-11" data-testid="input-fmt-firstName" />
+                        <Input id="fmt-firstName" name="firstName" placeholder="John" required className="h-11 text-black" data-testid="input-fmt-firstName" />
                       </div>
                       <div className="space-y-1">
                         <Label htmlFor="fmt-lastName" className="text-sm font-medium">Last Name</Label>
-                        <Input id="fmt-lastName" name="lastName" placeholder="Smith" required className="h-11" data-testid="input-fmt-lastName" />
+                        <Input id="fmt-lastName" name="lastName" placeholder="Smith" required className="h-11 text-black" data-testid="input-fmt-lastName" />
                       </div>
                     </div>
                     <div className="space-y-1">
                       <Label htmlFor="fmt-email" className="text-sm font-medium">Email Address</Label>
-                      <Input id="fmt-email" name="email" type="email" placeholder="john@example.com" required className="h-11" data-testid="input-fmt-email" />
+                      <Input id="fmt-email" name="email" type="email" placeholder="john@example.com" required className="h-11 text-black" data-testid="input-fmt-email" />
                     </div>
                     <div className="space-y-1">
                       <Label htmlFor="fmt-phone" className="text-sm font-medium">Phone Number</Label>
-                      <Input id="fmt-phone" name="phone" type="tel" placeholder="(555) 123-4567" required className="h-11" data-testid="input-fmt-phone" />
+                      <Input id="fmt-phone" name="phone" type="tel" placeholder="(555) 123-4567" required className="h-11 text-black" data-testid="input-fmt-phone" />
                     </div>
                     <div className="space-y-1">
                       <Label htmlFor="fmt-concern" className="text-sm font-medium">Primary Concern</Label>
                       <select
                         id="fmt-concern"
                         name="concern"
-                        className="flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                        className="flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-black ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                         data-testid="select-fmt-concern"
                       >
                         <option value="">Select your concern...</option>
@@ -206,7 +206,7 @@ export default function FMT() {
                         id="fmt-message"
                         name="message"
                         placeholder="Share any additional details about your symptoms, history, or questions..."
-                        className="min-h-[100px]"
+                        className="min-h-[100px] text-black"
                         data-testid="input-fmt-message"
                       />
                     </div>
