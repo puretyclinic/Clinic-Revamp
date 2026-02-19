@@ -1,0 +1,37 @@
+Google Ads API Tool - Design Document
+
+Company: Purety Family Naturopathic Corporation
+Website: https://puretyclinic.com
+MCC ID: 895-729-9346
+
+1. Overview
+We are building an internal campaign monitoring and optimization tool for our naturopathic medical clinic. The tool will allow our team to view campaign performance metrics, analyze ad effectiveness, and make data-driven decisions to improve our advertising ROI.
+
+2. Features
+- Read campaign performance data (impressions, clicks, cost, conversions)
+- Generate performance reports for internal review
+- Monitor ad group and keyword performance
+- Track conversion metrics from our website contact forms
+
+3. API Usage
+We will use the following Google Ads API resources:
+- GoogleAdsService.Search - to query campaign, ad group, and ad performance data
+- CustomerService - to retrieve account information
+- CampaignService - to read campaign settings and status
+
+4. Data Flow
+Website (puretyclinic.com) -> Contact Form Submissions -> Conversion Tracking
+Google Ads API -> Campaign Data -> Internal Dashboard -> Staff Review
+
+5. Users
+Internal staff only (clinic administrators and marketing team).
+No external users will have access to the tool.
+
+6. Rate Limiting
+We anticipate low API usage (under 1000 operations per day) for periodic
+reporting and monitoring purposes only.
+
+7. Data Storage
+Campaign performance data may be cached locally for reporting purposes.
+No customer PII is collected or stored through the API.
+All API credentials are stored securely using environment variable encryption.
