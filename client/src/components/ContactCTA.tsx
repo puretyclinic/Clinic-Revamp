@@ -113,26 +113,26 @@ export function ContactCTA({
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
                   <Label htmlFor="cta-firstName" className="text-foreground text-sm">First Name</Label>
-                  <Input id="cta-firstName" name="firstName" required className="h-11" data-testid="input-cta-firstName" />
+                  <Input id="cta-firstName" name="firstName" required className="h-11 text-black" data-testid="input-cta-firstName" />
                 </div>
                 <div className="space-y-1">
                   <Label htmlFor="cta-lastName" className="text-foreground text-sm">Last Name</Label>
-                  <Input id="cta-lastName" name="lastName" required className="h-11" data-testid="input-cta-lastName" />
+                  <Input id="cta-lastName" name="lastName" required className="h-11 text-black" data-testid="input-cta-lastName" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
                   <Label htmlFor="cta-email" className="text-foreground text-sm">Email</Label>
-                  <Input id="cta-email" name="email" type="email" required className="h-11" data-testid="input-cta-email" />
+                  <Input id="cta-email" name="email" type="email" required className="h-11 text-black" data-testid="input-cta-email" />
                 </div>
                 <div className="space-y-1">
                   <Label htmlFor="cta-phone" className="text-foreground text-sm">Phone</Label>
-                  <Input id="cta-phone" name="phone" type="tel" required className="h-11" data-testid="input-cta-phone" />
+                  <Input id="cta-phone" name="phone" type="tel" required className="h-11 text-black" data-testid="input-cta-phone" />
                 </div>
               </div>
               <div className="space-y-1">
                 <Label htmlFor="cta-message" className="text-foreground text-sm">How can we help?</Label>
-                <Textarea id="cta-message" name="message" required className="min-h-[100px]" data-testid="input-cta-message" />
+                <Textarea id="cta-message" name="message" required className="min-h-[100px] text-black" data-testid="input-cta-message" />
               </div>
               <Button type="submit" size="lg" disabled={sending} className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold" data-testid="button-cta-submit">
                 {sending ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...</> : "Send Message"}
