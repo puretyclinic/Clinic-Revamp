@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
     author: "Dr. Dena Birch",
     authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612849682752-20P4409HYPXT6ALS0FF3/Holistic+Dr.+Dena+Birch",
     authorTitle: "Naturopathic Doctor",
-    image: "https://images.unsplash.com/photo-1544367563-12123d89a5cd?auto=format&fit=crop&q=80&w=800",
+    image: "/images/blog-naturopathy.jpg",
     category: "Naturopathy",
     tags: ["Holistic", "NaturalMedicine", "Naturopathy"],
     content: `<p class="lead text-xl text-muted-foreground mb-8">
@@ -87,7 +87,7 @@ export const blogPosts: BlogPost[] = [
     author: "Dr. Jonathan Birch",
     authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612849607964-HHKKT71DKVC2FOBPIQCM/Jonathan+Birch+MD",
     authorTitle: "Medical Director",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800",
+    image: "/images/blog-regenerative.jpg",
     category: "Regenerative Medicine",
     tags: ["PRP", "StemCells", "JointPain", "RegenerativeMedicine"],
     content: `<p class="lead text-xl text-muted-foreground mb-8">
@@ -163,7 +163,7 @@ export const blogPosts: BlogPost[] = [
     author: "Dr. Jonathan Birch",
     authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612849607964-HHKKT71DKVC2FOBPIQCM/Jonathan+Birch+MD",
     authorTitle: "Medical Director",
-    image: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&q=80&w=800",
+    image: "/images/blog-gut-health.jpg",
     category: "Gut Health",
     tags: ["GutHealth", "Microbiome", "FMT", "Digestion"],
     content: `<p class="lead text-xl text-muted-foreground mb-8">
@@ -251,7 +251,7 @@ export const blogPosts: BlogPost[] = [
     author: "Dr. Dena Birch",
     authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612849682752-20P4409HYPXT6ALS0FF3/Holistic+Dr.+Dena+Birch",
     authorTitle: "Naturopathic Doctor",
-    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=800",
+    image: "/images/blog-hormones.jpg",
     category: "Women's Health",
     tags: ["Hormones", "BHRT", "WomensHealth", "Fatigue"],
     content: `<p class="lead text-xl text-muted-foreground mb-8">
