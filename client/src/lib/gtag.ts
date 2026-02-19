@@ -1,4 +1,4 @@
-export const GA_TRACKING_ID = "AW-XXXXXXXXX"; // Replace with your Google Ads Conversion ID
+export const GA_TRACKING_ID = "AW-11190214934";
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: string) => {
