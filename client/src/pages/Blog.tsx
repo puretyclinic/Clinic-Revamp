@@ -45,7 +45,7 @@ export default function Blog() {
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
               {visiblePosts.map((post, index) => (
                 <FadeIn key={post.id} delay={index * 0.1} direction="up">
-                  <Link href="/blog/post" className="group cursor-pointer flex flex-col h-full block">
+                  <Link href={`/blog/${post.id}`} className="group cursor-pointer flex flex-col h-full block">
                       <div className="aspect-[16/9] overflow-hidden rounded-2xl mb-6 shadow-sm">
                         <img 
                           src={post.image} 

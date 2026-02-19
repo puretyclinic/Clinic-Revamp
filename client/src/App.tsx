@@ -52,7 +52,7 @@ function Router() {
       <Route path="/doctors" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/blog" component={Blog} />
-      <Route path="/blog/post" component={BlogPost} /> {/* Demo single post route */}
+      <Route path="/blog/:id" component={BlogPost} />
       <Route path="/shop" component={Shop} />
       <Route path="/shop/product/:slug" component={ProductDetail} />
       <Route path="/claim" component={ClaimPreview} />
