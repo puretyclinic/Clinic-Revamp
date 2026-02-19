@@ -67,3 +67,8 @@ waitForPort = 5000
 stack = "MOCKUP_JS"
 mockupState = "FULLSTACK"
 integrations = ["google-mail:1.0.0"]
+
+[userenv]
+
+[userenv.shared]
+GOOGLE_ADS_CUSTOMER_ID = "3730159907"
