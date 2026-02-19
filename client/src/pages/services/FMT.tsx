@@ -145,10 +145,6 @@ export default function FMT() {
                     <div className="text-sm text-muted-foreground">Patients Helped</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-accent">90%+</div>
-                    <div className="text-sm text-muted-foreground">Success Rate</div>
-                  </div>
-                  <div>
                     <div className="text-3xl font-bold text-accent">10+</div>
                     <div className="text-sm text-muted-foreground">Years Experience</div>
                   </div>
