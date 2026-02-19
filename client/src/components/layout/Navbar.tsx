@@ -17,13 +17,13 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks: { name: string; href: string; external?: boolean }[] = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Doctors", href: "/doctors" },
     { name: "Blog", href: "/blog" },
-    { name: "Shop", href: "/shop" },
+    { name: "Shop", href: "https://puretyclinicshop.com", external: true },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -46,20 +46,32 @@ export function Navbar() {
         </Link>
 
         <div className="hidden lg:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors uppercase tracking-wider text-[11px]",
-                location === link.href 
-                  ? "text-accent font-bold" 
-                  : "text-foreground/80 hover:text-accent"
-              )}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.external ? (
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium transition-colors uppercase tracking-wider text-[11px] text-foreground/80 hover:text-accent"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "text-sm font-medium transition-colors uppercase tracking-wider text-[11px]",
+                  location === link.href 
+                    ? "text-accent font-bold" 
+                    : "text-foreground/80 hover:text-accent"
+                )}
+              >
+                {link.name}
+              </Link>
+            )
+          )}
           <div className="pl-4 ml-2 border-l border-gray-200">
             <Button 
               className="rounded-full bg-primary hover:bg-primary/90 text-white px-6 font-medium shadow-md"
@@ -83,16 +95,29 @@ export function Navbar() {
 
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-4 shadow-xl flex flex-col gap-4 animate-in slide-in-from-top-5 h-screen">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-lg font-serif font-medium text-foreground py-3 border-b border-gray-50"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.external ? (
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-serif font-medium text-foreground py-3 border-b border-gray-50"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-lg font-serif font-medium text-foreground py-3 border-b border-gray-50"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            )
+          )}
           <Button className="w-full bg-primary text-white mt-4 py-6 text-lg" asChild>
             <a href="tel:+18055008300">Call Us Today</a>
           </Button>

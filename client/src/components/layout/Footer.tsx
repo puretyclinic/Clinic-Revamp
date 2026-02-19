@@ -58,7 +58,7 @@ export function Footer() {
               <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Our Doctors</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Shop</a></li>
+              <li><a href="https://puretyclinicshop.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Shop</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
             </ul>
           </div>
