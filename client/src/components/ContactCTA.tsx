@@ -48,11 +48,7 @@ export function ContactCTA({
       const data = await res.json();
 
       if (data.success) {
-        gtag.event({
-          action: "submit_form",
-          category: "Contact",
-          label: formSource,
-        });
+        gtag.trackFormSubmission(formSource);
         toast({
           title: "Message Sent!",
           description: "We've received your message and will get back to you shortly.",

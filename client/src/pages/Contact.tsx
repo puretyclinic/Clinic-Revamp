@@ -40,11 +40,7 @@ export default function Contact() {
       const data = await res.json();
 
       if (data.success) {
-        gtag.event({
-          action: "submit_form",
-          category: "Contact",
-          label: "General Inquiry",
-        });
+        gtag.trackFormSubmission("Contact Page - General Inquiry");
 
         toast({
           title: "Message Sent!",

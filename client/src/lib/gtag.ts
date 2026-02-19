@@ -1,15 +1,22 @@
-export const GA_TRACKING_ID = "AW-11190214934";
+export const GA_ADS_ID = "AW-11190214934";
+export const GA4_ID = ""; // Will be populated once user provides GA4 Measurement ID
 
-// https://developers.google.com/analytics/devguides/collection/gtagjs/pages
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+    dataLayer: any[];
+  }
+}
+
 export const pageview = (url: string) => {
   if (typeof window.gtag !== "undefined") {
-    window.gtag("config", GA_TRACKING_ID, {
-      page_path: url,
-    });
+    window.gtag("config", GA_ADS_ID, { page_path: url });
+    if (GA4_ID) {
+      window.gtag("config", GA4_ID, { page_path: url });
+    }
   }
 };
 
-// https://developers.google.com/analytics/devguides/collection/gtagjs/events
 export const event = ({ action, category, label, value }: { action: string; category: string; label: string; value?: number }) => {
   if (typeof window.gtag !== "undefined") {
     window.gtag("event", action, {
@@ -20,11 +27,43 @@ export const event = ({ action, category, label, value }: { action: string; cate
   }
 };
 
-// Specific Google Ads Conversion
+export const trackFormSubmission = (formSource: string) => {
+  if (typeof window.gtag !== "undefined") {
+    window.gtag("event", "conversion", {
+      send_to: `${GA_ADS_ID}/form_submit`,
+    });
+
+    window.gtag("event", "generate_lead", {
+      event_category: "Contact",
+      event_label: formSource,
+      value: 100,
+      currency: "USD",
+    });
+
+    window.gtag("event", "submit_lead_form", {
+      event_category: "Contact",
+      event_label: formSource,
+    });
+  }
+};
+
+export const trackPhoneClick = (source: string) => {
+  if (typeof window.gtag !== "undefined") {
+    window.gtag("event", "conversion", {
+      send_to: `${GA_ADS_ID}/phone_click`,
+    });
+
+    window.gtag("event", "click_to_call", {
+      event_category: "Phone",
+      event_label: source,
+    });
+  }
+};
+
 export const conversion = (conversionLabel: string) => {
   if (typeof window.gtag !== "undefined") {
     window.gtag("event", "conversion", {
-      send_to: `${GA_TRACKING_ID}/${conversionLabel}`,
+      send_to: `${GA_ADS_ID}/${conversionLabel}`,
     });
   }
 };

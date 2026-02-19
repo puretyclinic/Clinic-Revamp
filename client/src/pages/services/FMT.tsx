@@ -69,11 +69,7 @@ export default function FMT() {
       const data = await res.json();
 
       if (data.success) {
-        gtag.event({
-          action: "submit_form",
-          category: "Contact",
-          label: "FMT Consultation Request",
-        });
+        gtag.trackFormSubmission("FMT Page - Consultation Request");
 
         fetch("https://formsubmit.co/ajax/DrJonathan@puretyclinic.com", {
           method: "POST",
@@ -118,7 +114,7 @@ export default function FMT() {
         Limited Availability: We can only accept <span className="font-bold underline">5 new patients per week</span> due to donor screening requirements
       </div>
       <div className="bg-primary text-white text-center py-2 px-4 text-sm">
-        Questions? Call or Text Now: <a href="tel:+18055008300" className="font-bold hover:underline">(805) 500-8300</a> | Consultations Available
+        Questions? Call or Text Now: <a href="tel:+18055008300" className="font-bold hover:underline" onClick={() => gtag.trackPhoneClick("FMT Top Bar")}>(805) 500-8300</a> | Consultations Available
       </div>
 
       <Navbar />
@@ -155,7 +151,7 @@ export default function FMT() {
                     <Phone className="w-4 h-4 mr-2" /> Schedule Consultation
                   </Button>
                   <Button size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/5 font-bold rounded-lg" asChild>
-                    <a href="tel:+18055008300">Call (805) 500-8300</a>
+                    <a href="tel:+18055008300" onClick={() => gtag.trackPhoneClick("FMT Hero")}>Call (805) 500-8300</a>
                   </Button>
                 </div>
               </FadeIn>
@@ -524,7 +520,7 @@ export default function FMT() {
                   Schedule Consultation
                 </Button>
                 <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-bold rounded-lg px-8" asChild>
-                  <a href="tel:+18055008300">Call (805) 500-8300</a>
+                  <a href="tel:+18055008300" onClick={() => gtag.trackPhoneClick("FMT Bottom CTA")}>Call (805) 500-8300</a>
                 </Button>
               </div>
             </FadeIn>
