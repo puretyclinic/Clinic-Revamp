@@ -143,7 +143,10 @@ export async function registerRoutes(
 
       const submission = await storage.createContact(parsed.data);
 
-      sendEmailNotification(parsed.data).catch(() => {});
+      sendEmailNotification({
+        ...parsed.data,
+        source: parsed.data.source || "Website",
+      }).catch(() => {});
 
       return res.json({ success: true, id: submission.id });
     } catch (error) {
@@ -164,7 +167,7 @@ export async function registerRoutes(
 
   app.patch("/api/contact/:id/read", requireAdmin, async (req, res) => {
     try {
-      await storage.markContactRead(req.params.id);
+      await storage.markContactRead(req.params.id as string);
       return res.json({ success: true });
     } catch (error) {
       console.error("Error marking contact read:", error);
