@@ -78,11 +78,21 @@ export default function Contact() {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 We are here to help you on your journey to optimal health.
               </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <Button size="lg" className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8" asChild>
+                  <a href="#contact-form-section" data-testid="button-send-message-contact" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form-section'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
+                    Send a Message
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/10 font-bold rounded-full px-8" asChild>
+                  <a href="tel:+18055008300" data-testid="link-phone-contact">Call (805) 500-8300</a>
+                </Button>
+              </div>
             </FadeIn>
           </div>
         </section>
 
-        <section className="pb-24 bg-white">
+        <section id="contact-form-section" className="pb-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16">
               

@@ -1,6 +1,7 @@
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight } from "lucide-react";
 import { Link, useRoute } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
@@ -63,6 +64,16 @@ export default function LocationPage({ params }: { params: { city: string } }) {
               <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
                 {location.description}
               </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <Button size="lg" className="bg-accent text-white hover:bg-accent/90 font-bold rounded-full px-8" asChild>
+                  <a href="#contact-form" data-testid="button-book-consultation-location" onClick={(e: React.MouseEvent) => { e.preventDefault(); const el = document.querySelector('#contact-form'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 20; window.scrollTo({ top: y, behavior: 'smooth' }); } }}>
+                    Book Consultation
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-bold rounded-full px-8" asChild>
+                  <a href="tel:+18055008300" data-testid="link-phone-location">Call (805) 500-8300</a>
+                </Button>
+              </div>
             </FadeIn>
           </div>
         </section>
