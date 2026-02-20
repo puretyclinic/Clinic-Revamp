@@ -123,20 +123,6 @@ export default function FMT() {
       if (data.success) {
         gtag.trackFormSubmission("FMT Page - Consultation Request");
 
-        fetch("https://formsubmit.co/ajax/DrJonathan@puretyclinic.com", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify({
-            Name: `${payload.firstName} ${payload.lastName}`,
-            Email: payload.email,
-            Phone: payload.phone,
-            Message: payload.message,
-            _subject: `FMT Consultation Request from ${payload.firstName} ${payload.lastName}`,
-            _replyto: payload.email,
-            _template: "table",
-          }),
-        }).catch(() => {});
-
         toast({
           title: "Consultation Requested!",
           description: "Dr. Birch's team will review your case and contact you shortly.",

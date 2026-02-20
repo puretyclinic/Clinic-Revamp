@@ -23,7 +23,7 @@ Preferred communication style: Simple, everyday language.
 - **Component library**: shadcn/ui with Radix UI primitives underneath
 - **Data**: Most content is currently stored as static TypeScript data files in `client/src/data/` (blog posts, products, SEO strategy, stored pages) — not yet database-driven
 - **Analytics**: Google Ads gtag.js integration with conversion tracking helpers in `client/src/lib/gtag.ts`
-- **Forms**: Contact form submits to FormSubmit.co (third-party form endpoint) — sends to `rebootbase@icloud.com` with CC to `dr@puretyclinic.com`
+- **Forms**: Contact forms submit to `/api/contact` backend endpoint, which stores to PostgreSQL and sends Gmail notification to `drjonathan@puretyclinic.com` via Replit Google Mail connector
 
 ### Backend (Express)
 - **Runtime**: Node.js with Express 5
@@ -86,8 +86,8 @@ attached_assets/          # Reference content, branding JSON, original site cont
 - Currently using in-memory storage as fallback; database integration is partially wired
 
 ### Third-Party Services
-- **FormSubmit.co**: Contact form submissions (sends to `rebootbase@icloud.com`, CC to `dr@puretyclinic.com`)
-- **Google Ads / gtag.js**: Conversion tracking (placeholder ID `AW-XXXXXXXXX` needs real ID)
+- **Google Mail (Replit Connector)**: Form notification emails sent to `drjonathan@puretyclinic.com`
+- **Google Ads / gtag.js**: Conversion tracking (AW-11190214934) + GA4 (G-XVVBDSK8LT)
 - **Google Fonts**: Playfair Display and Inter font families
 - **Squarespace CDN**: Some doctor/clinic images are still hosted on the old Squarespace site
 - **Unsplash**: Blog post placeholder images

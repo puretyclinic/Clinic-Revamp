@@ -54,20 +54,6 @@ export function ContactCTA({
           description: "We've received your message and will get back to you shortly.",
         });
         form.reset();
-
-        fetch("https://formsubmit.co/ajax/DrJonathan@puretyclinic.com", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify({
-            Name: `${payload.firstName} ${payload.lastName}`,
-            Email: payload.email,
-            Phone: payload.phone,
-            Message: payload.message,
-            _subject: `Purety Clinic Website - ${formSource}: ${payload.firstName} ${payload.lastName}`,
-            _replyto: payload.email,
-            _template: "table",
-          }),
-        }).catch(() => {});
       } else {
         toast({
           title: "Error",
