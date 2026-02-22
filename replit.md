@@ -87,7 +87,7 @@ attached_assets/          # Reference content, branding JSON, original site cont
 
 ### Third-Party Services
 - **Google Mail (Replit Connector)**: Form notification emails sent to `drjonathan@puretyclinic.com`
-- **Google Ads / gtag.js**: Conversion tracking (AW-11190214934) + GA4 (G-XVVBDSK8LT)
+- **Google Ads / gtag.js**: Conversion tracking (AW-11190214934) + GA4 (G-NFLLBLBKET for www.puretyclinic.com)
 - **Google Fonts**: Playfair Display and Inter font families
 - **Squarespace CDN**: Some doctor/clinic images are still hosted on the old Squarespace site
 - **Unsplash**: Blog post placeholder images

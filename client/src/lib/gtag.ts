@@ -1,5 +1,5 @@
 export const GA_ADS_ID = "AW-11190214934";
-export const GA4_ID = "G-XVVBDSK8LT";
+export const GA4_ID = "G-NFLLBLBKET";
 
 declare global {
   interface Window {
