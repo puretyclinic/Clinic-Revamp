@@ -329,6 +329,260 @@ export const blogPosts: BlogPost[] = [
 </p>`
   },
 
+  {
+    id: "aip-diet-guide",
+    title: "The Autoimmune Protocol (AIP) Diet: A Complete Guide to Foods, Phases & Healing",
+    excerpt: "If you're living with an autoimmune condition, the foods you eat can either fuel inflammation or help calm it. Here's a comprehensive guide to the AIP elimination diet — what to eat, what to avoid, and how to reintroduce foods safely.",
+    date: "February 22, 2026",
+    author: "Dr. Jonathan Birch",
+    authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612849607964-HHKKT71DKVC2FOBPIQCM/Jonathan+Birch+MD",
+    authorTitle: "Medical Director",
+    image: "/images/blog-aip-diet.jpg",
+    category: "Autoimmune Health",
+    tags: ["AIP", "Autoimmune", "Diet", "Paleo", "GutHealth", "Inflammation"],
+    content: `<p class="lead text-xl text-muted-foreground mb-8">
+  If you or someone you love is living with an autoimmune condition — whether it's Hashimoto's thyroiditis, rheumatoid arthritis, lupus, psoriasis, Crohn's disease, or any of the more than 100 recognized autoimmune disorders — you've probably noticed that what you eat has a direct impact on how you feel. The Autoimmune Protocol, commonly known as AIP, is a targeted elimination diet designed to reduce inflammation, heal the gut, and help identify which foods may be triggering your immune system. At Purety Family Medical Clinic, we use AIP as a foundational tool for many of our autoimmune patients, and the results we've seen have been truly remarkable.
+</p>
+
+<h2>What Is the AIP Diet?</h2>
+<p>
+  The Autoimmune Protocol is a specialized version of the Paleo diet that takes things a step further. While standard Paleo removes grains, dairy, and processed foods, AIP also eliminates additional food groups that are known to be common immune triggers — including nightshades, eggs, nuts, seeds, and certain spices. The idea isn't to restrict your diet forever. It's a temporary, structured elimination phase followed by a careful, systematic reintroduction process.
+</p>
+<p>
+  Think of AIP as a diagnostic tool for your body. By removing all potential inflammatory triggers for a period of time, you give your immune system a chance to calm down and your gut lining a chance to heal. Then, by reintroducing foods one at a time, you can identify exactly which foods your body tolerates well and which ones are contributing to your symptoms.
+</p>
+
+<h2>The Science Behind AIP</h2>
+<p>
+  Autoimmune diseases occur when the immune system mistakenly attacks healthy tissue. Research has shown that intestinal permeability — often called "leaky gut" — plays a central role in triggering and perpetuating autoimmune responses. When the tight junctions in your gut lining become compromised, partially digested food particles, toxins, and bacteria can leak into the bloodstream, activating the immune system and driving chronic inflammation.
+</p>
+<p>
+  Certain foods are well-documented triggers of intestinal permeability and immune activation. Gluten, for example, stimulates the release of zonulin, a protein that directly opens the tight junctions in the gut. Lectins found in grains and legumes can damage the intestinal lining. Saponins in nightshades may contribute to gut irritation. By removing these and other potentially problematic foods, AIP aims to break the cycle of gut damage, immune activation, and tissue destruction.
+</p>
+
+<h2>Phase 1: The Elimination Phase — Foods You CAN Eat</h2>
+<p>
+  The elimination phase typically lasts 30 to 90 days. During this time, you focus on nutrient-dense, anti-inflammatory whole foods. Despite what it might sound like, there is a tremendous variety of delicious foods available to you on AIP. Here's what's on the menu:
+</p>
+
+<h3>Proteins</h3>
+<ul>
+  <li><strong>All quality meats:</strong> Beef, bison, lamb, pork, venison, elk, and other game meats (ideally grass-fed and pasture-raised)</li>
+  <li><strong>Poultry:</strong> Chicken, turkey, duck (pasture-raised preferred)</li>
+  <li><strong>Fish and seafood:</strong> Wild-caught salmon, sardines, mackerel, shrimp, scallops, mussels, oysters, cod, halibut — all types of wild-caught fish and shellfish</li>
+  <li><strong>Organ meats:</strong> Liver, heart, kidney — these are nutrient powerhouses and highly encouraged on AIP</li>
+  <li><strong>Bone broth:</strong> Rich in collagen, glycine, and minerals that support gut healing</li>
+</ul>
+
+<h3>Vegetables (Non-Nightshade)</h3>
+<ul>
+  <li><strong>Leafy greens:</strong> Spinach, kale, arugula, romaine, Swiss chard, collard greens, bok choy, watercress</li>
+  <li><strong>Cruciferous vegetables:</strong> Broccoli, cauliflower, Brussels sprouts, cabbage (cooked is easier on digestion)</li>
+  <li><strong>Root vegetables:</strong> Sweet potatoes, beets, carrots, parsnips, turnips, rutabaga, radishes</li>
+  <li><strong>Squash:</strong> Butternut squash, acorn squash, spaghetti squash, zucchini, yellow squash, pumpkin</li>
+  <li><strong>Other vegetables:</strong> Asparagus, artichokes, celery, cucumber, leeks, onions, garlic, mushrooms, fennel, jicama</li>
+</ul>
+
+<h3>Fruits</h3>
+<ul>
+  <li><strong>All whole fruits</strong> are allowed: Berries (blueberries, strawberries, raspberries, blackberries), apples, pears, bananas, plantains, grapes, citrus fruits, melons, mangoes, papayas, figs, dates, cherries, peaches, plums, kiwi, pomegranate, coconut</li>
+  <li><strong>Note:</strong> While all fruits are allowed, we recommend moderating high-sugar fruits and prioritizing berries and lower-glycemic options, especially if blood sugar regulation is a concern</li>
+</ul>
+
+<h3>Healthy Fats</h3>
+<ul>
+  <li><strong>Avocado</strong> and avocado oil</li>
+  <li><strong>Olive oil</strong> (extra virgin, cold-pressed)</li>
+  <li><strong>Coconut oil,</strong> coconut cream, coconut milk (full-fat, no additives)</li>
+  <li><strong>Animal fats:</strong> Lard, tallow, duck fat (from quality sources)</li>
+  <li><strong>Palm oil</strong> (sustainably sourced)</li>
+</ul>
+
+<h3>Herbs, Spices & Seasonings (Non-Seed-Based)</h3>
+<ul>
+  <li><strong>Fresh herbs:</strong> Basil, oregano, thyme, rosemary, cilantro, parsley, mint, dill, chives, lemongrass, sage</li>
+  <li><strong>Spices:</strong> Turmeric, ginger, cinnamon, garlic powder, onion powder, saffron, cloves, mace, horseradish</li>
+  <li><strong>Other:</strong> Apple cider vinegar, balsamic vinegar (gluten-free), coconut aminos (soy sauce substitute), sea salt, nutritional yeast (for some people)</li>
+</ul>
+
+<h3>Fermented Foods</h3>
+<ul>
+  <li>Sauerkraut (raw, unpasteurized)</li>
+  <li>Kimchi (made without nightshade peppers)</li>
+  <li>Kombucha</li>
+  <li>Coconut milk yogurt or kefir</li>
+  <li>Kvass</li>
+</ul>
+
+<h3>Beverages</h3>
+<ul>
+  <li>Water, sparkling water</li>
+  <li>Herbal teas (non-seed-based: ginger, peppermint, chamomile, rooibos, turmeric)</li>
+  <li>Bone broth</li>
+  <li>Coconut milk</li>
+  <li>Fresh-pressed vegetable juices</li>
+</ul>
+
+<h2>Phase 1: Foods to ELIMINATE</h2>
+<p>
+  These foods are removed during the elimination phase because they are the most common triggers of intestinal permeability, inflammation, and immune activation. This is not a permanent restriction — it's a temporary reset.
+</p>
+
+<h3>Grains (All Types)</h3>
+<ul>
+  <li>Wheat, barley, rye, oats, corn, rice, millet, sorghum, teff, amaranth, buckwheat, quinoa</li>
+  <li>This includes all products made from grains: bread, pasta, cereal, crackers, flour tortillas, baked goods</li>
+</ul>
+
+<h3>Legumes (All Types)</h3>
+<ul>
+  <li>Beans (black, kidney, pinto, navy, white, chickpeas/garbanzo)</li>
+  <li>Lentils, split peas, peanuts (peanuts are a legume, not a nut)</li>
+  <li>Soybeans and all soy products (tofu, tempeh, soy sauce, edamame, soy lecithin)</li>
+</ul>
+
+<h3>Dairy (All Types)</h3>
+<ul>
+  <li>Milk, cheese, yogurt, butter, ghee, cream, ice cream, whey protein, casein</li>
+  <li>This includes dairy from all animals: cow, goat, sheep</li>
+</ul>
+
+<h3>Nightshades</h3>
+<ul>
+  <li>Tomatoes, potatoes (sweet potatoes are fine — they're not nightshades), eggplant, all peppers (bell peppers, chili peppers, jalape\u00f1os, cayenne, paprika)</li>
+  <li>Nightshade-derived spices: paprika, chili powder, cayenne pepper, red pepper flakes, curry powder (most blends contain nightshade spices)</li>
+  <li>Goji berries, ground cherries, ashwagandha (yes, ashwagandha is a nightshade)</li>
+</ul>
+
+<h3>Eggs</h3>
+<ul>
+  <li>Both whites and yolks are eliminated. Egg whites contain lysozyme and other proteins that can be particularly irritating to a compromised gut lining</li>
+</ul>
+
+<h3>Nuts and Seeds (All Types)</h3>
+<ul>
+  <li>Tree nuts: almonds, walnuts, cashews, pecans, pistachios, macadamia nuts, Brazil nuts, hazelnuts</li>
+  <li>Seeds: sunflower seeds, pumpkin seeds, sesame seeds, chia seeds, flax seeds, hemp seeds, poppy seeds</li>
+  <li>Seed-based spices: cumin, coriander, fennel seed, mustard seed, nutmeg, caraway, anise, celery seed, dill seed, fenugreek, black pepper</li>
+  <li>Cocoa and chocolate (cocoa is a seed)</li>
+  <li>Coffee (coffee is a seed)</li>
+</ul>
+
+<h3>Refined Sugars and Processed Foods</h3>
+<ul>
+  <li>White sugar, high-fructose corn syrup, artificial sweeteners (aspartame, sucralose, saccharin)</li>
+  <li>All processed and packaged foods with additives, preservatives, emulsifiers, or thickeners (carrageenan, guar gum, xanthan gum)</li>
+</ul>
+
+<h3>Alcohol</h3>
+<ul>
+  <li>All forms of alcohol are eliminated during the elimination phase</li>
+</ul>
+
+<h3>NSAIDs</h3>
+<ul>
+  <li>While not a food, it's worth noting that non-steroidal anti-inflammatory drugs like ibuprofen (Advil) and naproxen (Aleve) are known to damage the gut lining and should be avoided if possible during the protocol</li>
+</ul>
+
+<h2>Phase 2: The Reintroduction Process</h2>
+<p>
+  This is arguably the most important part of the AIP protocol, and it's where I see patients make the most mistakes. Reintroduction is NOT about going back to eating everything you ate before. It's a structured, methodical process of testing one food at a time to determine your individual tolerances. Done correctly, it gives you a personalized roadmap for eating that's based on your body's actual responses — not guesswork.
+</p>
+
+<h3>When to Start Reintroductions</h3>
+<p>
+  You should stay in the elimination phase for a minimum of 30 days, though 60 to 90 days is ideal for most autoimmune patients. Before beginning reintroductions, you should notice meaningful improvement in your symptoms — whether that's reduced joint pain, better digestion, clearer skin, more energy, or improved lab markers. If you haven't seen improvement after 90 days, there may be other factors at play (infections, mold exposure, hormonal imbalances), and I'd recommend working with a practitioner to investigate further.
+</p>
+
+<h3>The Reintroduction Stages</h3>
+<p>
+  Foods are reintroduced in a specific order, starting with the least likely to cause a reaction and progressing to the most common triggers. Here's the recommended sequence:
+</p>
+
+<p><strong>Stage 1 — Least Likely to React (Reintroduce First):</strong></p>
+<ul>
+  <li>Egg yolks (without whites)</li>
+  <li>Seed-based spices (black pepper, cumin, coriander, fennel, mustard)</li>
+  <li>Fruit and berry-based spices (vanilla, allspice)</li>
+  <li>Ghee (clarified butter — the milk proteins are removed)</li>
+  <li>Occasional coffee</li>
+  <li>Cocoa/chocolate</li>
+</ul>
+
+<p><strong>Stage 2 — Moderate Risk:</strong></p>
+<ul>
+  <li>Egg whites</li>
+  <li>Nuts (start with macadamia or blanched almonds, which tend to be best tolerated)</li>
+  <li>Seeds (start with sunflower or pumpkin)</li>
+  <li>Grass-fed butter</li>
+  <li>Alcohol in small amounts (clear spirits like vodka or gin, dry wines)</li>
+</ul>
+
+<p><strong>Stage 3 — Higher Risk:</strong></p>
+<ul>
+  <li>Nightshades (start with cooked, peeled nightshades like well-cooked tomato sauce or peeled roasted peppers before trying raw tomatoes or potatoes)</li>
+  <li>Dairy (start with fermented dairy like yogurt or kefir, then hard cheeses, then soft cheeses, then milk)</li>
+  <li>White rice (the least problematic grain for most people)</li>
+  <li>Legumes with edible pods (green beans, snap peas)</li>
+</ul>
+
+<p><strong>Stage 4 — Most Likely to React (Reintroduce Last):</strong></p>
+<ul>
+  <li>Gluten-free grains (oats, corn, quinoa)</li>
+  <li>Legumes (lentils, chickpeas, beans)</li>
+  <li>Gluten-containing grains (wheat, barley, rye) — many autoimmune patients find they do best permanently avoiding gluten</li>
+  <li>Soy products</li>
+</ul>
+
+<h3>How to Reintroduce a Single Food</h3>
+<p>
+  For each food you reintroduce, follow this 7-day protocol:
+</p>
+<p>
+  <strong>Day 1:</strong> Eat a small amount of the test food (about half a teaspoon) first thing in the morning. Wait 15 minutes. If no immediate reaction, eat a slightly larger portion (about a tablespoon). Wait another 15 minutes. If still no reaction, eat a normal serving size. Then stop eating that food completely for the rest of the day.
+</p>
+<p>
+  <strong>Days 2 through 4:</strong> Do NOT eat the test food. Instead, pay close attention to how you feel over the next 72 hours. Reactions can be delayed by up to three days, which is why this waiting period is critical.
+</p>
+<p>
+  <strong>What to watch for:</strong> Digestive symptoms (bloating, gas, diarrhea, constipation, stomach pain), skin changes (rash, acne, eczema flare), joint pain or stiffness, headaches, fatigue, brain fog, mood changes, sleep disruption, sinus congestion, or any return of your autoimmune symptoms.
+</p>
+<p>
+  <strong>Day 5 onward:</strong> If you had NO reactions during the 72-hour observation period, the food passes. You can add it back into your regular diet. If you DID react, that food stays out. You can retry it in 1 to 3 months, as your gut continues to heal and your tolerance may improve.
+</p>
+<p>
+  <strong>Important:</strong> Only test ONE new food at a time. If you reintroduce multiple foods simultaneously, you won't be able to tell which one caused a reaction.
+</p>
+
+<h2>Common Mistakes I See Patients Make</h2>
+<p>
+  After guiding hundreds of patients through AIP, here are the most common pitfalls:
+</p>
+<ul>
+  <li><strong>Rushing the elimination phase.</strong> Thirty days is the minimum. If you've had autoimmune symptoms for years, your gut needs more than four weeks to heal. Be patient.</li>
+  <li><strong>Not eating enough.</strong> AIP is not meant to be a calorie-restricted diet. You need to eat sufficient quantities of the allowed foods to maintain your energy and nutrition. Load up on sweet potatoes, avocados, quality meats, and plenty of vegetables.</li>
+  <li><strong>Reintroducing too many foods at once.</strong> One food at a time, with a full observation period. There are no shortcuts here.</li>
+  <li><strong>Ignoring the lifestyle component.</strong> Diet is powerful, but it's not the whole picture. Sleep, stress management, gentle movement, and social connection all influence your immune system. AIP works best when it's part of a comprehensive approach to health.</li>
+  <li><strong>Treating AIP as a permanent diet.</strong> The goal is NOT to eat this restrictively forever. The goal is to identify your triggers and build a personalized diet that works for you long-term. Most patients are able to reintroduce many foods successfully.</li>
+</ul>
+
+<h2>What Results Can You Expect?</h2>
+<p>
+  In my clinical experience, patients who commit to AIP for at least 60 days typically report significant improvements in their symptoms. Many see reductions in joint pain, skin clearing, better digestion, improved energy, reduced brain fog, and — most importantly — measurable improvements in their autoimmune markers on lab work. Some patients achieve full remission of their symptoms. Others find that while AIP doesn't eliminate their condition entirely, it gives them a powerful tool for managing flares and maintaining a higher quality of life.
+</p>
+
+<h2>You Don't Have to Do This Alone</h2>
+<p>
+  Starting AIP can feel overwhelming, especially when you look at the list of eliminated foods. But here's what I tell every patient: focus on what you CAN eat, not what you can't. The allowed food list is abundant and delicious. And the temporary sacrifice of certain foods is a small price to pay for the information you'll gain about your body and the relief you'll likely experience.
+</p>
+<p>
+  At Purety Family Medical Clinic, we don't just hand you a food list and send you on your way. We provide comprehensive support throughout the entire process — from pre-protocol lab work and gut health testing, through the elimination phase, and into a carefully guided reintroduction. We can also complement AIP with other therapies like <a href="/fecal-transplant">Fecal Microbiota Transplant (FMT)</a>, IV nutrient therapy, and targeted supplementation to accelerate your healing.
+</p>
+<p>
+  If you're living with an autoimmune condition and you're ready to explore how food can be part of your healing, I'd encourage you to reach out. Understanding your body's unique relationship with food is one of the most powerful steps you can take toward reclaiming your health.
+</p>`
+  },
+
   // --- Hidden Posts ---
   {
     id: "olivirex-olive-leaf",
