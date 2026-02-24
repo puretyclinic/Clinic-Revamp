@@ -77,7 +77,7 @@ export default function BlogPost() {
 
         <section className="pb-24 bg-white">
           <div className="container mx-auto px-4 max-w-3xl">
-            <FadeIn delay={0.3} className="prose prose-lg prose-slate prose-headings:font-serif prose-headings:font-bold prose-a:text-primary hover:prose-a:text-accent prose-p:mb-6 prose-p:leading-relaxed prose-h2:mt-12 prose-h2:mb-5 prose-h3:mt-8 prose-h3:mb-4 prose-ul:mb-6 prose-li:mb-1.5 prose-blockquote:my-8">
+            <FadeIn delay={0.3} className="blog-content text-lg text-foreground/90 font-sans">
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </FadeIn>
 
