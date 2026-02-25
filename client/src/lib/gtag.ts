@@ -1,4 +1,5 @@
 export const GA_ADS_ID = "AW-11190214934";
+export const GA_ADS_ID_2 = "AW-11102567891";
 export const GA4_ID = "G-NFLLBLBKET";
 
 declare global {
@@ -44,6 +45,12 @@ export const trackFormSubmission = (formSource: string) => {
     window.gtag("event", "contact", {
       event_category: "Contact",
       event_label: formSource,
+    });
+
+    window.gtag("event", "conversion", {
+      send_to: "AW-11102567891/14sQCJPe1_0bENP7jq4p",
+      value: 1.0,
+      currency: "USD",
     });
   }
 };
