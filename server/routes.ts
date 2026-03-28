@@ -103,6 +103,7 @@ async function sendEmailNotification(data: {
     const to = "drjonathan@puretyclinic.com";
     const rawMessage = [
       `To: ${to}`,
+      `Reply-To: ${data.firstName} ${data.lastName} <${data.email}>`,
       `Subject: ${subject}`,
       `MIME-Version: 1.0`,
       `Content-Type: text/html; charset=UTF-8`,
