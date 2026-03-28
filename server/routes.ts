@@ -139,16 +139,39 @@ export async function registerRoutes(
     // Honeypot: if the hidden field has any value, it's a bot
     if (body._honey && body._honey.trim().length > 0) return true;
 
+    const message = (body.message || "") as string;
+    const firstName = (body.firstName || "") as string;
+    const lastName = (body.lastName || "") as string;
+    const email = (body.email || "") as string;
+
+    // Block messages containing URLs — real patients never paste links
+    if (/https?:\/\//i.test(message)) return true;
+    if (/www\.[a-z0-9-]+\.[a-z]{2,}/i.test(message)) return true;
+
+    // Keyword blocklist for common marketing/spam patterns
+    const spamKeywords = [
+      "turbojot", "cold email", "paid ads", "roi", "per submission",
+      "automate", "contact form submission", "sign up for free",
+      "beats cold", "stealth browser", "rotating ip", "captcha solving",
+      "invite you to try", "founded the company", "costs just $",
+    ];
+    const msgLower = message.toLowerCase();
+    if (spamKeywords.some((kw) => msgLower.includes(kw))) return true;
+
     // Detect random-string spam: no spaces and long runs of mixed-case chars
     const randomStringPattern = /^[A-Za-z]{12,}$/;
-    if (randomStringPattern.test((body.firstName || "").replace(/\s/g, ""))) return true;
-    if (randomStringPattern.test((body.lastName || "").replace(/\s/g, ""))) return true;
-    if (randomStringPattern.test((body.message || "").replace(/\s/g, ""))) return true;
+    if (randomStringPattern.test(firstName.replace(/\s/g, ""))) return true;
+    if (randomStringPattern.test(lastName.replace(/\s/g, ""))) return true;
+    if (randomStringPattern.test(message.replace(/\s/g, ""))) return true;
 
     // Detect messages with no vowels (another bot tell)
     const vowelPattern = /[aeiouAEIOU]/;
-    const msg = (body.message || "").replace(/\s/g, "");
-    if (msg.length > 10 && !vowelPattern.test(msg)) return true;
+    const msgNoSpaces = message.replace(/\s/g, "");
+    if (msgNoSpaces.length > 10 && !vowelPattern.test(msgNoSpaces)) return true;
+
+    // Block known spam email domains
+    const spamDomains = ["turbojot.com"];
+    if (spamDomains.some((d) => email.toLowerCase().endsWith(`@${d}`))) return true;
 
     return false;
   }
