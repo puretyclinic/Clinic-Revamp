@@ -28,6 +28,7 @@ export default function Contact() {
       phone: formData.get("phone") as string,
       message: formData.get("message") as string,
       source: "Contact Page",
+      _honey: formData.get("_honey") as string,
     };
 
     try {

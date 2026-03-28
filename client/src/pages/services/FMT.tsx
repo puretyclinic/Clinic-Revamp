@@ -109,6 +109,7 @@ export default function FMT() {
       phone: formData.get("phone") as string,
       message: `Primary Concern: ${formData.get("concern")}\n\n${formData.get("message") || ""}`,
       source: "FMT Page - puretyclinic.com/fecal-transplant",
+      _honey: formData.get("_honey") as string,
     };
 
     try {

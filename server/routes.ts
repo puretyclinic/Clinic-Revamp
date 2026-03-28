@@ -134,8 +134,32 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
 
+  function isSpam(body: any): boolean {
+    // Honeypot: if the hidden field has any value, it's a bot
+    if (body._honey && body._honey.trim().length > 0) return true;
+
+    // Detect random-string spam: no spaces and long runs of mixed-case chars
+    const randomStringPattern = /^[A-Za-z]{12,}$/;
+    if (randomStringPattern.test((body.firstName || "").replace(/\s/g, ""))) return true;
+    if (randomStringPattern.test((body.lastName || "").replace(/\s/g, ""))) return true;
+    if (randomStringPattern.test((body.message || "").replace(/\s/g, ""))) return true;
+
+    // Detect messages with no vowels (another bot tell)
+    const vowelPattern = /[aeiouAEIOU]/;
+    const msg = (body.message || "").replace(/\s/g, "");
+    if (msg.length > 10 && !vowelPattern.test(msg)) return true;
+
+    return false;
+  }
+
   app.post("/api/contact", async (req, res) => {
     try {
+      // Silently reject spam — return success so bots don't retry
+      if (isSpam(req.body)) {
+        console.log("Spam submission blocked:", req.body.firstName, req.body.email);
+        return res.json({ success: true });
+      }
+
       const parsed = insertContactSchema.safeParse(req.body);
       if (!parsed.success) {
         return res.status(400).json({ success: false, message: "Please fill in all required fields." });
