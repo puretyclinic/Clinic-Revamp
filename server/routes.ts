@@ -135,6 +135,22 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
 
+  // Returns true if the string looks like a bot-generated random sequence
+  function looksRandom(str: string): boolean {
+    if (!str || str.length < 8) return false;
+    const s = str.replace(/\s/g, "");
+    if (s.length < 8) return false;
+    // Count uppercase letters after position 0
+    const upperAfterFirst = (s.slice(1).match(/[A-Z]/g) || []).length;
+    // Real names rarely have more than 1-2 uppercase letters after the first
+    if (upperAfterFirst > 2) return true;
+    // No vowels at all
+    if (!/[aeiouAEIOU]/.test(s)) return true;
+    // All same case with 10+ chars — bots sometimes do all-lowercase gibberish
+    if (s.length >= 10 && s === s.toLowerCase() && !/[aeiou]/.test(s)) return true;
+    return false;
+  }
+
   function isSpam(body: any): boolean {
     // Honeypot: if the hidden field has any value, it's a bot
     if (body._honey && body._honey.trim().length > 0) return true;
@@ -158,16 +174,10 @@ export async function registerRoutes(
     const msgLower = message.toLowerCase();
     if (spamKeywords.some((kw) => msgLower.includes(kw))) return true;
 
-    // Detect random-string spam: no spaces and long runs of mixed-case chars
-    const randomStringPattern = /^[A-Za-z]{12,}$/;
-    if (randomStringPattern.test(firstName.replace(/\s/g, ""))) return true;
-    if (randomStringPattern.test(lastName.replace(/\s/g, ""))) return true;
-    if (randomStringPattern.test(message.replace(/\s/g, ""))) return true;
-
-    // Detect messages with no vowels (another bot tell)
-    const vowelPattern = /[aeiouAEIOU]/;
-    const msgNoSpaces = message.replace(/\s/g, "");
-    if (msgNoSpaces.length > 10 && !vowelPattern.test(msgNoSpaces)) return true;
+    // Detect random-string names or messages
+    if (looksRandom(firstName)) return true;
+    if (looksRandom(lastName)) return true;
+    if (looksRandom(message)) return true;
 
     // Block known spam email domains
     const spamDomains = ["turbojot.com"];
