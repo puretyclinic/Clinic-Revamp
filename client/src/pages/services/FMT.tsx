@@ -84,9 +84,9 @@ export default function FMT() {
   const [sending, setSending] = useState(false);
 
   useEffect(() => {
-    document.title = "FMT Treatment | C. diff, SIBO, IBS, Crohn's & UC | Dr. Jonathan Birch | Purety Clinic Santa Barbara";
+    document.title = "FMT Treatment | Fecal Microbiota Transplant | Dr. Jonathan Birch | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Leading FMT specialists since 2014. 90%+ success rate for C. diff, SIBO, IBS, Crohn's disease & ulcerative colitis. Capsules, enema, or colonoscopy delivery. Remote consultations available. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Leading FMT specialists since 2014. 90%+ success rate for C. diff. Multiple treatment options: capsules, oral, enema, colonoscopy. Schedule your consultation with Dr. Birch today. (805) 500-8300");
 
     const script = document.createElement("script");
     script.type = "application/ld+json";
@@ -230,12 +230,8 @@ export default function FMT() {
                       >
                         <option value="">Select your concern...</option>
                         <option value="C. difficile (C. diff)">C. difficile (C. diff)</option>
-                        <option value="SIBO (Small Intestinal Bacterial Overgrowth)">SIBO (Small Intestinal Bacterial Overgrowth)</option>
-                        <option value="IBS (Irritable Bowel Syndrome)">IBS (Irritable Bowel Syndrome)</option>
-                        <option value="Crohn's Disease">Crohn's Disease</option>
-                        <option value="Ulcerative Colitis">Ulcerative Colitis</option>
-                        <option value="Gut Dysbiosis / Microbiome Imbalance">Gut Dysbiosis / Microbiome Imbalance</option>
-                        <option value="Gut Health Consultation">General Gut Health Consultation</option>
+                        <option value="Gut Health Consultation">Gut Health Consultation</option>
+                        <option value="Digestive Wellness">Digestive Wellness</option>
                         <option value="Other">Other - I'd like to discuss</option>
                       </select>
                     </div>
@@ -378,118 +374,6 @@ export default function FMT() {
                 </div>
               </FadeIn>
             </div>
-          </div>
-        </section>
-
-        <section className="py-20 bg-white" id="conditions">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <FadeIn>
-              <div className="text-center mb-14">
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Conditions We Treat with FMT</h2>
-                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">FMT is effective for a range of gut and microbiome-related conditions. Dr. Birch tailors every protocol to your specific diagnosis and history.</p>
-              </div>
-            </FadeIn>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <FadeIn delay={0.1}>
-                <div className="bg-[#f8fafb] rounded-2xl p-8 border border-gray-100 h-full">
-                  <div className="text-3xl mb-3">🦠</div>
-                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">Recurrent C. difficile (C. diff)</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    FMT is the most effective treatment for recurrent <em>Clostridioides difficile</em> infection, with a 90%+ cure rate. If you've had two or more C. diff recurrences — or antibiotic-resistant C. diff — FMT restores the healthy gut flora that antibiotics destroyed, breaking the cycle for good.
-                  </p>
-                  <ul className="space-y-1.5 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> 90%+ cure rate for recurrent C. diff</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Effective even after vancomycin & fidaxomicin failure</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Most patients see relief within 1–2 weeks</li>
-                  </ul>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.15}>
-                <div className="bg-[#f8fafb] rounded-2xl p-8 border border-gray-100 h-full">
-                  <div className="text-3xl mb-3">🌀</div>
-                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">SIBO (Small Intestinal Bacterial Overgrowth)</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    SIBO occurs when bacteria that belong in the large intestine migrate into the small intestine, causing bloating, gas, abdominal pain, diarrhea, and constipation. FMT re-colonizes the gut with a balanced microbial community, addressing the underlying dysbiosis that drives SIBO recurrence — something antibiotics like rifaximin can't achieve alone.
-                  </p>
-                  <ul className="space-y-1.5 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Addresses root-cause dysbiosis, not just symptoms</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Reduces relapse after antibiotic treatment</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Combined with dietary and motility support</li>
-                  </ul>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.2}>
-                <div className="bg-[#f8fafb] rounded-2xl p-8 border border-gray-100 h-full">
-                  <div className="text-3xl mb-3">⚡</div>
-                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">IBS (Irritable Bowel Syndrome)</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    Research increasingly links IBS — both IBS-C (constipation predominant) and IBS-D (diarrhea predominant) — to microbiome imbalances. FMT has shown meaningful symptom reduction in multiple clinical trials for IBS, particularly post-infectious IBS. If you've tried elimination diets and medications without lasting relief, FMT may offer a new path.
-                  </p>
-                  <ul className="space-y-1.5 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Effective for both IBS-C and IBS-D</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Especially promising for post-infectious IBS</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Addresses gut-brain axis and motility</li>
-                  </ul>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.25}>
-                <div className="bg-[#f8fafb] rounded-2xl p-8 border border-gray-100 h-full">
-                  <div className="text-3xl mb-3">🔥</div>
-                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">Ulcerative Colitis (UC)</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    Ulcerative colitis is a chronic inflammatory condition of the colon with a well-documented microbiome component. Clinical trials have shown FMT can induce remission in mild-to-moderate UC, with some patients achieving steroid-free remission. We work alongside your gastroenterologist to integrate FMT into your overall UC management plan.
-                  </p>
-                  <ul className="space-y-1.5 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Clinical trial data supports remission induction</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Can complement existing UC medications</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Colonoscopy delivery for maximum coverage</li>
-                  </ul>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.3}>
-                <div className="bg-[#f8fafb] rounded-2xl p-8 border border-gray-100 h-full">
-                  <div className="text-3xl mb-3">🩺</div>
-                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">Crohn's Disease</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    Crohn's disease involves complex immune dysregulation with a clear microbiome component — patients with Crohn's show reduced microbial diversity and altered bacterial composition. While FMT for Crohn's is still emerging, it shows promise for reducing inflammation and improving quality of life, particularly in patients with concurrent C. diff or significant gut dysbiosis.
-                  </p>
-                  <ul className="space-y-1.5 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Supports microbiome diversity restoration</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Complements biologics and immunomodulators</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Individualized protocol based on disease activity</li>
-                  </ul>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.35}>
-                <div className="bg-[#f8fafb] rounded-2xl p-8 border border-gray-100 h-full">
-                  <div className="text-3xl mb-3">⚖️</div>
-                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">Gut Dysbiosis & Microbiome Imbalance</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    Gut dysbiosis — an imbalance of the intestinal microbiome — underlies a wide range of chronic symptoms: persistent bloating, fatigue, brain fog, food intolerances, skin issues, and immune dysfunction. Dysbiosis often follows antibiotic use, illness, poor diet, or chronic stress. FMT is the most direct way to rebuild a healthy, diverse gut microbiome from the ground up.
-                  </p>
-                  <ul className="space-y-1.5 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Rebuilds microbiome diversity after antibiotic damage</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Addresses root cause, not just symptoms</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" /> Supported by comprehensive gut health testing</li>
-                  </ul>
-                </div>
-              </FadeIn>
-            </div>
-
-            <FadeIn delay={0.4}>
-              <div className="mt-12 text-center">
-                <p className="text-muted-foreground mb-6">Not sure if FMT is right for your condition? Schedule a consultation and Dr. Birch will review your case personally.</p>
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold rounded-lg px-8" onClick={scrollToForm} data-testid="button-conditions-cta">
-                  Schedule a Free Case Review
-                </Button>
-              </div>
-            </FadeIn>
           </div>
         </section>
 
@@ -653,28 +537,12 @@ export default function FMT() {
                   answer="FMT is remarkably safe when performed with properly screened donor material. Common side effects are mild and temporary: bloating, gas, or mild cramping for 1-2 days. Serious adverse effects are extremely rare, especially with our rigorous donor screening protocols."
                 />
                 <FAQItem
-                  question="Can FMT help with SIBO?"
-                  answer="Yes. SIBO (Small Intestinal Bacterial Overgrowth) is fundamentally a microbiome imbalance problem. While antibiotics like rifaximin can temporarily reduce bacterial overgrowth, they don't address the underlying dysbiosis that allows SIBO to recur. FMT re-colonizes the gut with a diverse, healthy microbial community, helping to normalize bacterial populations and reduce the conditions that allow SIBO to come back. We typically combine FMT with dietary and motility support for the best outcomes."
-                />
-                <FAQItem
-                  question="Is FMT effective for IBS?"
-                  answer="Research supports FMT as a promising treatment for IBS, particularly IBS-D (diarrhea-predominant) and post-infectious IBS. Multiple clinical trials have shown significant symptom improvement in IBS patients who received FMT. The gut-brain connection plays a major role in IBS, and restoring a healthy microbiome can positively influence gut motility, inflammation, and the gut-brain axis. Results vary by patient, and we'll review your specific history during your consultation."
-                />
-                <FAQItem
-                  question="Can FMT help with ulcerative colitis or Crohn's disease?"
-                  answer="FMT has shown the most clinical evidence in ulcerative colitis, with multiple randomized controlled trials demonstrating remission induction in mild-to-moderate UC. For Crohn's disease, the evidence is earlier but promising, especially in patients with concurrent gut dysbiosis or C. diff. We work alongside your gastroenterologist to integrate FMT appropriately into your IBD management. During your consultation, Dr. Birch will review your disease activity, medications, and history to determine if and how FMT fits your situation."
-                />
-                <FAQItem
                   question="Do you offer remote consultations?"
                   answer="Yes! We frequently do initial consultations remotely for patients outside the Santa Barbara area. After your consultation, we can discuss whether you'll need to travel to our clinic or if certain treatments can be managed remotely."
                 />
                 <FAQItem
                   question="How much does FMT treatment cost?"
                   answer="Treatment costs vary based on your specific protocol and delivery method. We discuss pricing during your initial consultation. Many patients find FMT cost-effective compared to ongoing antibiotics, repeated hospitalizations, and lost quality of life from chronic illness."
-                />
-                <FAQItem
-                  question="How is your FMT different from OpenBiome or hospital FMT?"
-                  answer="Unlike hospital-based FMT (which is typically limited to severe, recurrent C. diff and requires a procedural suite), our clinic offers multiple delivery methods — capsules, oral liquid, retention enema, and colonoscopy — tailored to your condition. We use super donors who are screened far beyond FDA minimums. We also see patients with a wider range of conditions including SIBO, IBS, and IBD. Remote consultations and home-based treatment options make access possible for patients anywhere in the country."
                 />
               </div>
             </FadeIn>
