@@ -51,7 +51,7 @@ const fmtStructuredData = {
     "streetAddress": "2323 Oak Park Ln, Suite 102",
     "addressLocality": "Santa Barbara",
     "addressRegion": "CA",
-    "postalCode": "93110",
+    "postalCode": "93105",
     "addressCountry": "US"
   },
   "geo": {
