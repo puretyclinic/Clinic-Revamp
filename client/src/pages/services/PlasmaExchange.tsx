@@ -1,12 +1,96 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Droplet, Activity, RefreshCw, AlertCircle, CheckCircle2, ShieldCheck, HeartPulse } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
+import { Link } from "wouter";
 
 export default function PlasmaExchange() {
+  useEffect(() => {
+    document.title = "Therapeutic Plasma Exchange (TPE) Santa Barbara | Purety Clinic";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Therapeutic Plasma Exchange (TPE) at Purety Clinic in Santa Barbara, CA. Advanced plasmapheresis for autoimmune disease, Long Covid, MS, and blood detoxification. Call (805) 500-8300.");
+
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "MedicalProcedure",
+      "name": "Therapeutic Plasma Exchange (TPE)",
+      "alternateName": ["Plasmapheresis", "TPE", "Plasma Exchange"],
+      "description": "Therapeutic Plasma Exchange (TPE) is an advanced medical procedure that removes harmful antibodies, toxins, and inflammatory proteins from the bloodstream by separating and replacing plasma. Offered at Purety Family Medical Clinic in Santa Barbara, CA.",
+      "procedureType": "Therapeutic",
+      "bodyLocation": "Blood",
+      "preparation": "Consultation with Dr. Jonathan Birch to assess candidacy and design a treatment protocol.",
+      "followUp": "Monitoring for 30 minutes post-procedure. Most patients receive 1 treatment per month for 5 months.",
+      "howPerformed": "Blood is drawn through peripheral IV access, separated into plasma and cellular components using a specialized apheresis machine. The plasma is discarded and replaced with albumin. Cleansed blood components are returned to the patient.",
+      "performer": {
+        "@type": "Physician",
+        "name": "Dr. Jonathan Birch",
+        "worksFor": {
+          "@type": "MedicalClinic",
+          "name": "Purety Family Medical Clinic",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2323 Oak Park Ln, Suite 102",
+            "addressLocality": "Santa Barbara",
+            "addressRegion": "CA",
+            "postalCode": "93105"
+          },
+          "telephone": "+1-805-500-8300",
+          "url": "https://puretyclinic.com"
+        }
+      }
+    };
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does a therapeutic plasma exchange procedure take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most TPE procedures last between 1 to 2.5 hours, depending on your constitution and specific treatment needs." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is therapeutic plasma exchange painful?",
+          "acceptedAnswer": { "@type": "Answer", "text": "TPE is generally well-tolerated. Veins are numbed prior to IV access, and we use ultrasound guidance when necessary to ensure smooth, comfortable access." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many plasma exchange treatments will I need?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The number of treatments varies by condition. We generally start with 1 treatment per month for 5 months, then reassess based on your response." }
+        },
+        {
+          "@type": "Question",
+          "name": "What conditions can therapeutic plasma exchange treat?",
+          "acceptedAnswer": { "@type": "Answer", "text": "TPE has shown clinical benefit for autoimmune conditions including lupus, myasthenia gravis, multiple sclerosis, Guillain-Barré syndrome, Goodpasture's syndrome, TTP, Long Covid, and certain neurodegenerative conditions including Alzheimer's disease." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is plasma exchange available in Santa Barbara?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Purety Family Medical Clinic in Santa Barbara offers therapeutic plasma exchange (TPE) under the care of Dr. Jonathan Birch. We serve patients from Santa Barbara, Ventura, Los Angeles, and throughout California." }
+        }
+      ]
+    };
+
+    const s1 = document.createElement("script");
+    s1.type = "application/ld+json"; s1.id = "tpe-procedure-schema";
+    s1.text = JSON.stringify(schema);
+    document.head.appendChild(s1);
+
+    const s2 = document.createElement("script");
+    s2.type = "application/ld+json"; s2.id = "tpe-faq-schema";
+    s2.text = JSON.stringify(faqSchema);
+    document.head.appendChild(s2);
+
+    return () => {
+      document.getElementById("tpe-procedure-schema")?.remove();
+      document.getElementById("tpe-faq-schema")?.remove();
+    };
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
       <Navbar />

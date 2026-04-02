@@ -1262,6 +1262,88 @@ export const blogPosts: BlogPost[] = [
 </p>`
   },
 
+  {
+    id: "therapeutic-plasma-exchange-guide",
+    title: "Therapeutic Plasma Exchange (TPE): What It Is, Who It's For, and What to Expect",
+    excerpt: "Therapeutic Plasma Exchange is one of the most powerful blood purification therapies available in integrative medicine. Here's a comprehensive guide to how it works, what conditions it helps, and what the treatment process looks like at our Santa Barbara clinic.",
+    date: "April 20, 2026",
+    author: "Dr. Jonathan Birch",
+    authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612849607964-HHKKT71DKVC2FOBPIQCM/Jonathan+Birch+MD",
+    authorTitle: "Medical Director",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=800",
+    category: "Advanced Therapies",
+    tags: ["TPE", "PlasmaExchange", "Plasmapheresis", "Autoimmune", "LongCovid"],
+    content: `<p class="lead text-xl text-muted-foreground mb-8">
+  Therapeutic Plasma Exchange — known as TPE or plasmapheresis — is one of the most powerful and underutilized therapies in integrative medicine. It works by physically removing harmful substances from the bloodstream: autoimmune antibodies, inflammatory proteins, toxins, and accumulated metabolic byproducts that contribute to chronic disease. Unlike medications that try to suppress or modulate these substances, TPE removes them directly. For patients with certain autoimmune conditions, neurological diseases, Long Covid, or those seeking blood rejuvenation and longevity protocols, it represents a fundamentally different mechanism of action than anything else available.
+</p>
+
+<h2>What Is Therapeutic Plasma Exchange?</h2>
+<p>
+  Your blood is composed of two main components: cellular elements (red blood cells, white blood cells, and platelets) and plasma — the liquid portion that makes up roughly 55% of blood volume. Plasma carries proteins, clotting factors, hormones, nutrients, and, critically, antibodies and inflammatory mediators.
+</p>
+<p>
+  In therapeutic plasma exchange, blood is drawn from the patient, passed through a specialized apheresis machine that separates plasma from the cellular components, and then returned to the patient with the plasma replaced by albumin — a natural human protein that restores appropriate blood volume and osmotic balance. The process effectively "cleans" the blood by removing whatever was circulating in that plasma fraction.
+</p>
+<p>
+  This is not a new therapy. TPE has been used in hospital medicine for decades, with well-established applications in conditions like Guillain-Barré syndrome, myasthenia gravis, and thrombotic thrombocytopenic purpura (TTP). What's newer is its application in outpatient integrative medicine settings for a broader range of chronic inflammatory and autoimmune conditions — and as a longevity and detoxification protocol.
+</p>
+
+<h2>What Conditions Can TPE Help?</h2>
+<p>
+  TPE's primary mechanism — the physical removal of pathological antibodies and inflammatory proteins — makes it applicable to any condition where these circulating substances are driving symptoms. The evidence base varies by condition:
+</p>
+<p>
+  <strong>Autoimmune diseases:</strong> Conditions like lupus, myasthenia gravis, neuromyelitis optica, and anti-NMDA receptor encephalitis involve pathological autoantibodies that attack the body's own tissues. TPE removes these antibodies from circulation, providing symptomatic relief and reducing inflammatory burden. It is particularly useful in acute flares when rapid reduction of antibody load is needed.
+</p>
+<p>
+  <strong>Neurological conditions:</strong> Multiple sclerosis, Guillain-Barré syndrome, and chronic inflammatory demyelinating polyneuropathy (CIDP) all have components driven by circulating inflammatory mediators. TPE has an established evidence base for GBS and CIDP, and is increasingly used as an adjunct therapy in MS management.
+</p>
+<p>
+  <strong>Long Covid:</strong> One of the most compelling emerging applications. Research from Germany published in 2023 in <em>The Lancet</em> documented that Long Covid patients have measurable microclots and inflammatory mediators circulating in their blood long after acute infection resolves. A pilot study using TPE in Long Covid patients showed significant improvement in fatigue, brain fog, and exercise intolerance — symptoms that correspond to the removal of these circulating factors. This is an active area of research and one we follow closely.
+</p>
+<p>
+  <strong>Neurodegeneration and aging:</strong> Research from Stanford published in <em>Nature</em> demonstrated that "young blood" factors improve cognitive function in aged animals, and that diluting aged plasma reduces inflammatory markers associated with neurodegeneration. TPE achieves a similar dilution effect — removing aged, inflammatory plasma and replacing it with albumin. Some longevity-focused physicians have adopted this as a protocol for patients interested in reducing neuroinflammatory burden as part of a comprehensive longevity program.
+</p>
+<p>
+  <strong>Toxin and heavy metal burden:</strong> For patients with documented heavy metal accumulation or significant environmental toxin exposure, TPE can complement chelation therapy by removing protein-bound toxins that chelation agents cannot fully address.
+</p>
+
+<h2>What the Procedure Looks Like at Our Clinic</h2>
+<p>
+  At Purety Family Medical Clinic, TPE is performed in our Santa Barbara clinic under the direct supervision of Dr. Jonathan Birch. Here's what a typical session looks like:
+</p>
+<p>
+  <strong>Before your first session:</strong> We begin with a comprehensive consultation reviewing your medical history, current conditions, medications, and treatment goals. We assess your candidacy for TPE, discuss realistic expectations based on your specific diagnosis, and design a protocol. Most patients start with one session per month for five months, with reassessment after each round.
+</p>
+<p>
+  <strong>During the procedure:</strong> IV access is established in both arms. We use topical numbing cream and have ultrasound guidance available for patients with difficult venous access. Your blood is processed continuously through the apheresis machine — approximately three liters of plasma are exchanged per session. The procedure takes between 1.5 and 2.5 hours. Patients typically read, listen to music, or rest during the session.
+</p>
+<p>
+  <strong>After the procedure:</strong> You're monitored for 20–30 minutes post-procedure. Most patients feel well enough to drive themselves home, though some prefer to bring someone with them for the first session. Mild fatigue for 24 hours afterward is common. Most patients report feeling progressively better in the days following treatment.
+</p>
+
+<h2>Is TPE Safe?</h2>
+<p>
+  TPE has a well-established safety profile when performed by experienced clinicians with appropriate monitoring. The most common side effects are mild: transient lightheadedness, mild fatigue, and occasional mild bruising at the IV sites. More significant reactions are rare but include citrate-related tingling (if citrate anticoagulation is used), allergic reactions to replacement fluids, and infection at IV access sites — all of which are manageable with appropriate protocols.
+</p>
+<p>
+  At our clinic, we use albumin rather than fresh frozen plasma as the replacement fluid, which eliminates the risk of blood-borne pathogen transmission associated with FFP and significantly reduces allergic reaction risk. We monitor vital signs continuously throughout the procedure.
+</p>
+
+<h2>TPE vs. Other Blood Therapies</h2>
+<p>
+  Patients sometimes ask how TPE compares to other blood-based therapies like ozone therapy or IV therapy. They're different mechanisms entirely. IV nutrient therapy delivers beneficial substances into the bloodstream. Ozone therapy (including our EBO2 protocol) oxygenates and treats the blood as it passes extracorporeally. TPE removes harmful substances from the blood. They're not competing — for the right patient, they can be complementary parts of a comprehensive protocol.
+</p>
+
+<h2>Is TPE Right for You?</h2>
+<p>
+  TPE is a significant medical intervention and is not appropriate for every patient. Ideal candidates typically have a documented condition with an antibody or inflammatory mediator component, have not achieved adequate response from conventional treatments alone, and have the venous access necessary for the procedure.
+</p>
+<p>
+  If you're in Santa Barbara, Ventura, Los Angeles, or elsewhere in California and want to understand whether TPE might be appropriate for your situation, we're happy to start with a consultation. We'll review your case, discuss the current evidence, and give you an honest assessment of whether this therapy makes sense for you.
+</p>`
+  },
+
   // --- Hidden Posts ---
   {
     id: "olivirex-olive-leaf",
