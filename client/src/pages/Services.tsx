@@ -6,6 +6,14 @@ import { Syringe, Wind, Droplet, Flower, Activity, Baby, HeartPulse, Brain, Bone
 import { Link } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
 
+function PoopIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2a3 3 0 0 0-2.55 4.57A4 4 0 0 0 8 10a4 4 0 0 0-3.95 4.5C3.44 15.07 3 15.98 3 17a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3c0-1.02-.44-1.93-1.05-2.5A4 4 0 0 0 16 10a4 4 0 0 0-1.45-3.07A3 3 0 0 0 12 2z" />
+    </svg>
+  );
+}
+
 const services = [
   {
     category: "Consultations",
@@ -56,7 +64,7 @@ const services = [
       {
         title: "Fecal Transplant (FMT)",
         description: "Microbiome restoration for gut health and C. diff.",
-        icon: () => <span className="text-2xl leading-none">💩</span>,
+        icon: PoopIcon,
         customLink: "/services/fmt"
       },
       {
