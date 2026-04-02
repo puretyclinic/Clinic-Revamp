@@ -1076,6 +1076,98 @@ export const blogPosts: BlogPost[] = [
 </p>`
   },
 
+  {
+    id: "what-to-look-for-in-a-fecal-transplant-doctor",
+    title: "What to Look for in a Fecal Transplant Doctor: Experience, Donor Screening, and Delivery Options",
+    excerpt: "Not all FMT providers are equal. After performing over 1,000 fecal microbiota transplants since 2014, Dr. Jonathan Birch shares what patients should ask before choosing a fecal transplant doctor — and why the answers matter enormously.",
+    date: "April 18, 2026",
+    author: "Dr. Jonathan Birch",
+    authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612849607964-HHKKT71DKVC2FOBPIQCM/Jonathan+Birch+MD",
+    authorTitle: "Medical Director",
+    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&q=80&w=800",
+    category: "FMT Treatment",
+    tags: ["FMT", "FecalTransplant", "CdiffTreatment", "GutHealth", "FMTDoctor"],
+    content: `<p class="lead text-xl text-muted-foreground mb-8">
+  I've been performing Fecal Microbiota Transplantation since 2014 — before it was widely discussed, before the FDA approved the first commercial FMT product, and before most gastroenterologists would consider it for anything other than the most severe, refractory C. diff cases. In that time, I've treated over 1,000 patients. Many of them came to me after being turned away by hospital programs, after being told FMT wasn't available for their situation, or after having a failed FMT elsewhere. What I've learned from a decade of practice is that the physician and clinic you choose for FMT matters enormously — more than most patients realize when they're first researching this treatment.
+</p>
+
+<h2>Why Choosing the Right FMT Doctor Matters</h2>
+<p>
+  FMT looks deceptively simple on the surface. You transfer stool from a healthy donor to a sick recipient. What could go wrong? In practice, the variables that determine whether FMT succeeds or fails — and whether it's safe — are numerous and require genuine expertise to manage well.
+</p>
+<p>
+  Donor selection, preparation protocols, delivery method, pre-treatment antibiotic timing, patient selection, and follow-up care all affect outcomes. A physician who has performed ten FMTs is working from a fundamentally different knowledge base than one who has performed a thousand. When you're dealing with recurrent C. difficile infection — a condition that can be genuinely debilitating, occasionally life-threatening, and deeply resistant to conventional treatment — the stakes of that difference are high.
+</p>
+<p>
+  Here are the questions I'd encourage every patient to ask before choosing an FMT provider.
+</p>
+
+<h2>Question 1: How Many FMTs Has This Physician Performed?</h2>
+<p>
+  This is the most important question, and it's one that patients often feel awkward asking. Don't. Volume matters in procedural medicine, and FMT is no exception. A physician who has performed hundreds or thousands of FMTs has encountered the edge cases — the patients who don't respond on the first attempt, the patients with anatomical considerations that affect delivery, the patients whose C. diff rebounds despite initial resolution. Experience teaches you how to manage those situations.
+</p>
+<p>
+  There is no established credentialing requirement for FMT in the United States — any licensed physician can perform it. This means the range of experience among providers is enormous, from academic gastroenterologists who have done it dozens of times as part of clinical trials, to outpatient clinic physicians who have made it a core specialty, to practitioners who have performed only a handful. Ask directly: how many FMTs has this doctor personally performed? How long have they been doing it? What is their outcome data?
+</p>
+<p>
+  At our clinic, I have personally overseen over 1,000 FMT courses since 2014. Our success rate for recurrent C. difficile mirrors the best published data at above 90%.
+</p>
+
+<h2>Question 2: How Do You Screen Your Donors?</h2>
+<p>
+  This is the most critical safety question in all of FMT. The microbial community you receive is only as good — and as safe — as the donor it comes from. Inadequate donor screening can transmit infectious pathogens, including drug-resistant organisms. In 2019, the FDA paused several clinical trials after two immunocompromised patients contracted extended-spectrum beta-lactamase (ESBL)-producing <em>E. coli</em> from FMT — one of whom died. The root cause was a gap in the donor screening protocol. This is not a theoretical risk.
+</p>
+<p>
+  The FDA has issued minimum guidance on donor screening requirements. A rigorous FMT physician goes well beyond those minimums. At our clinic, our donor screening panel includes comprehensive blood testing for HIV, hepatitis B and C, HTLV, syphilis, and CMV; stool testing for C. diff, extended-spectrum pathogens, parasites, ova, norovirus, and multi-drug-resistant organisms; and thorough health history screening that excludes donors with any history of antibiotic use, autoimmune conditions, metabolic disease, or chronic illness within defined time windows.
+</p>
+<p>
+  We also practice what researchers call "super donor" selection — identifying donors whose microbiome composition consistently produces better clinical outcomes across recipients. This concept, documented in multiple randomized trials, reflects the reality that not all healthy donors produce equally effective FMT material. The diversity and specific composition of the donor microbiome matters. Ask any FMT provider how they characterize and select their donors, not just how they screen them for pathogens.
+</p>
+
+<h2>Question 3: What Delivery Methods Do You Offer?</h2>
+<p>
+  FMT can be delivered several ways: oral capsules, oral liquid, retention enema, and colonoscopy. Each has a different profile of convenience, coverage, cost, and invasiveness. A physician who offers only one delivery method — typically colonoscopy, in hospital-based programs — may not be matching the treatment to the patient's specific needs.
+</p>
+<p>
+  Capsule-based FMT, validated by a landmark 2017 JAMA randomized trial showing equivalence to colonoscopy for C. diff, is often the most practical option: no sedation, no bowel prep, manageable at home. Colonoscopy delivery provides the most complete colonic coverage in a single session and is sometimes preferable for severe or anatomically complex cases. Enema delivery is effective for distal colonic disease.
+</p>
+<p>
+  The right delivery method depends on your specific situation. A physician with experience across multiple modalities can make that recommendation based on clinical judgment rather than what happens to be available at their institution.
+</p>
+
+<h2>Question 4: Do You Offer Remote Consultations?</h2>
+<p>
+  Qualified FMT physicians are not evenly distributed geographically. Many patients who need this treatment live hours from the nearest experienced provider. A physician who can conduct a thorough initial consultation via telehealth — reviewing your medical history, confirming candidacy, and designing a protocol — can significantly reduce the burden of travel. In many capsule-based protocols, patients may only need to travel once, or in some cases not at all if materials can be shipped directly.
+</p>
+<p>
+  At our clinic, we regularly consult with patients from across California and nationally who are researching FMT. We're happy to do that initial conversation remotely so you can make an informed decision before committing to travel.
+</p>
+
+<h2>Question 5: What Happens If the First Treatment Doesn't Work?</h2>
+<p>
+  Most patients with recurrent C. diff achieve resolution after a single FMT course. But some patients need a second course, or a different delivery method, or an adjustment to their pre-treatment protocol. How a physician handles non-responders tells you a great deal about their experience and commitment to outcomes.
+</p>
+<p>
+  Ask specifically: what is your protocol if my first FMT doesn't resolve my C. diff? A physician with substantial experience will have a clear answer — a second course, a switch to colonoscopy delivery, a different donor, additional pre-treatment antibiotic duration. A physician who hasn't thought through this question carefully may not have seen enough cases to have encountered it.
+</p>
+
+<h2>A Note on Hospital Programs vs. Outpatient FMT Clinics</h2>
+<p>
+  Patients sometimes assume that a hospital-based FMT program is inherently safer or more credible than an outpatient clinic. This is not necessarily true. Hospital programs typically offer colonoscopy-only delivery, have long waitlists, require GI specialist referrals, and may be more conservative about which patients they accept. Outpatient FMT clinics that have made this a core specialty often offer more delivery flexibility, faster access, and physicians with deeper focused experience in FMT specifically — as distinct from general gastroenterology practice.
+</p>
+<p>
+  What matters is the physician's specific FMT experience, their donor screening rigor, their outcomes data, and their willingness to answer your questions directly and transparently.
+</p>
+
+<h2>Choosing Well</h2>
+<p>
+  Recurrent C. difficile is a serious condition. The right FMT can resolve it durably — I've seen patients who had eight, ten, twelve recurrences before FMT achieve complete, lasting resolution. But the quality of care matters. Take the time to ask the questions above before choosing your provider.
+</p>
+<p>
+  If you'd like to discuss whether FMT is appropriate for your situation, I'm happy to start with a consultation. We'll go through your history, your prior treatments, and your test results together — and I'll give you a direct, honest assessment of what I think your options are.
+</p>`
+  },
+
   // --- Hidden Posts ---
   {
     id: "olivirex-olive-leaf",
