@@ -2,14 +2,58 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Share2 } from "lucide-react";
+import { ArrowLeft, Share2, ArrowRight } from "lucide-react";
 import { Link, useParams } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
 import { blogPosts } from "@/data/posts";
+import { useEffect } from "react";
 
 export default function BlogPost() {
   const { id } = useParams<{ id: string }>();
   const post = blogPosts.find((p) => p.id === id);
+
+  useEffect(() => {
+    if (!post) return;
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "image": post.image,
+      "datePublished": post.date,
+      "author": {
+        "@type": "Person",
+        "name": post.author,
+        "jobTitle": post.authorTitle || "Medical Doctor",
+        "worksFor": {
+          "@type": "MedicalOrganization",
+          "name": "Purety Family Medical Clinic",
+          "url": "https://puretyclinic.com"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Purety Family Medical Clinic",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://puretyclinic.com/images/logo.png"
+        },
+        "url": "https://puretyclinic.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://puretyclinic.com/blog/${post.id}`
+      },
+      "keywords": post.tags?.join(", ") || ""
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "blogposting-schema";
+    script.text = JSON.stringify(schema);
+    document.head.appendChild(script);
+    document.title = `${post.title} | Purety Clinic`;
+    return () => { document.getElementById("blogposting-schema")?.remove(); };
+  }, [post]);
 
   if (!post || !post.content) {
     return (
@@ -99,6 +143,38 @@ export default function BlogPost() {
             </div>
           </div>
         </section>
+
+        {/* Related Articles */}
+        {(() => {
+          const related = blogPosts
+            .filter(p => !p.hidden && p.id !== post.id && p.content)
+            .filter(p => p.tags?.some(t => post.tags?.includes(t)))
+            .slice(0, 3);
+          if (related.length === 0) return null;
+          return (
+            <section className="py-16 bg-muted/30 border-t border-gray-100">
+              <div className="container mx-auto px-4 max-w-4xl">
+                <FadeIn>
+                  <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-8">Related Articles</h2>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    {related.map(r => (
+                      <Link key={r.id} href={`/blog/${r.id}`} data-testid={`link-related-post-${r.id}`}>
+                        <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
+                          <img src={r.image} alt={r.title} className="w-full h-40 object-cover" />
+                          <div className="p-5 flex flex-col flex-1">
+                            <span className="text-xs font-bold uppercase tracking-wider text-accent mb-2">{r.category}</span>
+                            <h3 className="font-serif text-base text-foreground mb-3 leading-snug flex-1">{r.title}</h3>
+                            <span className="inline-flex items-center text-primary font-bold text-sm">Read Article <ArrowRight className="w-3 h-3 ml-1" /></span>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </FadeIn>
+              </div>
+            </section>
+          );
+        })()}
 
         <ContactCTA heading="Have Questions About Your Health?" formSource="Blog Post" />
       </main>

@@ -88,11 +88,77 @@ export default function FMT() {
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Leading FMT specialists since 2014. 90%+ success rate for C. diff. Multiple treatment options: capsules, oral, enema, colonoscopy. Schedule your consultation with Dr. Birch today. (805) 500-8300");
 
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is FMT and how does it work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fecal Microbiota Transplantation (FMT) transfers healthy gut bacteria from a rigorously screened donor to restore your gut microbiome. Unlike antibiotics that kill both good and bad bacteria, FMT repopulates your gut with the complete, balanced flora needed for proper digestion and immune function."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your success rate for C. diff?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our FMT protocol has a 90%+ success rate for antibiotic-resistant C. diff infections. Many patients see significant improvement within the first week, with full resolution typically achieved within 6 weeks of treatment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you screen your donors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use super donors who undergo extensive screening far beyond FDA requirements. This includes blood and stool testing for infectious diseases, comprehensive health history review, and ongoing monitoring. Our donors are young, healthy individuals with no history of antibiotics, autoimmune conditions, or chronic illness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is FMT safe? Are there side effects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FMT is remarkably safe when performed with properly screened donor material. Common side effects are mild and temporary: bloating, gas, or mild cramping for 1-2 days. Serious adverse effects are extremely rare, especially with our rigorous donor screening protocols."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer remote consultations for FMT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We frequently do initial consultations remotely for patients outside the Santa Barbara area. After your consultation, we can discuss whether you will need to travel to our clinic or if certain treatments can be managed remotely."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does FMT treatment cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Treatment costs vary based on your specific protocol and delivery method. We discuss pricing during your initial consultation. Many patients find FMT cost-effective compared to ongoing antibiotics, repeated hospitalizations, and lost quality of life from chronic illness."
+          }
+        }
+      ]
+    };
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
+    script.id = "fmt-clinic-schema";
     script.text = JSON.stringify(fmtStructuredData);
     document.head.appendChild(script);
-    return () => { document.head.removeChild(script); };
+
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.id = "fmt-faq-schema";
+    faqScript.text = JSON.stringify(faqSchema);
+    document.head.appendChild(faqScript);
+
+    return () => {
+      document.getElementById("fmt-clinic-schema")?.remove();
+      document.getElementById("fmt-faq-schema")?.remove();
+    };
   }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
