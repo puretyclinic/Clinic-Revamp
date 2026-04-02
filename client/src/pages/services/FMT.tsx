@@ -48,10 +48,10 @@ const fmtStructuredData = {
   "telephone": "+1-805-500-8300",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "1525 State St Suite 12",
+    "streetAddress": "2323 Oak Park Ln, Suite 102",
     "addressLocality": "Santa Barbara",
     "addressRegion": "CA",
-    "postalCode": "93101",
+    "postalCode": "93110",
     "addressCountry": "US"
   },
   "geo": {
