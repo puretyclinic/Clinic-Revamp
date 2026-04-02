@@ -1168,6 +1168,100 @@ export const blogPosts: BlogPost[] = [
 </p>`
   },
 
+  {
+    id: "where-can-i-get-a-stool-transplant",
+    title: "Where Can I Get a Stool Transplant? A Patient's Guide to Finding FMT Treatment",
+    excerpt: "If you're asking 'where can I get a stool transplant,' you're not alone — and the answer is more straightforward than you might expect. Here's exactly how to find a qualified FMT provider, what to look for, and what the process looks like.",
+    date: "April 19, 2026",
+    author: "Dr. Jonathan Birch",
+    authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612849607964-HHKKT71DKVC2FOBPIQCM/Jonathan+Birch+MD",
+    authorTitle: "Medical Director",
+    image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&q=80&w=800",
+    category: "FMT Treatment",
+    tags: ["FMT", "StoolTransplant", "FecalTransplant", "CdiffTreatment", "GutHealth"],
+    content: `<p class="lead text-xl text-muted-foreground mb-8">
+  If you've found yourself searching "where can I get a stool transplant," you're probably at a point where you've exhausted other options, done your research, and decided that Fecal Microbiota Transplantation is something you want to seriously pursue. That's the right instinct for many patients — particularly those dealing with recurrent <em>Clostridioides difficile</em> infection, where FMT has an evidence-based 90%+ cure rate. The challenge is that finding a qualified provider is less intuitive than it should be. This guide walks you through exactly how to do it.
+</p>
+
+<h2>First, a Quick Note on Terminology</h2>
+<p>
+  "Stool transplant," "fecal transplant," "fecal microbiota transplant," and "FMT" all refer to the same procedure: the transfer of carefully screened donor stool — and the microbial community it contains — into a recipient's gastrointestinal tract to restore a healthy gut microbiome. The medical term is Fecal Microbiota Transplantation (FMT), but all of these terms are used interchangeably by patients and, increasingly, by clinicians.
+</p>
+
+<h2>Your Three Main Options for Getting a Stool Transplant</h2>
+
+<h3>1. A Specialized Outpatient FMT Clinic</h3>
+<p>
+  This is where most patients get the best combination of access, flexibility, and experience. Specialized outpatient FMT clinics — like Purety Family Medical Clinic in Santa Barbara, California — have made FMT a core part of their practice. These clinics typically offer multiple delivery methods (capsules, enema, colonoscopy), accept patients from across the country, offer remote consultations, and have physicians with deep FMT-specific experience built over many years and hundreds or thousands of cases.
+</p>
+<p>
+  At our clinic, we've been performing FMT since 2014 and have treated over 1,000 patients. We offer capsule-based FMT (which can often be managed with minimal travel), retention enema, and colonoscopy delivery through our Southern California procedural partners. Initial consultations are available remotely for patients across the country.
+</p>
+
+<h3>2. A Hospital Gastroenterology Program</h3>
+<p>
+  Many academic medical centers and large hospital systems have GI departments that perform FMT, almost always via colonoscopy. These programs are appropriate for some patients — particularly those who need the full infrastructure of a hospital setting due to immunocompromise or other complex medical conditions. The downsides: waitlists can be long, referrals from a GI specialist are typically required, delivery options are usually limited to colonoscopy, and the physician performing your FMT may have done it far less frequently than the specialist at a dedicated FMT clinic.
+</p>
+
+<h3>3. FDA-Approved FMT Products</h3>
+<p>
+  In 2022 and 2023, the FDA approved two FMT-derived products for recurrent C. diff: Rebyota (fermented fecal microbiota, by Ferring Pharmaceuticals) and Vowst (fecal microbiota spores, by Seres Therapeutics). Both are available by prescription from a physician and are administered in a clinical setting. These products offer a standardized, pharmacy-dispensed alternative to physician-prepared FMT. If your gastroenterologist or primary care physician is willing to prescribe them, this may be the path of least resistance if you have insurance coverage.
+</p>
+<p>
+  The tradeoff is that pharmaceutical FMT products represent a narrower slice of the microbial community than full-preparation FMT from a carefully selected super donor — and the outcome data for physician-prepared FMT from experienced clinics is at least as good, often better.
+</p>
+
+<h2>How to Find an FMT Provider Near You</h2>
+<p>
+  There is no single national directory of FMT providers, which is part of why patients find this confusing. Here are the most reliable ways to find a qualified provider:
+</p>
+<p>
+  <strong>Search specifically for FMT clinics, not just gastroenterologists.</strong> Most GI specialists are not FMT specialists. Searching "FMT clinic [your state]" or "fecal microbiota transplant clinic California" will surface clinics that have made this a specialty, which is a different population from general GI practices.
+</p>
+<p>
+  <strong>Check whether the provider offers remote consultations.</strong> If you're not near a major metropolitan area — or if you're near one but can't find a qualified FMT provider locally — a clinic that offers telehealth consultations dramatically expands your options. At our clinic, we consult with patients from across California and nationally. Many patients from Los Angeles, San Diego, the Bay Area, and beyond travel to our Santa Barbara clinic specifically for FMT.
+</p>
+<p>
+  <strong>Look for published outcome data or patient volume.</strong> An experienced FMT clinic should be able to tell you how many patients they've treated and what their success rate is for C. diff. If a provider is vague about this, take it as a data point.
+</p>
+<p>
+  <strong>Ask about delivery options.</strong> A clinic offering only colonoscopy delivery is more limited than one offering capsules, enema, and colonoscopy. Capsule-based FMT, validated by randomized controlled trials as equivalent to colonoscopy for C. diff, is significantly more convenient and may not require travel at all if materials can be shipped.
+</p>
+
+<h2>What the Process Looks Like, Step by Step</h2>
+<p>
+  For patients considering our clinic, here is the typical process:
+</p>
+<p>
+  <strong>Step 1: Remote consultation.</strong> We start with a thorough review of your medical history, prior C. diff treatments, test results, and current symptoms. This can be done by telehealth. We confirm whether you're a candidate for FMT and discuss which delivery method is most appropriate.
+</p>
+<p>
+  <strong>Step 2: Pre-treatment preparation.</strong> Depending on your protocol, there may be a short antibiotic course immediately before FMT to reduce the existing bacterial burden and create a favorable environment for donor colonization. We provide detailed written instructions.
+</p>
+<p>
+  <strong>Step 3: Treatment.</strong> For capsule-based protocols, materials are shipped directly and the treatment is completed at home over a 14-day course. For enema delivery, you come to our Santa Barbara clinic. For colonoscopy delivery, we coordinate with our Southern California procedural partners.
+</p>
+<p>
+  <strong>Step 4: Follow-up.</strong> We schedule follow-up consultations to monitor your response. Most patients with recurrent C. diff see significant improvement within the first week. Full resolution is typically confirmed within six weeks.
+</p>
+
+<h2>How Far Do Patients Travel for FMT?</h2>
+<p>
+  More than you might expect. A significant portion of our patient base travels from outside the Santa Barbara area — from Los Angeles (about 90 minutes), San Diego, the Bay Area, and in some cases from out of state. For patients who have been dealing with recurrent C. diff through multiple antibiotic failures, the willingness to travel for a treatment with a 90%+ cure rate is not hard to understand. When capsule-based delivery is appropriate, the travel requirement is minimal — often just a single telehealth consultation.
+</p>
+
+<h2>The Bottom Line</h2>
+<p>
+  If you're asking where you can get a stool transplant, the answer is: from a specialized outpatient FMT clinic with a track record of experience and outcomes, via a hospital gastroenterology program, or through a prescription for one of the two FDA-approved FMT pharmaceutical products.
+</p>
+<p>
+  The most important thing is to choose a provider with genuine FMT expertise — not just a GI practice that has done it a handful of times. Ask about patient volume, donor screening protocols, delivery options, and what happens if the first treatment doesn't fully resolve your symptoms.
+</p>
+<p>
+  If you'd like to discuss whether FMT is right for you, we offer remote initial consultations. Reach out and we'll review your case together.
+</p>`
+  },
+
   // --- Hidden Posts ---
   {
     id: "olivirex-olive-leaf",
