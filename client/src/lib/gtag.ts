@@ -115,13 +115,15 @@ export const trackPhoneClick = (source: string) => {
       event_label: source,
     });
 
-    if (ADS_CONVERSION_PHONE) {
-      window.gtag("event", "conversion", {
-        send_to: ADS_CONVERSION_PHONE,
-        value: 1.0,
-        currency: "USD",
-      });
-    }
+    // Fire Ads conversion on every phone click.
+    // Use the dedicated phone label if set; otherwise fall back to the generic
+    // form conversion so Ads always receives a signal for phone leads.
+    const phoneConversionLabel = ADS_CONVERSION_PHONE || ADS_CONVERSION_FORM;
+    window.gtag("event", "conversion", {
+      send_to: phoneConversionLabel,
+      value: 1.0,
+      currency: "USD",
+    });
   }
 };
 

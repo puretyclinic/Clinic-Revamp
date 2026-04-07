@@ -263,7 +263,7 @@ export default function FMT() {
 
               <FadeIn delay={0.2}>
                 <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-                  <div className="flex flex-wrap gap-3 mb-5">
+                  <div className="flex flex-wrap gap-2 mb-5">
                     <div className="flex items-center gap-1.5 text-xs font-semibold text-primary bg-primary/8 border border-primary/20 rounded-full px-3 py-1.5">
                       <Globe className="w-3.5 h-3.5 shrink-0" />
                       Serving patients nationwide
@@ -271,6 +271,10 @@ export default function FMT() {
                     <div className="flex items-center gap-1.5 text-xs font-semibold text-primary bg-primary/8 border border-primary/20 rounded-full px-3 py-1.5">
                       <Video className="w-3.5 h-3.5 shrink-0" />
                       Remote consultations available
+                    </div>
+                    <div className="flex items-center gap-1.5 text-xs font-semibold text-primary bg-primary/8 border border-primary/20 rounded-full px-3 py-1.5">
+                      <Pill className="w-3.5 h-3.5 shrink-0" />
+                      Capsule delivery anywhere in the US
                     </div>
                   </div>
                   <h2 className="font-serif text-2xl font-bold mb-2 text-foreground">Schedule Your Consultation</h2>
