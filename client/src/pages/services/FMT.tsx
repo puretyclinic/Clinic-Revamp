@@ -231,7 +231,7 @@ export default function FMT() {
               <FadeIn>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6 border border-primary/20">
                   <CheckCircle2 className="w-4 h-4" />
-                  America's Most Experienced FMT Specialists Since 2014
+                  California's Leading FMT Specialists Since 2014
                 </div>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.2rem] leading-[1.15] mb-6 text-foreground">
                   Finally <span className="text-accent italic">Restore</span> Your Gut Health With FMT Treatment
