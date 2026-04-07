@@ -533,7 +533,7 @@ export default function FMT() {
               <FadeIn>
                 <div className="rounded-2xl overflow-hidden shadow-lg">
                   <img
-                    src="/images/dr-jonathan.jpg"
+                    src="https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1586254533732-DIBCSH2O3LNIQGHE1231/purety-clinic_Home_screen-3.jpg"
                     alt="Dr. Jonathan Birch"
                     className="w-full h-auto object-cover"
                   />
