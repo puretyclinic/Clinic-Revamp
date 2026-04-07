@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Loader2, ArrowRight, ShieldCheck, CheckCircle2, Pill, FlaskConical, Stethoscope, Droplets, Star, ChevronDown, ChevronUp } from "lucide-react";
+import { Phone, Loader2, ArrowRight, ShieldCheck, CheckCircle2, Pill, FlaskConical, Stethoscope, Droplets, Star, ChevronDown, ChevronUp, Globe, Video } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import * as gtag from "@/lib/gtag";
 import { useState, useEffect } from "react";
@@ -43,7 +43,7 @@ const fmtStructuredData = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
   "name": "Purety Family Medical Clinic - FMT Treatment",
-  "description": "California's leading FMT (Fecal Microbiota Transplant) specialists since 2014. Over 1,000 patients treated with 90%+ success rate for C. diff.",
+  "description": "America's most experienced FMT (Fecal Microbiota Transplant) specialists since 2014. Over 1,000 patients treated nationwide with 90%+ success rate for C. diff. Remote consultations and capsule delivery available.",
   "url": "https://puretyclinic.com/fecal-transplant",
   "telephone": "+1-805-500-8300",
   "address": {
@@ -188,7 +188,7 @@ export default function FMT() {
       const data = await res.json();
 
       if (data.success) {
-        gtag.trackFormSubmission("FMT Page - Consultation Request");
+        gtag.trackFMTFormSubmission("FMT Page - Consultation Request");
 
         toast({
           title: "Consultation Requested!",
@@ -231,7 +231,7 @@ export default function FMT() {
               <FadeIn>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6 border border-primary/20">
                   <CheckCircle2 className="w-4 h-4" />
-                  California's Leading FMT Specialists Since 2014
+                  America's Most Experienced FMT Specialists Since 2014
                 </div>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.2rem] leading-[1.15] mb-6 text-foreground">
                   Finally <span className="text-accent italic">Restore</span> Your Gut Health With FMT Treatment
@@ -263,6 +263,16 @@ export default function FMT() {
 
               <FadeIn delay={0.2}>
                 <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+                  <div className="flex flex-wrap gap-3 mb-5">
+                    <div className="flex items-center gap-1.5 text-xs font-semibold text-primary bg-primary/8 border border-primary/20 rounded-full px-3 py-1.5">
+                      <Globe className="w-3.5 h-3.5 shrink-0" />
+                      Serving patients nationwide
+                    </div>
+                    <div className="flex items-center gap-1.5 text-xs font-semibold text-primary bg-primary/8 border border-primary/20 rounded-full px-3 py-1.5">
+                      <Video className="w-3.5 h-3.5 shrink-0" />
+                      Remote consultations available
+                    </div>
+                  </div>
                   <h2 className="font-serif text-2xl font-bold mb-2 text-foreground">Schedule Your Consultation</h2>
                   <p className="text-muted-foreground text-sm mb-6">Dr. Birch will review your case and discuss the right treatment path together with you.</p>
 
@@ -519,7 +529,7 @@ export default function FMT() {
               <FadeIn>
                 <div className="rounded-2xl overflow-hidden shadow-lg">
                   <img
-                    src="https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1586254533732-DIBCSH2O3LNIQGHE1231/purety-clinic_Home_screen-3.jpg"
+                    src="/images/dr-jonathan.jpg"
                     alt="Dr. Jonathan Birch"
                     className="w-full h-auto object-cover"
                   />
@@ -632,6 +642,24 @@ export default function FMT() {
           </div>
         </section>
       </main>
+
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-2xl px-4 py-3 flex gap-3" data-testid="sticky-mobile-cta">
+        <a
+          href="tel:+18055008300"
+          className="flex-1 flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-lg py-3 text-sm"
+          onClick={() => gtag.trackPhoneClick("FMT Sticky Mobile Bar")}
+          data-testid="button-sticky-call"
+        >
+          <Phone className="w-4 h-4" /> Call Now
+        </a>
+        <button
+          className="flex-1 flex items-center justify-center gap-2 bg-accent text-white font-bold rounded-lg py-3 text-sm"
+          onClick={scrollToForm}
+          data-testid="button-sticky-consult"
+        >
+          <ArrowRight className="w-4 h-4" /> Get Consultation
+        </button>
+      </div>
 
       <Footer />
     </div>
