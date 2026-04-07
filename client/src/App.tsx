@@ -67,6 +67,7 @@ function Router() {
 function PageviewTracker() {
   const [location] = useLocation();
   useEffect(() => {
+    window.scrollTo(0, 0);
     gtag.pageview(location);
   }, [location]);
   return null;
