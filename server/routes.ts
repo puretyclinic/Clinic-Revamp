@@ -204,7 +204,7 @@ export async function registerRoutes(
       sendEmailNotification({
         ...parsed.data,
         source: parsed.data.source || "Website",
-      }).catch(() => {});
+      }).catch((err) => console.error("Email notification failed silently:", err?.message || err));
 
       return res.json({ success: true, id: submission.id });
     } catch (error) {
