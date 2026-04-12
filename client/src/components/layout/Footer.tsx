@@ -54,12 +54,13 @@ export function Footer() {
           <div>
             <h4 className="font-serif text-xl mb-6 text-primary">Explore</h4>
             <ul className="space-y-3 text-sm text-white/70">
-              <li><a href="#" className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Our Doctors</a></li>
+              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
+              <li><Link href="/doctors" className="hover:text-white transition-colors">Our Doctors</Link></li>
+              <li><Link href="/testimonials" className="hover:text-white transition-colors">Testimonials</Link></li>
+              <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
               <li><a href="https://puretyclinicshop.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Shop</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
             </ul>
           </div>
 
