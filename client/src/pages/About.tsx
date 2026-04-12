@@ -3,7 +3,8 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
 
 export default function About() {
@@ -107,7 +108,15 @@ export default function About() {
                         <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary"/> California Naturopathic Doctor’s Association</li>
                         <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary"/> Endocrinology Association of Naturopathic Physicians</li>
                         <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary"/> Pediatric Association of Naturopathic Physicians</li>
+                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary"/> American Herbalists Guild</li>
                      </ul>
+                     <div className="mt-5">
+                       <Link href="/dr-dena-birch" data-testid="link-about-dena-profile">
+                         <Button variant="outline" className="border-primary/30 text-primary font-bold rounded-lg">
+                           View Dr. Dena's Full Profile <ArrowRight className="w-4 h-4 ml-2" />
+                         </Button>
+                       </Link>
+                     </div>
                    </div>
                  </FadeIn>
                </div>
@@ -149,6 +158,13 @@ export default function About() {
                         <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary"/> Fecal Transplant Foundation</li>
                         <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary"/> Gastroenterology Association of Naturopathic Physicians</li>
                      </ul>
+                     <div className="mt-5">
+                       <Link href="/dr-jonathan-birch" data-testid="link-about-jonathan-profile">
+                         <Button variant="outline" className="border-primary/30 text-primary font-bold rounded-lg">
+                           View Dr. Jonathan's Full Profile <ArrowRight className="w-4 h-4 ml-2" />
+                         </Button>
+                       </Link>
+                     </div>
                    </div>
                  </FadeIn>
                </div>
