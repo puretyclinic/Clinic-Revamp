@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Core pages -->
   <url>
     <loc>https://www.puretyclinic.com/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/fecal-transplant</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -17,11 +11,33 @@
 
   <url>
     <loc>https://www.puretyclinic.com/about</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://www.puretyclinic.com/contact</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/testimonials</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/faqs</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Doctor profiles -->
   <url>
     <loc>https://www.puretyclinic.com/dr-jonathan-birch</loc>
     <lastmod>2026-04-12</lastmod>
@@ -36,48 +52,22 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- FMT — primary SEO target (national) -->
   <url>
-    <loc>https://www.puretyclinic.com/services</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.puretyclinic.com/fecal-transplant</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.puretyclinic.com/services/regenerative</loc>
+    <loc>https://www.puretyclinic.com/services/fmt</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <url>
-    <loc>https://www.puretyclinic.com/prp-santa-barbara</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/stem-cell-therapy-santa-barbara</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/services/iv-therapy</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/services/naturopathic</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
+  <!-- Ozone / EBO2 / EBOO -->
   <url>
     <loc>https://www.puretyclinic.com/services/ozone-therapy</loc>
     <lastmod>2026-04-12</lastmod>
@@ -99,20 +89,29 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Regenerative medicine / PRP / stem cell -->
   <url>
-    <loc>https://www.puretyclinic.com/services/hormone-replacement</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://www.puretyclinic.com/services/regenerative</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.puretyclinic.com/services/cancer-support</loc>
-    <lastmod>2026-04-02</lastmod>
+    <loc>https://www.puretyclinic.com/prp-santa-barbara</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://www.puretyclinic.com/stem-cell-therapy-santa-barbara</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Plasma exchange -->
   <url>
     <loc>https://www.puretyclinic.com/services/plasma-exchange</loc>
     <lastmod>2026-04-12</lastmod>
@@ -120,90 +119,94 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Other service pages -->
   <url>
-    <loc>https://www.puretyclinic.com/blog</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.puretyclinic.com/services</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.puretyclinic.com/contact</loc>
-    <lastmod>2026-04-02</lastmod>
+    <loc>https://www.puretyclinic.com/services/iv-therapy</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.puretyclinic.com/faqs</loc>
-    <lastmod>2026-04-02</lastmod>
+    <loc>https://www.puretyclinic.com/services/naturopathic</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/services/hormone-replacement</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/services/cancer-support</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/services/nature-therapies</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
+  <!-- Location pages -->
   <url>
-    <loc>https://www.puretyclinic.com/testimonials</loc>
-    <lastmod>2026-04-02</lastmod>
+    <loc>https://www.puretyclinic.com/locations/santa-barbara</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/shop</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.puretyclinic.com/locations/los-angeles</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/locations/santa-barbara</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/locations/ventura</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/locations/montecito</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/locations/goleta</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/blog/eboo-ozone-therapy-guide</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.puretyclinic.com/blog/therapeutic-plasma-exchange-guide</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://www.puretyclinic.com/locations/ventura</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/locations/montecito</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/locations/goleta</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog index -->
+  <url>
+    <loc>https://www.puretyclinic.com/blog</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog posts — FMT (high priority, national SEO) -->
   <url>
     <loc>https://www.puretyclinic.com/blog/where-can-i-get-a-stool-transplant</loc>
     <lastmod>2026-04-12</lastmod>
@@ -267,53 +270,70 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Blog posts — Ozone / EBO2 -->
+  <url>
+    <loc>https://www.puretyclinic.com/blog/eboo-ozone-therapy-guide</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/blog/ozone-therapy-overview</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog posts — Plasma exchange -->
+  <url>
+    <loc>https://www.puretyclinic.com/blog/therapeutic-plasma-exchange-guide</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog posts — Other -->
+  <url>
+    <loc>https://www.puretyclinic.com/blog/prp-therapy-guide</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <url>
     <loc>https://www.puretyclinic.com/blog/aip-diet-autoimmune</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.puretyclinic.com/blog/iv-therapy-guide</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/blog/prp-therapy-guide</loc>
-    <lastmod>2024-02-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/blog/healing-power-nature</loc>
-    <lastmod>2023-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/blog/ozone-therapy-overview</loc>
-    <lastmod>2023-09-05</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.puretyclinic.com/blog/bioidentical-hormones</loc>
-    <lastmod>2023-08-18</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.puretyclinic.com/blog/gut-microbiome-health</loc>
-    <lastmod>2023-07-22</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/blog/healing-power-nature</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
