@@ -43,6 +43,46 @@ export default function PlasmaExchange() {
       }
     };
 
+    const localBusinessSchema = {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Purety Family Medical Clinic",
+      "description": "Purety Family Medical Clinic offers therapeutic plasma exchange (TPE / plasmapheresis) in Santa Barbara, CA. Serving patients from Ventura, Los Angeles, Oxnard, Thousand Oaks, Goleta, Montecito, Ojai, and throughout Southern California.",
+      "url": "https://puretyclinic.com/services/plasma-exchange",
+      "telephone": "+1-805-500-8300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2323 Oak Park Ln, Suite 102",
+        "addressLocality": "Santa Barbara",
+        "addressRegion": "CA",
+        "postalCode": "93105",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.4483,
+        "longitude": -119.7148
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Santa Barbara", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "City", "name": "Ventura", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "City", "name": "Oxnard", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "City", "name": "Thousand Oaks", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "City", "name": "Los Angeles", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "City", "name": "Goleta", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "City", "name": "Montecito", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "City", "name": "Ojai", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "City", "name": "Carpinteria", "containedInPlace": { "@type": "State", "name": "California" } }
+      ],
+      "medicalSpecialty": "IntegrativeMedicine",
+      "hasMap": "https://maps.google.com/?q=Purety+Family+Medical+Clinic+Santa+Barbara+CA"
+    };
+
+    const s0 = document.createElement("script");
+    s0.type = "application/ld+json"; s0.id = "tpe-localbusiness-schema";
+    s0.text = JSON.stringify(localBusinessSchema);
+    document.head.appendChild(s0);
+
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -86,6 +126,7 @@ export default function PlasmaExchange() {
     document.head.appendChild(s2);
 
     return () => {
+      document.getElementById("tpe-localbusiness-schema")?.remove();
       document.getElementById("tpe-procedure-schema")?.remove();
       document.getElementById("tpe-faq-schema")?.remove();
     };
@@ -229,6 +270,41 @@ export default function PlasmaExchange() {
                   </div>
                </div>
 
+            </FadeIn>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white border-t border-gray-100">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <FadeIn>
+              <h2 className="font-serif text-3xl mb-4 text-foreground text-center">Therapeutic Plasma Exchange Near You</h2>
+              <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
+                Purety Family Medical Clinic is one of the few outpatient clinics in Southern California offering therapeutic plasma exchange (TPE / plasmapheresis). Located in Santa Barbara, we serve patients from across the region.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {[
+                  { city: "Santa Barbara, CA", note: "Our clinic location" },
+                  { city: "Goleta, CA", note: "5 min away" },
+                  { city: "Montecito, CA", note: "10 min away" },
+                  { city: "Carpinteria, CA", note: "15 min away" },
+                  { city: "Ojai, CA", note: "45 min away" },
+                  { city: "Ventura, CA", note: "45 min away" },
+                  { city: "Oxnard, CA", note: "50 min away" },
+                  { city: "Thousand Oaks, CA", note: "1 hr away" },
+                  { city: "Los Angeles, CA", note: "1.5 hrs away" },
+                ].map(({ city, note }) => (
+                  <div key={city} className="flex items-start gap-2 p-3 bg-gray-50 rounded-lg">
+                    <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">{city}</p>
+                      <p className="text-xs text-muted-foreground">{note}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-center text-sm text-muted-foreground mt-8">
+                Can't find your city? We welcome patients from all of California. Remote consultations are available.
+              </p>
             </FadeIn>
           </div>
         </section>
