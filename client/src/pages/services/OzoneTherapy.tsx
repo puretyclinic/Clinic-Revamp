@@ -27,13 +27,13 @@ export default function OzoneTherapy() {
   useEffect(() => {
     document.title = "Ozone Therapy Santa Barbara | EBO2 | EBOO | Ozone Dialysis | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Santa Barbara's most experienced ozone therapy clinic. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (EBOO / ozone dialysis), 10-Pass, and major autohemotherapy. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Santa Barbara's most experienced ozone therapy clinic. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (EBOO / ozone dialysis), Multipass OHT / 10-Pass, and major autohemotherapy. Call (805) 500-8300.");
 
     const localSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalClinic",
       "name": "Purety Family Medical Clinic — Ozone Therapy & EBO2",
-      "description": "Santa Barbara's most experienced ozone therapy clinic. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (also known as EBOO or ozone dialysis), 10-Pass high-dose ozone, and major autohemotherapy.",
+      "description": "Santa Barbara's most experienced ozone therapy clinic. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (also known as EBOO or ozone dialysis), Multipass OHT / 10-Pass, and major autohemotherapy.",
       "url": "https://puretyclinic.com/services/ozone-therapy",
       "telephone": "+1-805-500-8300",
       "address": {
@@ -64,10 +64,9 @@ export default function OzoneTherapy() {
       "hasMap": "https://maps.google.com/?q=Purety+Family+Medical+Clinic+Santa+Barbara+CA",
       "availableService": [
         { "@type": "MedicalProcedure", "name": "EBO2 (EBOO / Ozone Dialysis)", "description": "Extracorporeal Blood Oxygenation and Ozonation — the most comprehensive ozone therapy available. Blood is continuously circulated through an extracorporeal circuit, exposed to high-concentration medical ozone and UV light, and returned. Also known as EBOO or ozone dialysis." },
-        { "@type": "MedicalProcedure", "name": "10-Pass High-Dose Ozone", "description": "Hyperbaric high-dose ozone autohemotherapy. Blood is drawn, ozonated under pressure, and returned — repeated 10 times in a single session." },
+        { "@type": "MedicalProcedure", "name": "Multipass OHT / 10-Pass", "description": "Hyperbaric high-dose ozone autohemotherapy. Blood is drawn, ozonated under pressure, and returned — repeated 10 times in a single session." },
         { "@type": "MedicalProcedure", "name": "Major Autohemotherapy (MAH)", "description": "Standard ozone autohemotherapy: blood drawn, ozonated, and returned intravenously." },
-        { "@type": "MedicalProcedure", "name": "Prolozone Injections", "description": "Ozone injected directly into joints and soft tissue to reduce pain and stimulate healing." },
-        { "@type": "MedicalProcedure", "name": "Ozone Insufflation", "description": "Rectal, vaginal, or sinus ozone insufflation for systemic absorption without IV access." }
+        { "@type": "MedicalProcedure", "name": "Prolozone Injections", "description": "Ozone injected directly into joints and soft tissue to reduce pain and stimulate healing." }
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -115,7 +114,7 @@ export default function OzoneTherapy() {
         { "@type": "Question", "name": "What conditions does ozone therapy treat?", "acceptedAnswer": { "@type": "Answer", "text": "Ozone therapy is used for a wide range of conditions including chronic infections (Lyme disease, EBV, mold toxicity), autoimmune disorders, Long COVID, inflammatory conditions, cardiovascular disease, chronic fatigue, and as a general immune system modulator. EBO2 is particularly effective for conditions with a heavy toxic or inflammatory burden." } },
         { "@type": "Question", "name": "How many EBO2 sessions will I need?", "acceptedAnswer": { "@type": "Answer", "text": "Most protocols involve 4–8 sessions, spaced 1–2 weeks apart. Patients with more chronic or complex conditions may benefit from a longer course. Dr. Birch will recommend a protocol based on your specific diagnosis, lab work, and treatment goals during your initial consultation." } },
         { "@type": "Question", "name": "Is ozone therapy safe?", "acceptedAnswer": { "@type": "Answer", "text": "Medical ozone therapy has an excellent safety record when performed by experienced practitioners using proper protocols and pharmaceutical-grade ozone generators. Dr. Birch has performed over 2,500 ozone treatments and uses only medical-grade equipment. Side effects are generally mild and may include temporary fatigue or mild flu-like symptoms as the body detoxifies." } },
-        { "@type": "Question", "name": "What is 10-Pass ozone and how does it differ from EBO2?", "acceptedAnswer": { "@type": "Answer", "text": "10-Pass (also called Multipass) is a high-dose hyperbaric ozone autohemotherapy. Blood is drawn into a pressurized bottle, ozonated, and returned — repeated 10 times in one sitting for a high dose. EBO2 is more comprehensive because it continuously circulates blood through an extracorporeal circuit, treating a much larger total blood volume. Both are powerful treatments; Dr. Birch will recommend which is appropriate for your situation." } },
+        { "@type": "Question", "name": "What is Multipass OHT / 10-Pass ozone and how does it differ from EBO2?", "acceptedAnswer": { "@type": "Answer", "text": "Multipass OHT (also called 10-Pass) is a high-dose hyperbaric ozone autohemotherapy. Blood is drawn into a pressurized bottle, ozonated, and returned — repeated 10 times in one sitting for a high dose. EBO2 is more comprehensive because it continuously circulates blood through an extracorporeal circuit, treating a much larger total blood volume. Both are powerful treatments; Dr. Birch will recommend which is appropriate for your situation." } },
         { "@type": "Question", "name": "How long does an EBO2 session take?", "acceptedAnswer": { "@type": "Answer", "text": "An EBO2 session typically takes 60–90 minutes from start to finish, including setup, the procedure itself, and a short recovery period. You can drive yourself home afterward, though many patients prefer to rest for the remainder of the day." } },
         { "@type": "Question", "name": "Do you offer ozone therapy near Ventura or Los Angeles?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our clinic is located in Santa Barbara and is easily accessible from Ventura (45 min), Ojai (50 min), Oxnard (55 min), Thousand Oaks (70 min), and Los Angeles (about 1 hr 45 min). Many patients make the drive specifically for our level of experience with EBO2 and 10-Pass ozone." } }
       ]
@@ -172,7 +171,7 @@ export default function OzoneTherapy() {
                 Ozone <span className="italic text-accent">Therapy</span>
               </h1>
               <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-3">
-                EBO2 · EBOO · Ozone Dialysis · 10-Pass · Major Autohemotherapy
+                EBO2 · EBOO · Ozone Dialysis · Multipass OHT / 10-Pass · Major Autohemotherapy
               </p>
               <p className="text-sm text-white/60 mb-8">
                 2,500+ treatments performed in Santa Barbara · Serving the Central Coast & Southern California
@@ -294,7 +293,7 @@ export default function OzoneTherapy() {
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                     <Activity className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="font-serif text-xl font-bold mb-3">10-Pass High-Dose Ozone</h3>
+                  <h3 className="font-serif text-xl font-bold mb-3">Multipass OHT / 10-Pass</h3>
                   <p className="text-muted-foreground text-sm mb-5 leading-relaxed flex-1">
                     Hyperbaric ozone autohemotherapy — blood is drawn, ozonated under pressure, and returned to the body, repeated 10 times in one session for maximum ozone saturation.
                   </p>
@@ -343,41 +342,6 @@ export default function OzoneTherapy() {
                 </div>
               </FadeIn>
 
-              <FadeIn delay={0.25}>
-                <div className="bg-white rounded-2xl p-7 shadow-sm border border-gray-100 h-full flex flex-col">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Wind className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-serif text-xl font-bold mb-3">Ozone Insufflation</h3>
-                  <p className="text-muted-foreground text-sm mb-5 leading-relaxed flex-1">
-                    Rectal, vaginal, or sinus ozone insufflation — a needle-free way to absorb ozone systemically and treat localized infections without IV access.
-                  </p>
-                  <h4 className="font-bold text-xs text-foreground uppercase tracking-wider mb-2">Best for:</h4>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    {["Gut dysbiosis", "Vaginal infections", "Sinus infections", "Patients avoiding needles"].map((c, i) => (
-                      <li key={i} className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-green-600 shrink-0" /> {c}</li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.3}>
-                <div className="bg-white rounded-2xl p-7 shadow-sm border border-gray-100 h-full flex flex-col">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Activity className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-serif text-xl font-bold mb-3">Ozone Sauna (HOCATT)</h3>
-                  <p className="text-muted-foreground text-sm mb-5 leading-relaxed flex-1">
-                    A full-body ozone sauna that combines transdermal ozone absorption with far-infrared heat, carbonic acid, and steam — supporting detoxification, circulation, and skin health.
-                  </p>
-                  <h4 className="font-bold text-xs text-foreground uppercase tracking-wider mb-2">Best for:</h4>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    {["Detoxification", "Skin conditions", "Circulation support", "Adjunct to EBO2"].map((c, i) => (
-                      <li key={i} className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-green-600 shrink-0" /> {c}</li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeIn>
             </div>
           </div>
         </section>
@@ -423,7 +387,7 @@ export default function OzoneTherapy() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { initials: "L.F.", type: "EBO2 Patient · Long COVID", quote: "I'd been dealing with Long COVID for over a year — debilitating fatigue, brain fog, I couldn't work. After a course of EBO2 with Dr. Birch, my energy came back. I wish I'd found him sooner." },
-                { initials: "J.M.", type: "10-Pass Ozone Patient · Ojai", quote: "Chronic Lyme for four years. After everything else failed, I drove up from Ojai to try Dr. Birch's ozone protocol. The improvement was significant. He's one of the most knowledgeable practitioners I've encountered." },
+                { initials: "J.M.", type: "Multipass OHT Patient · Ojai", quote: "Chronic Lyme for four years. After everything else failed, I drove up from Ojai to try Dr. Birch's ozone protocol. The improvement was significant. He's one of the most knowledgeable practitioners I've encountered." },
                 { initials: "P.C.", type: "EBO2 Patient · Santa Barbara", quote: "I had very high inflammatory markers from mold exposure. Dr. Birch recommended a series of EBO2 treatments. My labs are dramatically improved and I feel like myself again for the first time in two years." },
               ].map((t, i) => (
                 <FadeIn key={i} delay={i * 0.1}>
@@ -551,8 +515,8 @@ export default function OzoneTherapy() {
                   answer="Medical ozone therapy has an excellent safety record when performed by experienced practitioners using proper protocols and pharmaceutical-grade ozone generators. Dr. Birch has performed over 2,500 ozone treatments and uses only medical-grade equipment. Side effects are generally mild and may include temporary fatigue or mild flu-like symptoms as the body detoxifies."
                 />
                 <FAQItem
-                  question="What is 10-Pass ozone and how does it differ from EBO2?"
-                  answer="10-Pass (also called Multipass) is a high-dose hyperbaric ozone autohemotherapy. Blood is drawn into a pressurized bottle, ozonated, and returned — repeated 10 times in one sitting for a high dose. EBO2 is more comprehensive because it continuously circulates blood through an extracorporeal circuit, treating a much larger total blood volume. Both are powerful treatments; Dr. Birch will recommend which is appropriate for your situation."
+                  question="What is Multipass OHT / 10-Pass ozone and how does it differ from EBO2?"
+                  answer="Multipass OHT (also called 10-Pass) is a high-dose hyperbaric ozone autohemotherapy. Blood is drawn into a pressurized bottle, ozonated, and returned — repeated 10 times in one sitting for a high dose. EBO2 is more comprehensive because it continuously circulates blood through an extracorporeal circuit, treating a much larger total blood volume. Both are powerful treatments; Dr. Birch will recommend which is appropriate for your situation."
                 />
                 <FAQItem
                   question="How long does an EBO2 session take?"
@@ -560,7 +524,7 @@ export default function OzoneTherapy() {
                 />
                 <FAQItem
                   question="Do you offer ozone therapy near Ventura or Los Angeles?"
-                  answer="Yes. Our clinic is located in Santa Barbara and is easily accessible from Ventura (45 min), Ojai (50 min), Oxnard (55 min), Thousand Oaks (70 min), and Los Angeles (about 1 hr 45 min). Many patients make the drive specifically for our level of experience with EBO2 and 10-Pass ozone."
+                  answer="Yes. Our clinic is located in Santa Barbara and is easily accessible from Ventura (45 min), Ojai (50 min), Oxnard (55 min), Thousand Oaks (70 min), and Los Angeles (about 1 hr 45 min). Many patients make the drive specifically for our level of experience with EBO2 and Multipass OHT."
                 />
               </div>
             </FadeIn>
