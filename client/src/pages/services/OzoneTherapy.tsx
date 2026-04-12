@@ -63,7 +63,7 @@ export default function OzoneTherapy() {
       "medicalSpecialty": ["IntegrativeMedicine", "OxygenTherapy"],
       "hasMap": "https://maps.google.com/?q=Purety+Family+Medical+Clinic+Santa+Barbara+CA",
       "availableService": [
-        { "@type": "MedicalProcedure", "name": "EBO2 (EBOO / Ozone Dialysis)", "description": "Extracorporeal Blood Oxygenation and Ozonation — the most comprehensive ozone therapy available. Blood is filtered, ozonated, and returned. Also known as EBOO or ozone dialysis." },
+        { "@type": "MedicalProcedure", "name": "EBO2 (EBOO / Ozone Dialysis)", "description": "Extracorporeal Blood Oxygenation and Ozonation — the most comprehensive ozone therapy available. Blood is continuously circulated through an extracorporeal circuit, exposed to high-concentration medical ozone and UV light, and returned. Also known as EBOO or ozone dialysis." },
         { "@type": "MedicalProcedure", "name": "10-Pass High-Dose Ozone", "description": "Hyperbaric high-dose ozone autohemotherapy. Blood is drawn, ozonated under pressure, and returned — repeated 10 times in a single session." },
         { "@type": "MedicalProcedure", "name": "Major Autohemotherapy (MAH)", "description": "Standard ozone autohemotherapy: blood drawn, ozonated, and returned intravenously." },
         { "@type": "MedicalProcedure", "name": "Prolozone Injections", "description": "Ozone injected directly into joints and soft tissue to reduce pain and stimulate healing." },
@@ -82,12 +82,12 @@ export default function OzoneTherapy() {
       "@type": "MedicalProcedure",
       "name": "EBO2 — Extracorporeal Blood Oxygenation and Ozonation",
       "alternateName": ["EBOO", "Ozone Dialysis", "Extracorporeal ozone therapy", "Blood ozone dialysis"],
-      "description": "EBO2 (also called EBOO or ozone dialysis) is the most advanced ozone therapy available. Blood is drawn continuously through an extracorporeal circuit, filtered through a membrane dialyzer to remove lipids, heavy metals, and inflammatory proteins, then ozonated and UV-irradiated before being returned to the body. Dr. Jonathan Birch at Purety Family Medical Clinic in Santa Barbara, CA is one of the most experienced EBO2 providers in California with over 2,500 ozone treatments performed.",
+      "description": "EBO2 (also called EBOO or ozone dialysis) is the most advanced ozone therapy available. Blood is drawn continuously through an extracorporeal circuit, exposed to high-concentration medical ozone and UV light, and returned to the body — treating a much larger volume of blood than standard autohemotherapy. Dr. Jonathan Birch at Purety Family Medical Clinic in Santa Barbara, CA is one of the most experienced EBO2 providers in California with over 2,500 ozone treatments performed.",
       "procedureType": "Therapeutic",
       "bodyLocation": "Blood / Systemic",
       "preparation": "Avoid blood thinners 24 hours prior. Stay well hydrated. Eat a light meal beforehand. Wear comfortable, loose-fitting clothing.",
       "followUp": "Rest recommended for the remainder of the day. Most patients feel increased energy and clarity within 24–48 hours. Protocol typically involves 4–8 sessions.",
-      "howPerformed": "Blood is drawn through IV access into an extracorporeal circuit. It passes through a membrane filter that separates and removes lipids, inflammatory proteins, and heavy metals. The filtered blood is then exposed to medical-grade ozone and UV light before being returned to the patient.",
+      "howPerformed": "Blood is drawn through IV access into an extracorporeal circuit where it is continuously exposed to high-concentration medical-grade ozone and UV light before being returned to the patient. The process treats a significantly larger volume of blood than standard autohemotherapy.",
       "performer": {
         "@type": "Physician",
         "name": "Dr. Jonathan Birch",
@@ -110,12 +110,12 @@ export default function OzoneTherapy() {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "What is EBO2 and how is it different from regular ozone therapy?", "acceptedAnswer": { "@type": "Answer", "text": "EBO2 (also called EBOO or ozone dialysis) is the most advanced form of ozone therapy. Unlike major autohemotherapy, which treats a small volume of blood, EBO2 processes your entire blood volume through an extracorporeal circuit that filters out lipids, heavy metals, and inflammatory proteins before ozonating and UV-irradiating the blood. It's a significantly more comprehensive treatment than standard ozone IV therapy." } },
+        { "@type": "Question", "name": "What is EBO2 and how is it different from regular ozone therapy?", "acceptedAnswer": { "@type": "Answer", "text": "EBO2 (also called EBOO or ozone dialysis) is the most advanced form of ozone therapy. Unlike major autohemotherapy, which treats a small volume of blood per session, EBO2 continuously circulates blood through an extracorporeal circuit where it is exposed to high-concentration medical ozone and UV light — treating a significantly larger volume of blood. It's a more comprehensive and intensive treatment than standard ozone IV therapy." } },
         { "@type": "Question", "name": "Is EBO2 the same as EBOO or ozone dialysis?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — EBO2, EBOO, and ozone dialysis all refer to the same procedure: Extracorporeal Blood Oxygenation and Ozonation. The different names reflect how different clinics and manufacturers market the technology. At Purety Clinic we use the term EBO2, but the procedure is identical to what others call EBOO or ozone dialysis." } },
         { "@type": "Question", "name": "What conditions does ozone therapy treat?", "acceptedAnswer": { "@type": "Answer", "text": "Ozone therapy is used for a wide range of conditions including chronic infections (Lyme disease, EBV, mold toxicity), autoimmune disorders, Long COVID, inflammatory conditions, cardiovascular disease, chronic fatigue, and as a general immune system modulator. EBO2 is particularly effective for conditions with a heavy toxic or inflammatory burden." } },
         { "@type": "Question", "name": "How many EBO2 sessions will I need?", "acceptedAnswer": { "@type": "Answer", "text": "Most protocols involve 4–8 sessions, spaced 1–2 weeks apart. Patients with more chronic or complex conditions may benefit from a longer course. Dr. Birch will recommend a protocol based on your specific diagnosis, lab work, and treatment goals during your initial consultation." } },
         { "@type": "Question", "name": "Is ozone therapy safe?", "acceptedAnswer": { "@type": "Answer", "text": "Medical ozone therapy has an excellent safety record when performed by experienced practitioners using proper protocols and pharmaceutical-grade ozone generators. Dr. Birch has performed over 2,500 ozone treatments and uses only medical-grade equipment. Side effects are generally mild and may include temporary fatigue or mild flu-like symptoms as the body detoxifies." } },
-        { "@type": "Question", "name": "What is 10-Pass ozone and how does it differ from EBO2?", "acceptedAnswer": { "@type": "Answer", "text": "10-Pass (also called Multipass) is a high-dose hyperbaric ozone autohemotherapy. Blood is drawn into a pressurized bottle, ozonated, and returned — repeated 10 times in one sitting for a high dose without filtration. EBO2 is more comprehensive because it also filters the blood. Both are powerful treatments; Dr. Birch will recommend which is appropriate for your situation." } },
+        { "@type": "Question", "name": "What is 10-Pass ozone and how does it differ from EBO2?", "acceptedAnswer": { "@type": "Answer", "text": "10-Pass (also called Multipass) is a high-dose hyperbaric ozone autohemotherapy. Blood is drawn into a pressurized bottle, ozonated, and returned — repeated 10 times in one sitting for a high dose. EBO2 is more comprehensive because it continuously circulates blood through an extracorporeal circuit, treating a much larger total blood volume. Both are powerful treatments; Dr. Birch will recommend which is appropriate for your situation." } },
         { "@type": "Question", "name": "How long does an EBO2 session take?", "acceptedAnswer": { "@type": "Answer", "text": "An EBO2 session typically takes 60–90 minutes from start to finish, including setup, the procedure itself, and a short recovery period. You can drive yourself home afterward, though many patients prefer to rest for the remainder of the day." } },
         { "@type": "Question", "name": "Do you offer ozone therapy near Ventura or Los Angeles?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our clinic is located in Santa Barbara and is easily accessible from Ventura (45 min), Ojai (50 min), Oxnard (55 min), Thousand Oaks (70 min), and Los Angeles (about 1 hr 45 min). Many patients make the drive specifically for our level of experience with EBO2 and 10-Pass ozone." } }
       ]
@@ -213,7 +213,7 @@ export default function OzoneTherapy() {
                   EBO2 — The Most Advanced Ozone Therapy Available
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-5">
-                  EBO2 (also known as EBOO or ozone dialysis) is Extracorporeal Blood Oxygenation and Ozonation — a procedure that processes your entire blood volume through an extracorporeal circuit. Unlike standard ozone IV therapy, EBO2 first filters out lipids, heavy metals, and inflammatory proteins through a membrane dialyzer, then ozoniates and UV-irradiates the blood before returning it.
+                  EBO2 (also known as EBOO or ozone dialysis) is Extracorporeal Blood Oxygenation and Ozonation — a procedure that continuously circulates blood through an extracorporeal circuit where it is exposed to high-concentration medical ozone and UV light before being returned to the body. Unlike standard ozone IV therapy, EBO2 treats a significantly larger volume of blood per session.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-5">
                   The result is a far more comprehensive treatment than major autohemotherapy alone. Patients with chronic infections, mold toxicity, autoimmune conditions, Long COVID, and heavy metal burden often experience dramatic improvement with a course of EBO2 that they haven't found with other treatments.
@@ -223,9 +223,9 @@ export default function OzoneTherapy() {
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    "Filters blood of lipids & toxins",
-                    "Ozonates & UV-irradiates blood",
-                    "Full-volume blood processing",
+                    "High-concentration ozone exposure",
+                    "UV-irradiates blood in circuit",
+                    "Larger blood volume than standard MAH",
                     "Treats systemic infections",
                     "Autoimmune modulation",
                     "No hospital stay required",
@@ -278,7 +278,7 @@ export default function OzoneTherapy() {
                   </div>
                   <h3 className="font-serif text-xl font-bold mb-3">EBO2 / EBOO / Ozone Dialysis</h3>
                   <p className="text-muted-foreground text-sm mb-5 leading-relaxed flex-1">
-                    Extracorporeal Blood Oxygenation and Ozonation — the most comprehensive ozone therapy. Your entire blood volume is filtered, ozonated, and UV-irradiated in a continuous extracorporeal circuit. Also called EBOO or ozone dialysis.
+                    Extracorporeal Blood Oxygenation and Ozonation — the most comprehensive ozone therapy. Blood continuously circulates through an extracorporeal circuit, where it is exposed to high-concentration ozone and UV light before being returned. Also called EBOO or ozone dialysis.
                   </p>
                   <h4 className="font-bold text-xs text-foreground uppercase tracking-wider mb-2">Best for:</h4>
                   <ul className="space-y-1 text-sm text-muted-foreground">
@@ -532,7 +532,7 @@ export default function OzoneTherapy() {
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 px-8">
                 <FAQItem
                   question="What is EBO2 and how is it different from regular ozone therapy?"
-                  answer="EBO2 (also called EBOO or ozone dialysis) is the most advanced form of ozone therapy. Unlike major autohemotherapy, which treats a small volume of blood, EBO2 processes your entire blood volume through an extracorporeal circuit that filters out lipids, heavy metals, and inflammatory proteins before ozonating and UV-irradiating the blood. It's a significantly more comprehensive treatment than standard ozone IV therapy."
+                  answer="EBO2 (also called EBOO or ozone dialysis) is the most advanced form of ozone therapy. Unlike major autohemotherapy, which treats a small volume of blood per session, EBO2 continuously circulates blood through an extracorporeal circuit where it is exposed to high-concentration medical ozone and UV light — treating a significantly larger volume of blood. It's a more comprehensive and intensive treatment than standard ozone IV therapy."
                 />
                 <FAQItem
                   question="Is EBO2 the same as EBOO or ozone dialysis?"
@@ -552,7 +552,7 @@ export default function OzoneTherapy() {
                 />
                 <FAQItem
                   question="What is 10-Pass ozone and how does it differ from EBO2?"
-                  answer="10-Pass (also called Multipass) is a high-dose hyperbaric ozone autohemotherapy. Blood is drawn into a pressurized bottle, ozonated, and returned — repeated 10 times in one sitting for a high dose without filtration. EBO2 is more comprehensive because it also filters the blood. Both are powerful treatments; Dr. Birch will recommend which is appropriate for your situation."
+                  answer="10-Pass (also called Multipass) is a high-dose hyperbaric ozone autohemotherapy. Blood is drawn into a pressurized bottle, ozonated, and returned — repeated 10 times in one sitting for a high dose. EBO2 is more comprehensive because it continuously circulates blood through an extracorporeal circuit, treating a much larger total blood volume. Both are powerful treatments; Dr. Birch will recommend which is appropriate for your situation."
                 />
                 <FAQItem
                   question="How long does an EBO2 session take?"
