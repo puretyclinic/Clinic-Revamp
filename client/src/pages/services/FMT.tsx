@@ -139,6 +139,62 @@ export default function FMT() {
             "@type": "Answer",
             "text": "Treatment costs vary based on your specific protocol and delivery method. We discuss pricing during your initial consultation. Many patients find FMT cost-effective compared to ongoing antibiotics, repeated hospitalizations, and lost quality of life from chronic illness."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Can FMT capsules be shipped to me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. For patients who qualify after a remote consultation, we can ship FMT capsules directly to your home anywhere in the United States. Capsules are triple-encapsulated, frozen, and shipped with dry ice to preserve viability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What conditions does FMT treat besides C. diff?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While C. diff is the most well-studied indication with the highest success rate, FMT is also being used clinically for IBS, ulcerative colitis, Crohn's disease, SIBO, and other gut dysbiosis conditions. Dr. Birch evaluates each patient individually to determine whether FMT is appropriate for their specific diagnosis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a super donor and why does it matter for FMT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A super donor is a FMT donor whose microbiome produces significantly better patient outcomes than average donors. Research shows donor selection is one of the most important variables in FMT success. At Purety Clinic, we identify and maintain a small pool of super donors who are rigorously and continuously screened. Using a super donor materially improves your chances of a successful outcome."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does FMT treatment take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the delivery method. FMT capsules are taken daily for approximately 14 days. A retention enema protocol typically runs 3 to 5 days. A colonoscopy-delivered FMT is a single session. Most patients begin noticing improvement within the first week, with full resolution typically within 4 to 6 weeks of completing the protocol."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between FMT and probiotics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Probiotics introduce a small number of specific bacterial strains into your gut. FMT transfers a complete, diverse ecosystem of thousands of bacterial species — the full microbiome of a healthy donor. This is why FMT is dramatically more effective than probiotics for conditions like C. diff: it restores the entire community of gut bacteria, not just a handful of strains."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is FMT covered by insurance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Insurance coverage for FMT varies by plan and diagnosis. For recurrent C. diff, some insurance plans do cover the procedure. We recommend contacting your insurance provider before your consultation. Our team can also help you understand what documentation may be needed to support a coverage request."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I prepare for FMT treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Preparation depends on the delivery method. For capsule-based FMT, you will typically stop antibiotics 48 to 72 hours before starting and follow a light bowel prep. For colonoscopy FMT, standard colonoscopy prep is required. Dr. Birch will provide you with a detailed, personalized preparation protocol after your consultation."
+          }
         }
       ]
     };
@@ -637,9 +693,14 @@ export default function FMT() {
                     </div>
                   ))}
                 </div>
-                <Button size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-white font-bold rounded-lg" onClick={scrollToForm}>
-                  Schedule Your Consultation
-                </Button>
+                <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold rounded-lg" onClick={scrollToForm}>
+                    Schedule Your Consultation
+                  </Button>
+                  <a href="/dr-jonathan-birch" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-primary/30 text-primary font-bold hover:bg-primary/5 transition-colors text-sm" data-testid="link-fmt-dr-birch-bio">
+                    Full Bio &amp; Credentials <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
               </FadeIn>
             </div>
           </div>
@@ -705,6 +766,34 @@ export default function FMT() {
                 <FAQItem
                   question="How much does FMT treatment cost?"
                   answer="Treatment costs vary based on your specific protocol and delivery method. We discuss pricing during your initial consultation. Many patients find FMT cost-effective compared to ongoing antibiotics, repeated hospitalizations, and lost quality of life from chronic illness."
+                />
+                <FAQItem
+                  question="Can FMT capsules be shipped to me?"
+                  answer="Yes. For patients who qualify after a remote consultation, we can ship FMT capsules directly to your home anywhere in the United States. This makes treatment accessible to patients who cannot travel to Santa Barbara. Capsules are triple-encapsulated, frozen, and shipped with dry ice to preserve viability."
+                />
+                <FAQItem
+                  question="What conditions does FMT treat besides C. diff?"
+                  answer="While C. diff is the most well-studied indication with the highest success rate, FMT is also being used clinically for IBS (irritable bowel syndrome), ulcerative colitis, Crohn's disease, SIBO (small intestinal bacterial overgrowth), and other gut dysbiosis conditions. Dr. Birch evaluates each patient individually to determine whether FMT is appropriate for their specific diagnosis."
+                />
+                <FAQItem
+                  question="What is a super donor and why does it matter?"
+                  answer="A super donor is a FMT donor whose microbiome appears to produce significantly better outcomes than average donors. Research shows that donor selection is one of the most important variables in FMT success. At Purety Clinic, we identify and maintain a small pool of super donors who are rigorously and continuously screened. Using a super donor materially improves your chances of a successful outcome."
+                />
+                <FAQItem
+                  question="How long does FMT treatment take?"
+                  answer="It depends on the delivery method. FMT capsules are taken daily for approximately 14 days. A retention enema protocol typically runs 3–5 days. A colonoscopy-delivered FMT is a single session. Most patients begin noticing improvement within the first week, with full resolution typically within 4–6 weeks of completing the protocol."
+                />
+                <FAQItem
+                  question="What is the difference between FMT and probiotics?"
+                  answer="Probiotics introduce a small number of specific bacterial strains into your gut. FMT transfers a complete, diverse ecosystem of thousands of bacterial species — the full microbiome of a healthy donor. This is why FMT is dramatically more effective than probiotics for conditions like C. diff: it restores the entire community of gut bacteria, not just a handful of strains."
+                />
+                <FAQItem
+                  question="Is FMT covered by insurance?"
+                  answer="Insurance coverage for FMT varies by plan and diagnosis. For recurrent C. diff, some insurance plans do cover the procedure. We recommend contacting your insurance provider before your consultation. Our team can also help you understand what documentation may be needed to support a coverage request."
+                />
+                <FAQItem
+                  question="How do I prepare for FMT treatment?"
+                  answer="Preparation depends on the delivery method. For capsule-based FMT, you will typically stop antibiotics 48–72 hours before starting and follow a light bowel prep. For colonoscopy FMT, standard colonoscopy prep is required. Dr. Birch will provide you with a detailed, personalized preparation protocol after your consultation."
                 />
               </div>
             </FadeIn>

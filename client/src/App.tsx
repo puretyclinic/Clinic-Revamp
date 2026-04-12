@@ -29,6 +29,7 @@ import LocationPage from "@/pages/LocationPage";
 import Testimonials from "@/pages/Testimonials";
 import FAQ from "@/pages/FAQ";
 import Admin from "@/pages/Admin";
+import DrBirch from "@/pages/DrBirch";
 
 function Router() {
   return (
@@ -52,6 +53,7 @@ function Router() {
       <Route path="/faqs" component={FAQ} />
 
       <Route path="/doctors" component={About} />
+      <Route path="/dr-jonathan-birch" component={DrBirch} />
       <Route path="/contact" component={Contact} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:id" component={BlogPost} />
