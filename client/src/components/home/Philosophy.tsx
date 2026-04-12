@@ -11,8 +11,8 @@ export function Philosophy() {
               <div className="absolute inset-0 bg-secondary/30 rounded-[3rem] rotate-3 transform"></div>
               <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl relative z-10 bg-white p-2">
                  <img 
-                   src="https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1613153079774-2B13LPCPQFVKOY83RHZK/Front+of+Purety+Clinic+Office.jpg" 
-                   alt="Purety Clinic Office" 
+                   src="/images/clinic-sign.jpeg" 
+                   alt="Purety Clinic — Oak Park Medical Building, Santa Barbara" 
                    className="w-full h-full object-cover rounded-[2rem] hover:scale-105 transition-transform duration-700"
                  />
               </div>
