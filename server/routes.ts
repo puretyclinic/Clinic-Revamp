@@ -233,5 +233,68 @@ export async function registerRoutes(
     }
   });
 
+  // Google Reviews endpoint — keeps API key server-side
+  let reviewsCache: { data: unknown; fetchedAt: number } | null = null;
+  const REVIEWS_CACHE_MS = 60 * 60 * 1000; // 1 hour
+
+  app.get("/api/reviews", async (_req, res) => {
+    try {
+      const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+      const placeId = process.env.GOOGLE_PLACE_ID;
+
+      if (!apiKey || !placeId) {
+        return res.status(503).json({ error: "Reviews not configured" });
+      }
+
+      // Return cached result if fresh
+      if (reviewsCache && Date.now() - reviewsCache.fetchedAt < REVIEWS_CACHE_MS) {
+        return res.json(reviewsCache.data);
+      }
+
+      const response = await fetch(
+        `https://places.googleapis.com/v1/places/${placeId}`,
+        {
+          headers: {
+            "X-Goog-Api-Key": apiKey,
+            "X-Goog-FieldMask": "rating,userRatingCount,reviews",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Places API error: ${response.status}`);
+      }
+
+      const raw = await response.json() as {
+        rating?: number;
+        userRatingCount?: number;
+        reviews?: Array<{
+          authorAttribution?: { displayName?: string; photoUri?: string };
+          rating?: number;
+          text?: { text?: string };
+          relativePublishTimeDescription?: string;
+        }>;
+      };
+
+      const data = {
+        rating: raw.rating ?? 5,
+        totalReviews: raw.userRatingCount ?? 0,
+        reviews: (raw.reviews ?? []).map((r) => ({
+          author: r.authorAttribution?.displayName ?? "Patient",
+          photoUri: r.authorAttribution?.photoUri ?? null,
+          rating: r.rating ?? 5,
+          text: r.text?.text ?? "",
+          timeAgo: r.relativePublishTimeDescription ?? "",
+        })),
+      };
+
+      reviewsCache = { data, fetchedAt: Date.now() };
+      return res.json(data);
+    } catch (error) {
+      console.error("Reviews fetch error:", error);
+      return res.status(500).json({ error: "Failed to fetch reviews" });
+    }
+  });
+
   return httpServer;
 }
