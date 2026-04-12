@@ -210,7 +210,7 @@ export default function Home() {
 
               {/* Women's Health & Pediatrics — Dr. Dena */}
               <FadeIn delay={0.25}>
-                <Link href="/services/naturopathic">
+                <Link href="/dr-dena-birch">
                   <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/20 transition-all cursor-pointer h-full">
                     <div className="text-xs font-bold uppercase tracking-widest text-accent mb-3">Dr. Dena Birch · NMD</div>
                     <h3 className="font-serif text-lg font-bold text-foreground mb-4">Women's Health & Pediatrics</h3>

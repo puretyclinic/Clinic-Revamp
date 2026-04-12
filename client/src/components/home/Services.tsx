@@ -51,7 +51,7 @@ const services = [
     title: "Women's Health & Pediatrics",
     description: "Dr. Dena Birch NMD specializes in hormone balance, fertility, menopause, prenatal care, and holistic pediatric medicine.",
     icon: Baby,
-    link: "/services/naturopathic",
+    link: "/dr-dena-birch",
     badge: "Dr. Dena Birch"
   },
   {
