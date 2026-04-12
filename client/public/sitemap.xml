@@ -38,9 +38,23 @@
 
   <url>
     <loc>https://www.puretyclinic.com/services/regenerative</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/prp-santa-barbara</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/stem-cell-therapy-santa-barbara</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>

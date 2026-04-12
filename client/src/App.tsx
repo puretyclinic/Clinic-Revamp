@@ -38,6 +38,8 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
       <Route path="/services/regenerative" component={RegenerativeMedicine} />
+      <Route path="/prp-santa-barbara" component={RegenerativeMedicine} />
+      <Route path="/stem-cell-therapy-santa-barbara" component={RegenerativeMedicine} />
       <Route path="/services/iv-therapy" component={IVTherapy} />
       <Route path="/services/naturopathic" component={NaturopathicMedicine} />
       <Route path="/services/fmt" component={FMT} />

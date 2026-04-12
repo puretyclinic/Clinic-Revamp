@@ -176,6 +176,35 @@ export default function BlogPost() {
           );
         })()}
 
+        {/* PRP/Regenerative-specific CTA */}
+        {post.tags?.some(t => ["PRP", "StemCells", "RegenerativeMedicine", "JointPain"].includes(t)) && (
+          <section className="py-16 bg-primary/5 border-t border-primary/20">
+            <div className="container mx-auto px-4 max-w-3xl text-center">
+              <FadeIn>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-5 border border-primary/20">
+                  Ultrasound-Guided PRP &amp; Stem Cell Therapy · Santa Barbara, CA
+                </div>
+                <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
+                  Ready to Explore Regenerative Treatment?
+                </h2>
+                <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+                  Dr. Jonathan Birch NMD, RMSK uses real-time ultrasound guidance on every injection — one of the few practitioners in the Santa Barbara area with board-registered musculoskeletal sonography certification.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="/services/regenerative" data-testid="link-blog-regen-cta">
+                    <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold rounded-lg px-8">
+                      PRP &amp; Stem Cell Info <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                  <Button size="lg" variant="outline" className="border-primary/30 text-primary font-bold rounded-lg" asChild>
+                    <a href="tel:+18055008300">Call (805) 500-8300</a>
+                  </Button>
+                </div>
+              </FadeIn>
+            </div>
+          </section>
+        )}
+
         {/* FMT-specific CTA for FMT blog posts */}
         {post.tags?.some(t => ["FMT", "FecalTransplant", "CdiffTreatment", "Cdiff", "GutHealth", "StoolTransplant"].includes(t)) && (
           <section className="py-16 bg-primary/5 border-t border-primary/20">
