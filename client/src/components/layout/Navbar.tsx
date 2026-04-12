@@ -107,8 +107,9 @@ export function Navbar() {
             </button>
 
             {isServicesOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 animate-in fade-in slide-in-from-top-2 duration-150">
-                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-2 overflow-hidden">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-56 pt-3 animate-in fade-in slide-in-from-top-2 duration-150">
+                <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2">
+                <div className="absolute top-1 left-1/2 -translate-x-1/2 w-4 h-2 overflow-hidden">
                   <div className="w-3 h-3 bg-white border-l border-t border-gray-100 rotate-45 mx-auto mt-1" />
                 </div>
                 {serviceLinks.map((link, i) => (
@@ -126,6 +127,7 @@ export function Navbar() {
                     {link.name}
                   </Link>
                 ))}
+                </div>
               </div>
             )}
           </div>
