@@ -73,7 +73,7 @@ export default function BlogPost() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
+    <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground overflow-x-hidden">
       <Navbar />
       
       <main className="flex-grow">
@@ -125,8 +125,8 @@ export default function BlogPost() {
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </FadeIn>
 
-            <div className="mt-16 pt-8 border-t border-gray-100 flex justify-between items-center">
-               <div className="flex gap-2">
+            <div className="mt-16 pt-8 border-t border-gray-100 flex flex-wrap justify-between items-center gap-3">
+               <div className="flex flex-wrap gap-2">
                  {post.tags?.map((tag) => (
                    <span key={tag} className="px-3 py-1 bg-gray-100 rounded-full text-xs font-bold text-muted-foreground">#{tag}</span>
                  ))}
