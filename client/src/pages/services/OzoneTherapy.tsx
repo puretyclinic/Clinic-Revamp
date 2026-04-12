@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Wind, Activity, Zap, Droplets, CheckCircle2, ArrowRight, ShieldCheck, Star, ChevronDown, ChevronUp, MapPin, Phone } from "lucide-react";
+import { Wind, Activity, Zap, CheckCircle2, ShieldCheck, Star, ChevronDown, ChevronUp, MapPin, Phone } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -27,13 +27,13 @@ export default function OzoneTherapy() {
   useEffect(() => {
     document.title = "Ozone Therapy Santa Barbara | EBO2 | EBOO | Ozone Dialysis | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Santa Barbara's most experienced ozone therapy clinic. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (EBOO / ozone dialysis), Multipass OHT / 10-Pass, and major autohemotherapy. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Santa Barbara's most experienced ozone therapy clinic. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (EBOO / ozone dialysis), Multipass OHT / 10-Pass, and Prolozone injections. Call (805) 500-8300.");
 
     const localSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalClinic",
       "name": "Purety Family Medical Clinic — Ozone Therapy & EBO2",
-      "description": "Santa Barbara's most experienced ozone therapy clinic. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (also known as EBOO or ozone dialysis), Multipass OHT / 10-Pass, and major autohemotherapy.",
+      "description": "Santa Barbara's most experienced ozone therapy clinic. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (also known as EBOO or ozone dialysis), Multipass OHT / 10-Pass, and Prolozone injections.",
       "url": "https://puretyclinic.com/services/ozone-therapy",
       "telephone": "+1-805-500-8300",
       "address": {
@@ -65,7 +65,6 @@ export default function OzoneTherapy() {
       "availableService": [
         { "@type": "MedicalProcedure", "name": "EBO2 (EBOO / Ozone Dialysis)", "description": "Extracorporeal Blood Oxygenation and Ozonation — the most comprehensive ozone therapy available. Blood is continuously circulated through an extracorporeal circuit, exposed to high-concentration medical ozone and UV light, and returned. Also known as EBOO or ozone dialysis." },
         { "@type": "MedicalProcedure", "name": "Multipass OHT / 10-Pass", "description": "Hyperbaric high-dose ozone autohemotherapy. Blood is drawn, ozonated under pressure, and returned — repeated 10 times in a single session." },
-        { "@type": "MedicalProcedure", "name": "Major Autohemotherapy (MAH)", "description": "Standard ozone autohemotherapy: blood drawn, ozonated, and returned intravenously." },
         { "@type": "MedicalProcedure", "name": "Prolozone Injections", "description": "Ozone injected directly into joints and soft tissue to reduce pain and stimulate healing." }
       ],
       "aggregateRating": {
@@ -109,7 +108,7 @@ export default function OzoneTherapy() {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "What is EBO2 and how is it different from regular ozone therapy?", "acceptedAnswer": { "@type": "Answer", "text": "EBO2 (also called EBOO or ozone dialysis) is the most advanced form of ozone therapy. Unlike major autohemotherapy, which treats a small volume of blood per session, EBO2 continuously circulates blood through an extracorporeal circuit where it is exposed to high-concentration medical ozone and UV light — treating a significantly larger volume of blood. It's a more comprehensive and intensive treatment than standard ozone IV therapy." } },
+        { "@type": "Question", "name": "What is EBO2 and how is it different from regular ozone therapy?", "acceptedAnswer": { "@type": "Answer", "text": "EBO2 (also called EBOO or ozone dialysis) is the most advanced form of ozone therapy. Unlike standard ozone IV therapy, EBO2 continuously circulates blood through an extracorporeal circuit where it is exposed to high-concentration medical ozone and UV light — treating a significantly larger volume of blood per session. It's a more comprehensive and intensive treatment." } },
         { "@type": "Question", "name": "Is EBO2 the same as EBOO or ozone dialysis?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — EBO2, EBOO, and ozone dialysis all refer to the same procedure: Extracorporeal Blood Oxygenation and Ozonation. The different names reflect how different clinics and manufacturers market the technology. At Purety Clinic we use the term EBO2, but the procedure is identical to what others call EBOO or ozone dialysis." } },
         { "@type": "Question", "name": "What conditions does ozone therapy treat?", "acceptedAnswer": { "@type": "Answer", "text": "Ozone therapy is used for a wide range of conditions including chronic infections (Lyme disease, EBV, mold toxicity), autoimmune disorders, Long COVID, inflammatory conditions, cardiovascular disease, chronic fatigue, and as a general immune system modulator. EBO2 is particularly effective for conditions with a heavy toxic or inflammatory burden." } },
         { "@type": "Question", "name": "How many EBO2 sessions will I need?", "acceptedAnswer": { "@type": "Answer", "text": "Most protocols involve 4–8 sessions, spaced 1–2 weeks apart. Patients with more chronic or complex conditions may benefit from a longer course. Dr. Birch will recommend a protocol based on your specific diagnosis, lab work, and treatment goals during your initial consultation." } },
@@ -171,7 +170,7 @@ export default function OzoneTherapy() {
                 Ozone <span className="italic text-accent">Therapy</span>
               </h1>
               <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-3">
-                EBO2 · EBOO · Ozone Dialysis · Multipass OHT / 10-Pass · Major Autohemotherapy
+                EBO2 · EBOO · Ozone Dialysis · Multipass OHT / 10-Pass · Prolozone
               </p>
               <p className="text-sm text-white/60 mb-8">
                 2,500+ treatments performed in Santa Barbara · Serving the Central Coast & Southern California
@@ -215,7 +214,7 @@ export default function OzoneTherapy() {
                   EBO2 (also known as EBOO or ozone dialysis) is Extracorporeal Blood Oxygenation and Ozonation — a procedure that continuously circulates blood through an extracorporeal circuit where it is exposed to high-concentration medical ozone and UV light before being returned to the body. Unlike standard ozone IV therapy, EBO2 treats a significantly larger volume of blood per session.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-5">
-                  The result is a far more comprehensive treatment than major autohemotherapy alone. Patients with chronic infections, mold toxicity, autoimmune conditions, Long COVID, and heavy metal burden often experience dramatic improvement with a course of EBO2 that they haven't found with other treatments.
+                  The result is a far more comprehensive treatment than standard ozone IV therapy. Patients with chronic infections, mold toxicity, autoimmune conditions, Long COVID, and heavy metal burden often experience dramatic improvement with a course of EBO2 that they haven't found with other treatments.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   Dr. Birch has performed over 2,500 ozone treatments at Purety Clinic — making this one of the highest-volume ozone practices on the Central Coast of California.
@@ -224,7 +223,7 @@ export default function OzoneTherapy() {
                   {[
                     "High-concentration ozone exposure",
                     "UV-irradiates blood in circuit",
-                    "Larger blood volume than standard MAH",
+                    "Larger blood volume than standard ozone IV",
                     "Treats systemic infections",
                     "Autoimmune modulation",
                     "No hospital stay required",
@@ -300,24 +299,6 @@ export default function OzoneTherapy() {
                   <h4 className="font-bold text-xs text-foreground uppercase tracking-wider mb-2">Best for:</h4>
                   <ul className="space-y-1 text-sm text-muted-foreground">
                     {["Viral infections", "Immune system support", "Cancer support", "Fatigue & brain fog", "Chronic inflammation"].map((c, i) => (
-                      <li key={i} className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-green-600 shrink-0" /> {c}</li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.15}>
-                <div className="bg-white rounded-2xl p-7 shadow-sm border border-gray-100 h-full flex flex-col">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Droplets className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-serif text-xl font-bold mb-3">Major Autohemotherapy (MAH)</h3>
-                  <p className="text-muted-foreground text-sm mb-5 leading-relaxed flex-1">
-                    Standard ozone autohemotherapy — a volume of blood is drawn, mixed with ozone, and returned intravenously. A well-established protocol for immune modulation and infection control.
-                  </p>
-                  <h4 className="font-bold text-xs text-foreground uppercase tracking-wider mb-2">Best for:</h4>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    {["General immune support", "Acute infections", "Maintenance therapy", "Energy & vitality"].map((c, i) => (
                       <li key={i} className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-green-600 shrink-0" /> {c}</li>
                     ))}
                   </ul>
@@ -496,7 +477,7 @@ export default function OzoneTherapy() {
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 px-8">
                 <FAQItem
                   question="What is EBO2 and how is it different from regular ozone therapy?"
-                  answer="EBO2 (also called EBOO or ozone dialysis) is the most advanced form of ozone therapy. Unlike major autohemotherapy, which treats a small volume of blood per session, EBO2 continuously circulates blood through an extracorporeal circuit where it is exposed to high-concentration medical ozone and UV light — treating a significantly larger volume of blood. It's a more comprehensive and intensive treatment than standard ozone IV therapy."
+                  answer="EBO2 (also called EBOO or ozone dialysis) is the most advanced form of ozone therapy. Unlike standard ozone IV therapy, EBO2 continuously circulates blood through an extracorporeal circuit where it is exposed to high-concentration medical ozone and UV light — treating a significantly larger volume of blood per session. It's a more comprehensive and intensive treatment."
                 />
                 <FAQItem
                   question="Is EBO2 the same as EBOO or ozone dialysis?"
