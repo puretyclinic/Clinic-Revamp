@@ -234,6 +234,35 @@ export default function BlogPost() {
           </section>
         )}
 
+        {/* Ozone/EBOO-specific CTA */}
+        {post.tags?.some(t => ["Ozone", "EBOO", "EBO2", "OzoneTherapy"].includes(t)) && (
+          <section className="py-16 bg-primary/5 border-t border-primary/20">
+            <div className="container mx-auto px-4 max-w-3xl text-center">
+              <FadeIn>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-5 border border-primary/20">
+                  2,500+ Ozone Treatments · Santa Barbara, CA
+                </div>
+                <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
+                  Interested in EBOO or Ozone Therapy?
+                </h2>
+                <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+                  Dr. Jonathan Birch is one of the most experienced ozone therapy providers on California's Central Coast. Book a consultation to find out which ozone protocol is right for your condition.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="/services/ozone-therapy" data-testid="link-blog-ozone-cta">
+                    <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold rounded-lg px-8">
+                      Learn About Ozone Therapies <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                  <Button size="lg" variant="outline" className="border-primary/30 text-primary font-bold rounded-lg" asChild>
+                    <a href="tel:+18055008300">Call (805) 500-8300</a>
+                  </Button>
+                </div>
+              </FadeIn>
+            </div>
+          </section>
+        )}
+
         <ContactCTA heading="Have Questions About Your Health?" formSource="Blog Post" />
       </main>
       

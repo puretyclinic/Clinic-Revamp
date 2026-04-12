@@ -187,7 +187,7 @@ export default function Home() {
                         <li key={i} className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" />{c}</li>
                       ))}
                     </ul>
-                    <div className="mt-5 text-xs font-bold text-primary">Learn about EBO2 →</div>
+                    <div className="mt-5 text-xs font-bold text-primary">Learn about ozone therapies →</div>
                   </div>
                 </Link>
               </FadeIn>

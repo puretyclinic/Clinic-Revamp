@@ -167,10 +167,13 @@ export default function OzoneTherapy() {
                 Santa Barbara, CA
               </span>
               <h1 className="font-serif text-5xl md:text-7xl mb-6 leading-tight">
-                Ozone <span className="italic text-accent">Therapy</span>
+                Ozone <span className="italic text-accent">Therapies</span>
               </h1>
-              <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-3">
-                EBO2 · EBOO · Ozone Dialysis · Multipass OHT / 10-Pass · Prolozone
+              <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-4">
+                Medical ozone therapy uses high-concentration ozone gas to oxygenate the blood, modulate the immune system, and eliminate chronic pathogens — delivered through several evidence-informed protocols depending on your condition and goals.
+              </p>
+              <p className="text-sm text-white/60 mb-3">
+                EBOO · EBO2 · Ozone Dialysis · Multipass OHT / 10-Pass · Prolozone
               </p>
               <p className="text-sm text-white/60 mb-8">
                 2,500+ treatments performed in Santa Barbara · Serving the Central Coast & Southern California

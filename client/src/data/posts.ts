@@ -15,6 +15,113 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "eboo-ozone-therapy-guide",
+    title: "EBOO Therapy: What It Is, How It Works, and Who It Helps",
+    excerpt: "EBOO (also called EBO2 or ozone dialysis) is the most advanced form of ozone therapy available. Here's a complete guide to what EBOO is, how it differs from other ozone treatments, what conditions it treats, and what to expect from a session.",
+    date: "April 12, 2026",
+    author: "Dr. Jonathan Birch",
+    authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612850026107-T8M1DMZCFPJ8630SCU8C/Naturopathic+Dr.+Birch",
+    authorTitle: "NMD, RMSK — Ozone Therapy Specialist",
+    image: "/images/ebo2-machine.jpeg",
+    category: "Ozone Therapy",
+    tags: ["Ozone", "EBOO", "EBO2", "OzoneTherapy", "LongCOVID", "ChronicLyme", "Autoimmune"],
+    content: `<p class="lead text-xl text-muted-foreground mb-8">
+  EBOO — Extracorporeal Blood Oxygenation and Ozonation — is the most advanced form of ozone therapy currently available. You may also see it called EBO2 or ozone dialysis. All three names refer to the same procedure. At Purety Family Medical Clinic in Santa Barbara, Dr. Jonathan Birch has performed over 2,500 ozone treatments and is one of the most experienced EBOO providers on the California Central Coast.
+</p>
+
+<h2>What Is EBOO?</h2>
+<p>
+  EBOO stands for Extracorporeal Blood Oxygenation and Ozonation. In simple terms, your blood is drawn out of the body through IV access, circulated through an external circuit where it is exposed to high-concentration medical-grade ozone and ultraviolet (UV) light, and then returned to your body.
+</p>
+<p>
+  What sets EBOO apart from older forms of ozone therapy is the volume of blood treated. Standard major autohemotherapy treats a small volume of blood — typically 100–200 mL — in a single pass. EBOO continuously circulates blood through the extracorporeal circuit throughout the session, treating a significantly larger volume of blood with high-concentration ozone.
+</p>
+<p>
+  The UV irradiation step adds another layer — exposing the blood to specific wavelengths of ultraviolet light known to have antimicrobial and immune-modulating effects.
+</p>
+
+<h2>EBOO, EBO2, and Ozone Dialysis — Are They the Same?</h2>
+<p>
+  Yes. EBOO, EBO2, and "ozone dialysis" are all names for the same procedure. The naming varies by equipment manufacturer and clinic:
+</p>
+<ul>
+  <li><strong>EBOO</strong> is the most commonly searched term and the name used by many practitioners trained in Europe.</li>
+  <li><strong>EBO2</strong> is the name used by one of the primary equipment manufacturers.</li>
+  <li><strong>Ozone dialysis</strong> is a descriptive term that emphasizes the extracorporeal (outside-the-body) nature of the treatment, similar conceptually to dialysis though the mechanism is different.</li>
+</ul>
+<p>
+  At Purety Clinic, we use the terms interchangeably. If you've heard any of these three names from another provider or in your own research, you're asking about the same therapy.
+</p>
+
+<h2>How Does EBOO Differ from Other Ozone Therapies?</h2>
+<p>
+  Ozone therapy encompasses several different delivery methods. Here's how EBOO compares to the most common alternatives:
+</p>
+<ul>
+  <li><strong>EBOO / EBO2:</strong> Continuous extracorporeal circuit. Blood is continuously drawn, exposed to high-concentration ozone and UV light, and returned. Treats the largest blood volume. Most comprehensive ozone therapy available.</li>
+  <li><strong>Multipass OHT / 10-Pass:</strong> Blood is drawn into a pressurized chamber, ozonated, and returned — repeated 10 times in a single session. High dose without the continuous circuit. A strong protocol for acute viral infections and general immune support.</li>
+  <li><strong>Major Autohemotherapy (MAH):</strong> A smaller volume of blood is drawn, mixed with ozone in a bag, and returned via IV. Standard entry-level ozone IV therapy. Less intensive than EBOO or Multipass.</li>
+  <li><strong>Prolozone Injections:</strong> Ozone injected directly into joints, tendons, or soft tissue. Used for local pain and tissue healing rather than systemic immune effects.</li>
+</ul>
+<p>
+  For patients with complex chronic conditions — particularly those involving a significant immune, infectious, or inflammatory burden — EBOO is typically the most appropriate place to start.
+</p>
+
+<h2>What Conditions Does EBOO Treat?</h2>
+<p>
+  EBOO is most commonly used for conditions where chronic infection, immune dysfunction, or inflammatory burden is a central feature:
+</p>
+<ul>
+  <li><strong>Long COVID and post-viral fatigue:</strong> One of the most common reasons patients seek EBOO. Long COVID creates a persistent inflammatory state that ozone therapy can help modulate.</li>
+  <li><strong>Chronic Lyme disease:</strong> Ozone has direct antimicrobial properties and may help address the immune dysregulation associated with Lyme and co-infections.</li>
+  <li><strong>Mold and mycotoxin illness:</strong> EBOO is frequently used as part of comprehensive mold detoxification protocols alongside binders, nutritional support, and environmental remediation.</li>
+  <li><strong>Chronic EBV and other viral infections:</strong> Reactivated Epstein-Barr virus is a common finding in patients with chronic fatigue. Ozone's antiviral properties make EBOO a useful tool in these cases.</li>
+  <li><strong>Autoimmune conditions:</strong> Ozone therapy has immune-modulating effects that may help reduce the immune hyperactivity driving autoimmune disease.</li>
+  <li><strong>Chronic fatigue syndrome (ME/CFS) and fibromyalgia:</strong> Patients with these diagnoses often have underlying inflammatory or infectious contributors that ozone therapy can address.</li>
+  <li><strong>Cardiovascular disease:</strong> Ozone therapy improves oxygen delivery and circulation and has been studied in the context of cardiovascular health.</li>
+  <li><strong>Heavy metal burden:</strong> As part of a broader detoxification protocol, EBOO may support the body's ability to process and eliminate heavy metals.</li>
+</ul>
+
+<blockquote>
+  "The patients who tend to respond best to EBOO are those who've been struggling with something chronic — Long COVID, Lyme, mold illness — for years. They've often tried many other approaches. For a significant portion of them, ozone therapy is a turning point." — Dr. Jonathan Birch
+</blockquote>
+
+<h2>What to Expect from an EBOO Session</h2>
+<p>
+  Your first EBOO session at Purety Clinic begins with a consultation with Dr. Birch to review your history, labs, and goals. Once treatment begins:
+</p>
+<ul>
+  <li><strong>Setup:</strong> IV access is established, typically in both arms — one for drawing blood out, one for returning it.</li>
+  <li><strong>The procedure:</strong> Blood circulates continuously through the extracorporeal circuit where it is exposed to ozone and UV light. The session runs for approximately 60–90 minutes.</li>
+  <li><strong>During the session:</strong> Most patients relax, read, or listen to music. The procedure is not painful, though some patients report mild warmth or awareness at the IV sites.</li>
+  <li><strong>After the session:</strong> Most patients can drive themselves home. Some feel an immediate sense of clarity or energy. Others feel tired as the body begins its response — this is normal and typically passes within 24–48 hours.</li>
+</ul>
+
+<h2>How Many EBOO Sessions Will I Need?</h2>
+<p>
+  Most protocols involve 4–8 sessions spaced 1–2 weeks apart. The right number for you depends on your condition, how long you've been dealing with it, your labs, and how your body responds to the initial sessions. Dr. Birch will discuss a recommended protocol at your consultation and adjust it based on your response.
+</p>
+<p>
+  Some patients with very chronic or complex conditions benefit from a longer initial course followed by quarterly maintenance sessions.
+</p>
+
+<h2>Is EBOO Safe?</h2>
+<p>
+  Medical ozone therapy has a strong safety record when performed by trained practitioners using pharmaceutical-grade ozone generators and proper protocols. Side effects are generally mild and may include temporary fatigue, mild flu-like symptoms (often a positive sign that the immune system is responding), or lightheadedness immediately after a session.
+</p>
+<p>
+  EBOO is not appropriate for everyone. Patients with certain clotting disorders, G6PD deficiency, or active hyperthyroidism require careful evaluation before proceeding. Dr. Birch reviews your health history and labs before recommending treatment.
+</p>
+
+<h2>EBOO at Purety Family Medical Clinic, Santa Barbara</h2>
+<p>
+  Dr. Jonathan Birch has been performing ozone therapy for over a decade and has completed more than 2,500 ozone treatments. Purety Clinic is one of the most experienced ozone therapy practices on California's Central Coast, serving patients from Santa Barbara, Goleta, Montecito, Ventura, Ojai, and as far as Los Angeles.
+</p>
+<p>
+  If you're interested in EBOO and want to explore whether it's right for your condition, the first step is a consultation with Dr. Birch. He'll review your history, discuss the options across the ozone therapy spectrum, and recommend a protocol tailored to your specific situation.
+</p>`,
+  },
+  {
     id: "healing-power-nature",
     title: "The Healing Power of Nature: Understanding Naturopathy",
     excerpt: "Naturopathic medicine is a distinct primary health care profession, emphasizing prevention, treatment, and optimal health through the use of therapeutic methods and substances that encourage individuals' inherent self-healing process.",
