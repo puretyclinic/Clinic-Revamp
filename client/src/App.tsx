@@ -46,6 +46,8 @@ function Router() {
       <Route path="/fecal-transplant" component={FMT} />
       <Route path="/services/cancer-support" component={CancerSupport} />
       <Route path="/services/ozone-therapy" component={OzoneTherapy} />
+      <Route path="/ebo2-santa-barbara" component={OzoneTherapy} />
+      <Route path="/eboo-santa-barbara" component={OzoneTherapy} />
       <Route path="/services/hormone-replacement" component={HormoneReplacement} />
       <Route path="/services/plasma-exchange" component={PlasmaExchange} />
       <Route path="/services/nature-therapies" component={NatureTherapies} />
