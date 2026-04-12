@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Droplet, Activity, RefreshCw, AlertCircle, CheckCircle2, ShieldCheck, HeartPulse } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
+import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
 import { Link } from "wouter";
 
 export default function PlasmaExchange() {
@@ -322,6 +323,10 @@ export default function PlasmaExchange() {
              </Button>
            </div>
         </section>
+        <RelatedBlogPosts
+          heading="Learn More About Plasma Exchange"
+          postIds={["therapeutic-plasma-exchange-guide"]}
+        />
         <ContactCTA heading="Interested in Plasma Exchange?" subheading="Contact us to learn how therapeutic plasma exchange can help you." formSource="Plasma Exchange Page" />
       </main>
       <Footer />

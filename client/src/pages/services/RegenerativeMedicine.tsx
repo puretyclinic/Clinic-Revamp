@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Activity, Syringe, Bone, CheckCircle2, ArrowRight, ShieldCheck, Star, ChevronDown, ChevronUp, MapPin, Phone } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
+import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
@@ -529,6 +530,10 @@ export default function RegenerativeMedicine() {
           </div>
         </section>
 
+        <RelatedBlogPosts
+          heading="Learn More About Regenerative Medicine"
+          postIds={["regenerative-medicine"]}
+        />
         <ContactCTA heading="Questions About PRP or Stem Cell Therapy?" subheading="Contact us to learn which regenerative treatment is right for your condition." formSource="Regenerative Medicine Page" />
       </main>
 

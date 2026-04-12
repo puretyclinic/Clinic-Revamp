@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Wind, Activity, Zap, CheckCircle2, ShieldCheck, Star, ChevronDown, ChevronUp, MapPin, Phone } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
+import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
@@ -540,6 +541,10 @@ export default function OzoneTherapy() {
           </div>
         </section>
 
+        <RelatedBlogPosts
+          heading="Learn More About Ozone Therapy"
+          postIds={["eboo-ozone-therapy-guide"]}
+        />
         <ContactCTA heading="Questions About EBO2 or Ozone Therapy?" subheading="Contact us to learn which ozone protocol is right for your condition." formSource="Ozone Therapy Page" />
       </main>
 

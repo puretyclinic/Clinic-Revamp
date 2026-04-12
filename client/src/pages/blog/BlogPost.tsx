@@ -52,7 +52,20 @@ export default function BlogPost() {
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
     document.title = `${post.title} | Purety Clinic`;
-    return () => { document.getElementById("blogposting-schema")?.remove(); };
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement("meta");
+      (metaDesc as HTMLMetaElement).name = "description";
+      document.head.appendChild(metaDesc);
+    }
+    const prevDesc = metaDesc.getAttribute("content") || "";
+    metaDesc.setAttribute("content", post.excerpt);
+
+    return () => {
+      document.getElementById("blogposting-schema")?.remove();
+      metaDesc?.setAttribute("content", prevDesc);
+    };
   }, [post]);
 
   if (!post || !post.content) {

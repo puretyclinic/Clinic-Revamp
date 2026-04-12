@@ -1,6 +1,7 @@
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -835,6 +836,15 @@ export default function FMT() {
           <ArrowRight className="w-4 h-4" /> Get Consultation
         </button>
       </div>
+
+      <RelatedBlogPosts
+        heading="Learn More About FMT"
+        postIds={[
+          "where-can-i-get-a-stool-transplant",
+          "fmt-success-rate-and-cost",
+          "how-to-get-fmt-treatment",
+        ]}
+      />
 
       <Footer />
     </div>
