@@ -13,53 +13,61 @@ function PoopIcon({ className }: { className?: string }) {
 
 const services = [
   {
-    title: "Holistic Medical Consultations",
-    description: "Deep dive into your health history to discover and address root causes.",
-    icon: Brain,
-    link: "/services/naturopathic"
-  },
-  {
-    title: "Regenerative Injections",
-    description: "PRP, Stem Cell Matrix, Prolotherapy / Prolozone for joint pain and injuries.",
-    icon: Syringe,
-    link: "/services/regenerative"
-  },
-  {
-    title: "Ozone Therapy",
-    description: "EBO2 and Ten Pass / Multipass treatment to oxygenate and modulate immunity.",
-    icon: Wind,
-    link: "/services/ozone-therapy"
-  },
-  {
-    title: "IV Drip Therapies",
-    description: "Personalized nutrients, chelation, Plaquex, and growth factors.",
-    icon: Droplet,
-    link: "/services/iv-therapy"
-  },
-  {
-    title: "Bioidentical HRT",
-    description: "Natural hormone balancing for thyroid, adrenals, and sex hormones.",
-    icon: Flower,
-    link: "/services/hormone-replacement"
-  },
-  {
     title: "Fecal Transplant (FMT)",
-    description: "Restoring gut microbiome health for chronic digestive conditions.",
+    description: "1,000+ procedures performed. Restoring gut microbiome health for UC, Crohn's, IBS, C. diff, and chronic digestive conditions.",
     icon: PoopIcon,
-    link: "/services/fmt"
-  },
-  {
-    title: "Pediatrics",
-    description: "Holistic well-child exams and treatment of common illnesses.",
-    icon: Baby,
-    link: "/services/naturopathic"
+    link: "/fecal-transplant",
+    badge: "National Specialty"
   },
   {
     title: "Therapeutic Plasma Exchange",
-    description: "Detoxification and blood rejuvenation by removing harmful substances from the bloodstream.",
+    description: "Advanced blood purification for autoimmune disorders, Long COVID, chronic Lyme, neurological conditions, and mold illness.",
     icon: RefreshCw,
-    link: "/services/plasma-exchange"
-  }
+    link: "/services/plasma-exchange",
+    badge: null
+  },
+  {
+    title: "PRP & Regenerative Injections",
+    description: "4,000+ injections. Ultrasound-guided PRP, stem cell matrix, and prolotherapy for joint pain, tendon injuries, and arthritis.",
+    icon: Syringe,
+    link: "/services/regenerative",
+    badge: "RMSK Certified"
+  },
+  {
+    title: "Holistic Medical Care",
+    description: "Root-cause diagnosis and treatment. Functional lab work, nutrition, and natural therapies for the whole family.",
+    icon: Brain,
+    link: "/services/naturopathic",
+    badge: null
+  },
+  {
+    title: "Ozone Therapy · EBO2",
+    description: "2,500+ treatments. EBO2 / EBOO / Multipass OHT for chronic infections, Long COVID, mold toxicity, and immune modulation.",
+    icon: Wind,
+    link: "/services/ozone-therapy",
+    badge: null
+  },
+  {
+    title: "Women's Health & Pediatrics",
+    description: "Dr. Dena Birch NMD specializes in hormone balance, fertility, menopause, prenatal care, and holistic pediatric medicine.",
+    icon: Baby,
+    link: "/services/naturopathic",
+    badge: "Dr. Dena Birch"
+  },
+  {
+    title: "Bioidentical HRT",
+    description: "Natural hormone balancing for thyroid, adrenals, sex hormones, menopause, and testosterone — for men and women.",
+    icon: Flower,
+    link: "/services/hormone-replacement",
+    badge: null
+  },
+  {
+    title: "IV Drip Therapies",
+    description: "Personalized IV nutrients, chelation, Plaquex, Myers' Cocktail, and high-dose Vitamin C.",
+    icon: Droplet,
+    link: "/services/iv-therapy",
+    badge: null
+  },
 ];
 
 export function Services() {
@@ -79,16 +87,21 @@ export function Services() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <FadeIn key={index} delay={index * 0.05} direction="up">
-              <Link href={service.link} className="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/20 h-full flex flex-col text-center items-center cursor-pointer">
-                  <div className="text-primary mb-4 bg-secondary/50 w-14 h-14 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    <service.icon className="w-7 h-7" />
-                  </div>
-                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </p>
+              <Link href={service.link} className="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/20 h-full flex flex-col text-center items-center cursor-pointer relative">
+                {service.badge && (
+                  <span className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wide bg-accent/10 text-accent px-2 py-0.5 rounded-full border border-accent/20">
+                    {service.badge}
+                  </span>
+                )}
+                <div className="text-primary mb-4 bg-secondary/50 w-14 h-14 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <service.icon className="w-7 h-7" />
+                </div>
+                <h3 className="font-serif text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {service.description}
+                </p>
               </Link>
             </FadeIn>
           ))}
