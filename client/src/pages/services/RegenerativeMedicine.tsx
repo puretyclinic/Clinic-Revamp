@@ -28,13 +28,13 @@ export default function RegenerativeMedicine() {
   useEffect(() => {
     document.title = "PRP Therapy Santa Barbara | Stem Cell Injections | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "PRP therapy and stem cell injections in Santa Barbara, CA. Dr. Jonathan Birch NMD, RMSK uses ultrasound guidance for precise regenerative treatment of joint pain, arthritis, and tendon injuries. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "PRP therapy and stem cell injections in Santa Barbara, CA. Dr. Jonathan Birch NMD, RMSK has performed over 4,000 regenerative injections using ultrasound guidance. Joint pain, arthritis, tendon injuries. Call (805) 500-8300.");
 
     const localSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalClinic",
       "name": "Purety Family Medical Clinic — PRP & Regenerative Medicine",
-      "description": "Santa Barbara's leading regenerative medicine clinic. Dr. Jonathan Birch NMD, RMSK offers ultrasound-guided PRP therapy, stem cell injections, prolotherapy, and biologic treatments for joint pain, arthritis, and sports injuries.",
+      "description": "Santa Barbara's leading regenerative medicine clinic. Dr. Jonathan Birch NMD, RMSK has performed over 4,000 ultrasound-guided regenerative injections — PRP therapy, stem cell injections, and prolotherapy — for joint pain, arthritis, and sports injuries.",
       "url": "https://puretyclinic.com/services/regenerative",
       "telephone": "+1-805-500-8300",
       "address": {
@@ -196,7 +196,7 @@ export default function RegenerativeMedicine() {
             <div className="flex flex-wrap justify-center gap-8 md:gap-16 text-sm font-medium text-muted-foreground">
               <div className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 text-primary" /> Board-Registered Sonographer (RMSK)</div>
               <div className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 text-primary" /> Ultrasound-Guided Every Injection</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-primary" /> 10+ Years Experience</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-primary" /> 4,000+ Injections Performed</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-primary" /> Licensed Medical Clinic</div>
             </div>
           </div>
@@ -238,9 +238,9 @@ export default function RegenerativeMedicine() {
               <FadeIn delay={0.2}>
                 <div className="space-y-4">
                   {[
+                    { label: "Regenerative Injections Performed", value: "4,000+" },
                     { label: "Years in Practice", value: "10+" },
                     { label: "Injection Accuracy Improvement\nwith Ultrasound Guidance", value: "2–3×" },
-                    { label: "Conditions Treated", value: "20+" },
                     { label: "Google Rating", value: "5.0★" },
                   ].map((s, i) => (
                     <div key={i} className="bg-[#f8fafb] rounded-2xl p-5 border border-gray-100 flex items-center gap-5">

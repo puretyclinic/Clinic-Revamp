@@ -18,7 +18,7 @@ export default function DrBirch() {
       "@type": "Physician",
       "name": "Dr. Jonathan Birch",
       "alternateName": "Jonathan Birch NMD RMSK",
-      "description": "Dr. Jonathan Birch NMD, RMSK is one of the nation's most experienced fecal microbiota transplant (FMT) specialists, having performed over 1,000 FMT procedures since graduating from Southwest College of Naturopathic Medicine in 2014. He offers in-person care in Santa Barbara, CA and remote consultations nationwide.",
+      "description": "Dr. Jonathan Birch NMD, RMSK has performed over 1,000 FMT procedures and more than 4,000 regenerative injections since graduating from Southwest College of Naturopathic Medicine in 2014. He is one of the most experienced FMT and regenerative medicine specialists in the United States, offering in-person care in Santa Barbara, CA and remote consultations nationwide.",
       "image": "https://puretyclinic.com/images/dr-jonathan-birch.png",
       "url": "https://puretyclinic.com/dr-jonathan-birch",
       "telephone": "+1-805-500-8300",
@@ -159,19 +159,19 @@ export default function DrBirch() {
                   <p className="text-lg text-muted-foreground font-medium mb-6">NMD, RMSK · Naturopathic Medical Doctor</p>
 
                   <p className="text-muted-foreground leading-relaxed mb-5">
-                    Dr. Jonathan Birch is a naturopathic medical doctor and one of the most experienced fecal microbiota transplant (FMT) specialists in the United States. Since graduating from Southwest College of Naturopathic Medicine in 2014, he has performed over 1,000 FMT procedures and developed protocols that consistently achieve a 90%+ success rate for recurrent <em>C. difficile</em> infections.
+                    Dr. Jonathan Birch is a naturopathic medical doctor and one of the most experienced FMT and regenerative medicine specialists in the United States. Since graduating from Southwest College of Naturopathic Medicine in 2014, he has performed over 1,000 FMT procedures and more than 4,000 regenerative injections — including PRP, prolotherapy, and biologic treatments — all under real-time musculoskeletal ultrasound guidance.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    Dr. Birch's practice encompasses the full spectrum of integrative and regenerative medicine — from gut microbiome restoration and plasma exchange to PRP, prolotherapy, and IV nutrient therapy. He sees patients in Santa Barbara and conducts remote consultations for patients across the United States, with capsule-based FMT available by mail.
+                    Dr. Birch's practice spans the full spectrum of integrative and regenerative medicine — from gut microbiome restoration and plasma exchange to joint repair and IV nutrient therapy. He sees patients in Santa Barbara and conducts remote consultations for patients across the United States, with capsule-based FMT available by mail.
                   </p>
 
                   <div className="grid grid-cols-2 gap-3 mb-8">
                     {[
                       "10+ Years in Practice",
                       "1,000+ FMT Procedures",
-                      "Remote Consultations",
+                      "4,000+ Regenerative Injections",
+                      "Remote Consultations Available",
                       "Nationwide Capsule Delivery",
-                      "Super Donor Protocol",
                       "90%+ C. diff Success Rate",
                     ].map((item, i) => (
                       <div key={i} className="flex items-center gap-2">
@@ -298,9 +298,9 @@ export default function DrBirch() {
                 <div className="space-y-4">
                   {[
                     { label: "Years Performing FMT", value: "10+", sub: "Since 2014 — one of the earliest practitioners in the US" },
-                    { label: "Patients Treated", value: "1,000+", sub: "More FMT experience than most academic centers" },
+                    { label: "FMT Procedures Performed", value: "1,000+", sub: "More FMT experience than most academic centers" },
+                    { label: "Regenerative Injections Performed", value: "4,000+", sub: "PRP, prolotherapy, and biologic injections under ultrasound guidance" },
                     { label: "C. diff Success Rate", value: "90%+", sub: "Even for antibiotic-resistant, recurrent cases" },
-                    { label: "Delivery Methods", value: "4", sub: "Capsules, oral liquid, retention enema, colonoscopy" },
                   ].map((stat, i) => (
                     <div key={i} className="bg-[#f8fafb] rounded-2xl p-6 border border-gray-100 flex items-center gap-6">
                       <div className="text-3xl font-bold font-serif text-primary shrink-0 w-20 text-center">{stat.value}</div>

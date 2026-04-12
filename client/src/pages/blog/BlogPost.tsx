@@ -188,7 +188,7 @@ export default function BlogPost() {
                   Ready to Explore Regenerative Treatment?
                 </h2>
                 <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-                  Dr. Jonathan Birch NMD, RMSK uses real-time ultrasound guidance on every injection — one of the few practitioners in the Santa Barbara area with board-registered musculoskeletal sonography certification.
+                  Dr. Jonathan Birch NMD, RMSK has performed over 4,000 regenerative injections using real-time ultrasound guidance — one of the most experienced practitioners in the Santa Barbara area.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/services/regenerative" data-testid="link-blog-regen-cta">
