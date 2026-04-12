@@ -139,11 +139,11 @@ export default function Home() {
               <div className="text-center mb-14">
                 <span className="text-accent font-bold tracking-widest uppercase text-xs mb-4 block">What We Treat</span>
                 <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">Conditions We <span className="italic text-primary">Specialize In</span></h2>
-                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Our four areas of specialty allow us to treat complex, chronic conditions that conventional medicine often struggles to resolve.</p>
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Our specialty areas allow us to treat complex, chronic conditions that conventional medicine often struggles to resolve.</p>
               </div>
             </FadeIn>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* FMT */}
               <FadeIn delay={0.05}>
                 <Link href="/fecal-transplant">
@@ -176,8 +176,24 @@ export default function Home() {
                 </Link>
               </FadeIn>
 
-              {/* PRP / Regen */}
+              {/* EBO2 / Ozone */}
               <FadeIn delay={0.15}>
+                <Link href="/services/ozone-therapy">
+                  <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/20 transition-all cursor-pointer h-full">
+                    <div className="text-xs font-bold uppercase tracking-widest text-accent mb-3">Ozone Therapy · EBO2 · EBOO</div>
+                    <h3 className="font-serif text-lg font-bold text-foreground mb-4">Chronic Infection & Inflammation</h3>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      {["Long COVID & Post-viral Fatigue", "Chronic Lyme Disease", "Mold / Mycotoxin Illness", "Autoimmune Conditions", "Chronic EBV / Viral Infections", "Chronic Fatigue (ME/CFS)", "Fibromyalgia", "Immune Modulation"].map((c, i) => (
+                        <li key={i} className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" />{c}</li>
+                      ))}
+                    </ul>
+                    <div className="mt-5 text-xs font-bold text-primary">Learn about EBO2 →</div>
+                  </div>
+                </Link>
+              </FadeIn>
+
+              {/* PRP / Regen */}
+              <FadeIn delay={0.2}>
                 <Link href="/services/regenerative">
                   <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/20 transition-all cursor-pointer h-full">
                     <div className="text-xs font-bold uppercase tracking-widest text-accent mb-3">PRP · Regenerative Injections</div>
@@ -193,7 +209,7 @@ export default function Home() {
               </FadeIn>
 
               {/* Women's Health & Pediatrics — Dr. Dena */}
-              <FadeIn delay={0.2}>
+              <FadeIn delay={0.25}>
                 <Link href="/services/naturopathic">
                   <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/20 transition-all cursor-pointer h-full">
                     <div className="text-xs font-bold uppercase tracking-widest text-accent mb-3">Dr. Dena Birch · NMD</div>
