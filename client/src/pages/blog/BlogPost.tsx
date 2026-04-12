@@ -176,6 +176,35 @@ export default function BlogPost() {
           );
         })()}
 
+        {/* FMT-specific CTA for FMT blog posts */}
+        {post.tags?.some(t => ["FMT", "FecalTransplant", "CdiffTreatment", "Cdiff", "GutHealth", "StoolTransplant"].includes(t)) && (
+          <section className="py-16 bg-primary/5 border-t border-primary/20">
+            <div className="container mx-auto px-4 max-w-3xl text-center">
+              <FadeIn>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-5 border border-primary/20">
+                  California's Leading FMT Specialists Since 2014
+                </div>
+                <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
+                  Ready to Talk to an FMT Specialist?
+                </h2>
+                <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+                  Dr. Jonathan Birch has helped over 1,000 patients with fecal microbiota transplant since 2014. Remote consultations and capsule delivery are available nationwide.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="/fecal-transplant" data-testid="link-blog-fmt-cta">
+                    <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold rounded-lg px-8">
+                      Learn About FMT Treatment <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                  <Button size="lg" variant="outline" className="border-primary/30 text-primary font-bold rounded-lg" asChild>
+                    <a href="tel:+18055008300">Call (805) 500-8300</a>
+                  </Button>
+                </div>
+              </FadeIn>
+            </div>
+          </section>
+        )}
+
         <ContactCTA heading="Have Questions About Your Health?" formSource="Blog Post" />
       </main>
       

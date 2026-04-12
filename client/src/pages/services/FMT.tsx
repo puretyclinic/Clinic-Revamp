@@ -143,6 +143,86 @@ export default function FMT() {
       ]
     };
 
+    const physicianSchema = {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Jonathan Birch",
+      "description": "Dr. Jonathan Birch is one of the nation's most experienced FMT (Fecal Microbiota Transplant) specialists, having performed over 1,000 procedures since 2014. He offers remote consultations and capsule-based FMT delivery to patients across the United States.",
+      "medicalSpecialty": ["Gastroenterology", "IntegrativeMedicine", "NaturopathicMedicine"],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Medical Doctor"
+      },
+      "worksFor": {
+        "@type": "MedicalClinic",
+        "name": "Purety Family Medical Clinic",
+        "url": "https://puretyclinic.com",
+        "telephone": "+1-805-500-8300",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2323 Oak Park Ln, Suite 102",
+          "addressLocality": "Santa Barbara",
+          "addressRegion": "CA",
+          "postalCode": "93105",
+          "addressCountry": "US"
+        }
+      },
+      "knowsAbout": [
+        "Fecal Microbiota Transplant (FMT)",
+        "C. difficile treatment",
+        "Gut microbiome restoration",
+        "FMT capsules",
+        "Plasmapheresis",
+        "Integrative medicine"
+      ],
+      "url": "https://puretyclinic.com/fecal-transplant"
+    };
+
+    const nationalFmtSchema = {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Purety Family Medical Clinic - FMT Treatment",
+      "description": "One of the most experienced FMT clinics in the United States. Dr. Jonathan Birch has performed over 1,000 fecal microbiota transplants since 2014. Remote consultations and capsule delivery available to patients nationwide.",
+      "url": "https://puretyclinic.com/fecal-transplant",
+      "telephone": "+1-805-500-8300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2323 Oak Park Ln, Suite 102",
+        "addressLocality": "Santa Barbara",
+        "addressRegion": "CA",
+        "postalCode": "93105",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "FMT Capsules", "description": "Capsule-based fecal microbiota transplant shipped to patients nationwide" },
+        { "@type": "MedicalProcedure", "name": "FMT Retention Enema", "description": "Retention enema FMT delivery at our Santa Barbara clinic" },
+        { "@type": "MedicalProcedure", "name": "FMT Colonoscopy", "description": "Colonoscopy-based FMT delivery via Southern California procedural partners" },
+        { "@type": "MedicalProcedure", "name": "Remote FMT Consultation", "description": "Telehealth consultations for FMT patients across the United States" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "70",
+        "bestRating": "5"
+      }
+    };
+
+    const physicianScript = document.createElement("script");
+    physicianScript.type = "application/ld+json";
+    physicianScript.id = "fmt-physician-schema";
+    physicianScript.text = JSON.stringify(physicianSchema);
+    document.head.appendChild(physicianScript);
+
+    const nationalScript = document.createElement("script");
+    nationalScript.type = "application/ld+json";
+    nationalScript.id = "fmt-national-schema";
+    nationalScript.text = JSON.stringify(nationalFmtSchema);
+    document.head.appendChild(nationalScript);
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.id = "fmt-clinic-schema";
@@ -156,6 +236,8 @@ export default function FMT() {
     document.head.appendChild(faqScript);
 
     return () => {
+      document.getElementById("fmt-physician-schema")?.remove();
+      document.getElementById("fmt-national-schema")?.remove();
       document.getElementById("fmt-clinic-schema")?.remove();
       document.getElementById("fmt-faq-schema")?.remove();
     };
