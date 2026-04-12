@@ -238,17 +238,24 @@ export default function OzoneTherapy() {
 
               <FadeIn delay={0.2}>
                 <div className="space-y-4">
-                  {[
-                    { label: "Ozone Treatments Performed", value: "2,500+" },
-                    { label: "Years in Practice", value: "10+" },
-                    { label: "Ozone Protocols Available", value: "5+" },
-                    { label: "Google Rating", value: "5.0★" },
-                  ].map((s, i) => (
-                    <div key={i} className="bg-[#f8fafb] rounded-2xl p-5 border border-gray-100 flex items-center gap-5">
-                      <div className="text-3xl font-bold font-serif text-primary shrink-0 w-20 text-center leading-tight">{s.value}</div>
-                      <div className="font-medium text-foreground text-sm">{s.label}</div>
-                    </div>
-                  ))}
+                  <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-md">
+                    <img
+                      src="/images/ebo2-machine.jpeg"
+                      alt="EBO2 extracorporeal ozone therapy circuit running at Purety Family Medical Clinic in Santa Barbara, CA"
+                      className="w-full object-cover"
+                    />
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 pt-1">
+                    {[
+                      { label: "Ozone Treatments Performed", value: "2,500+" },
+                      { label: "Years in Practice", value: "10+" },
+                    ].map((s, i) => (
+                      <div key={i} className="bg-[#f8fafb] rounded-2xl p-4 border border-gray-100 flex flex-col items-center text-center gap-1">
+                        <div className="text-2xl font-bold font-serif text-primary leading-tight">{s.value}</div>
+                        <div className="font-medium text-foreground text-xs">{s.label}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </FadeIn>
             </div>
