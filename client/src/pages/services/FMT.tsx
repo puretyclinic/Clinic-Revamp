@@ -75,7 +75,7 @@ const fmtStructuredData = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
-    "reviewCount": "70",
+    "reviewCount": "77",
     "bestRating": "5"
   }
 };
@@ -263,7 +263,7 @@ export default function FMT() {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "70",
+        "reviewCount": "77",
         "bestRating": "5"
       }
     };
@@ -328,12 +328,7 @@ export default function FMT() {
 
       if (data.success) {
         gtag.trackFMTFormSubmission("FMT Page - Consultation Request");
-
-        toast({
-          title: "Consultation Requested!",
-          description: "Dr. Birch's team will review your case and contact you shortly.",
-        });
-        form.reset();
+        window.location.href = "/thank-you";
       } else {
         toast({
           title: "Error",
@@ -361,7 +356,28 @@ export default function FMT() {
         Questions? Call or Text Now: <a href="tel:+18055008300" className="font-bold hover:underline" onClick={() => gtag.trackPhoneClick("FMT Top Bar")}>(805) 500-8300</a> | Consultations Available
       </div>
 
-      <Navbar />
+      {/* Minimal nav — keeps paid traffic focused, no exit links */}
+      <header className="bg-white border-b border-gray-100 py-3 px-6 flex items-center justify-between sticky top-0 z-50 shadow-sm">
+        <a href="/">
+          <img src="/images/logo.gif" alt="Purety Family Medical Clinic" className="h-12 w-auto object-contain" />
+        </a>
+        <div className="flex items-center gap-3">
+          <span className="hidden sm:flex items-center gap-1 text-sm text-muted-foreground">
+            {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 text-accent fill-current" />)}
+            <span className="font-semibold ml-1">5.0</span>
+            <span className="text-muted-foreground">· 77 Reviews</span>
+          </span>
+          <a
+            href="tel:+18055008300"
+            onClick={() => gtag.trackPhoneClick("FMT Minimal Nav")}
+            className="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-primary/90 transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            <span className="hidden sm:inline">(805) 500-8300</span>
+            <span className="sm:hidden">Call Now</span>
+          </a>
+        </div>
+      </header>
 
       <main className="flex-grow">
         <section id="consultation" className="py-16 md:py-24 bg-gradient-to-br from-[#f0f7f8] to-[#e8f0f1]">

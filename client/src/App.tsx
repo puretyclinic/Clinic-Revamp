@@ -31,6 +31,7 @@ import FAQ from "@/pages/FAQ";
 import Admin from "@/pages/Admin";
 import DrBirch from "@/pages/DrBirch";
 import DrDena from "@/pages/DrDena";
+import ThankYou from "@/pages/ThankYou";
 
 function Router() {
   return (
@@ -65,6 +66,7 @@ function Router() {
       <Route path="/blog/:id" component={BlogPost} />
       <Route path="/shop" component={Shop} />
       <Route path="/shop/product/:slug" component={ProductDetail} />
+      <Route path="/thank-you" component={ThankYou} />
       <Route path="/claim" component={ClaimPreview} />
       <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
