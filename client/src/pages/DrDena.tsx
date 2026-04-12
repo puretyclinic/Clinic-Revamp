@@ -326,11 +326,9 @@ export default function DrDena() {
               <FadeIn delay={0.15} className="order-2 md:order-1">
                 <div className="space-y-5">
                   {[
-                    { title: "Newborns & Infants", desc: "Gentle, safe naturopathic support for the earliest stages of life — colic, reflux, eczema, and nutritional foundations." },
                     { title: "Children's Wellness", desc: "Annual well-child visits, immune support, allergy evaluation, and nutritional assessment for growing kids." },
                     { title: "Adolescents", desc: "Hormonal health, acne, anxiety, and support through the physical and emotional changes of adolescence." },
                     { title: "Chronic Conditions in Children", desc: "ADHD, asthma, recurrent infections, gut issues, and food sensitivities — a whole-child approach." },
-                    { title: "Vaccine Conversations", desc: "Thoughtful, non-judgmental dialogue about vaccine schedules and child health decisions." },
                   ].map((item, i) => (
                     <FadeIn key={i} delay={i * 0.07}>
                       <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
