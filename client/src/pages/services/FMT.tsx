@@ -385,13 +385,16 @@ export default function FMT() {
               <FadeIn>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6 border border-primary/20">
                   <CheckCircle2 className="w-4 h-4" />
-                  California's Leading FMT Specialists Since 2014
+                  Gut Microbiome Restoration Specialists · Since 2014
                 </div>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.2rem] leading-[1.15] mb-6 text-foreground">
-                  Finally <span className="text-accent italic">Restore</span> Your Gut Health With FMT Treatment
+                  Finally Get to the <span className="text-accent italic">Root</span> of Your Gut Health
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  Dr. Jonathan Birch has helped over 1,000 patients achieve lasting relief with our proven FMT protocol. Whether you're dealing with C. diff, recurring digestive issues, or other gut health concerns, we're here to help.
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  Dr. Jonathan Birch has helped over 1,000 patients restore their gut microbiome and achieve lasting digestive relief using FMT. If you've been struggling with gut health and haven't found answers elsewhere, we'd like to review your case.
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed mb-8">
+                  We consult on a wide range of gut concerns. Whatever you're dealing with, reach out — Dr. Birch will personally evaluate whether FMT may be appropriate for your situation.
                 </p>
 
                 <div className="flex gap-8 mb-8">
@@ -402,6 +405,10 @@ export default function FMT() {
                   <div>
                     <div className="text-3xl font-bold text-accent">10+</div>
                     <div className="text-sm text-muted-foreground">Years Experience</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-accent">5.0 ★</div>
+                    <div className="text-sm text-muted-foreground">Google Rating</div>
                   </div>
                 </div>
 
@@ -431,8 +438,8 @@ export default function FMT() {
                       Capsule delivery anywhere in the US
                     </div>
                   </div>
-                  <h2 className="font-serif text-2xl font-bold mb-2 text-foreground">Schedule Your Consultation</h2>
-                  <p className="text-muted-foreground text-sm mb-6">Dr. Birch will review your case and discuss the right treatment path together with you.</p>
+                  <h2 className="font-serif text-2xl font-bold mb-2 text-foreground">Request a Case Review</h2>
+                  <p className="text-muted-foreground text-sm mb-6">Tell us what you're dealing with. Dr. Birch personally reviews every inquiry and will reach out to discuss whether FMT may be right for you.</p>
 
                   <form onSubmit={handleSubmit} className="space-y-4" data-testid="form-fmt-consultation">
                     <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
@@ -464,9 +471,14 @@ export default function FMT() {
                       >
                         <option value="">Select your concern...</option>
                         <option value="C. difficile (C. diff)">C. difficile (C. diff)</option>
-                        <option value="Gut Health Consultation">Gut Health Consultation</option>
-                        <option value="Digestive Wellness">Digestive Wellness</option>
-                        <option value="Other">Other - I'd like to discuss</option>
+                        <option value="SIBO">SIBO (Small Intestinal Bacterial Overgrowth)</option>
+                        <option value="IBS">IBS / Irritable Bowel Syndrome</option>
+                        <option value="Ulcerative Colitis">Ulcerative Colitis / IBD</option>
+                        <option value="Crohn's Disease">Crohn's Disease</option>
+                        <option value="Post-antibiotic Dysbiosis">Post-antibiotic Gut Dysbiosis</option>
+                        <option value="Chronic Digestive Issues">Chronic Digestive Issues</option>
+                        <option value="Microbiome Restoration">Microbiome Restoration / General Gut Health</option>
+                        <option value="Other">Other — I'd like to discuss my situation</option>
                       </select>
                     </div>
                     <div className="space-y-1">
