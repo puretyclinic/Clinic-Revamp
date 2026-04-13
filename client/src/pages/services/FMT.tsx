@@ -186,7 +186,7 @@ export default function FMT() {
           "name": "Is FMT covered by insurance?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Insurance coverage for FMT varies by plan and diagnosis. For recurrent C. diff, some insurance plans do cover the procedure. We recommend contacting your insurance provider before your consultation. Our team can also help you understand what documentation may be needed to support a coverage request."
+            "text": "FMT is not covered by insurance at our clinic. As a private practice using our own specific protocols, we operate on a fee-for-service basis. We are transparent about all costs during the initial consultation."
           }
         },
         {
@@ -525,15 +525,6 @@ export default function FMT() {
 
         <section className="py-16 bg-[#f8fbfb]">
           <div className="container mx-auto px-4 max-w-5xl">
-            <FadeIn>
-              <div className="text-center mb-10">
-                <div className="flex items-center justify-center gap-1 mb-2">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-accent fill-current" />)}
-                </div>
-                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-2">What Our Patients Are Saying</h2>
-                <p className="text-muted-foreground">Real reviews from Google — verified patients, unfiltered feedback</p>
-              </div>
-            </FadeIn>
             <GoogleReviews />
           </div>
         </section>
@@ -840,7 +831,7 @@ export default function FMT() {
                 />
                 <FAQItem
                   question="Is FMT covered by insurance?"
-                  answer="Insurance coverage for FMT varies by plan and diagnosis. For recurrent C. diff, some insurance plans do cover the procedure. We recommend contacting your insurance provider before your consultation. Our team can also help you understand what documentation may be needed to support a coverage request."
+                  answer="FMT is not covered by insurance at our clinic. As a private practice using our own specific protocols, we operate on a fee-for-service basis. We are transparent about all costs during the initial consultation."
                 />
                 <FAQItem
                   question="How do I prepare for FMT treatment?"
