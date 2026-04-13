@@ -144,34 +144,38 @@ const locations: Record<string, LocationData> = {
   "santa-barbara": {
     city: "Santa Barbara",
     state: "CA",
-    headline: "Holistic & Integrative Medicine in Santa Barbara",
-    subheadline: "Purety Family Medical Clinic — your Santa Barbara home for naturopathic care, FMT, regenerative medicine, and integrative oncology support.",
-    metaTitle: "Holistic Doctor Santa Barbara | Purety Family Medical Clinic",
-    metaDescription: "Purety Family Medical Clinic in Santa Barbara offers FMT, naturopathic primary care, IV therapy, regenerative injections, and bioidentical hormones. Call (805) 500-8300.",
+    headline: "Integrative Medicine in Santa Barbara, CA",
+    subheadline: "Purety Family Medical Clinic — Santa Barbara's home for FMT, EBO2 ozone therapy, PRP & regenerative injections, therapeutic plasma exchange, and holistic primary care.",
+    metaTitle: "Integrative Medicine Santa Barbara | FMT · EBO2 · PRP · TPE | Purety Clinic",
+    metaDescription: "Purety Family Medical Clinic in Santa Barbara offers FMT, EBO2/EBOO ozone therapy, PRP & stem cell injections, therapeutic plasma exchange, IV therapy, and holistic primary care. Dr. Jonathan & Dr. Dena Birch. Call (805) 500-8300.",
     driveTime: "In clinic",
     distance: "2323 Oak Park Ln, Suite 102",
-    intro: "Purety Family Medical Clinic is Santa Barbara's leading integrative and naturopathic medical practice. Founded by Dr. Jonathan Birch and Dr. Dena Birch, the clinic has served the Central Coast community since 2014 with a blend of evidence-based natural medicine and advanced therapeutic procedures.",
-    whyTravel: "Our Santa Barbara clinic offers the full spectrum of our services in a single location — from FMT and IV therapy to regenerative injections and bioidentical hormone care.",
+    intro: "Purety Family Medical Clinic is Santa Barbara's leading integrative and naturopathic medical practice. Founded by Dr. Jonathan Birch NMD, RMSK and Dr. Dena Birch NMD, the clinic has served the Central Coast since 2014 — specializing in advanced therapies including FMT, EBO2 ozone therapy, PRP and regenerative injections, and therapeutic plasma exchange.",
+    whyTravel: "Our Santa Barbara clinic is one of the few outpatient practices in California offering all four of these advanced therapies under one roof: FMT, EBO2 ozone therapy, PRP & biologic injections, and therapeutic plasma exchange — alongside comprehensive naturopathic primary care.",
     services: [
-      { name: "FMT for C. difficile", description: "California's most experienced outpatient FMT clinic. 90%+ success rate since 2014." },
-      { name: "Naturopathic Primary Care", description: "Comprehensive holistic medicine addressing the root causes of chronic illness." },
-      { name: "IV Nutrient Therapy", description: "High-dose vitamin C, Myers cocktail, NAD+, chelation, and custom infusions." },
-      { name: "Regenerative Injections", description: "PRP, prolotherapy, prolozone, and stem cell matrix for joint pain and injury." },
-      { name: "Bioidentical Hormones", description: "Personalized hormone restoration for men and women using bioidentical compounds." },
-      { name: "Ozone Therapy", description: "10-pass ozone, rectal ozone, ozone sauna, and targeted ozone injections." }
+      { name: "FMT — Fecal Microbiota Transplant", description: "California's most experienced outpatient FMT clinic. 90%+ success rate for C. diff since 2014. Capsule, enema, and colonoscopy options. National patients welcome." },
+      { name: "EBO2 / EBOO Ozone Therapy", description: "Over 2,500 ozone treatments performed. Santa Barbara's most experienced EBO2 provider — extracorporeal blood ozonation for chronic infections, autoimmune disease, and systemic inflammation." },
+      { name: "PRP & Regenerative Injections", description: "Over 4,000 ultrasound-guided injections by Dr. Birch (RMSK). PRP, prolotherapy, Wharton's Jelly, and exosome injections for joint pain, arthritis, and sports injuries." },
+      { name: "Therapeutic Plasma Exchange (TPE)", description: "One of the few outpatient TPE clinics in Southern California. Plasmapheresis for autoimmune conditions, Long Covid, neurological disease, and healthy aging." },
+      { name: "IV Nutrient Therapy", description: "High-dose vitamin C, Myers cocktail, NAD+, chelation, and custom longevity infusions." },
+      { name: "Holistic Primary Care", description: "Naturopathic medicine, bioidentical hormones, women's health, and pediatric care with Dr. Dena Birch NMD." }
     ],
     faqs: [
-      { question: "Where is Purety Clinic located?", answer: "We are located at 2323 Oak Park Ln, Suite 102, Santa Barbara, CA 93105. We serve patients from Santa Barbara, Goleta, Montecito, Carpinteria, Ventura, and beyond." },
+      { question: "Where is Purety Clinic located in Santa Barbara?", answer: "We are located at 2323 Oak Park Ln, Suite 102, Santa Barbara, CA 93105 — easily accessible from Goleta, Montecito, Carpinteria, and Ventura." },
+      { question: "Does Purety Clinic offer EBO2 ozone therapy in Santa Barbara?", answer: "Yes. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (also called EBOO or ozone dialysis) at our Santa Barbara clinic. We are one of the most experienced EBO2 providers on the Central Coast." },
+      { question: "Is PRP therapy available in Santa Barbara at Purety Clinic?", answer: "Yes. Dr. Jonathan Birch NMD, RMSK performs ultrasound-guided PRP, stem cell, and prolotherapy injections. He has performed over 4,000 regenerative injections and is board-registered in Musculoskeletal Sonography." },
+      { question: "Do you offer therapeutic plasma exchange in Santa Barbara?", answer: "Yes. Purety Clinic is one of the few outpatient clinics in Southern California offering therapeutic plasma exchange (TPE / plasmapheresis) under the care of Dr. Jonathan Birch." },
       { question: "Do you accept new patients?", answer: "Yes, we are currently accepting new patients. Same-week appointments are often available. Call (805) 500-8300 or submit a consultation request online." },
-      { question: "Do you offer telehealth appointments?", answer: "Yes. We offer remote consultations for patients who are not local to Santa Barbara, including initial FMT consultations for patients throughout California and nationally." },
       { question: "What insurance do you accept?", answer: "We are primarily a fee-for-service practice. We can provide superbills for patients with PPO plans who wish to seek reimbursement. We discuss all pricing transparently at the initial consultation." }
     ],
     schema: {
       "@context": "https://schema.org",
       "@type": "MedicalClinic",
       "name": "Purety Family Medical Clinic",
+      "description": "Santa Barbara's leading integrative medicine clinic. Specializing in FMT, EBO2/EBOO ozone therapy, PRP & regenerative injections, and therapeutic plasma exchange. Dr. Jonathan Birch NMD, RMSK and Dr. Dena Birch NMD.",
       "url": "https://puretyclinic.com",
       "telephone": "+1-805-500-8300",
+      "foundingDate": "2014",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "2323 Oak Park Ln, Suite 102",
@@ -179,7 +183,35 @@ const locations: Record<string, LocationData> = {
         "addressRegion": "CA",
         "postalCode": "93105",
         "addressCountry": "US"
-      }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.4483,
+        "longitude": -119.7148
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:00" }
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Santa Barbara" },
+        { "@type": "City", "name": "Goleta" },
+        { "@type": "City", "name": "Montecito" },
+        { "@type": "City", "name": "Carpinteria" },
+        { "@type": "City", "name": "Ventura" }
+      ],
+      "hasMap": "https://maps.google.com/?q=Purety+Family+Medical+Clinic+Santa+Barbara+CA",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "77",
+        "bestRating": "5"
+      },
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "Fecal Microbiota Transplant (FMT)", "url": "https://puretyclinic.com/fecal-transplant" },
+        { "@type": "MedicalProcedure", "name": "EBO2 / EBOO Ozone Therapy", "url": "https://puretyclinic.com/ebo2-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "PRP Therapy", "url": "https://puretyclinic.com/prp-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "Therapeutic Plasma Exchange (TPE)", "url": "https://puretyclinic.com/services/plasma-exchange" }
+      ]
     }
   },
 

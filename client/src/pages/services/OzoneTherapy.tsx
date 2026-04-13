@@ -3,6 +3,7 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 import { Wind, Activity, Zap, CheckCircle2, ShieldCheck, Star, ChevronDown, ChevronUp, MapPin, Phone } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
 import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
@@ -24,11 +25,42 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   );
 }
 
+const GEO_VARIANTS_OZONE: Record<string, { title: string; metaDescription: string; h1: React.ReactNode; subtitle: string; breadcrumbName: string; breadcrumbUrl: string }> = {
+  "/ebo2-santa-barbara": {
+    title: "EBO2 Santa Barbara, CA | Extracorporeal Blood Ozone Therapy | Purety Clinic",
+    metaDescription: "EBO2 ozone therapy in Santa Barbara, CA. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (extracorporeal blood ozonation). One of California's most experienced EBO2 providers. Call (805) 500-8300.",
+    h1: <>EBO2 Ozone Therapy in <span className="italic text-accent">Santa Barbara, CA</span></>,
+    subtitle: "Extracorporeal blood ozonation (EBO2) — the most advanced ozone therapy available — performed at our Santa Barbara clinic by one of California's most experienced providers.",
+    breadcrumbName: "EBO2 Ozone Therapy Santa Barbara",
+    breadcrumbUrl: "https://puretyclinic.com/ebo2-santa-barbara",
+  },
+  "/eboo-santa-barbara": {
+    title: "EBOO Santa Barbara, CA | Ozone Dialysis | Extracorporeal Ozone | Purety Clinic",
+    metaDescription: "EBOO (extracorporeal blood ozone) therapy in Santa Barbara, CA. Also known as EBO2 or ozone dialysis. Over 2,500 treatments performed by Dr. Jonathan Birch. Call (805) 500-8300.",
+    h1: <>EBOO Ozone Therapy in <span className="italic text-accent">Santa Barbara, CA</span></>,
+    subtitle: "EBOO (Extracorporeal Blood Oxygenation and Ozonation) — also called EBO2 or ozone dialysis — available in Santa Barbara at Purety Family Medical Clinic.",
+    breadcrumbName: "EBOO Ozone Therapy Santa Barbara",
+    breadcrumbUrl: "https://puretyclinic.com/eboo-santa-barbara",
+  },
+};
+
+const DEFAULT_OZONE_VARIANT = {
+  title: "Ozone Therapy Santa Barbara | EBO2 | EBOO | Ozone Dialysis | Purety Clinic",
+  metaDescription: "Santa Barbara's most experienced ozone therapy clinic. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (EBOO / ozone dialysis), Multipass OHT / 10-Pass, and Prolozone injections. Call (805) 500-8300.",
+  h1: <>Ozone <span className="italic text-accent">Therapies</span></>,
+  subtitle: "Medical ozone therapy uses high-concentration ozone gas to oxygenate the blood, modulate the immune system, and eliminate chronic pathogens — delivered through several evidence-informed protocols depending on your condition and goals.",
+  breadcrumbName: "Ozone Therapy Santa Barbara — EBO2 & EBOO",
+  breadcrumbUrl: "https://puretyclinic.com/services/ozone-therapy",
+};
+
 export default function OzoneTherapy() {
+  const [location] = useLocation();
+  const variant = GEO_VARIANTS_OZONE[location] ?? DEFAULT_OZONE_VARIANT;
+
   useEffect(() => {
-    document.title = "Ozone Therapy Santa Barbara | EBO2 | EBOO | Ozone Dialysis | Purety Clinic";
+    document.title = variant.title;
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Santa Barbara's most experienced ozone therapy clinic. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (EBOO / ozone dialysis), Multipass OHT / 10-Pass, and Prolozone injections. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", variant.metaDescription);
 
     const localSchema = {
       "@context": "https://schema.org",
@@ -71,7 +103,7 @@ export default function OzoneTherapy() {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "70",
+        "reviewCount": "77",
         "bestRating": "5"
       }
     };
@@ -126,7 +158,7 @@ export default function OzoneTherapy() {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://puretyclinic.com/" },
         { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://puretyclinic.com/services" },
-        { "@type": "ListItem", "position": 3, "name": "Ozone Therapy Santa Barbara — EBO2 & EBOO", "item": "https://puretyclinic.com/services/ozone-therapy" }
+        { "@type": "ListItem", "position": 3, "name": variant.breadcrumbName, "item": variant.breadcrumbUrl }
       ]
     };
 
@@ -146,7 +178,7 @@ export default function OzoneTherapy() {
     });
 
     return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-  }, []);
+  }, [variant.title]);
 
   function scrollToForm() {
     const el = document.getElementById("contact-form");
@@ -168,10 +200,10 @@ export default function OzoneTherapy() {
                 Santa Barbara, CA
               </span>
               <h1 className="font-serif text-5xl md:text-7xl mb-6 leading-tight">
-                Ozone <span className="italic text-accent">Therapies</span>
+                {variant.h1}
               </h1>
               <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-4">
-                Medical ozone therapy uses high-concentration ozone gas to oxygenate the blood, modulate the immune system, and eliminate chronic pathogens — delivered through several evidence-informed protocols depending on your condition and goals.
+                {variant.subtitle}
               </p>
               <p className="text-sm text-white/60 mb-3">
                 EBOO · EBO2 · Ozone Dialysis · Multipass OHT / 10-Pass · Prolozone

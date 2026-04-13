@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Activity, Syringe, Bone, CheckCircle2, ArrowRight, ShieldCheck, Star, ChevronDown, ChevronUp, MapPin, Phone } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
 import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
@@ -25,11 +25,42 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   );
 }
 
+const GEO_VARIANTS: Record<string, { title: string; metaDescription: string; h1: React.ReactNode; subtitle: string; breadcrumbName: string; breadcrumbUrl: string }> = {
+  "/prp-santa-barbara": {
+    title: "PRP Santa Barbara, CA | Platelet-Rich Plasma Therapy | Purety Clinic",
+    metaDescription: "Dr. Jonathan Birch performs ultrasound-guided PRP therapy in Santa Barbara, CA. Over 4,000 injections. Board-registered sonographer (RMSK). Joint pain, arthritis, sports injuries. Call (805) 500-8300.",
+    h1: <>PRP Therapy in <span className="italic text-accent">Santa Barbara, CA</span></>,
+    subtitle: "Ultrasound-guided platelet-rich plasma injections for joint pain, arthritis, and tendon injuries — at our Santa Barbara clinic.",
+    breadcrumbName: "PRP Therapy Santa Barbara",
+    breadcrumbUrl: "https://puretyclinic.com/prp-santa-barbara",
+  },
+  "/stem-cell-therapy-santa-barbara": {
+    title: "Stem Cell Therapy Santa Barbara, CA | Biologic Injections | Purety Clinic",
+    metaDescription: "Stem cell and biologic injections in Santa Barbara, CA. Wharton's Jelly, exosomes, and mesenchymal stem cell therapy for advanced arthritis and joint degeneration. Dr. Birch NMD, RMSK. Call (805) 500-8300.",
+    h1: <>Stem Cell Therapy in <span className="italic text-accent">Santa Barbara, CA</span></>,
+    subtitle: "Biologic injections — Wharton's Jelly, exosomes, and stem cell matrix — delivered under real-time ultrasound guidance at our Santa Barbara clinic.",
+    breadcrumbName: "Stem Cell Therapy Santa Barbara",
+    breadcrumbUrl: "https://puretyclinic.com/stem-cell-therapy-santa-barbara",
+  },
+};
+
+const DEFAULT_REGEN_VARIANT = {
+  title: "PRP Therapy Santa Barbara | Stem Cell Injections | Purety Clinic",
+  metaDescription: "PRP therapy and stem cell injections in Santa Barbara, CA. Dr. Jonathan Birch NMD, RMSK has performed over 4,000 regenerative injections using ultrasound guidance. Joint pain, arthritis, tendon injuries. Call (805) 500-8300.",
+  h1: <>PRP &amp; Regenerative<br /><span className="italic text-accent">Medicine</span></>,
+  subtitle: "Ultrasound-guided PRP therapy, stem cell injections, and prolotherapy in Santa Barbara — without surgery, without steroids.",
+  breadcrumbName: "PRP & Regenerative Medicine Santa Barbara",
+  breadcrumbUrl: "https://puretyclinic.com/services/regenerative",
+};
+
 export default function RegenerativeMedicine() {
+  const [location] = useLocation();
+  const variant = GEO_VARIANTS[location] ?? DEFAULT_REGEN_VARIANT;
+
   useEffect(() => {
-    document.title = "PRP Therapy Santa Barbara | Stem Cell Injections | Purety Clinic";
+    document.title = variant.title;
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "PRP therapy and stem cell injections in Santa Barbara, CA. Dr. Jonathan Birch NMD, RMSK has performed over 4,000 regenerative injections using ultrasound guidance. Joint pain, arthritis, tendon injuries. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", variant.metaDescription);
 
     const localSchema = {
       "@context": "https://schema.org",
@@ -72,7 +103,7 @@ export default function RegenerativeMedicine() {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "70",
+        "reviewCount": "77",
         "bestRating": "5"
       }
     };
@@ -131,7 +162,7 @@ export default function RegenerativeMedicine() {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://puretyclinic.com/" },
         { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://puretyclinic.com/services" },
-        { "@type": "ListItem", "position": 3, "name": "PRP & Regenerative Medicine Santa Barbara", "item": "https://puretyclinic.com/services/regenerative" }
+        { "@type": "ListItem", "position": 3, "name": variant.breadcrumbName, "item": variant.breadcrumbUrl }
       ]
     };
 
@@ -151,7 +182,7 @@ export default function RegenerativeMedicine() {
     });
 
     return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-  }, []);
+  }, [variant.title]);
 
   function scrollToForm() {
     const el = document.getElementById("contact-form");
@@ -173,10 +204,10 @@ export default function RegenerativeMedicine() {
                 Santa Barbara, CA
               </span>
               <h1 className="font-serif text-5xl md:text-7xl mb-6 leading-tight">
-                PRP &amp; Regenerative<br /><span className="italic text-accent">Medicine</span>
+                {variant.h1}
               </h1>
               <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-4">
-                Ultrasound-guided PRP therapy, stem cell injections, and prolotherapy in Santa Barbara — without surgery, without steroids.
+                {variant.subtitle}
               </p>
               <p className="text-sm text-white/60 mb-8">Serving Santa Barbara, Goleta, Montecito, Ventura, Ojai, and all of the Central Coast</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">

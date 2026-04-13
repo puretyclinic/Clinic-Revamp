@@ -76,7 +76,13 @@ export default function PlasmaExchange() {
         { "@type": "City", "name": "Carpinteria", "containedInPlace": { "@type": "State", "name": "California" } }
       ],
       "medicalSpecialty": "IntegrativeMedicine",
-      "hasMap": "https://maps.google.com/?q=Purety+Family+Medical+Clinic+Santa+Barbara+CA"
+      "hasMap": "https://maps.google.com/?q=Purety+Family+Medical+Clinic+Santa+Barbara+CA",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "77",
+        "bestRating": "5"
+      }
     };
 
     const s0 = document.createElement("script");
