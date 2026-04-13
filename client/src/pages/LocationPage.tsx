@@ -46,71 +46,35 @@ const locations: Record<string, LocationData> = {
   "los-angeles": {
     city: "Los Angeles",
     state: "CA",
-    headline: "Fecal Microbiota Transplant (FMT) for Los Angeles Patients",
-    subheadline: "California's most experienced FMT clinic is 90 minutes from LA. Remote consultations available. Over 1,000 patients treated since 2014.",
-    metaTitle: "FMT Treatment for Los Angeles Patients | Fecal Transplant Clinic | Purety Clinic",
-    metaDescription: "Los Angeles patients seeking FMT for C. diff travel to Purety Clinic in Santa Barbara — 90 minutes away. 90%+ success rate, capsule or enema options, remote consultations available. Call (805) 500-8300.",
+    headline: "FMT, EBO2 Ozone, PRP & Therapeutic Plasma Exchange Near Los Angeles",
+    subheadline: "Purety Family Medical Clinic in Santa Barbara — 90 minutes from LA. One of California's most experienced outpatient clinics for FMT, EBO2/EBOO ozone therapy, PRP injections, and therapeutic plasma exchange (TPE).",
+    metaTitle: "FMT · EBO2 Ozone · PRP · Therapeutic Plasma Exchange Near Los Angeles | Purety Clinic",
+    metaDescription: "Los Angeles patients travel to Purety Clinic in Santa Barbara (90 min) for FMT, EBO2/EBOO ozone therapy, PRP & stem cell injections, and therapeutic plasma exchange (TPE). Dr. Jonathan Birch NMD, RMSK. Call (805) 500-8300.",
     driveTime: "Approximately 90 minutes",
     distance: "About 95 miles",
-    intro: "If you're in Los Angeles and researching Fecal Microbiota Transplantation for recurrent C. difficile, you've likely found that qualified FMT providers are harder to come by than you'd expect in a major metro area. Hospital-based FMT programs have long waitlists and typically only offer colonoscopy delivery. Purety Family Medical Clinic in Santa Barbara has been California's leading outpatient FMT clinic since 2014 — and many of our patients make the 90-minute drive from the LA area specifically for our level of experience and the flexibility of our treatment options.",
-    whyTravel: "Our FMT program offers something most LA-area providers don't: multiple delivery options (capsules, oral liquid, enema, and colonoscopy via our procedural partners), a 90%+ success rate for recurrent C. diff, and the ability to begin with a remote consultation so you only need to travel once your treatment plan is confirmed. For many patients, the drive is the smallest part of the process.",
+    intro: "Purety Family Medical Clinic in Santa Barbara is one of the few outpatient clinics in California offering all four of these advanced therapies under a single roof: FMT for gut health and C. difficile, EBO2 (EBOO) ozone therapy, ultrasound-guided PRP and stem cell injections, and therapeutic plasma exchange (TPE / plasmapheresis). Los Angeles has a large patient population seeking these treatments, but qualified outpatient providers are rare. Many LA-area patients make the 90-minute drive — often starting with a remote consultation to avoid unnecessary trips.",
+    whyTravel: "For Los Angeles patients, the drive to Santa Barbara is straightforward and the level of specialist experience is difficult to match locally. Dr. Jonathan Birch NMD, RMSK has performed over 1,000 FMT procedures, 4,000+ regenerative injections, and 2,500+ ozone treatments — making this one of the highest-volume integrative specialty practices in the state. Initial consultations for FMT and many other services can be done by telehealth.",
     services: [
-      {
-        name: "FMT for Recurrent C. difficile",
-        description: "Our primary FMT indication. 90%+ cure rate for antibiotic-resistant C. diff — dramatically better than repeated antibiotic courses. Multiple delivery methods available."
-      },
-      {
-        name: "Remote Consultations",
-        description: "Initial consultations can be conducted via telehealth for Los Angeles patients. We review your history, confirm candidacy, and design your protocol before you travel."
-      },
-      {
-        name: "Capsule-Based FMT",
-        description: "Our most popular delivery method — oral capsules taken over a 14-day course. In many cases, no travel to the clinic is needed after your consultation."
-      },
-      {
-        name: "Gut Microbiome Restoration",
-        description: "Beyond C. diff, we work with patients dealing with post-antibiotic dysbiosis, gut imbalances, and other microbiome-related health concerns."
-      },
-      {
-        name: "Integrative Primary Care",
-        description: "Naturopathic medicine, bioidentical hormone therapy, IV nutrient infusions, regenerative injections, and ozone therapy for patients willing to make the drive to Santa Barbara."
-      },
-      {
-        name: "Integrative Oncology Support",
-        description: "Complementary cancer care protocols including IV high-dose vitamin C, mistletoe, nutritional support, and immune optimization alongside conventional treatment."
-      }
+      { name: "FMT — Fecal Microbiota Transplant", description: "90%+ success rate for recurrent C. diff since 2014. Capsule, enema, and colonoscopy options. Remote consultations available — many LA patients never need to travel for capsule-based protocols." },
+      { name: "EBO2 / EBOO Ozone Therapy", description: "Extracorporeal blood ozonation — one of California's most experienced providers with 2,500+ treatments. LA patients seeking EBO2 or EBOO for chronic illness, Lyme, autoimmune disease, and long COVID travel specifically for this." },
+      { name: "PRP & Stem Cell Injections", description: "Over 4,000 ultrasound-guided regenerative injections by Dr. Birch (RMSK). PRP, Wharton's Jelly, exosomes, and prolotherapy for joint pain, arthritis, and sports injuries." },
+      { name: "Therapeutic Plasma Exchange (TPE)", description: "One of the few outpatient therapeutic plasma exchange clinics in Southern California. TPE / plasmapheresis for autoimmune conditions, Long COVID, MS, Guillain-Barré, and neurodegeneration." },
+      { name: "IV Nutrient Therapy", description: "High-dose vitamin C, NAD+, Myers cocktail, chelation, and custom longevity infusions." },
+      { name: "Remote Consultations", description: "Initial telehealth consultations available for FMT, EBO2, PRP, and TPE. Confirm your candidacy and treatment plan before making the trip." }
     ],
     faqs: [
-      {
-        question: "Do you have an FMT clinic in Los Angeles?",
-        answer: "We don't have a Los Angeles office — our clinic is located in Santa Barbara at 2323 Oak Park Ln, Suite 102. However, we serve a large number of LA-area patients. Initial consultations can be done remotely, and for capsule-based FMT protocols, some patients never need to travel to the clinic at all. For colonoscopy-based FMT, we coordinate with procedural partners in Southern California."
-      },
-      {
-        question: "How far is Purety Clinic from Los Angeles?",
-        answer: "We're approximately 95 miles from downtown Los Angeles — about a 90-minute drive depending on traffic. Many patients from LA, Beverly Hills, Santa Monica, Pasadena, and the San Fernando Valley make the trip. We recommend scheduling morning appointments to avoid southbound traffic on the return trip."
-      },
-      {
-        question: "Can I do my FMT consultation remotely from Los Angeles?",
-        answer: "Yes. We offer telehealth consultations for patients who want to review their case, discuss treatment options, and confirm candidacy before making the trip to Santa Barbara. In many cases, we can also ship capsule-based FMT materials directly, so the number of required in-person visits is minimized."
-      },
-      {
-        question: "Does insurance cover FMT for C. diff?",
-        answer: "Coverage varies by insurer. Some plans cover FMT for recurrent C. difficile, particularly colonoscopy-based delivery. We recommend contacting your insurer directly and asking about coverage for 'fecal microbiota transplant' before your appointment. We discuss pricing transparently during the consultation."
-      },
-      {
-        question: "What is the success rate for FMT at your clinic?",
-        answer: "Our FMT protocol achieves a 90%+ cure rate for recurrent C. difficile infection, consistent with the published clinical trial literature. We have treated over 1,000 patients since 2014. Many patients see significant improvement within the first week following treatment."
-      },
-      {
-        question: "Why should I travel to Santa Barbara instead of finding an LA provider?",
-        answer: "Experience and delivery flexibility. Most hospital-based FMT programs in Los Angeles offer only colonoscopy delivery and have significant wait times. We offer capsules, oral liquid, enema, and colonoscopy options — and with a 90%+ success rate built over a decade of practice, many patients find the 90-minute drive well worth it."
-      }
+      { question: "Do you have a clinic in Los Angeles?", answer: "We don't have an LA office — our clinic is at 2323 Oak Park Ln, Suite 102 in Santa Barbara, approximately 90 minutes from Los Angeles. Initial consultations for most services can be conducted via telehealth, minimizing unnecessary travel." },
+      { question: "How far is Purety Clinic from Los Angeles?", answer: "About 95 miles — roughly 90 minutes by car on the 101 freeway. We serve patients from Los Angeles, Santa Monica, Beverly Hills, Pasadena, the San Fernando Valley, and Orange County. Morning appointments are recommended to avoid southbound traffic on the return trip." },
+      { question: "Do you offer EBO2 ozone therapy for Los Angeles patients?", answer: "Yes. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (EBOO / ozone dialysis). Many LA patients travel specifically for this therapy, as qualified outpatient EBO2 providers are rare in Southern California." },
+      { question: "Is therapeutic plasma exchange (TPE) available for Los Angeles patients?", answer: "Yes. Purety Clinic is one of the few outpatient therapeutic plasma exchange clinics serving Southern California. We offer TPE (plasmapheresis) for autoimmune conditions, Long COVID, neurological disease, and longevity protocols. LA patients make the trip regularly." },
+      { question: "Can I do a remote consultation for FMT from Los Angeles?", answer: "Yes. We offer telehealth for initial FMT consultations. In many cases, capsule-based FMT can be shipped directly, meaning some patients complete their entire protocol without an in-person visit." },
+      { question: "Why travel to Santa Barbara instead of finding an LA provider?", answer: "Experience and breadth of services. Dr. Birch has performed over 1,000 FMT procedures, 4,000+ regenerative injections, and 2,500+ ozone treatments — a volume that's very difficult to find in a single outpatient practice. We also offer all four flagship services (FMT, EBO2, PRP, TPE) in one location, which no LA-area outpatient clinic currently does." }
     ],
     schema: {
       "@context": "https://schema.org",
       "@type": "MedicalClinic",
       "name": "Purety Family Medical Clinic",
-      "description": "FMT clinic serving Los Angeles patients. California's most experienced outpatient Fecal Microbiota Transplantation provider since 2014. 90%+ success rate for recurrent C. diff.",
+      "description": "Integrative medicine clinic serving Los Angeles patients. Specializing in FMT, EBO2/EBOO ozone therapy, PRP & stem cell injections, and therapeutic plasma exchange (TPE). 90 minutes from LA.",
       "url": "https://puretyclinic.com/locations/los-angeles",
       "telephone": "+1-805-500-8300",
       "address": {
@@ -123,20 +87,27 @@ const locations: Record<string, LocationData> = {
       },
       "areaServed": [
         { "@type": "City", "name": "Los Angeles" },
-        { "@type": "City", "name": "Santa Barbara" },
         { "@type": "City", "name": "Santa Monica" },
         { "@type": "City", "name": "Beverly Hills" },
-        { "@type": "City", "name": "Ventura" }
+        { "@type": "City", "name": "Pasadena" },
+        { "@type": "City", "name": "West Hollywood" },
+        { "@type": "City", "name": "Burbank" },
+        { "@type": "City", "name": "Glendale" },
+        { "@type": "City", "name": "Calabasas" },
+        { "@type": "City", "name": "Westlake Village" },
+        { "@type": "City", "name": "Thousand Oaks" }
       ],
-      "availableService": {
-        "@type": "MedicalProcedure",
-        "name": "Fecal Microbiota Transplant (FMT)",
-        "description": "FMT for recurrent C. difficile infection. Capsule, enema, and colonoscopy delivery. Remote consultations available for Los Angeles patients."
-      },
-      "physician": {
-        "@type": "Physician",
-        "name": "Dr. Jonathan Birch",
-        "medicalSpecialty": "Naturopathic Medicine"
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "Fecal Microbiota Transplant (FMT)", "url": "https://puretyclinic.com/fecal-transplant" },
+        { "@type": "MedicalProcedure", "name": "EBO2 / EBOO Ozone Therapy", "url": "https://puretyclinic.com/ebo2-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "PRP & Regenerative Injections", "url": "https://puretyclinic.com/prp-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "Therapeutic Plasma Exchange (TPE)", "url": "https://puretyclinic.com/services/plasma-exchange" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "77",
+        "bestRating": "5"
       }
     }
   },
@@ -342,6 +313,133 @@ const locations: Record<string, LocationData> = {
         "addressCountry": "US"
       },
       "areaServed": [{ "@type": "City", "name": "Montecito" }]
+    }
+  },
+
+  "san-luis-obispo": {
+    city: "San Luis Obispo",
+    state: "CA",
+    headline: "FMT, EBO2 Ozone & Integrative Medicine Near San Luis Obispo",
+    subheadline: "Purety Family Medical Clinic in Santa Barbara is just 75 miles south of SLO — the nearest specialist clinic for FMT, EBO2 ozone therapy, PRP injections, and therapeutic plasma exchange on the Central Coast.",
+    metaTitle: "FMT & EBO2 Ozone Therapy Near San Luis Obispo CA | Purety Clinic",
+    metaDescription: "San Luis Obispo patients travel to Purety Clinic in Santa Barbara (75 miles) for FMT, EBO2/EBOO ozone therapy, PRP injections, and therapeutic plasma exchange. Dr. Jonathan Birch NMD. Call (805) 500-8300.",
+    driveTime: "Approximately 75 minutes",
+    distance: "About 75 miles",
+    intro: "Purety Family Medical Clinic in Santa Barbara is the closest specialist clinic to San Luis Obispo offering FMT, EBO2 ozone therapy, PRP and regenerative injections, and therapeutic plasma exchange (TPE). The Central Coast has limited access to these advanced therapies, and SLO-area patients regularly make the 75-mile drive south for treatments not available locally. Many begin with a remote telehealth consultation before visiting the clinic.",
+    whyTravel: "SLO and the surrounding areas — Paso Robles, Pismo Beach, Arroyo Grande — have very few providers offering FMT or EBO2. Our clinic offers all of these at a single location, with a depth of experience (1,000+ FMT procedures, 2,500+ ozone treatments) that would be difficult to find anywhere on the Central Coast.",
+    services: [
+      { name: "FMT — Fecal Microbiota Transplant", description: "California's most experienced outpatient FMT clinic. 90%+ success rate for C. diff. Capsule and enema options with remote consultations available — many SLO patients manage their protocol without repeat in-person visits." },
+      { name: "EBO2 / EBOO Ozone Therapy", description: "2,500+ ozone treatments performed. SLO has no outpatient EBO2 providers — patients with chronic illness, Lyme, autoimmune disease, and Long COVID travel south specifically for this therapy." },
+      { name: "PRP & Regenerative Injections", description: "Ultrasound-guided PRP, prolotherapy, and biologic injections for joint pain, arthritis, and sports injuries. Over 4,000 injections by Dr. Birch (RMSK)." },
+      { name: "Therapeutic Plasma Exchange (TPE)", description: "One of the few outpatient TPE clinics in the region. Plasmapheresis for autoimmune conditions, Long COVID, and neurological disease." },
+      { name: "IV Nutrient Therapy", description: "High-dose vitamin C, NAD+, Myers cocktail, and custom infusions." },
+      { name: "Naturopathic Primary Care", description: "Root-cause medicine and holistic primary care for the whole family." }
+    ],
+    faqs: [
+      { question: "How far is Purety Clinic from San Luis Obispo?", answer: "About 75 miles south — approximately a 75-minute drive on the 101. We're located at 2323 Oak Park Ln, Suite 102 in Santa Barbara." },
+      { question: "Is there an FMT clinic in San Luis Obispo?", answer: "There are currently no outpatient FMT clinics in the San Luis Obispo area. Purety Clinic in Santa Barbara is the nearest specialist FMT provider on the Central Coast. We offer telehealth consultations and capsule-based protocols that minimize in-person visits." },
+      { question: "Is EBO2 ozone therapy available near San Luis Obispo?", answer: "EBO2 (EBOO) is not available in the SLO area. Purety Clinic in Santa Barbara is the nearest qualified provider — Dr. Birch has performed over 2,500 ozone treatments including EBO2, Multipass OHT (10-Pass), and Prolozone." },
+      { question: "Can I start with a telehealth consultation from SLO?", answer: "Yes. We offer remote consultations for FMT, ozone therapy, PRP, and TPE candidates. This allows us to review your case, confirm candidacy, and design your protocol before you make the trip to Santa Barbara." },
+      { question: "Do you accept new patients from the Central Coast?", answer: "Yes. We welcome patients from San Luis Obispo, Paso Robles, Pismo Beach, Arroyo Grande, Grover Beach, and throughout the Central Coast." }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Purety Family Medical Clinic",
+      "description": "Integrative medicine clinic serving San Luis Obispo and Central Coast patients. Nearest specialist clinic for FMT, EBO2 ozone therapy, PRP injections, and therapeutic plasma exchange (TPE).",
+      "url": "https://puretyclinic.com/locations/san-luis-obispo",
+      "telephone": "+1-805-500-8300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2323 Oak Park Ln, Suite 102",
+        "addressLocality": "Santa Barbara",
+        "addressRegion": "CA",
+        "postalCode": "93105",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "San Luis Obispo" },
+        { "@type": "City", "name": "Paso Robles" },
+        { "@type": "City", "name": "Pismo Beach" },
+        { "@type": "City", "name": "Arroyo Grande" },
+        { "@type": "City", "name": "Grover Beach" },
+        { "@type": "City", "name": "Atascadero" },
+        { "@type": "City", "name": "Morro Bay" }
+      ],
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "Fecal Microbiota Transplant (FMT)", "url": "https://puretyclinic.com/fecal-transplant" },
+        { "@type": "MedicalProcedure", "name": "EBO2 / EBOO Ozone Therapy", "url": "https://puretyclinic.com/ebo2-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "PRP & Regenerative Injections", "url": "https://puretyclinic.com/prp-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "Therapeutic Plasma Exchange (TPE)", "url": "https://puretyclinic.com/services/plasma-exchange" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "77",
+        "bestRating": "5"
+      }
+    }
+  },
+
+  "santa-maria": {
+    city: "Santa Maria",
+    state: "CA",
+    headline: "FMT & Integrative Medicine Near Santa Maria, CA",
+    subheadline: "Purety Family Medical Clinic in Santa Barbara is just 55 miles south of Santa Maria — your nearest specialist for FMT, ozone therapy, PRP, and naturopathic care.",
+    metaTitle: "FMT & Integrative Medicine Near Santa Maria CA | Purety Family Medical Clinic",
+    metaDescription: "Santa Maria patients seeking FMT for C. diff, ozone therapy, PRP injections, or naturopathic care travel to Purety Clinic in Santa Barbara — just 55 miles away. Dr. Jonathan Birch NMD. Call (805) 500-8300.",
+    driveTime: "Approximately 55 minutes",
+    distance: "About 55 miles",
+    intro: "Purety Family Medical Clinic is just 55 miles south of Santa Maria on the 101 freeway. For Santa Maria and Lompoc-area patients looking for FMT for C. difficile, integrative primary care, ozone therapy, or regenerative injections, our Santa Barbara clinic is the nearest specialist option — and one of the most experienced in California.",
+    whyTravel: "Santa Maria and the surrounding area have limited access to advanced integrative therapies. Our Santa Barbara clinic offers FMT with a 90%+ success rate, EBO2 ozone therapy, PRP injections, and therapeutic plasma exchange — in a single location, with telehealth available so you can confirm your candidacy before making the drive.",
+    services: [
+      { name: "FMT — Fecal Microbiota Transplant", description: "California's most experienced outpatient FMT clinic. 90%+ success rate for C. diff since 2014. Remote consultations and capsule-based FMT available — often requiring minimal travel." },
+      { name: "EBO2 / EBOO Ozone Therapy", description: "2,500+ ozone treatments. Extracorporeal blood ozonation for chronic illness, Lyme disease, autoimmune conditions, and Long COVID." },
+      { name: "PRP & Regenerative Injections", description: "Ultrasound-guided PRP, prolotherapy, and biologic injections for joint pain and sports injuries. Over 4,000 injections by Dr. Birch (RMSK)." },
+      { name: "Naturopathic Primary Care", description: "Root-cause holistic medicine for chronic conditions, hormonal imbalance, pediatric health, and whole-family care." },
+      { name: "Therapeutic Plasma Exchange (TPE)", description: "Outpatient plasmapheresis for autoimmune disease, Long COVID, and neurological conditions." },
+      { name: "IV Nutrient Therapy", description: "High-dose vitamin C, NAD+, Myers cocktail, and custom infusions." }
+    ],
+    faqs: [
+      { question: "How far is Purety Clinic from Santa Maria?", answer: "About 55 miles south — roughly a 55-minute drive on the 101 freeway. We're at 2323 Oak Park Ln, Suite 102 in Santa Barbara." },
+      { question: "Do you offer FMT for Santa Maria patients?", answer: "Yes. We serve a number of Central Coast patients from Santa Maria, Lompoc, and Guadalupe. Initial consultations can be done via telehealth, and capsule-based FMT can often be shipped directly — minimizing in-person visits." },
+      { question: "Can I do a remote consultation from Santa Maria?", answer: "Absolutely. We offer telehealth consultations for FMT, ozone therapy, PRP, and TPE candidates. We'll review your case and confirm your candidacy before you make the trip." },
+      { question: "Do you accept new patients from Santa Maria?", answer: "Yes. We welcome new patients from Santa Maria, Lompoc, Guadalupe, Orcutt, and the surrounding Central Coast. Call (805) 500-8300 or submit a consultation request online." }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Purety Family Medical Clinic",
+      "description": "Integrative medicine clinic serving Santa Maria and Central Coast patients. FMT, ozone therapy, PRP injections, and naturopathic care. 55 miles south of Santa Maria.",
+      "url": "https://puretyclinic.com/locations/santa-maria",
+      "telephone": "+1-805-500-8300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2323 Oak Park Ln, Suite 102",
+        "addressLocality": "Santa Barbara",
+        "addressRegion": "CA",
+        "postalCode": "93105",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Santa Maria" },
+        { "@type": "City", "name": "Lompoc" },
+        { "@type": "City", "name": "Guadalupe" },
+        { "@type": "City", "name": "Orcutt" },
+        { "@type": "City", "name": "Vandenberg Village" }
+      ],
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "Fecal Microbiota Transplant (FMT)", "url": "https://puretyclinic.com/fecal-transplant" },
+        { "@type": "MedicalProcedure", "name": "EBO2 / EBOO Ozone Therapy", "url": "https://puretyclinic.com/ebo2-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "PRP & Regenerative Injections", "url": "https://puretyclinic.com/prp-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "Therapeutic Plasma Exchange (TPE)", "url": "https://puretyclinic.com/services/plasma-exchange" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "77",
+        "bestRating": "5"
+      }
     }
   }
 };

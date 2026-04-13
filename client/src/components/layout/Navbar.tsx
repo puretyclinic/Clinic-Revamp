@@ -13,7 +13,7 @@ const serviceLinks = [
   { name: "Ozone Therapy", href: "/services/ozone-therapy" },
   { name: "Hormone Replacement", href: "/services/hormone-replacement" },
   { name: "Naturopathic Medicine", href: "/services/naturopathic" },
-  { name: "Plasma Exchange", href: "/services/plasma-exchange" },
+  { name: "Therapeutic Plasma Exchange", href: "/services/plasma-exchange" },
 ];
 
 export function Navbar() {

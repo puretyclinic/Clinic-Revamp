@@ -198,6 +198,20 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.puretyclinic.com/locations/san-luis-obispo</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/locations/santa-maria</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Thank you page (post-conversion) -->
   <url>
     <loc>https://www.puretyclinic.com/thank-you</loc>

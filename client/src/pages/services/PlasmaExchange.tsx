@@ -106,7 +106,7 @@ export default function PlasmaExchange() {
         },
         {
           "@type": "Question",
-          "name": "How many plasma exchange treatments will I need?",
+          "name": "How many therapeutic plasma exchange (TPE) treatments will I need?",
           "acceptedAnswer": { "@type": "Answer", "text": "The number of treatments varies by condition. We generally start with 1 treatment per month for 5 months, then reassess based on your response." }
         },
         {
@@ -116,7 +116,7 @@ export default function PlasmaExchange() {
         },
         {
           "@type": "Question",
-          "name": "Is plasma exchange available in Santa Barbara?",
+          "name": "Is therapeutic plasma exchange (TPE) available in Santa Barbara?",
           "acceptedAnswer": { "@type": "Answer", "text": "Yes. Purety Family Medical Clinic in Santa Barbara offers therapeutic plasma exchange (TPE) under the care of Dr. Jonathan Birch. We serve patients from Santa Barbara, Ventura, Los Angeles, and throughout California." }
         }
       ]
@@ -248,7 +248,7 @@ export default function PlasmaExchange() {
                    </li>
                    <li className="ml-6">
                      <span className="absolute flex items-center justify-center w-6 h-6 bg-primary rounded-full -left-3 ring-8 ring-white text-white text-xs font-bold">4</span>
-                     <h3 className="font-bold text-lg mb-1">Plasma Exchange</h3>
+                     <h3 className="font-bold text-lg mb-1">Therapeutic Plasma Exchange (TPE)</h3>
                      <p className="text-sm text-muted-foreground">The unhealthy plasma is removed, and albumin is added before the blood components are returned to your body.</p>
                    </li>
                    <li className="ml-6">
@@ -330,7 +330,7 @@ export default function PlasmaExchange() {
            </div>
         </section>
         <RelatedBlogPosts
-          heading="Learn More About Plasma Exchange"
+          heading="Learn More About Therapeutic Plasma Exchange"
           postIds={["therapeutic-plasma-exchange-guide"]}
         />
         <ContactCTA heading="Interested in Plasma Exchange?" subheading="Contact us to learn how therapeutic plasma exchange can help you." formSource="Plasma Exchange Page" />

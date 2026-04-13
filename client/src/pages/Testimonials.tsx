@@ -7,7 +7,7 @@ import { ContactCTA } from "@/components/ContactCTA";
 import { GoogleReviews } from "@/components/GoogleReviews";
 import { Star } from "lucide-react";
 
-const CATEGORIES = ["All", "FMT", "Regenerative", "Ozone / EBO2", "Women's Health", "Pediatrics", "Plasma Exchange"];
+const CATEGORIES = ["All", "FMT", "Regenerative", "Ozone / EBO2", "Women's Health", "Pediatrics", "TPE / Plasma Exchange"];
 
 const TESTIMONIALS = [
   {
@@ -109,14 +109,14 @@ const TESTIMONIALS = [
     quote: "Our daughter had seven ear infections in one year. The pediatrician recommended ear tubes immediately. We wanted a second opinion and came to Dr. Dena. She identified dietary triggers and a vitamin D deficiency, suggested some structural work with a pediatric chiropractor, and recommended some targeted supplements. It's been fourteen months and not a single ear infection. We avoided surgery entirely.",
   },
   {
-    category: "Plasma Exchange",
+    category: "TPE / Plasma Exchange",
     name: "Christopher A.",
     location: "Phoenix, AZ",
     treatment: "Therapeutic Plasma Exchange — Long COVID",
     quote: "Eighteen months of long COVID with debilitating fatigue, cognitive impairment, and post-exertional malaise. I had done extensive research and found the German data on TPE promising. Dr. Birch was one of the only physicians in the country offering it in a clinical setting. His protocol is rigorous. Five sessions in, my cognitive function returned to about 80% of normal — better than I'd hoped after so long. I'm continuing treatment and remain optimistic.",
   },
   {
-    category: "Plasma Exchange",
+    category: "TPE / Plasma Exchange",
     name: "Deborah L.",
     location: "San Diego, CA",
     treatment: "Therapeutic Plasma Exchange — Autoimmune",

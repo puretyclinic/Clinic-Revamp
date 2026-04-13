@@ -163,7 +163,7 @@ export default function DrBirch() {
                     Dr. Jonathan Birch is a naturopathic medical doctor and one of the most experienced FMT and regenerative medicine specialists in the United States. Since graduating from Southwest College of Naturopathic Medicine in 2014, he has performed over 1,000 FMT procedures and more than 4,000 regenerative injections — including PRP, prolotherapy, and biologic treatments — all under real-time musculoskeletal ultrasound guidance.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    Dr. Birch's practice spans the full spectrum of integrative and regenerative medicine — from gut microbiome restoration and plasma exchange to joint repair and IV nutrient therapy. He sees patients in Santa Barbara and conducts remote consultations for patients across the United States, with capsule-based FMT available by mail.
+                    Dr. Birch's practice spans the full spectrum of integrative and regenerative medicine — from gut microbiome restoration and therapeutic plasma exchange (TPE) to joint repair and IV nutrient therapy. He sees patients in Santa Barbara and conducts remote consultations for patients across the United States, with capsule-based FMT available by mail.
                   </p>
 
                   <div className="grid grid-cols-2 gap-3 mb-8">
