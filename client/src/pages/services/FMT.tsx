@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Loader2, ArrowRight, ShieldCheck, CheckCircle2, Pill, FlaskConical, Stethoscope, Droplets, Star, ChevronDown, ChevronUp, Globe, Video } from "lucide-react";
+import { Phone, Loader2, ArrowRight, ShieldCheck, CheckCircle2, Pill, FlaskConical, Stethoscope, Droplets, Star, ChevronDown, ChevronUp, Globe, Video, MessageSquare, Clock } from "lucide-react";
+import { GoogleReviews } from "@/components/GoogleReviews";
 import { useToast } from "@/hooks/use-toast";
 import * as gtag from "@/lib/gtag";
 import { useState, useEffect } from "react";
@@ -393,9 +394,26 @@ export default function FMT() {
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   Dr. Jonathan Birch has helped over 1,000 patients restore their gut microbiome and achieve lasting digestive relief using FMT. If you've been struggling with gut health and haven't found answers elsewhere, we'd like to review your case.
                 </p>
-                <p className="text-base text-muted-foreground leading-relaxed mb-8">
+                <p className="text-base text-muted-foreground leading-relaxed mb-6">
                   We consult on a wide range of gut concerns. Whatever you're dealing with, reach out — Dr. Birch will personally evaluate whether FMT may be appropriate for your situation.
                 </p>
+
+                {/* Dr. Birch credibility card */}
+                <div className="flex items-center gap-4 bg-white rounded-xl px-4 py-3 border border-gray-100 shadow-sm mb-8">
+                  <img
+                    src="/images/dr-jonathan-birch.png"
+                    alt="Dr. Jonathan Birch NMD"
+                    className="w-14 h-14 rounded-full object-cover object-top border-2 border-primary/20 shrink-0"
+                  />
+                  <div>
+                    <div className="font-bold text-foreground text-sm">Dr. Jonathan Birch, NMD, RMSK</div>
+                    <div className="text-xs text-muted-foreground">FMT Specialist · 10+ years · 1,000+ procedures</div>
+                    <div className="flex items-center gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 text-accent fill-current" />)}
+                      <span className="text-xs text-muted-foreground ml-1">5.0 · 77 Google reviews</span>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="flex gap-8 mb-8">
                   <div>
@@ -414,10 +432,17 @@ export default function FMT() {
 
                 <div className="flex flex-wrap gap-3">
                   <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold rounded-lg" onClick={scrollToForm} data-testid="button-fmt-hero-schedule">
-                    <Phone className="w-4 h-4 mr-2" /> Schedule Consultation
+                    <Phone className="w-4 h-4 mr-2" /> Request Case Review
                   </Button>
                   <Button size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/5 font-bold rounded-lg" asChild>
-                    <a href="tel:+18055008300" onClick={() => gtag.trackPhoneClick("FMT Hero")}>Call (805) 500-8300</a>
+                    <a href="tel:+18055008300" onClick={() => gtag.trackPhoneClick("FMT Hero")}>
+                      <Phone className="w-4 h-4 mr-2" /> Call
+                    </a>
+                  </Button>
+                  <Button size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/5 font-bold rounded-lg" asChild>
+                    <a href="sms:+18055008300" data-testid="button-fmt-sms-hero">
+                      <MessageSquare className="w-4 h-4 mr-2" /> Text Us
+                    </a>
                   </Button>
                 </div>
               </FadeIn>
@@ -477,6 +502,9 @@ export default function FMT() {
                     <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-1">
                       <ShieldCheck className="w-3 h-3" /> Your information is 100% confidential and HIPAA protected
                     </p>
+                    <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-1 mt-1">
+                      <Clock className="w-3 h-3" /> We respond to every inquiry within 1 business day
+                    </p>
                   </form>
                 </div>
               </FadeIn>
@@ -494,6 +522,21 @@ export default function FMT() {
             </div>
           </div>
         </div>
+
+        <section className="py-16 bg-[#f8fbfb]">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <FadeIn>
+              <div className="text-center mb-10">
+                <div className="flex items-center justify-center gap-1 mb-2">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-accent fill-current" />)}
+                </div>
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-2">What Our Patients Are Saying</h2>
+                <p className="text-muted-foreground">Real reviews from Google — verified patients, unfiltered feedback</p>
+              </div>
+            </FadeIn>
+            <GoogleReviews />
+          </div>
+        </section>
 
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 max-w-5xl">
@@ -854,6 +897,37 @@ export default function FMT() {
       />
 
       <Footer />
+
+      {/* Sticky mobile call bar — visible only on small screens */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] px-4 py-3">
+        <div className="flex gap-3">
+          <a
+            href="tel:+18055008300"
+            onClick={() => gtag.trackPhoneClick("FMT Sticky Mobile Bar")}
+            className="flex-1 flex items-center justify-center gap-2 bg-accent text-white font-bold rounded-xl py-3 text-sm"
+            data-testid="button-fmt-mobile-call"
+          >
+            <Phone className="w-4 h-4" /> Call Now
+          </a>
+          <a
+            href="sms:+18055008300"
+            className="flex-1 flex items-center justify-center gap-2 bg-primary/10 text-primary font-bold rounded-xl py-3 text-sm border border-primary/20"
+            data-testid="button-fmt-mobile-text"
+          >
+            <MessageSquare className="w-4 h-4" /> Text Us
+          </a>
+          <button
+            onClick={scrollToForm}
+            className="flex-1 flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-xl py-3 text-sm"
+            data-testid="button-fmt-mobile-form"
+          >
+            <ArrowRight className="w-4 h-4" /> Get Started
+          </button>
+        </div>
+      </div>
+
+      {/* Spacer so footer isn't hidden behind sticky bar on mobile */}
+      <div className="h-20 lg:hidden" />
     </div>
   );
 }
