@@ -286,13 +286,6 @@
     <priority>0.9</priority>
   </url>
 
-  <url>
-    <loc>https://www.puretyclinic.com/blog/ozone-therapy-overview</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- Blog posts — Plasma exchange -->
   <url>
     <loc>https://www.puretyclinic.com/blog/therapeutic-plasma-exchange-guide</loc>
@@ -303,35 +296,28 @@
 
   <!-- Blog posts — Other -->
   <url>
-    <loc>https://www.puretyclinic.com/blog/prp-therapy-guide</loc>
+    <loc>https://www.puretyclinic.com/blog/regenerative-medicine</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.puretyclinic.com/blog/aip-diet-autoimmune</loc>
+    <loc>https://www.puretyclinic.com/blog/aip-diet-guide</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.puretyclinic.com/blog/iv-therapy-guide</loc>
+    <loc>https://www.puretyclinic.com/blog/hormonal-balance</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.puretyclinic.com/blog/bioidentical-hormones</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.puretyclinic.com/blog/gut-microbiome-health</loc>
+    <loc>https://www.puretyclinic.com/blog/gut-health-microbiome</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
