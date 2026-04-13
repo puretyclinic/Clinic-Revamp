@@ -7,6 +7,7 @@ import { Droplet, Activity, RefreshCw, AlertCircle, CheckCircle2, ShieldCheck, H
 import { ContactCTA } from "@/components/ContactCTA";
 import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
 import { Link } from "wouter";
+import { StarRating } from "@/components/ui/StarRating";
 
 export default function PlasmaExchange() {
   useEffect(() => {
@@ -328,6 +329,15 @@ export default function PlasmaExchange() {
                </a>
              </Button>
            </div>
+        </section>
+        <section className="py-8 bg-white border-t border-border/40">
+          <div className="container mx-auto px-4 max-w-xl" data-testid="section-service-rating-tpe">
+            <StarRating
+              pageId="service-therapeutic-plasma-exchange"
+              pageType="service"
+              pageTitle="Therapeutic Plasma Exchange (TPE)"
+            />
+          </div>
         </section>
         <RelatedBlogPosts
           heading="Learn More About Therapeutic Plasma Exchange"

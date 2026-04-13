@@ -51,6 +51,55 @@ export class DatabaseStorage implements IStorage {
   async markContactRead(id: string): Promise<void> {
     await db.update(contactSubmissions).set({ read: true }).where(eq(contactSubmissions.id, id));
   }
+
+  async createRating(rating: InsertRating): Promise<Rating> {
+    const [created] = await db.insert(ratings).values(rating).returning();
+    return created;
+  }
+
+  async getRatingSummary(pageId: string): Promise<RatingSummary | null> {
+    const rows = await db.select().from(ratings).where(eq(ratings.pageId, pageId));
+    if (rows.length === 0) return null;
+    const distribution: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+    let total = 0;
+    for (const r of rows) {
+      distribution[r.stars] = (distribution[r.stars] || 0) + 1;
+      total += r.stars;
+    }
+    return {
+      pageId,
+      pageType: rows[0].pageType,
+      pageTitle: rows[0].pageTitle,
+      totalRatings: rows.length,
+      averageStars: Math.round((total / rows.length) * 10) / 10,
+      distribution,
+    };
+  }
+
+  async getAllRatingSummaries(): Promise<RatingSummary[]> {
+    const rows = await db.select().from(ratings).orderBy(desc(ratings.createdAt));
+    const map = new Map<string, { rows: Rating[] }>();
+    for (const r of rows) {
+      if (!map.has(r.pageId)) map.set(r.pageId, { rows: [] });
+      map.get(r.pageId)!.rows.push(r);
+    }
+    return Array.from(map.entries()).map(([pageId, { rows }]) => {
+      const distribution: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+      let total = 0;
+      for (const r of rows) {
+        distribution[r.stars] = (distribution[r.stars] || 0) + 1;
+        total += r.stars;
+      }
+      return {
+        pageId,
+        pageType: rows[0].pageType,
+        pageTitle: rows[0].pageTitle,
+        totalRatings: rows.length,
+        averageStars: Math.round((total / rows.length) * 10) / 10,
+        distribution,
+      };
+    }).sort((a, b) => b.totalRatings - a.totalRatings);
+  }
 }
 
 export const storage = new DatabaseStorage();

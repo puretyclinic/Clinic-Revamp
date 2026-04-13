@@ -7,6 +7,7 @@ import { Link, useParams } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
 import { blogPosts } from "@/data/posts";
 import { useEffect } from "react";
+import { StarRating } from "@/components/ui/StarRating";
 
 export default function BlogPost() {
   const { id } = useParams<{ id: string }>();
@@ -275,6 +276,17 @@ export default function BlogPost() {
             </div>
           </section>
         )}
+
+        {/* Star rating */}
+        <section className="py-8 bg-white border-t border-border/40">
+          <div className="container mx-auto px-4 max-w-xl" data-testid="section-article-rating">
+            <StarRating
+              pageId={`blog-${post.id}`}
+              pageType="article"
+              pageTitle={post.title}
+            />
+          </div>
+        </section>
 
         <ContactCTA heading="Have Questions About Your Health?" formSource="Blog Post" />
       </main>

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle2, ChevronDown, ChevronUp, ArrowRight, ShieldCheck, XCircle, AlertCircle } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
+import { StarRating } from "@/components/ui/StarRating";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
@@ -317,6 +318,15 @@ export default function CDiff() {
           </div>
         </section>
 
+        <section className="py-8 bg-white border-t border-border/40">
+          <div className="container mx-auto px-4 max-w-xl" data-testid="section-condition-rating-cdiff">
+            <StarRating
+              pageId="condition-c-difficile"
+              pageType="condition"
+              pageTitle="C. difficile & FMT"
+            />
+          </div>
+        </section>
         <ContactCTA heading="Ready to End the C. diff Cycle?" subheading="Start with a consultation — by telehealth or in-person in Santa Barbara. We'll review your history, confirm your candidacy, and recommend the delivery method best suited to your situation." formSource="C. difficile Condition Page" />
       </main>
       <Footer />
