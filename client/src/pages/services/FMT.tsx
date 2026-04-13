@@ -462,26 +462,6 @@ export default function FMT() {
                       <Input id="fmt-phone" name="phone" type="tel" placeholder="(555) 123-4567" required className="h-11 text-black" data-testid="input-fmt-phone" />
                     </div>
                     <div className="space-y-1">
-                      <Label htmlFor="fmt-concern" className="text-sm font-medium">Primary Concern</Label>
-                      <select
-                        id="fmt-concern"
-                        name="concern"
-                        className="flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-black ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                        data-testid="select-fmt-concern"
-                      >
-                        <option value="">Select your concern...</option>
-                        <option value="C. difficile (C. diff)">C. difficile (C. diff)</option>
-                        <option value="SIBO">SIBO (Small Intestinal Bacterial Overgrowth)</option>
-                        <option value="IBS">IBS / Irritable Bowel Syndrome</option>
-                        <option value="Ulcerative Colitis">Ulcerative Colitis / IBD</option>
-                        <option value="Crohn's Disease">Crohn's Disease</option>
-                        <option value="Post-antibiotic Dysbiosis">Post-antibiotic Gut Dysbiosis</option>
-                        <option value="Chronic Digestive Issues">Chronic Digestive Issues</option>
-                        <option value="Microbiome Restoration">Microbiome Restoration / General Gut Health</option>
-                        <option value="Other">Other — I'd like to discuss my situation</option>
-                      </select>
-                    </div>
-                    <div className="space-y-1">
                       <Label htmlFor="fmt-message" className="text-sm font-medium">Tell us about your situation (optional)</Label>
                       <Textarea
                         id="fmt-message"
