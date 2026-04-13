@@ -1,5 +1,4 @@
 import { FadeIn } from "@/components/layout/FadeIn";
-import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
 import { Button } from "@/components/ui/button";
