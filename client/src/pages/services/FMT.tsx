@@ -542,31 +542,31 @@ export default function FMT() {
           <div className="container mx-auto px-4 max-w-5xl">
             <FadeIn>
               <div className="text-center mb-14">
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Tired of the Endless Antibiotic Cycle?</h2>
-                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">You've tried everything. Multiple rounds of antibiotics. Strict diets. Nothing works for long. There's a better way.</p>
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">When Conventional Treatments Haven't Been Enough</h2>
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">You've seen the doctors. Tried the medications. Followed the protocols. Yet here you are, still searching for answers. You're not alone — and there may be a reason nothing has worked.</p>
               </div>
             </FadeIn>
 
             <div className="grid md:grid-cols-3 gap-8">
               <FadeIn delay={0.1}>
                 <div className="bg-red-50 rounded-2xl p-8 text-center border border-red-100 h-full">
-                  <div className="text-4xl mb-4">💊</div>
-                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">The Antibiotic Trap</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">Round after round of antibiotics... They kill the bad bacteria but also destroy your healthy gut flora, leading to recurrence.</p>
+                  <div className="text-4xl mb-4">🩺</div>
+                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">Treating Symptoms, Not the Root Cause</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">Most conventional treatments manage symptoms without addressing the underlying issue — an imbalanced gut microbiome that drives many chronic conditions.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <div className="bg-amber-50 rounded-2xl p-8 text-center border border-amber-100 h-full">
-                  <div className="text-4xl mb-4">🔄</div>
-                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">Recurring Infections</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">25-35% of C. diff patients experience recurrence. After 2+ recurrences, your chances of another infection jump to 60%.</p>
+                  <div className="text-4xl mb-4">🔬</div>
+                  <h3 className="font-serif text-xl font-bold mb-3 text-foreground">The Gut-Body Connection</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">Science increasingly shows that gut microbiome disruption is linked to a wide range of conditions — affecting digestive, immune, neurological, and metabolic health.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.3}>
                 <div className="bg-green-50 rounded-2xl p-8 text-center border border-green-100 h-full">
                   <div className="text-4xl mb-4">✔</div>
                   <h3 className="font-serif text-xl font-bold mb-3 text-foreground">The FMT Solution</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">FMT restores your complete gut microbiome with healthy donor bacteria. 90%+ success rate for recurrent C. diff, even for antibiotic-resistant cases.</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">FMT restores a healthy, diverse microbiome using carefully screened donor material — addressing many conditions at their root rather than masking them.</p>
                 </div>
               </FadeIn>
             </div>
