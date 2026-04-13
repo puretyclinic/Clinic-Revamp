@@ -1,7 +1,7 @@
 import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertContactSchema, insertRatingSchema } from "@shared/schema";
+import { insertContactSchema } from "@shared/schema";
 import { google } from "googleapis";
 
 const ADMIN_KEY = process.env.ADMIN_KEY || "purety2026admin";
@@ -293,40 +293,6 @@ export async function registerRoutes(
     } catch (error) {
       console.error("Reviews fetch error:", error);
       return res.status(500).json({ error: "Failed to fetch reviews" });
-    }
-  });
-
-  // ── Ratings ──────────────────────────────────────────────────────────────
-  app.post("/api/ratings", async (req, res) => {
-    const parsed = insertRatingSchema.safeParse(req.body);
-    if (!parsed.success) {
-      return res.status(400).json({ message: "Invalid rating data", errors: parsed.error.flatten() });
-    }
-    try {
-      const rating = await storage.createRating(parsed.data);
-      const summary = await storage.getRatingSummary(parsed.data.pageId);
-      return res.status(201).json({ rating, summary });
-    } catch (err) {
-      console.error("Rating create error:", err);
-      return res.status(500).json({ message: "Failed to save rating" });
-    }
-  });
-
-  app.get("/api/ratings/:pageId", async (req, res) => {
-    try {
-      const summary = await storage.getRatingSummary(req.params.pageId);
-      return res.json(summary ?? { pageId: req.params.pageId, totalRatings: 0, averageStars: 0, distribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 } });
-    } catch (err) {
-      return res.status(500).json({ message: "Failed to fetch rating" });
-    }
-  });
-
-  app.get("/api/ratings", requireAdmin, async (req, res) => {
-    try {
-      const summaries = await storage.getAllRatingSummaries();
-      return res.json(summaries);
-    } catch (err) {
-      return res.status(500).json({ message: "Failed to fetch ratings" });
     }
   });
 

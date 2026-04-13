@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle2, ChevronDown, ChevronUp, ArrowRight, ShieldCheck, Activity, Droplet, Wind } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
-import { StarRating } from "@/components/ui/StarRating";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
@@ -341,15 +340,6 @@ export default function LongCovid() {
           </div>
         </section>
 
-        <section className="py-8 bg-white border-t border-border/40">
-          <div className="container mx-auto px-4 max-w-xl" data-testid="section-condition-rating-longcovid">
-            <StarRating
-              pageId="condition-long-covid"
-              pageType="condition"
-              pageTitle="Long COVID Treatment"
-            />
-          </div>
-        </section>
         <ContactCTA heading="Ready to Address Your Long COVID?" subheading="Book an initial consultation — in-person in Santa Barbara or by telehealth. We'll review your history, discuss treatment options, and determine which protocols are most appropriate for your symptom profile." formSource="Long COVID Condition Page" />
       </main>
       <Footer />

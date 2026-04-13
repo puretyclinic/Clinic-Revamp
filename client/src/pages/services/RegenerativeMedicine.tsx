@@ -7,7 +7,6 @@ import { Link, useLocation } from "wouter";
 import { Activity, Syringe, Bone, CheckCircle2, ArrowRight, ShieldCheck, Star, ChevronDown, ChevronUp, MapPin, Phone } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
 import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
-import { StarRating } from "@/components/ui/StarRating";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
@@ -562,15 +561,6 @@ export default function RegenerativeMedicine() {
           </div>
         </section>
 
-        <section className="py-8 bg-white border-t border-border/40">
-          <div className="container mx-auto px-4 max-w-xl" data-testid="section-service-rating-regen">
-            <StarRating
-              pageId="service-regenerative-medicine"
-              pageType="service"
-              pageTitle="PRP & Stem Cell Therapy"
-            />
-          </div>
-        </section>
         <RelatedBlogPosts
           heading="Learn More About Regenerative Medicine"
           postIds={["regenerative-medicine"]}

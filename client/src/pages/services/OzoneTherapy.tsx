@@ -7,7 +7,6 @@ import { useLocation } from "wouter";
 import { Wind, Activity, Zap, CheckCircle2, ShieldCheck, Star, ChevronDown, ChevronUp, MapPin, Phone } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
 import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
-import { StarRating } from "@/components/ui/StarRating";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
@@ -574,15 +573,6 @@ export default function OzoneTherapy() {
           </div>
         </section>
 
-        <section className="py-8 bg-white border-t border-border/40">
-          <div className="container mx-auto px-4 max-w-xl" data-testid="section-service-rating-ozone">
-            <StarRating
-              pageId="service-ozone-therapy"
-              pageType="service"
-              pageTitle="EBO2 / EBOO Ozone Therapy"
-            />
-          </div>
-        </section>
         <RelatedBlogPosts
           heading="Learn More About Ozone Therapy"
           postIds={["eboo-ozone-therapy-guide"]}
