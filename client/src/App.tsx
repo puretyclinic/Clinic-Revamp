@@ -32,6 +32,8 @@ import Admin from "@/pages/Admin";
 import DrBirch from "@/pages/DrBirch";
 import DrDena from "@/pages/DrDena";
 import ThankYou from "@/pages/ThankYou";
+import LongCovid from "@/pages/conditions/LongCovid";
+import CDiff from "@/pages/conditions/CDiff";
 
 function Router() {
   return (
@@ -66,6 +68,8 @@ function Router() {
       <Route path="/blog/:id" component={BlogPost} />
       <Route path="/shop" component={Shop} />
       <Route path="/shop/product/:slug" component={ProductDetail} />
+      <Route path="/conditions/long-covid" component={LongCovid} />
+      <Route path="/conditions/c-difficile" component={CDiff} />
       <Route path="/thank-you" component={ThankYou} />
       <Route path="/claim" component={ClaimPreview} />
       <Route path="/admin" component={Admin} />

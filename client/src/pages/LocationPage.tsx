@@ -2,7 +2,7 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { MapPin, Car, Phone, CheckCircle2, ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
+import { MapPin, Car, Phone, CheckCircle2, ChevronDown, ChevronUp, ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
 import { useState, useEffect } from "react";
@@ -444,6 +444,30 @@ const locations: Record<string, LocationData> = {
   }
 };
 
+const SERVICE_LINKS: Record<string, string> = {
+  "FMT — Fecal Microbiota Transplant": "/fecal-transplant",
+  "FMT for C. difficile": "/fecal-transplant",
+  "FMT for Recurrent C. difficile": "/fecal-transplant",
+  "FMT for recurrent C. difficile": "/fecal-transplant",
+  "EBO2 / EBOO Ozone Therapy": "/ebo2-santa-barbara",
+  "Ozone Therapy": "/services/ozone-therapy",
+  "PRP & Regenerative Injections": "/prp-santa-barbara",
+  "PRP & Stem Cell Injections": "/prp-santa-barbara",
+  "Regenerative Injections": "/prp-santa-barbara",
+  "Regenerative Medicine": "/prp-santa-barbara",
+  "Therapeutic Plasma Exchange (TPE)": "/services/plasma-exchange",
+  "Therapeutic Plasma Exchange": "/services/plasma-exchange",
+  "IV Nutrient Therapy": "/services/iv-therapy",
+  "IV Longevity Protocols": "/services/iv-therapy",
+  "Bioidentical Hormones": "/services/hormone-replacement",
+  "Bioidentical Hormone Therapy": "/services/hormone-replacement",
+  "Holistic Primary Care": "/services/naturopathic",
+  "Naturopathic Primary Care": "/services/naturopathic",
+  "Naturopathic Medicine": "/services/naturopathic",
+  "Pediatric Holistic Care": "/services/naturopathic",
+  "Integrative Oncology Support": "/services/cancer-support",
+};
+
 export default function LocationPage({ params }: { params: { city: string } }) {
   const cityKey = params.city.toLowerCase();
   const location = locations[cityKey];
@@ -556,13 +580,24 @@ export default function LocationPage({ params }: { params: { city: string } }) {
                 All services are provided at our Santa Barbara clinic.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {location.services.map((service, i) => (
-                  <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                    <CheckCircle2 className="w-6 h-6 text-primary mb-3" />
-                    <h3 className="font-bold text-foreground text-lg mb-2">{service.name}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-                  </div>
-                ))}
+                {location.services.map((service, i) => {
+                  const href = SERVICE_LINKS[service.name];
+                  const card = (
+                    <div className={`bg-white rounded-2xl p-6 shadow-sm border border-gray-100 h-full flex flex-col ${href ? "hover:border-primary/30 hover:shadow-md transition-all cursor-pointer" : ""}`}>
+                      <CheckCircle2 className="w-6 h-6 text-primary mb-3" />
+                      <h3 className="font-bold text-foreground text-lg mb-2">{service.name}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed flex-grow">{service.description}</p>
+                      {href && (
+                        <span className="inline-flex items-center gap-1 text-primary text-xs font-bold mt-4">
+                          Learn more <ArrowRight className="w-3 h-3" />
+                        </span>
+                      )}
+                    </div>
+                  );
+                  return href
+                    ? <Link key={i} href={href} data-testid={`service-link-${i}`}>{card}</Link>
+                    : <div key={i}>{card}</div>;
+                })}
               </div>
             </FadeIn>
           </div>
