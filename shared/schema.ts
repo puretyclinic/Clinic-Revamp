@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, timestamp, boolean } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, timestamp, boolean, integer } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -20,6 +20,30 @@ export const contactSubmissions = pgTable("contact_submissions", {
   read: boolean("read").notNull().default(false),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
+
+export const ratings = pgTable("ratings", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  pageId: text("page_id").notNull(),
+  pageType: text("page_type").notNull(),
+  pageTitle: text("page_title").notNull(),
+  stars: integer("stars").notNull(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+export const insertRatingSchema = createInsertSchema(ratings).pick({
+  pageId: true,
+  pageType: true,
+  pageTitle: true,
+  stars: true,
+}).extend({
+  stars: z.number().int().min(1).max(5),
+  pageId: z.string().min(1),
+  pageType: z.enum(["article", "service", "condition"]),
+  pageTitle: z.string().min(1),
+});
+
+export type InsertRating = z.infer<typeof insertRatingSchema>;
+export type Rating = typeof ratings.$inferSelect;
 
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,

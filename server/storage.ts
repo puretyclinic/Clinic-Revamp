@@ -1,6 +1,15 @@
-import { type User, type InsertUser, type ContactSubmission, type InsertContact, users, contactSubmissions } from "@shared/schema";
+import { type User, type InsertUser, type ContactSubmission, type InsertContact, type Rating, type InsertRating, users, contactSubmissions, ratings } from "@shared/schema";
 import { db } from "./db";
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, sql } from "drizzle-orm";
+
+export interface RatingSummary {
+  pageId: string;
+  pageType: string;
+  pageTitle: string;
+  totalRatings: number;
+  averageStars: number;
+  distribution: Record<number, number>;
+}
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
@@ -9,6 +18,9 @@ export interface IStorage {
   createContact(contact: InsertContact): Promise<ContactSubmission>;
   getContacts(): Promise<ContactSubmission[]>;
   markContactRead(id: string): Promise<void>;
+  createRating(rating: InsertRating): Promise<Rating>;
+  getRatingSummary(pageId: string): Promise<RatingSummary | null>;
+  getAllRatingSummaries(): Promise<RatingSummary[]>;
 }
 
 export class DatabaseStorage implements IStorage {
