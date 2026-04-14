@@ -60,6 +60,29 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  const { isBot, prerenderPage } = await import("./prerender");
+
+  app.use(async (req: Request, res: Response, next: NextFunction) => {
+    const ua = req.headers["user-agent"] || "";
+    if (
+      isBot(ua) &&
+      !req.path.startsWith("/api") &&
+      !req.path.match(/\.(js|css|png|jpg|jpeg|ico|svg|woff|woff2|ttf|map)$/)
+    ) {
+      try {
+        const port = process.env.PORT || "5000";
+        const html = await prerenderPage(`http://localhost:${port}${req.path}`, req.path);
+        res.setHeader("X-Prerendered", "true");
+        res.setHeader("X-Robots-Tag", "index, follow");
+        return res.send(html);
+      } catch (err) {
+        console.error("[prerender] Error:", err);
+        return next();
+      }
+    }
+    return next();
+  });
+
   await registerRoutes(httpServer, app);
 
   app.use((err: any, _req: Request, res: Response, next: NextFunction) => {

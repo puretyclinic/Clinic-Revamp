@@ -33,6 +33,7 @@ Preferred communication style: Simple, everyday language.
 - **Database schema**: PostgreSQL via Drizzle ORM — currently only a `users` table with `id`, `username`, `password`
 - **Dev server**: Vite dev server is integrated as Express middleware for HMR during development
 - **Production**: Client is built to `dist/public`, served as static files by Express with SPA fallback
+- **Dynamic Rendering / Bot Prerendering**: `server/prerender.ts` uses `puppeteer-core` + the Nix Chromium binary to render pages for search engine bots (Googlebot, Bingbot, facebookexternalhit, etc.) — middleware in `server/index.ts` detects bot user agents and returns fully-rendered HTML; regular users still get the React SPA. Includes a 1-hour in-memory cache to avoid re-renders.
 
 ### Build System
 - **Client build**: Vite → `dist/public`
