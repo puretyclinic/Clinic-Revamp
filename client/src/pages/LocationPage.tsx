@@ -441,6 +441,331 @@ const locations: Record<string, LocationData> = {
         "bestRating": "5"
       }
     }
+  },
+
+  "oxnard": {
+    city: "Oxnard",
+    state: "CA",
+    headline: "FMT, EBO2 Ozone, PRP & Integrative Medicine Near Oxnard, CA",
+    subheadline: "Purety Family Medical Clinic in Santa Barbara is just 30 miles from Oxnard — your nearest specialist for FMT, EBO2 ozone therapy, PRP injections, and therapeutic plasma exchange in Ventura County.",
+    metaTitle: "FMT · EBO2 Ozone · PRP Near Oxnard CA | Purety Clinic Santa Barbara",
+    metaDescription: "Oxnard patients travel 30 miles to Purety Clinic in Santa Barbara for FMT, EBO2/EBOO ozone therapy, PRP injections, and therapeutic plasma exchange. Dr. Jonathan Birch NMD, RMSK. Call (805) 500-8300.",
+    driveTime: "Approximately 35 minutes",
+    distance: "About 30 miles",
+    intro: "Purety Family Medical Clinic in Santa Barbara is the closest specialist clinic to Oxnard offering FMT, EBO2 ozone therapy, PRP and regenerative injections, and therapeutic plasma exchange. Just 30 miles up the 101 freeway, our clinic provides Oxnard and Port Hueneme patients with advanced integrative therapies not available locally. Many patients begin with a telehealth consultation and make the short drive only when in-person treatment is required.",
+    whyTravel: "Oxnard is Ventura County's largest city and has limited access to the specialized therapies we offer. The 30-mile drive to Santa Barbara is one of the shortest on our patient roster — and the level of experience (1,000+ FMT procedures, 4,000+ regenerative injections, 2,500+ ozone treatments) is among the highest available anywhere in Southern California.",
+    services: [
+      { name: "FMT — Fecal Microbiota Transplant", description: "California's most experienced outpatient FMT clinic. 90%+ success rate for recurrent C. diff since 2014. Capsule, enema, and colonoscopy options. Remote consultations available — many Oxnard patients complete capsule protocols with minimal in-person visits." },
+      { name: "EBO2 / EBOO Ozone Therapy", description: "2,500+ ozone treatments performed. Extracorporeal blood ozonation for chronic illness, Lyme disease, autoimmune conditions, mold illness, and Long COVID. No comparable outpatient EBO2 clinic in Ventura County." },
+      { name: "PRP & Regenerative Injections", description: "Ultrasound-guided PRP, prolotherapy, and biologic injections for joint pain, arthritis, tendinopathy, and sports injuries. Over 4,000 procedures by Dr. Birch (RMSK)." },
+      { name: "Therapeutic Plasma Exchange (TPE)", description: "One of the few outpatient therapeutic plasma exchange clinics serving Ventura County. Plasmapheresis for autoimmune disease, Long COVID, POTS, and neurological conditions." },
+      { name: "IV Nutrient Therapy", description: "High-dose vitamin C, NAD+, Myers cocktail, glutathione, and custom longevity infusions." },
+      { name: "Naturopathic Primary Care", description: "Root-cause integrative medicine for whole families, including women's health and pediatric care." }
+    ],
+    faqs: [
+      { question: "How far is Purety Clinic from Oxnard?", answer: "About 30 miles north — roughly a 35-minute drive on the 101 freeway. We're at 2323 Oak Park Ln, Suite 102 in Santa Barbara, CA." },
+      { question: "Is there an FMT clinic in Oxnard or Ventura County?", answer: "There are currently no outpatient FMT specialist clinics in Oxnard or greater Ventura County. Purety Clinic in Santa Barbara is the nearest qualified FMT provider — with over 1,000 FMT procedures performed since 2014 and a 90%+ success rate for recurrent C. difficile." },
+      { question: "Do you offer EBO2 ozone therapy for Oxnard patients?", answer: "Yes. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (EBOO). Qualified outpatient EBO2 providers are rare in Ventura County — many Oxnard patients make the short drive to Santa Barbara specifically for this therapy." },
+      { question: "Can I do a telehealth consultation from Oxnard?", answer: "Yes. We offer remote consultations for FMT, ozone therapy, PRP, and TPE candidates. You can confirm your candidacy, review your history, and develop a treatment plan from home before making the trip." },
+      { question: "Do you offer PRP injections near Oxnard?", answer: "Dr. Jonathan Birch NMD, RMSK performs ultrasound-guided PRP, prolotherapy, and biologic injections at our Santa Barbara clinic — just 30 miles from Oxnard. He has performed over 4,000 regenerative procedures and is board-certified in musculoskeletal sonography." },
+      { question: "Do you accept new patients from Oxnard?", answer: "Yes. We welcome new patients from Oxnard, Port Hueneme, Camarillo, Ventura, and throughout Ventura County. Call (805) 500-8300 or submit a consultation request online." }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Purety Family Medical Clinic",
+      "description": "Integrative medicine clinic serving Oxnard and Ventura County patients. Nearest specialist for FMT, EBO2 ozone therapy, PRP injections, and therapeutic plasma exchange (TPE). 30 miles north on the 101.",
+      "url": "https://puretyclinic.com/locations/oxnard",
+      "telephone": "+1-805-500-8300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2323 Oak Park Ln, Suite 102",
+        "addressLocality": "Santa Barbara",
+        "addressRegion": "CA",
+        "postalCode": "93105",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Oxnard" },
+        { "@type": "City", "name": "Port Hueneme" },
+        { "@type": "City", "name": "Camarillo" },
+        { "@type": "City", "name": "Ventura" },
+        { "@type": "City", "name": "Fillmore" },
+        { "@type": "City", "name": "Santa Paula" }
+      ],
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "Fecal Microbiota Transplant (FMT)", "url": "https://puretyclinic.com/fecal-transplant" },
+        { "@type": "MedicalProcedure", "name": "EBO2 / EBOO Ozone Therapy", "url": "https://puretyclinic.com/ebo2-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "PRP & Regenerative Injections", "url": "https://puretyclinic.com/prp-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "Therapeutic Plasma Exchange (TPE)", "url": "https://puretyclinic.com/services/plasma-exchange" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "77",
+        "bestRating": "5"
+      }
+    }
+  },
+
+  "thousand-oaks": {
+    city: "Thousand Oaks",
+    state: "CA",
+    headline: "FMT, EBO2 Ozone, PRP & Integrative Medicine Near Thousand Oaks, CA",
+    subheadline: "Purety Family Medical Clinic in Santa Barbara is 50 miles from Thousand Oaks — the nearest outpatient specialist for FMT, EBO2/EBOO ozone therapy, PRP injections, and therapeutic plasma exchange in the Conejo Valley.",
+    metaTitle: "FMT · EBO2 Ozone · PRP Near Thousand Oaks CA | Purety Clinic Santa Barbara",
+    metaDescription: "Thousand Oaks patients travel to Purety Clinic in Santa Barbara (50 miles) for FMT, EBO2 ozone therapy, PRP injections, and therapeutic plasma exchange. Dr. Jonathan Birch NMD, RMSK. Call (805) 500-8300.",
+    driveTime: "Approximately 50 minutes",
+    distance: "About 50 miles",
+    intro: "Purety Family Medical Clinic in Santa Barbara is the nearest outpatient specialist clinic to Thousand Oaks offering FMT, EBO2 ozone therapy, ultrasound-guided PRP, and therapeutic plasma exchange under one roof. The Conejo Valley — including Thousand Oaks, Westlake Village, and Calabasas — has a large health-conscious population with limited local access to these advanced therapies. Many patients begin with a telehealth consultation before making the drive up the 101.",
+    whyTravel: "Thousand Oaks patients have access to some excellent conventional medicine locally but very little in the way of FMT, extracorporeal ozone therapy, or therapeutic plasma exchange. Our Santa Barbara clinic consolidates all four flagship therapies in one location — with procedural volume and credentials that are difficult to match anywhere in California.",
+    services: [
+      { name: "FMT — Fecal Microbiota Transplant", description: "California's most experienced outpatient FMT clinic. 90%+ success rate for recurrent C. diff. Capsule protocols often require minimal travel — many Conejo Valley patients complete treatment with just 1–2 in-person visits." },
+      { name: "EBO2 / EBOO Ozone Therapy", description: "2,500+ ozone treatments performed. EBO2 extracorporeal blood ozonation for Lyme disease, autoimmune conditions, mold illness, Long COVID, and chronic infections. The Conejo Valley has no outpatient EBO2 providers." },
+      { name: "PRP & Stem Cell Injections", description: "Ultrasound-guided PRP, Wharton's Jelly, exosome injections, and prolotherapy for joint pain, arthritis, and sports injuries. Over 4,000 procedures by Dr. Birch (RMSK) — the RMSK credential is rare in naturopathic medicine." },
+      { name: "Therapeutic Plasma Exchange (TPE)", description: "Outpatient plasmapheresis for autoimmune disease, Long COVID, POTS, neurological conditions, and longevity protocols. One of the few outpatient TPE clinics in Southern California." },
+      { name: "IV Nutrient Therapy & NAD+", description: "High-dose NAD+, vitamin C, Myers cocktail, phosphatidylcholine, and personalized longevity infusions." }
+    ],
+    faqs: [
+      { question: "How far is Purety Clinic from Thousand Oaks?", answer: "About 50 miles — roughly a 50-minute drive north on the 101 freeway. We're at 2323 Oak Park Ln, Suite 102 in Santa Barbara, CA." },
+      { question: "Is there an EBO2 ozone therapy clinic near Thousand Oaks?", answer: "No qualified outpatient EBO2 (EBOO) providers are currently operating in the Thousand Oaks or Conejo Valley area. Purety Clinic in Santa Barbara is the nearest outpatient EBO2 clinic — Dr. Birch has performed over 2,500 ozone treatments." },
+      { question: "Do you offer FMT for Thousand Oaks patients?", answer: "Yes. We serve patients from Thousand Oaks, Westlake Village, Calabasas, and the broader Conejo Valley. Capsule-based FMT can often be shipped directly, minimizing in-person visits for patients who can't easily make the drive." },
+      { question: "Does Dr. Birch offer PRP injections for Thousand Oaks patients?", answer: "Yes. Dr. Jonathan Birch NMD, RMSK performs ultrasound-guided PRP injections at our Santa Barbara clinic. The 50-mile drive from Thousand Oaks is well worth it for many patients who need the precision of RMSK-certified sonographic guidance." },
+      { question: "Can I start with a telehealth consultation from Thousand Oaks?", answer: "Absolutely. We offer remote consultations for FMT, EBO2, PRP, and TPE. Most patients from Thousand Oaks complete their initial consultation by telehealth, then visit in person only when hands-on treatment is required." },
+      { question: "Do you accept new patients from the Conejo Valley?", answer: "Yes. We welcome new patients from Thousand Oaks, Westlake Village, Calabasas, Agoura Hills, Oak Park, and throughout the Conejo Valley. Call (805) 500-8300 or submit a consultation request online." }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Purety Family Medical Clinic",
+      "description": "Integrative medicine clinic serving Thousand Oaks, Westlake Village, and Conejo Valley patients. Nearest outpatient specialist for FMT, EBO2 ozone therapy, PRP injections, and therapeutic plasma exchange. 50 miles on the 101.",
+      "url": "https://puretyclinic.com/locations/thousand-oaks",
+      "telephone": "+1-805-500-8300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2323 Oak Park Ln, Suite 102",
+        "addressLocality": "Santa Barbara",
+        "addressRegion": "CA",
+        "postalCode": "93105",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Thousand Oaks" },
+        { "@type": "City", "name": "Westlake Village" },
+        { "@type": "City", "name": "Calabasas" },
+        { "@type": "City", "name": "Agoura Hills" },
+        { "@type": "City", "name": "Oak Park" },
+        { "@type": "City", "name": "Simi Valley" }
+      ],
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "Fecal Microbiota Transplant (FMT)", "url": "https://puretyclinic.com/fecal-transplant" },
+        { "@type": "MedicalProcedure", "name": "EBO2 / EBOO Ozone Therapy", "url": "https://puretyclinic.com/ebo2-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "PRP & Regenerative Injections", "url": "https://puretyclinic.com/prp-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "Therapeutic Plasma Exchange (TPE)", "url": "https://puretyclinic.com/services/plasma-exchange" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "77",
+        "bestRating": "5"
+      }
+    }
+  },
+
+  "santa-monica": {
+    city: "Santa Monica",
+    state: "CA",
+    headline: "FMT, EBO2 Ozone, PRP & Therapeutic Plasma Exchange Near Santa Monica",
+    subheadline: "Purety Family Medical Clinic in Santa Barbara is 90 miles from Santa Monica — one of California's most experienced outpatient clinics for FMT, EBO2/EBOO ozone therapy, PRP, and therapeutic plasma exchange (TPE).",
+    metaTitle: "FMT · EBO2 Ozone · PRP · Plasma Exchange Near Santa Monica CA | Purety Clinic",
+    metaDescription: "Santa Monica patients travel to Purety Clinic in Santa Barbara (90 miles) for FMT, EBO2 ozone therapy, PRP injections, and therapeutic plasma exchange. Dr. Jonathan Birch NMD, RMSK. Call (805) 500-8300.",
+    driveTime: "Approximately 90 minutes",
+    distance: "About 90 miles",
+    intro: "Santa Monica and the West LA health community have access to many excellent practitioners, but outpatient FMT, EBO2 extracorporeal ozone therapy, and therapeutic plasma exchange are difficult to find at any single location. Purety Family Medical Clinic in Santa Barbara consolidates all four of these advanced therapies under one roof — 90 miles up the 101 or Pacific Coast Highway — with a depth of procedural experience that is genuinely rare anywhere in California.",
+    whyTravel: "West LA patients are accustomed to seeking the best available specialists, regardless of location. Dr. Jonathan Birch has performed over 1,000 FMT procedures, 4,000+ regenerative injections, and 2,500+ ozone treatments — a combination of volume and breadth that few outpatient integrative clinics in the state can offer. Initial telehealth consultations are available, and many protocols can be designed to minimize in-person trips.",
+    services: [
+      { name: "FMT — Fecal Microbiota Transplant", description: "California's most experienced outpatient FMT clinic. 90%+ success rate for recurrent C. difficile. Capsule, enema, and colonoscopy options. Remote consultations available — Santa Monica patients can often complete capsule-based protocols with a single in-person visit." },
+      { name: "EBO2 / EBOO Ozone Therapy", description: "2,500+ ozone treatments. Extracorporeal blood ozonation with UV irradiation for Lyme, Long COVID, autoimmune disease, mold illness, and chronic infections. Qualified outpatient EBO2 providers are rare in the West LA area." },
+      { name: "PRP & Stem Cell Injections", description: "Ultrasound-guided PRP, Wharton's Jelly, exosome injections, and prolotherapy by Dr. Birch (RMSK). 4,000+ procedures. The RMSK credential ensures every injection is placed under real-time imaging guidance." },
+      { name: "Therapeutic Plasma Exchange (TPE)", description: "Outpatient plasmapheresis for autoimmune conditions, Long COVID, POTS, MS, Guillain-Barré, and neurodegeneration. One of the few outpatient TPE clinics in Southern California." },
+      { name: "IV Nutrient Therapy & NAD+", description: "High-dose NAD+, vitamin C, phosphatidylcholine, Myers cocktail, and custom longevity infusions." },
+      { name: "Remote Consultations", description: "Telehealth for initial consultations across all services. Confirm your candidacy and develop your protocol before making the trip from Santa Monica." }
+    ],
+    faqs: [
+      { question: "How far is Purety Clinic from Santa Monica?", answer: "About 90 miles — roughly a 90-minute drive on the 101 freeway (or via Pacific Coast Highway). We're at 2323 Oak Park Ln, Suite 102 in Santa Barbara. We recommend scheduling morning appointments to make the most of the trip." },
+      { question: "Is there an EBO2 ozone clinic near Santa Monica or West LA?", answer: "Qualified outpatient EBO2 providers are rare in the greater Los Angeles area. Purety Clinic in Santa Barbara is one of the most experienced options in Southern California, with Dr. Birch having performed over 2,500 ozone treatments." },
+      { question: "Can I get FMT near Santa Monica?", answer: "Purety Clinic in Santa Barbara is one of the most experienced outpatient FMT clinics in California — 90 minutes from Santa Monica. We offer capsule-based FMT that can often be shipped directly, meaning many patients complete their protocol without multiple in-person visits. We also offer telehealth for the initial consultation." },
+      { question: "Do you offer therapeutic plasma exchange near Los Angeles?", answer: "Yes. Purety Clinic is one of the few outpatient therapeutic plasma exchange (TPE) clinics in Southern California. We see patients from Santa Monica, West LA, Beverly Hills, and throughout Los Angeles for TPE protocols." },
+      { question: "Can I do a telehealth consultation from Santa Monica?", answer: "Yes. We offer telehealth for initial consultations for all our services. Santa Monica patients frequently use telehealth to confirm candidacy and design a treatment plan before making the drive to Santa Barbara." },
+      { question: "Why travel to Santa Barbara instead of finding an LA provider?", answer: "Breadth and volume. We offer FMT, EBO2, PRP, and TPE under one roof — a combination that is extremely rare in the LA area. Dr. Birch's procedural volume (1,000+ FMT, 4,000+ injections, 2,500+ ozone) is among the highest in any single outpatient integrative practice in California." }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Purety Family Medical Clinic",
+      "description": "Integrative medicine clinic serving Santa Monica, West LA, and coastal Los Angeles patients. Nearest outpatient specialist for FMT, EBO2 ozone therapy, PRP injections, and therapeutic plasma exchange. 90 miles on the 101.",
+      "url": "https://puretyclinic.com/locations/santa-monica",
+      "telephone": "+1-805-500-8300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2323 Oak Park Ln, Suite 102",
+        "addressLocality": "Santa Barbara",
+        "addressRegion": "CA",
+        "postalCode": "93105",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Santa Monica" },
+        { "@type": "City", "name": "West Hollywood" },
+        { "@type": "City", "name": "Beverly Hills" },
+        { "@type": "City", "name": "Brentwood" },
+        { "@type": "City", "name": "Pacific Palisades" },
+        { "@type": "City", "name": "Malibu" },
+        { "@type": "City", "name": "Marina del Rey" },
+        { "@type": "City", "name": "Culver City" }
+      ],
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "Fecal Microbiota Transplant (FMT)", "url": "https://puretyclinic.com/fecal-transplant" },
+        { "@type": "MedicalProcedure", "name": "EBO2 / EBOO Ozone Therapy", "url": "https://puretyclinic.com/ebo2-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "PRP & Regenerative Injections", "url": "https://puretyclinic.com/prp-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "Therapeutic Plasma Exchange (TPE)", "url": "https://puretyclinic.com/services/plasma-exchange" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "77",
+        "bestRating": "5"
+      }
+    }
+  },
+
+  "malibu": {
+    city: "Malibu",
+    state: "CA",
+    headline: "FMT, EBO2 Ozone, PRP & Integrative Medicine Near Malibu, CA",
+    subheadline: "Purety Family Medical Clinic in Santa Barbara is 70 miles from Malibu — via the 101 or Pacific Coast Highway. One of California's most experienced clinics for FMT, EBO2 ozone therapy, PRP, and therapeutic plasma exchange.",
+    metaTitle: "FMT · EBO2 Ozone · PRP Near Malibu CA | Purety Clinic Santa Barbara",
+    metaDescription: "Malibu patients travel to Purety Clinic in Santa Barbara (70 miles via PCH or 101) for FMT, EBO2 ozone therapy, PRP injections, and therapeutic plasma exchange. Dr. Jonathan Birch NMD, RMSK. Call (805) 500-8300.",
+    driveTime: "Approximately 75 minutes",
+    distance: "About 70 miles",
+    intro: "Purety Family Medical Clinic in Santa Barbara is a natural destination for Malibu patients — reachable via Pacific Coast Highway or the 101 freeway in about 75 minutes. The Malibu community's deep commitment to health and wellness makes it one of our most aligned patient populations. We offer FMT, EBO2 extracorporeal ozone therapy, PRP and biologic injections, and therapeutic plasma exchange — all in one clinic, with telehealth available for initial assessments.",
+    whyTravel: "Malibu patients already prioritize the best available care regardless of where it is. Dr. Birch's credentials — NMD, RMSK, 1,000+ FMT procedures, 4,000+ regenerative injections, 2,500+ ozone treatments — represent a depth of integrative specialty experience that is genuinely difficult to find anywhere in California, let alone the LA area.",
+    services: [
+      { name: "FMT — Fecal Microbiota Transplant", description: "California's most experienced outpatient FMT clinic. 90%+ success rate for recurrent C. difficile. Capsule-based protocols available with minimal in-person visits. Remote consultations for Malibu patients." },
+      { name: "EBO2 / EBOO Ozone Therapy", description: "2,500+ ozone treatments. Extracorporeal blood ozonation for Lyme disease, autoimmune conditions, mold toxicity, Long COVID, and chronic infections. Qualified outpatient EBO2 providers are rare in the Malibu and PCH corridor." },
+      { name: "PRP & Regenerative Injections", description: "Ultrasound-guided PRP, Wharton's Jelly, and exosome injections by Dr. Birch (RMSK). 4,000+ procedures. Precision imaging guidance at every injection — a standard rarely found elsewhere." },
+      { name: "Therapeutic Plasma Exchange (TPE)", description: "Outpatient plasmapheresis for autoimmune disease, Long COVID, POTS, and healthy aging/longevity protocols. One of the few outpatient TPE clinics in Southern California." },
+      { name: "NAD+ IV & Longevity Infusions", description: "High-dose NAD+, phosphatidylcholine, vitamin C, and custom longevity protocols aligned with the Malibu community's performance and wellness goals." }
+    ],
+    faqs: [
+      { question: "How do I get from Malibu to Purety Clinic in Santa Barbara?", answer: "Two routes work well: Pacific Coast Highway (PCH) north to Ventura, then the 101 north to Santa Barbara — about 70 miles and 75 minutes in light traffic. Alternatively, take the 101 inland via Thousand Oaks for a slightly different route. We recommend scheduling a morning appointment to enjoy the drive." },
+      { question: "Is EBO2 ozone therapy available near Malibu?", answer: "No qualified outpatient EBO2 providers currently operate in the Malibu or PCH corridor. Purety Clinic in Santa Barbara is the nearest qualified EBO2 specialist — Dr. Birch has performed over 2,500 ozone treatments including EBO2, EBOO, and multipass protocols." },
+      { question: "Can I get an FMT consultation without traveling to Santa Barbara?", answer: "Yes. We offer telehealth for initial consultations, and capsule-based FMT can often be shipped directly — meaning some Malibu patients complete their entire C. diff protocol without an in-person visit." },
+      { question: "Do you offer PRP injections for Malibu patients?", answer: "Yes. Dr. Jonathan Birch NMD, RMSK performs ultrasound-guided PRP and regenerative injections at our Santa Barbara clinic. The RMSK credential ensures every injection is placed under real-time musculoskeletal imaging — a level of precision that is rare and meaningful for outcomes." },
+      { question: "Do you accept new patients from Malibu?", answer: "Yes. We welcome new patients from Malibu, Point Dume, Pacific Palisades, Topanga, and the surrounding area. Call (805) 500-8300 or submit a consultation request online to get started." }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Purety Family Medical Clinic",
+      "description": "Integrative medicine clinic serving Malibu and the PCH corridor. Nearest outpatient specialist for FMT, EBO2 ozone therapy, PRP injections, and therapeutic plasma exchange. 70 miles via PCH or 101.",
+      "url": "https://puretyclinic.com/locations/malibu",
+      "telephone": "+1-805-500-8300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2323 Oak Park Ln, Suite 102",
+        "addressLocality": "Santa Barbara",
+        "addressRegion": "CA",
+        "postalCode": "93105",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Malibu" },
+        { "@type": "City", "name": "Pacific Palisades" },
+        { "@type": "City", "name": "Topanga" },
+        { "@type": "City", "name": "Point Dume" },
+        { "@type": "City", "name": "Zuma Beach" },
+        { "@type": "City", "name": "Calabasas" }
+      ],
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "Fecal Microbiota Transplant (FMT)", "url": "https://puretyclinic.com/fecal-transplant" },
+        { "@type": "MedicalProcedure", "name": "EBO2 / EBOO Ozone Therapy", "url": "https://puretyclinic.com/ebo2-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "PRP & Regenerative Injections", "url": "https://puretyclinic.com/prp-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "Therapeutic Plasma Exchange (TPE)", "url": "https://puretyclinic.com/services/plasma-exchange" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "77",
+        "bestRating": "5"
+      }
+    }
+  },
+
+  "bakersfield": {
+    city: "Bakersfield",
+    state: "CA",
+    headline: "FMT, EBO2 Ozone, PRP & Integrative Medicine for Bakersfield, CA",
+    subheadline: "Purety Family Medical Clinic in Santa Barbara is the nearest outpatient specialist for FMT, EBO2 ozone therapy, PRP, and therapeutic plasma exchange — serving Bakersfield and the Central Valley.",
+    metaTitle: "FMT · EBO2 Ozone · PRP Near Bakersfield CA | Purety Clinic Santa Barbara",
+    metaDescription: "Bakersfield patients seeking FMT, EBO2 ozone therapy, PRP injections, or therapeutic plasma exchange travel to Purety Clinic in Santa Barbara — 2 hours via the 58/101. Dr. Jonathan Birch NMD. Call (805) 500-8300.",
+    driveTime: "Approximately 2 hours",
+    distance: "About 120 miles",
+    intro: "Purety Family Medical Clinic in Santa Barbara is one of the most accessible advanced integrative medicine clinics for Bakersfield and Central Valley patients. The drive west on the 58 to the 101 takes about 2 hours and connects Bakersfield to a clinic that offers FMT, EBO2 ozone therapy, PRP and regenerative injections, and therapeutic plasma exchange — all under one roof. These are therapies with essentially no equivalent providers in Kern County.",
+    whyTravel: "The Central Valley has very limited access to advanced integrative therapies. For Bakersfield patients with recurrent C. difficile, chronic illness requiring EBO2, or musculoskeletal injuries needing precision PRP, the 2-hour drive to Santa Barbara is often the most practical option. Telehealth consultations minimize the number of in-person trips required, and capsule-based FMT can frequently be shipped directly.",
+    services: [
+      { name: "FMT — Fecal Microbiota Transplant", description: "California's most experienced outpatient FMT clinic. 90%+ success rate for recurrent C. diff since 2014. Capsule-based protocols can often be shipped to Bakersfield patients directly — minimizing in-person visits. No comparable FMT clinic is available in Kern County." },
+      { name: "EBO2 / EBOO Ozone Therapy", description: "2,500+ ozone treatments. EBO2 extracorporeal blood ozonation for Lyme disease, mold toxicity, autoimmune conditions, Long COVID, and chronic infections. No EBO2 providers are currently available in Bakersfield or Kern County." },
+      { name: "PRP & Regenerative Injections", description: "Ultrasound-guided PRP, prolotherapy, and biologic injections for joint pain, arthritis, tendinopathy, and sports injuries. Over 4,000 procedures by Dr. Birch (RMSK). Precision guidance that is unavailable locally." },
+      { name: "Therapeutic Plasma Exchange (TPE)", description: "Outpatient plasmapheresis for autoimmune disease, Long COVID, POTS, and neurological conditions. No equivalent outpatient TPE clinic is available in the Central Valley." },
+      { name: "IV Nutrient Therapy", description: "High-dose vitamin C, NAD+, Myers cocktail, and custom infusions for immune support, energy, and recovery." },
+      { name: "Naturopathic Primary Care", description: "Root-cause integrative medicine and naturopathic care — available via telehealth for Central Valley patients who cannot make frequent in-person visits." }
+    ],
+    faqs: [
+      { question: "How far is Purety Clinic from Bakersfield?", answer: "About 120 miles — approximately a 2-hour drive. The most direct route is west on the 58 freeway to the 101, then north to Santa Barbara. We're at 2323 Oak Park Ln, Suite 102. We recommend scheduling a morning appointment and pairing it with a coastal detour on the way back." },
+      { question: "Is there an FMT clinic in Bakersfield or Kern County?", answer: "There are currently no outpatient FMT specialist clinics in Bakersfield or Kern County. Purety Clinic in Santa Barbara is the nearest qualified provider — with over 1,000 FMT procedures and a 90%+ success rate for C. difficile. Importantly, capsule-based FMT can often be shipped directly, so Bakersfield patients sometimes complete their entire protocol without multiple trips." },
+      { question: "Is EBO2 ozone therapy available near Bakersfield?", answer: "EBO2 (EBOO) is not available in Bakersfield or the Central Valley. Purety Clinic in Santa Barbara is the nearest qualified outpatient EBO2 provider — 2 hours west via the 58/101. Dr. Birch has performed over 2,500 ozone treatments." },
+      { question: "Can I do a telehealth consultation from Bakersfield?", answer: "Yes. We offer remote consultations for FMT, ozone therapy, PRP, and TPE candidates. For Bakersfield patients, telehealth is especially valuable — you can confirm your candidacy, review your case, and design a treatment plan before committing to the 2-hour drive." },
+      { question: "Do you accept new patients from Bakersfield and Kern County?", answer: "Yes. We welcome new patients from Bakersfield, Tehachapi, Delano, Ridgecrest, and throughout Kern County. Call (805) 500-8300 or submit an online consultation request to get started." },
+      { question: "What treatments can be done remotely to minimize trips from Bakersfield?", answer: "FMT consultations and capsule-based protocols, naturopathic care follow-ups, and treatment planning for all services can be done via telehealth. The only treatments that require in-person visits are EBO2 (infusion-based), PRP injections, TPE, and IV therapy." }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Purety Family Medical Clinic",
+      "description": "Integrative medicine clinic serving Bakersfield and Kern County patients. Nearest outpatient specialist for FMT, EBO2 ozone therapy, PRP injections, and therapeutic plasma exchange. 2 hours via the 58/101.",
+      "url": "https://puretyclinic.com/locations/bakersfield",
+      "telephone": "+1-805-500-8300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2323 Oak Park Ln, Suite 102",
+        "addressLocality": "Santa Barbara",
+        "addressRegion": "CA",
+        "postalCode": "93105",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Bakersfield" },
+        { "@type": "City", "name": "Tehachapi" },
+        { "@type": "City", "name": "Delano" },
+        { "@type": "City", "name": "Ridgecrest" },
+        { "@type": "City", "name": "Taft" },
+        { "@type": "City", "name": "Wasco" },
+        { "@type": "City", "name": "McFarland" }
+      ],
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "Fecal Microbiota Transplant (FMT)", "url": "https://puretyclinic.com/fecal-transplant" },
+        { "@type": "MedicalProcedure", "name": "EBO2 / EBOO Ozone Therapy", "url": "https://puretyclinic.com/ebo2-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "PRP & Regenerative Injections", "url": "https://puretyclinic.com/prp-santa-barbara" },
+        { "@type": "MedicalProcedure", "name": "Therapeutic Plasma Exchange (TPE)", "url": "https://puretyclinic.com/services/plasma-exchange" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "77",
+        "bestRating": "5"
+      }
+    }
   }
 };
 
