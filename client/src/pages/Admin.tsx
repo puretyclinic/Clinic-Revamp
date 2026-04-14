@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, Clock, CheckCircle2, Eye, Lock } from "lucide-react";
+import { Mail, Phone, Clock, CheckCircle2, Eye, Lock, Download } from "lucide-react";
 import type { ContactSubmission } from "@shared/schema";
 import { useState } from "react";
 
@@ -109,16 +109,27 @@ function AdminDashboard({ adminKey }: { adminKey: string }) {
       <main className="flex-grow">
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
               <div>
                 <h1 className="font-serif text-4xl text-foreground" data-testid="text-admin-title">Form Submissions</h1>
                 <p className="text-muted-foreground mt-2">
                   {unreadCount > 0 ? `${unreadCount} new submission${unreadCount > 1 ? "s" : ""}` : "All caught up!"}
                 </p>
               </div>
-              <Badge variant={unreadCount > 0 ? "default" : "secondary"} className="text-lg px-4 py-2" data-testid="badge-unread-count">
-                {submissions.length} total
-              </Badge>
+              <div className="flex items-center gap-3">
+                <Badge variant={unreadCount > 0 ? "default" : "secondary"} className="text-lg px-4 py-2" data-testid="badge-unread-count">
+                  {submissions.length} total
+                </Badge>
+                <a
+                  href={`/api/contact/export?key=${adminKey}`}
+                  download
+                  data-testid="link-export-csv"
+                >
+                  <Button variant="outline" size="sm" className="gap-2">
+                    <Download className="w-4 h-4" /> Export CSV
+                  </Button>
+                </a>
+              </div>
             </div>
 
             {isLoading ? (

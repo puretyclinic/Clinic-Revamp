@@ -296,5 +296,30 @@ export async function registerRoutes(
     }
   });
 
+  // ── CSV Export ───────────────────────────────────────────────────────────
+  app.get("/api/contact/export", requireAdmin, async (req, res) => {
+    try {
+      const submissions = await storage.getContacts();
+      const header = ["Date (PT)", "First Name", "Last Name", "Email", "Phone", "Source", "Message"];
+      const escape = (v: any) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+      const rows = submissions.map((s) => [
+        new Date(s.createdAt).toLocaleString("en-US", { timeZone: "America/Los_Angeles" }),
+        s.firstName,
+        s.lastName,
+        s.email,
+        s.phone,
+        s.source,
+        s.message,
+      ].map(escape).join(","));
+      const csv = [header.join(","), ...rows].join("\r\n");
+      const date = new Date().toISOString().slice(0, 10);
+      res.setHeader("Content-Type", "text/csv");
+      res.setHeader("Content-Disposition", `attachment; filename="purety-leads-${date}.csv"`);
+      return res.send(csv);
+    } catch (err) {
+      return res.status(500).json({ message: "Export failed" });
+    }
+  });
+
   return httpServer;
 }
