@@ -62,29 +62,35 @@ app.use((req, res, next) => {
 (async () => {
   const { isBot, prerenderPage } = await import("./prerender");
 
-  app.use(async (req: Request, res: Response, next: NextFunction) => {
-    const ua = req.headers["user-agent"] || "";
-    if (
-      isBot(ua) &&
-      !req.path.startsWith("/api") &&
-      !req.path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|map|txt|xml|json|webmanifest)$/)
-    ) {
-      try {
-        const port = process.env.PORT || "5000";
-        const html = await prerenderPage(
-          `http://localhost:${port}${req.originalUrl}`,
-          req.originalUrl
-        );
-        res.setHeader("X-Prerendered", "true");
-        res.setHeader("X-Robots-Tag", "index, follow");
-        return res.send(html);
-      } catch (err) {
-        console.error("[prerender] Error:", err);
-        return next();
+  const prerenderEnabled = process.env.PRERENDER_ENABLED === "true";
+  if (prerenderEnabled) {
+    console.log("[prerender] Dynamic rendering middleware ENABLED");
+    app.use(async (req: Request, res: Response, next: NextFunction) => {
+      const ua = req.headers["user-agent"] || "";
+      if (
+        isBot(ua) &&
+        !req.path.startsWith("/api") &&
+        !req.path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|map|txt|xml|json|webmanifest)$/)
+      ) {
+        try {
+          const port = process.env.PORT || "5000";
+          const html = await prerenderPage(
+            `http://localhost:${port}${req.originalUrl}`,
+            req.originalUrl
+          );
+          res.setHeader("X-Prerendered", "true");
+          res.setHeader("X-Robots-Tag", "index, follow");
+          return res.send(html);
+        } catch (err) {
+          console.error("[prerender] Error:", err);
+          return next();
+        }
       }
-    }
-    return next();
-  });
+      return next();
+    });
+  } else {
+    console.log("[prerender] Dynamic rendering middleware DISABLED (set PRERENDER_ENABLED=true to enable)");
+  }
 
   app.use((_req: Request, res: Response, next: NextFunction) => {
     res.setHeader("X-Robots-Tag", "index, follow");
