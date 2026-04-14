@@ -326,8 +326,10 @@ export default function FMT() {
 
       const data = await res.json();
 
-      if (data.success) {
+      if (data.success && !data._s) {
         gtag.trackFMTFormSubmission("FMT Page - Consultation Request");
+        window.location.href = "/thank-you";
+      } else if (data.success && data._s) {
         window.location.href = "/thank-you";
       } else {
         toast({

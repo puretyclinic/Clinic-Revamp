@@ -40,9 +40,14 @@ export default function Contact() {
 
       const data = await res.json();
 
-      if (data.success) {
+      if (data.success && !data._s) {
         gtag.trackFormSubmission("Contact Page - General Inquiry");
-
+        toast({
+          title: "Message Sent!",
+          description: "We've received your message and will get back to you shortly.",
+        });
+        form.reset();
+      } else if (data.success && data._s) {
         toast({
           title: "Message Sent!",
           description: "We've received your message and will get back to you shortly.",

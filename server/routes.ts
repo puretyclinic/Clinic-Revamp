@@ -188,10 +188,11 @@ export async function registerRoutes(
 
   app.post("/api/contact", async (req, res) => {
     try {
-      // Silently reject spam — return success so bots don't retry
+      // Silently reject spam — return success so bots don't retry,
+      // but include a hidden flag so the client skips the conversion pixel
       if (isSpam(req.body)) {
         console.log("Spam submission blocked:", req.body.firstName, req.body.email);
-        return res.json({ success: true });
+        return res.json({ success: true, _s: 1 });
       }
 
       const parsed = insertContactSchema.safeParse(req.body);
