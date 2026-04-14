@@ -15,6 +15,442 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "prp-vs-cortisone-injections",
+    title: "PRP vs. Cortisone Injections: What the Research Actually Says",
+    excerpt: "Cortisone injections offer fast pain relief — but mounting research shows they may accelerate joint damage over time. PRP takes longer to work, but the evidence increasingly supports it as the better long-term choice for most musculoskeletal conditions.",
+    date: "April 14, 2026",
+    author: "Dr. Jonathan Birch, NMD, RMSK",
+    authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612850026107-T8M1DMZCFPJ8630SCU8C/Naturopathic+Dr.+Birch",
+    authorTitle: "Naturopathic Medical Doctor, RMSK",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=800",
+    category: "Regenerative Medicine",
+    tags: ["PRP", "Cortisone", "Injections", "JointPain", "Orthopedic", "RegenerativeMedicine"],
+    content: `<p class="lead text-xl text-muted-foreground mb-8">
+  If you have joint pain, tendinopathy, or a sports injury, your doctor has likely offered you a cortisone shot. They're quick, inexpensive, and they work — at least for a few weeks. But what actually happens inside the joint after that shot? And how does PRP compare when you look beyond the short-term relief? At Purety Family Medical Clinic in Santa Barbara, Dr. Jonathan Birch (NMD, RMSK) has performed over 4,000 regenerative injections. Here's an honest, evidence-based look at both options.
+</p>
+
+<h2>What Is a Cortisone Injection?</h2>
+<p>
+  Cortisone (corticosteroid) injections deliver a synthetic version of cortisol directly into an inflamed joint, bursa, or tendon. They work by suppressing the local inflammatory response. The result is often dramatic: significant pain relief within days, sometimes hours.
+</p>
+<p>
+  For many patients, that relief is exactly what they need — to get through a busy week, compete in an event, or bridge to a more definitive treatment. Used once or twice, cortisone injections are a reasonable tool. The problem is what happens with repeated use, and what the evidence says about joint health over time.
+</p>
+
+<h2>What Does the Research Say About Cortisone?</h2>
+<p>
+  A landmark 2017 study published in <em>JAMA</em> followed 140 patients with knee osteoarthritis over two years. Half received cortisone injections every 12 weeks; half received saline injections. The cortisone group had greater cartilage loss and no meaningful improvement in pain or function compared to saline — despite experiencing short-term relief. The anti-inflammatory effect was real. The structural damage was also real.
+</p>
+<p>
+  A 2021 meta-analysis in <em>Radiology</em> found that corticosteroid injections were associated with accelerated joint damage, stress fractures, and progression to joint replacement in a significant subset of patients. The authors concluded that "repeated corticosteroid injections should be used with caution" in patients with moderate-to-severe osteoarthritis.
+</p>
+<p>
+  For tendons, the data are similarly sobering. A Cochrane review of corticosteroid injections for tendinopathy found that while short-term pain reduction was consistent, patients were significantly more likely to have worse outcomes at 6–12 months compared to patients who received no injection at all — a phenomenon researchers call the "cortisone rebound."
+</p>
+<p>
+  None of this means cortisone injections are never appropriate. They remain useful for acute flares, inflammatory bursitis, and situations where short-term relief is the primary goal. But for patients with chronic joint degeneration or recurrent tendinopathy who want to preserve function long-term, the evidence suggests cortisone is not the right tool.
+</p>
+
+<h2>What Is PRP?</h2>
+<p>
+  Platelet-Rich Plasma (PRP) is derived from your own blood. A sample is drawn, placed in a centrifuge to concentrate the platelet fraction, and then injected — under ultrasound guidance — directly into the injured tissue. Platelets contain dozens of growth factors, including PDGF, TGF-β, IGF-1, and VEGF, that orchestrate the tissue repair process.
+</p>
+<p>
+  Unlike cortisone, which suppresses inflammation, PRP works with your body's healing cascade. It signals damaged tissue to begin the repair process — recruiting stem cells, promoting collagen synthesis, and stimulating angiogenesis. The result is actual tissue regeneration rather than temporary symptom suppression.
+</p>
+
+<h2>What Does the Research Say About PRP?</h2>
+<p>
+  The evidence base for PRP has grown substantially over the last decade. A 2021 systematic review and meta-analysis in the <em>American Journal of Sports Medicine</em>, analyzing 18 randomized controlled trials with 1,088 patients, found that PRP was significantly superior to hyaluronic acid and corticosteroid injections for knee osteoarthritis pain at both 6-month and 12-month follow-up.
+</p>
+<p>
+  A 2019 study in the <em>British Journal of Sports Medicine</em> reviewed PRP for lateral epicondylitis (tennis elbow). Patients receiving PRP had significantly better outcomes at 6 and 12 months compared to cortisone. Critically, the cortisone group had higher rates of symptom recurrence and worse long-term function — consistent with the "cortisone rebound" effect seen in tendinopathy research.
+</p>
+<p>
+  For rotator cuff, Achilles tendinopathy, and plantar fasciitis, multiple randomized trials have shown PRP to be at least equivalent to cortisone in the short term and significantly superior at 3, 6, and 12 months.
+</p>
+
+<h2>Why Ultrasound Guidance Matters</h2>
+<p>
+  A critical variable that affects PRP outcomes — often omitted from popular discussions — is whether the injection is placed accurately. Studies show that without imaging guidance, injections into specific structures like the supraspinatus, the patellar tendon, or the AC joint miss their target a significant percentage of the time. A 2019 study in <em>Arthroscopy</em> found that unguided knee injections miss the intra-articular space in up to 30% of cases.
+</p>
+<p>
+  Dr. Birch is certified in musculoskeletal sonography (RMSK) and performs all PRP injections under real-time ultrasound guidance. This ensures accurate delivery — one of the most important factors in achieving good outcomes. It also allows him to visualize the pathology being treated, confirm needle placement, and document the procedure.
+</p>
+
+<h2>PRP vs. Cortisone: Who Should Choose Which?</h2>
+<p>
+  This isn't a binary choice for every patient. Here's a practical framework:
+</p>
+<ul>
+  <li><strong>Cortisone may be appropriate</strong> if you need acute pain relief for a specific event, have inflammatory bursitis or acute tenosynovitis, or are preparing for a procedure and need a bridge to healing.</li>
+  <li><strong>PRP is typically preferred</strong> if you have mild-to-moderate osteoarthritis, chronic tendinopathy, a partial tendon or ligament tear, or a history of cortisone injections that have provided diminishing returns. PRP is also the stronger choice for younger patients who are trying to avoid joint replacement.</li>
+</ul>
+<p>
+  For patients with significant joint degeneration or who have had multiple prior cortisone injections, a combination approach — using PRP alongside prolotherapy or stem cell matrix injections — is sometimes the most appropriate plan.
+</p>
+
+<h2>What to Expect at Purety Clinic</h2>
+<p>
+  If you're considering PRP, we begin with a thorough consultation and musculoskeletal ultrasound evaluation. Dr. Birch reviews your imaging, discusses the full range of regenerative options, and designs a treatment plan specific to your anatomy and goals. PRP injections are performed on-site under real-time ultrasound guidance.
+</p>
+<p>
+  Most patients begin to notice improvement within 4–8 weeks, with continued gains over 3–6 months as tissue remodeling occurs. Many require 1–3 sessions depending on the condition and severity.
+</p>
+<p>
+  To schedule a consultation or learn more about <a href="/prp-santa-barbara">PRP injections at Purety Clinic</a>, call (805) 500-8300 or submit a request online. We also work with patients who have <a href="/conditions/orthopedic-injuries">orthopedic injuries</a> including partial tendon tears, ligament sprains, and early osteoarthritis.
+</p>`
+  },
+
+  {
+    id: "does-ebo2-ozone-therapy-work",
+    title: "Does EBO2 Ozone Therapy Work? A Naturopathic Doctor's Honest Take",
+    excerpt: "Ozone therapy generates more questions — and more skepticism — than almost any treatment we offer. Here's Dr. Birch's honest assessment: what the evidence actually supports, which conditions show the strongest data, and what patients should watch out for when researching providers.",
+    date: "April 14, 2026",
+    author: "Dr. Jonathan Birch, NMD, RMSK",
+    authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612850026107-T8M1DMZCFPJ8630SCU8C/Naturopathic+Dr.+Birch",
+    authorTitle: "Naturopathic Medical Doctor, RMSK",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
+    category: "Ozone Therapy",
+    tags: ["EBO2", "OzoneTherapy", "EBOO", "LongCOVID", "Lyme", "ChronicIllness", "Evidence"],
+    content: `<p class="lead text-xl text-muted-foreground mb-8">
+  "Does ozone therapy actually work?" It's the first question most patients ask — and it's a good one. At Purety Family Medical Clinic, Dr. Jonathan Birch has performed over 2,500 ozone treatments, including EBO2 (also called EBOO or ozone dialysis). He's seen what it does well, where the evidence is strongest, and where patients need to be careful. This is his honest take.
+</p>
+
+<h2>First: What Is EBO2 Ozone Therapy?</h2>
+<p>
+  EBO2 (Extracorporeal Blood Ozonation) is the most advanced form of ozone therapy currently available. Blood is drawn from the body, circulated through an external circuit where it is exposed to high-concentration medical-grade ozone and ultraviolet light, and returned to the body. This is distinct from simpler ozone methods like rectal insufflation or minor autohemotherapy — it treats a much larger volume of blood and has a fundamentally different physiological impact.
+</p>
+<p>
+  When patients ask "does ozone therapy work?", they're often conflating very different modalities. A clinic that does rectal ozone or ozone sauna is doing something categorically different from a clinic performing true EBO2 with an extracorporeal circuit. The research base and expected clinical outcomes are not equivalent.
+</p>
+
+<h2>What the Evidence Actually Shows</h2>
+<p>
+  Ozone therapy has a larger evidence base than most practitioners — and most skeptics — realize. There are over 3,000 published studies on medical ozone, including a significant number of randomized controlled trials and systematic reviews. The evidence is not uniform across all conditions, which is important to acknowledge.
+</p>
+
+<h3>Strongest evidence: Infections and antimicrobial effects</h3>
+<p>
+  Ozone's antimicrobial properties are among the most thoroughly documented. In vitro and clinical studies have demonstrated activity against bacteria, viruses, fungi, and protozoa. A 2018 systematic review in <em>Frontiers in Microbiology</em> documented ozone's efficacy against drug-resistant organisms. For patients with chronic infections — including Lyme disease, chronic EBV reactivation, and C. difficile — this is one of the more compelling mechanisms.
+</p>
+
+<h3>Strong evidence: Wound healing and tissue oxygenation</h3>
+<p>
+  Ozone is extensively studied and widely used in European hospitals for wound care — particularly diabetic foot ulcers and chronic non-healing wounds. The mechanism is well understood: ozone improves oxygen delivery and utilization at the cellular level, stimulates antioxidant enzyme production, and promotes angiogenesis. Several meta-analyses confirm these effects.
+</p>
+
+<h3>Growing evidence: Autoimmune and inflammatory conditions</h3>
+<p>
+  For autoimmune and inflammatory conditions, the evidence is newer and still accumulating. Ozone therapy appears to modulate the immune response — dampening excess inflammatory activity rather than simply suppressing it. A 2019 review in <em>Oxidative Medicine and Cellular Longevity</em> documented ozone's effects on cytokine regulation and its potential role in autoimmune disease management.
+</p>
+
+<h3>Emerging evidence: Long COVID and post-viral conditions</h3>
+<p>
+  The Long COVID literature is evolving rapidly. Several published case series and clinical observational studies have reported significant symptom improvement — including fatigue, cognitive symptoms, and post-exertional malaise — following ozone therapy protocols. Mechanistically, this makes sense: Long COVID involves persistent viral antigen, immune dysregulation, mitochondrial dysfunction, and microclotting — all areas where ozone therapy has documented biological effects. This is a plausible biological basis, not a theoretical one.
+</p>
+<p>
+  Dr. Birch has seen significant improvements in Long COVID patients. He's also clear that ozone therapy alone is rarely the complete answer — it's most effective as part of a comprehensive protocol that addresses nutrition, sleep, autonomic function, and other contributors.
+</p>
+
+<h2>Where Skepticism Is Warranted</h2>
+<p>
+  Here's where I'll be direct: some ozone clinics make claims that go well beyond what the evidence supports. Ozone therapy is not a cancer cure. It is not appropriate as a substitute for antibiotics in acute life-threatening infections. Claims that ozone "detoxifies the blood" of heavy metals or filters toxins are not supported by the EBO2 mechanism — the extracorporeal circuit in EBO2 does not function like dialysis. It exposes blood to ozone and UV; it does not filter or remove substances.
+</p>
+<p>
+  Patients deserve accurate information. I'm more interested in patients making good decisions than in selling ozone to everyone who walks in. If your case isn't a strong match for EBO2, I'll tell you — and we'll talk about what is.
+</p>
+
+<h2>What to Watch Out For When Researching Providers</h2>
+<p>
+  Not all ozone providers are equal. Some important red flags:
+</p>
+<ul>
+  <li><strong>Clinics calling insufflation "EBO2."</strong> Rectal, vaginal, or ear insufflation is a completely different modality — simple and low-risk, but not EBO2. If a clinic is charging EBO2 prices for insufflation, that's a problem.</li>
+  <li><strong>No physician oversight.</strong> EBO2 is an IV-based extracorporeal procedure. It should be performed under direct medical supervision with appropriate monitoring, not in a wellness spa setting without qualified medical oversight.</li>
+  <li><strong>Guaranteed outcomes.</strong> No responsible practitioner guarantees specific outcomes from ozone therapy. If a clinic promises that EBO2 will "cure" your Lyme disease or reverse your autoimmune condition, walk away.</li>
+  <li><strong>No intake process.</strong> EBO2 is contraindicated in some situations — including G6PD deficiency, certain coagulation disorders, and active thyroid disease. A qualified provider will screen for contraindications before treatment.</li>
+</ul>
+
+<h2>Who Is EBO2 Best For?</h2>
+<p>
+  In our practice, patients who respond best to EBO2 tend to share a few characteristics: they have chronic conditions with an infectious, inflammatory, or immune component that hasn't responded adequately to conventional care. Common presentations include <a href="/conditions/lyme-disease">chronic Lyme disease</a>, <a href="/conditions/long-covid">Long COVID</a>, <a href="/conditions/mold-illness">mold illness and CIRS</a>, autoimmune flares, and complex multi-system illness.
+</p>
+<p>
+  EBO2 is not a first-line treatment for uncomplicated conditions. It's a powerful tool for complex cases where the biological burden — infectious, inflammatory, or toxic — is high enough that a comprehensive, intensive intervention makes sense.
+</p>
+<p>
+  If you're trying to decide whether EBO2 is appropriate for your situation, the right starting point is a thorough consultation. We review your history, labs, and prior treatments before recommending any protocol. To learn more about <a href="/ebo2-santa-barbara">EBO2 ozone therapy at Purety Clinic</a>, call (805) 500-8300.
+</p>`
+  },
+
+  {
+    id: "prp-for-knee-osteoarthritis",
+    title: "PRP for Knee Osteoarthritis: What the 2024 Research Says",
+    excerpt: "Multiple randomized trials and meta-analyses now show PRP superior to cortisone and hyaluronic acid for mild-to-moderate knee osteoarthritis — with effects that last. Here's what the research shows, who is a good candidate, and what ultrasound guidance adds.",
+    date: "April 14, 2026",
+    author: "Dr. Jonathan Birch, NMD, RMSK",
+    authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612850026107-T8M1DMZCFPJ8630SCU8C/Naturopathic+Dr.+Birch",
+    authorTitle: "Naturopathic Medical Doctor, RMSK",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
+    category: "Regenerative Medicine",
+    tags: ["PRP", "KneePain", "Osteoarthritis", "JointPain", "RegenerativeMedicine", "KneeReplacement"],
+    content: `<p class="lead text-xl text-muted-foreground mb-8">
+  Knee osteoarthritis is one of the most common reasons patients come to Purety Family Medical Clinic seeking an alternative to conventional care. Most have already tried cortisone shots — some multiple times — and are frustrated with diminishing returns. Many are trying to avoid, or at least delay, knee replacement surgery. PRP (Platelet-Rich Plasma) is increasingly well-supported by evidence as a meaningful option. Here's a plain-English review of what the research actually shows.
+</p>
+
+<h2>What Is Knee Osteoarthritis?</h2>
+<p>
+  Knee osteoarthritis (OA) is the progressive loss of articular cartilage in the knee joint — the smooth tissue that allows bones to glide over each other without friction. As cartilage wears away, bone-on-bone contact increases, causing pain, stiffness, swelling, and reduced range of motion. It's the leading cause of disability in adults over 50 and affects an estimated 32.5 million Americans.
+</p>
+<p>
+  Standard treatment follows a predictable escalation: NSAIDs, then physical therapy, then cortisone or hyaluronic acid injections, then eventually knee replacement surgery. Each step manages symptoms but none of the conventional options — including surgery — actually restore cartilage. They buy time. PRP is the only widely available injectable treatment with a plausible mechanism for actually slowing the degenerative process.
+</p>
+
+<h2>What Does PRP Do in an Arthritic Knee?</h2>
+<p>
+  PRP is concentrated from a sample of your own blood. The platelet-rich fraction is separated by centrifuge and injected into the knee joint under ultrasound guidance. Platelets release a cascade of growth factors — including PDGF, TGF-β, IGF-1, and FGF — that are directly involved in cartilage metabolism and repair.
+</p>
+<p>
+  In the context of knee OA, PRP has several documented effects: it promotes chondrocyte proliferation (the cells that maintain cartilage), reduces inflammatory cytokines like IL-1β and TNF-α that drive cartilage degradation, and stimulates production of synovial fluid — the natural lubricant of the joint. These mechanisms address some of the root drivers of OA progression rather than simply masking pain.
+</p>
+
+<h2>What the Research Shows</h2>
+<p>
+  The evidence base for PRP in knee OA has grown substantially. Here are some of the most important findings:
+</p>
+
+<h3>PRP vs. Hyaluronic Acid</h3>
+<p>
+  A 2022 systematic review and meta-analysis published in the <em>Journal of Orthopaedic Surgery and Research</em>, which analyzed 25 randomized controlled trials with over 2,000 patients, found that PRP produced significantly better pain reduction and functional improvement compared to hyaluronic acid at 6 and 12 months. The advantage was most pronounced in patients with mild-to-moderate OA (Kellgren-Lawrence grades 1–3).
+</p>
+
+<h3>PRP vs. Cortisone</h3>
+<p>
+  Multiple head-to-head trials have now compared PRP directly to corticosteroid injections. While cortisone consistently outperforms PRP at 4–6 weeks (the short-term advantage of anti-inflammatory suppression), PRP shows superior outcomes at 3, 6, and 12 months. A 2021 RCT in the <em>American Journal of Sports Medicine</em> found that PRP patients had 40% greater reduction in KOOS (Knee Injury and Osteoarthritis Outcome Score) pain subscores at 12 months compared to cortisone. The cortisone group showed measurable decline in function at 12 months — consistent with the known tissue effects of repeated corticosteroid exposure.
+</p>
+
+<h3>Long-Term Cartilage Effects</h3>
+<p>
+  A 2020 study using MRI cartilage mapping found that patients receiving PRP had significantly less cartilage volume loss at 12 months compared to patients receiving saline control injections. This is a meaningful finding: PRP appears to slow the degenerative process, not just reduce symptoms. No conventional injection therapy — including cortisone and hyaluronic acid — has demonstrated this effect.
+</p>
+
+<h2>Who Is a Good Candidate for PRP?</h2>
+<p>
+  PRP is best supported in patients with mild-to-moderate knee OA (Kellgren-Lawrence grades 1–3). Evidence is more limited for severe, bone-on-bone OA (grade 4), where the structural damage is extensive and the remaining cartilage too compromised to benefit meaningfully from growth factor stimulation.
+</p>
+<p>
+  Good candidates typically include:
+</p>
+<ul>
+  <li>Patients with persistent knee pain despite NSAIDs and physical therapy</li>
+  <li>Those who have had cortisone injections with diminishing returns</li>
+  <li>Younger patients (under 65) trying to delay or avoid knee replacement</li>
+  <li>Active patients with moderate OA who want to maintain function and sport</li>
+  <li>Patients with hyaluronic acid treatment history who want a more regenerative option</li>
+</ul>
+<p>
+  Patients who are not good candidates include those with severe grade 4 OA, active infection, bleeding disorders, or certain autoimmune conditions affecting the knee. A thorough evaluation — including musculoskeletal ultrasound — helps confirm candidacy.
+</p>
+
+<h2>Why Ultrasound Guidance Matters for Knee PRP</h2>
+<p>
+  The knee may seem like an easy target for injection — it's a large joint. But studies show that unguided injections miss the intra-articular space in 20–30% of cases, even in experienced hands. Inaccurate placement means the growth factors in your PRP never reach their target.
+</p>
+<p>
+  Dr. Birch is certified in musculoskeletal sonography (RMSK) — a credential held by very few naturopathic or integrative physicians. Every PRP injection at Purety Clinic is performed under real-time ultrasound guidance, with visual confirmation of needle placement inside the joint. This precision is not a luxury — it's a basic standard of care that directly affects outcomes.
+</p>
+
+<h2>What to Expect: Protocol and Recovery</h2>
+<p>
+  Most patients with knee OA receive 1–3 PRP injections spaced 4–6 weeks apart, depending on severity and response. The procedure takes about 45–60 minutes including preparation and processing. There may be mild soreness in the first 48–72 hours as the inflammatory healing response is activated. Most patients can walk immediately afterward, though high-impact activity is typically restricted for 1–2 weeks.
+</p>
+<p>
+  Meaningful improvement is usually noticed between 4–8 weeks and continues over 3–6 months. Some patients experience durable benefit for 12–18 months or longer before considering retreatment.
+</p>
+<p>
+  To schedule a PRP consultation or learn more about <a href="/prp-santa-barbara">regenerative injections at Purety Clinic</a>, call (805) 500-8300. We also work with patients with a range of <a href="/conditions/orthopedic-injuries">orthopedic injuries</a> and offer a full menu of <a href="/services/regenerative">regenerative medicine services</a> including stem cell matrix, prolotherapy, and prolozone.
+</p>`
+  },
+
+  {
+    id: "how-to-find-cirs-mold-illness-doctor",
+    title: "How to Find a Mold Illness (CIRS) Doctor: What to Look For",
+    excerpt: "Finding a qualified CIRS or mold illness specialist is harder than it should be. This guide explains the credentials to look for, the testing that actually matters, the red flags that signal an unqualified provider, and what a first appointment with a real specialist should look like.",
+    date: "April 14, 2026",
+    author: "Dr. Jonathan Birch, NMD, RMSK",
+    authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612850026107-T8M1DMZCFPJ8630SCU8C/Naturopathic+Dr.+Birch",
+    authorTitle: "Naturopathic Medical Doctor, RMSK",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800",
+    category: "Mold Illness & CIRS",
+    tags: ["CIRS", "MoldIllness", "Shoemaker", "ChronicIllness", "Biotoxin", "HolisticDoctor"],
+    content: `<p class="lead text-xl text-muted-foreground mb-8">
+  If you've been struggling with unexplained fatigue, cognitive impairment, joint pain, and sensitivity to light or sound — and your conventional labs have come back normal — you may have heard of CIRS (Chronic Inflammatory Response Syndrome), also called mold illness or biotoxin illness. Finding a qualified specialist is the hardest part. This guide is designed to help.
+</p>
+
+<h2>What Is CIRS and Why Is It Frequently Missed?</h2>
+<p>
+  CIRS is a multi-system inflammatory condition caused by exposure to biotoxins — typically mold and mycotoxins from water-damaged buildings, though other biotoxins (cyanobacteria, dinoflagellates, Lyme-related toxins) can trigger the same syndrome. It was formally described by Dr. Ritchie Shoemaker, MD, whose research over the past two decades has established CIRS as a distinct, diagnosable, and treatable condition.
+</p>
+<p>
+  The reason CIRS is so frequently missed is that it doesn't fit conventional diagnostic categories. Patients have normal CBC, CMP, and thyroid panels. They're often told their symptoms are anxiety, depression, or stress. Meanwhile, specific inflammatory biomarkers — VIP, MSH, VEGF, TGF-β1, C4a, MMP-9, and others — are markedly abnormal. These markers are not part of any standard workup, which means patients can spend years in the conventional system without ever receiving an accurate diagnosis.
+</p>
+
+<h2>What Credentials Should a CIRS Doctor Have?</h2>
+<p>
+  There is no single "CIRS board certification," but there are meaningful markers of qualification:
+</p>
+
+<h3>1. Familiarity with the Shoemaker Protocol</h3>
+<p>
+  The Shoemaker Protocol is the most evidence-based treatment framework for CIRS. It involves a sequential, step-by-step approach that includes environmental removal, binders, VIP (Vasoactive Intestinal Polypeptide) therapy, and targeted biomarker correction. A qualified CIRS practitioner doesn't need to follow the protocol exactly — but they should be deeply familiar with it, understand the rationale behind each step, and be able to explain where they agree or diverge from the standard approach.
+</p>
+<p>
+  If a provider has never heard of the Shoemaker Protocol or dismisses it without a clear scientific rationale, that's a significant red flag.
+</p>
+
+<h3>2. Experience Ordering the Full CIRS Biomarker Panel</h3>
+<p>
+  A genuine CIRS evaluation involves specific laboratory testing that goes well beyond standard bloodwork. This includes: MSH (Melanocyte-Stimulating Hormone), VIP, VEGF (Vascular Endothelial Growth Factor), TGF-β1, C4a, MMP-9, ADH/osmolality, NeuroQuant MRI (for specific brain volume measurements), and the Visual Contrast Sensitivity (VCS) test.
+</p>
+<p>
+  These markers tell a story about the state of the neuroimmune system, hypothalamic-pituitary-adrenal axis, and vascular function. Running only "mold allergy" testing (IgE to Aspergillus and other molds) is a fundamentally different thing — allergy testing for environmental mold does not diagnose CIRS and will miss the condition in most patients.
+</p>
+
+<h3>3. An Environmental Remediation Framework</h3>
+<p>
+  Treatment doesn't work without removing the source of exposure. A qualified CIRS practitioner understands this and will not begin treatment without addressing the environment. This typically involves an ERMI (Environmental Relative Moldiness Index) test or inspection by a qualified IEP (Independent Environmental Professional) — not the mold inspector hired by the building owner.
+</p>
+<p>
+  If a provider is willing to treat CIRS without addressing environmental exposure, they either don't understand the condition or are prioritizing their supplement revenue over your health.
+</p>
+
+<h2>Red Flags to Watch Out For</h2>
+<p>
+  The CIRS and mold illness space attracts practitioners who are not genuinely qualified. Here are specific warning signs:
+</p>
+<ul>
+  <li><strong>Treatment is primarily a supplement protocol.</strong> While certain supplements (binders, antioxidants) play a supportive role in CIRS management, a practice that diagnoses you over the phone and ships you a $500 supplement package is not providing CIRS care. It's selling supplements.</li>
+  <li><strong>No follow-up testing.</strong> CIRS treatment is guided by biomarkers. If a provider never repeats the lab panel or never orders NeuroQuant MRI to track progress, they are not managing CIRS — they're treating symptoms.</li>
+  <li><strong>Guaranteed cure in a fixed time period.</strong> CIRS recovery is highly variable and depends on the duration and intensity of exposure, genetic susceptibility (HLA-DR genotype), and how thoroughly the environment is addressed. Any provider promising a "3-month cure" is not being honest with you.</li>
+  <li><strong>No discussion of HLA-DR genotype.</strong> A significant subset of CIRS patients have an HLA-DR variant that makes them genetically susceptible — meaning their immune systems cannot clear biotoxins normally. A qualified practitioner will test for this and incorporate it into their treatment plan.</li>
+</ul>
+
+<h2>What a First Appointment Should Look Like</h2>
+<p>
+  A genuine first appointment with a CIRS specialist should take at least 60–90 minutes. The provider should review your full symptom history, residential and occupational history (any water damage, musty smells, flooding?), prior testing, and current medications. They should explain the VCS test, the biomarker panel, and their diagnostic framework.
+</p>
+<p>
+  They should also discuss environmental testing — what you should do to evaluate your current living or working environment — before prescribing anything.
+</p>
+<p>
+  If the appointment is 15 minutes and ends with a supplement prescription, that's not a CIRS specialist.
+</p>
+
+<h2>Ozone Therapy's Role in Mold Illness</h2>
+<p>
+  For patients with established CIRS who have also been exposed to mold-related mycotoxins, ozone therapy — particularly EBO2 — is increasingly used as part of the treatment protocol. Ozone has documented antifungal and immune-modulating properties, and many CIRS patients report significant improvement in fatigue, cognitive function, and systemic inflammation following EBO2 treatment. It is not a replacement for the Shoemaker protocol but can be a useful adjunct, particularly in patients with high mycotoxin burden or significant inflammatory biomarker elevation.
+</p>
+<p>
+  At Purety Family Medical Clinic, we evaluate <a href="/conditions/mold-illness">mold illness and CIRS</a> comprehensively — including the full biomarker panel, HLA-DR genotype testing, environmental assessment guidance, and, where appropriate, <a href="/ebo2-santa-barbara">EBO2 ozone therapy</a> as part of the treatment protocol. We also offer naturopathic primary care through our <a href="/services/naturopathic">naturopathic medicine services</a>. To schedule a consultation, call (805) 500-8300.
+</p>`
+  },
+
+  {
+    id: "what-to-expect-therapeutic-plasma-exchange",
+    title: "What to Expect from Therapeutic Plasma Exchange: A Step-by-Step Guide",
+    excerpt: "Therapeutic plasma exchange (plasmapheresis) is one of the most powerful tools available for autoimmune and inflammatory disease — but it's also one of the least understood. This step-by-step guide demystifies the procedure, explains who it's for, and describes what the experience actually feels like.",
+    date: "April 14, 2026",
+    author: "Dr. Jonathan Birch, NMD, RMSK",
+    authorImage: "https://images.squarespace-cdn.com/content/v1/5e8750872ceab220c4d4f137/1612850026107-T8M1DMZCFPJ8630SCU8C/Naturopathic+Dr.+Birch",
+    authorTitle: "Naturopathic Medical Doctor, RMSK",
+    image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=800",
+    category: "Plasma Exchange",
+    tags: ["PlasmaExchange", "TPE", "Plasmapheresis", "Autoimmune", "LongCOVID", "POTS", "Neurology"],
+    content: `<p class="lead text-xl text-muted-foreground mb-8">
+  Therapeutic plasma exchange (TPE) — also called plasmapheresis — is one of the most powerful tools available in integrative and conventional medicine for autoimmune and inflammatory disease. It's also one of the most misunderstood. If you've been recommended TPE, or are researching it independently, this step-by-step guide explains exactly what happens during a session, what you'll experience, and how to know whether you're a candidate.
+</p>
+
+<h2>What Is Therapeutic Plasma Exchange?</h2>
+<p>
+  Therapeutic plasma exchange is an extracorporeal procedure — meaning it occurs outside the body in a specialized circuit. Blood is drawn from the patient, passed through a separator that removes the plasma (the liquid portion of blood), and the remaining blood cells are returned along with a replacement fluid. The removed plasma takes with it the pathological substances that are driving disease: autoantibodies, immune complexes, inflammatory cytokines, and other circulating molecules.
+</p>
+<p>
+  Think of it as a systematic "reset" of the immune milieu. Unlike medications that block specific cytokines or receptors, TPE removes a broad range of inflammatory and autoimmune mediators simultaneously. It doesn't cure the underlying condition — autoantibodies will eventually be reproduced — but it can provide a powerful therapeutic window in which the immune system is dramatically quieted and other treatments can work more effectively.
+</p>
+
+<h2>Who Is Therapeutic Plasma Exchange For?</h2>
+<p>
+  TPE has FDA-approved indications for a long list of conditions, including myasthenia gravis, Guillain-Barré syndrome, CIDP (Chronic Inflammatory Demyelinating Polyneuropathy), thrombotic thrombocytopenic purpura (TTP), and several other neurological and hematological conditions.
+</p>
+<p>
+  Beyond the formal FDA indications, TPE is increasingly used in clinical practice for:
+</p>
+<ul>
+  <li><strong>Autoimmune conditions</strong> with active antibody-mediated disease — including lupus, NMDA receptor encephalitis, and refractory rheumatoid arthritis</li>
+  <li><strong>Long COVID</strong> — particularly in patients with persistent fatigue, cognitive symptoms (brain fog), and autonomic dysfunction. Research groups in Germany and the United States have documented significant improvement in Long COVID patients following TPE, with studies showing reduction in autoantibodies and microclotting markers</li>
+  <li><strong>POTS and dysautonomia</strong> — many POTS patients have detectable autoantibodies (including adrenergic and muscarinic receptor antibodies) that TPE can reduce, with corresponding improvements in heart rate variability and symptom burden</li>
+  <li><strong>Neurological conditions</strong> — including MS, neuromyelitis optica spectrum disorder, and post-infectious neurological syndromes</li>
+  <li><strong>Longevity and anti-aging protocols</strong> — research from Stanford and other centers has explored "young blood" and plasma dilution approaches for cognitive aging and biological rejuvenation</li>
+</ul>
+
+<h2>Step-by-Step: What Happens During a TPE Session</h2>
+
+<h3>Before You Arrive</h3>
+<p>
+  At Purety Clinic, TPE begins with a comprehensive consultation. We review your medical history, current labs, diagnosis, and treatment goals. We assess your IV access — most patients receive TPE through peripheral IV lines in both arms, though patients with difficult access may need a temporary central line. We also review replacement fluid options (typically albumin, sometimes fresh frozen plasma depending on the indication) and discuss the planned number of sessions.
+</p>
+
+<h3>Step 1: IV Access and Setup</h3>
+<p>
+  Two peripheral IV lines are established — one in each arm. One line draws blood out; the other returns processed blood. This typically takes 10–15 minutes. The apheresis machine is prepared and primed. Most patients find the IV placement to be the most uncomfortable part of the entire procedure.
+</p>
+
+<h3>Step 2: The Exchange Begins</h3>
+<p>
+  Blood flows from the draw line into the apheresis machine, where the plasma is separated from the red blood cells, white blood cells, and platelets. The plasma is collected for disposal. The remaining blood cells are combined with replacement albumin (or other replacement fluid) and returned through the return IV.
+</p>
+<p>
+  A single TPE session typically exchanges 1–1.5 plasma volumes — roughly 2.5–4 liters of plasma, depending on body size. This takes approximately 2–3 hours.
+</p>
+
+<h3>Step 3: What You Feel During the Session</h3>
+<p>
+  Most patients find TPE surprisingly tolerable. Common experiences during the session include:
+</p>
+<ul>
+  <li><strong>Mild tingling or numbness</strong> around the lips, fingers, or toes — caused by calcium reduction from the citrate anticoagulant used to prevent clotting in the circuit. We supplement calcium during the session to minimize this.</li>
+  <li><strong>A sense of cold or chill</strong> as the blood returns to the body at a slightly lower temperature than body temperature. We use warming blankets to manage this.</li>
+  <li><strong>Lightheadedness</strong> in some patients, particularly early in the session or if fluid replacement lags. We monitor vital signs throughout and adjust flow rates as needed.</li>
+  <li><strong>Most patients feel fine</strong> — reading, on their phone, or relaxing. The session is not painful once IV access is established.</li>
+</ul>
+
+<h3>Step 4: After the Session</h3>
+<p>
+  When the exchange is complete, the IV lines are removed and the access sites are dressed. Most patients feel well immediately after TPE, though some experience mild fatigue lasting a few hours. Some patients — particularly those with Long COVID or active autoimmune disease — notice improvement in their symptoms within 12–48 hours of the first session. Others experience a gradual improvement over the course of their treatment series.
+</p>
+<p>
+  We recommend eating a normal meal before the session, staying well-hydrated, and having someone available to drive if this is your first session.
+</p>
+
+<h2>How Many Sessions Will I Need?</h2>
+<p>
+  This depends entirely on the indication and the individual patient. Acute autoimmune neurological conditions (like Guillain-Barré or myasthenic crisis) may require a 5-session series over 10 days. Long COVID and POTS protocols typically involve 5–10 sessions over several weeks, often followed by periodic maintenance sessions. Patients undergoing TPE for longevity protocols typically have 2–4 sessions.
+</p>
+<p>
+  We use lab markers — including specific autoantibody titers, inflammatory cytokines, and clinical symptom tracking — to guide the number and frequency of sessions.
+</p>
+
+<h2>What Makes Our Setup Different</h2>
+<p>
+  Purety Family Medical Clinic is one of the few outpatient integrative clinics in California offering therapeutic plasma exchange. Our approach is to use TPE as part of a comprehensive protocol — not as a standalone intervention. For <a href="/conditions/autoimmune">autoimmune patients</a>, we combine TPE with naturopathic primary care, nutritional optimization, and other immune-modulating therapies. For <a href="/conditions/long-covid">Long COVID patients</a>, TPE is integrated into a broader protocol addressing mitochondrial dysfunction, autonomic function, and microbiome health. For <a href="/conditions/pots">POTS and dysautonomia</a> patients, we address the autonomic, inflammatory, and autoimmune components in parallel.
+</p>
+<p>
+  To learn more about <a href="/services/plasma-exchange">therapeutic plasma exchange at Purety Clinic</a> or to schedule a consultation, call (805) 500-8300 or submit a request online.
+</p>`
+  },
+
+  {
     id: "eboo-ozone-therapy-guide",
     title: "EBOO Therapy: What It Is, How It Works, and Who It Helps",
     excerpt: "EBOO (also called EBO2 or ozone dialysis) is the most advanced form of ozone therapy available. Here's a complete guide to what EBOO is, how it differs from other ozone treatments, what conditions it treats, and what to expect from a session.",
