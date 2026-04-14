@@ -227,6 +227,34 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://www.puretyclinic.com/conditions/lyme-disease</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/conditions/pots</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/conditions/dysautonomia</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/conditions/autoimmune</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Thank you page (post-conversion) -->
   <url>
     <loc>https://www.puretyclinic.com/thank-you</loc>
