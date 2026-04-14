@@ -322,5 +322,85 @@ export async function registerRoutes(
     }
   });
 
+  // POST /api/review-request — send branded review request email to a patient
+  app.post("/api/review-request", requireAdmin, async (req, res) => {
+    const { firstName, lastName, email } = req.body;
+    if (!firstName || !email) {
+      return res.status(400).json({ message: "firstName and email are required" });
+    }
+
+    const googleReviewUrl = "https://g.page/r/CY37yOB_b1BWEBM/review";
+    const yelpUrl = "https://www.yelp.com/biz/purety-family-medical-clinic-santa-barbara";
+    const clinicPhone = "(805) 500-8300";
+    const clinicName = "Purety Family Medical Clinic";
+
+    const htmlBody = `
+      <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #fff;">
+        <div style="background: #5A8085; padding: 32px 32px 24px; text-align: center;">
+          <h1 style="color: white; margin: 0; font-size: 24px; letter-spacing: 1px;">${clinicName}</h1>
+          <p style="color: rgba(255,255,255,0.85); margin: 6px 0 0; font-size: 14px; font-family: Arial, sans-serif;">Santa Barbara, CA &nbsp;·&nbsp; ${clinicPhone}</p>
+        </div>
+        <div style="padding: 36px 32px; border: 1px solid #e5e5e5; border-top: none;">
+          <p style="font-size: 17px; color: #2d3748; margin: 0 0 16px;">Dear ${firstName},</p>
+          <p style="font-size: 15px; color: #4a5568; line-height: 1.7; margin: 0 0 16px;">
+            Thank you for trusting us with your care. We hope your experience at ${clinicName} exceeded your expectations.
+          </p>
+          <p style="font-size: 15px; color: #4a5568; line-height: 1.7; margin: 0 0 28px;">
+            If you have a moment, we would be so grateful if you could share your experience. Reviews help other patients find the holistic, personalized care they deserve.
+          </p>
+
+          <div style="text-align: center; margin-bottom: 28px;">
+            <a href="${googleReviewUrl}" style="display: inline-block; background: #5A8085; color: white; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; margin: 0 8px 12px;">
+              ⭐ Leave a Google Review
+            </a>
+            <br />
+            <a href="${yelpUrl}" style="display: inline-block; background: #d32323; color: white; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; margin: 0 8px 12px;">
+              Review on Yelp
+            </a>
+          </div>
+
+          <p style="font-size: 14px; color: #718096; line-height: 1.7; margin: 0 0 8px;">
+            It only takes a minute and means the world to us. Thank you again for being part of our community.
+          </p>
+          <p style="font-size: 15px; color: #2d3748; margin: 24px 0 0;">
+            With gratitude,<br />
+            <strong>Dr. Jonathan Birch &amp; Dr. Dena Birch</strong><br />
+            <span style="font-size: 13px; color: #718096;">${clinicName} &nbsp;·&nbsp; ${clinicPhone}</span>
+          </p>
+        </div>
+        <div style="padding: 16px 32px; background: #f7f7f7; text-align: center; border: 1px solid #e5e5e5; border-top: none; border-radius: 0 0 8px 8px;">
+          <p style="font-size: 12px; color: #a0aec0; margin: 0;">2323 De la Vina St, Suite 101 · Santa Barbara, CA 93105 · puretyclinic.com</p>
+        </div>
+      </div>
+    `;
+
+    try {
+      const gmail = await getGmailClient();
+      const to = `${firstName}${lastName ? " " + lastName : ""} <${email}>`;
+      const rawMessage = [
+        `To: ${to}`,
+        `From: Purety Family Medical Clinic <drjonathan@puretyclinic.com>`,
+        `Subject: Thank You — Would You Share Your Experience?`,
+        `MIME-Version: 1.0`,
+        `Content-Type: text/html; charset=UTF-8`,
+        ``,
+        htmlBody,
+      ].join("\r\n");
+
+      const encodedMessage = Buffer.from(rawMessage)
+        .toString("base64")
+        .replace(/\+/g, "-")
+        .replace(/\//g, "_")
+        .replace(/=+$/, "");
+
+      await gmail.users.messages.send({ userId: "me", requestBody: { raw: encodedMessage } });
+      console.log(`[review-request] Sent to ${email}`);
+      return res.json({ success: true });
+    } catch (error: any) {
+      console.error("[review-request] Failed:", error?.message || error);
+      return res.status(500).json({ message: "Failed to send email. Please try again." });
+    }
+  });
+
   return httpServer;
 }
