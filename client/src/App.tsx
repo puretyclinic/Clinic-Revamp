@@ -37,6 +37,8 @@ import CDiff from "@/pages/conditions/CDiff";
 import LymeDisease from "@/pages/conditions/LymeDisease";
 import POTS from "@/pages/conditions/POTS";
 import AutoimmuneDisease from "@/pages/conditions/AutoimmuneDisease";
+import MoldIllness from "@/pages/conditions/MoldIllness";
+import OrthopedicInjuries from "@/pages/conditions/OrthopedicInjuries";
 
 function Router() {
   return (
@@ -77,6 +79,10 @@ function Router() {
       <Route path="/conditions/pots" component={POTS} />
       <Route path="/conditions/dysautonomia" component={POTS} />
       <Route path="/conditions/autoimmune" component={AutoimmuneDisease} />
+      <Route path="/conditions/mold-illness" component={MoldIllness} />
+      <Route path="/conditions/cirs" component={MoldIllness} />
+      <Route path="/conditions/orthopedic-injuries" component={OrthopedicInjuries} />
+      <Route path="/conditions/sports-injuries" component={OrthopedicInjuries} />
       <Route path="/thank-you" component={ThankYou} />
       <Route path="/claim" component={ClaimPreview} />
       <Route path="/admin" component={Admin} />

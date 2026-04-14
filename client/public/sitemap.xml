@@ -255,6 +255,34 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://www.puretyclinic.com/conditions/mold-illness</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/conditions/cirs</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/conditions/orthopedic-injuries</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.puretyclinic.com/conditions/sports-injuries</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Thank you page (post-conversion) -->
   <url>
     <loc>https://www.puretyclinic.com/thank-you</loc>

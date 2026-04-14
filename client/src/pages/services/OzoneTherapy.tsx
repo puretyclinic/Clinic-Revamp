@@ -325,7 +325,7 @@ export default function OzoneTherapy() {
                   <ul className="space-y-1 text-sm text-muted-foreground">
                     {[
                       { label: "Chronic Lyme disease", href: "/conditions/lyme-disease" },
-                      { label: "Mold / mycotoxin illness", href: null },
+                      { label: "Mold / mycotoxin illness", href: "/conditions/mold-illness" },
                       { label: "Long COVID", href: "/conditions/long-covid" },
                       { label: "Heavy metal burden", href: null },
                       { label: "Autoimmune conditions", href: "/conditions/autoimmune" },
@@ -393,7 +393,7 @@ export default function OzoneTherapy() {
               {[
                 { label: "Chronic Lyme Disease", href: "/conditions/lyme-disease" },
                 { label: "Long COVID & Post-viral Fatigue", href: "/conditions/long-covid" },
-                { label: "Mold / Mycotoxin Illness", href: null },
+                { label: "Mold / Mycotoxin Illness", href: "/conditions/mold-illness" },
                 { label: "Epstein-Barr Virus (EBV)", href: null },
                 { label: "Autoimmune Conditions", href: "/conditions/autoimmune" },
                 { label: "POTS & Dysautonomia", href: "/conditions/pots" },

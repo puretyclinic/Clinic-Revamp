@@ -317,6 +317,11 @@ export default function RegenerativeMedicine() {
                       <li key={i} className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-green-600 shrink-0" /> {c}</li>
                     ))}
                   </ul>
+                  <Link href="/conditions/orthopedic-injuries">
+                    <a className="inline-flex items-center gap-1 text-primary text-xs font-bold mt-4 hover:underline">
+                      All sports &amp; orthopedic conditions →
+                    </a>
+                  </Link>
                 </div>
               </FadeIn>
 

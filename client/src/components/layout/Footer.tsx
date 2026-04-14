@@ -45,7 +45,7 @@ export function Footer() {
                    ))}
                  </div>
                  <div className="text-[10px] text-gray-500 font-bold leading-tight mt-0.5 group-hover:text-primary transition-colors">
-                   5.0 Rating | 80+ Reviews
+                   5.0 Rating | 77+ Reviews
                  </div>
                </div>
             </a>
@@ -112,6 +112,8 @@ export function Footer() {
             <Link href="/conditions/lyme-disease" className="hover:text-white transition-colors">Lyme Disease</Link>
             <Link href="/conditions/pots" className="hover:text-white transition-colors">POTS & Dysautonomia</Link>
             <Link href="/conditions/autoimmune" className="hover:text-white transition-colors">Autoimmune Disease</Link>
+            <Link href="/conditions/mold-illness" className="hover:text-white transition-colors">Mold Illness / CIRS</Link>
+            <Link href="/conditions/orthopedic-injuries" className="hover:text-white transition-colors">Orthopedic & Sports Injuries</Link>
             <Link href="/conditions/c-difficile" className="hover:text-white transition-colors">C. difficile (FMT)</Link>
           </div>
         </div>
