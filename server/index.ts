@@ -71,7 +71,10 @@ app.use((req, res, next) => {
     ) {
       try {
         const port = process.env.PORT || "5000";
-        const html = await prerenderPage(`http://localhost:${port}${req.path}`, req.path);
+        const html = await prerenderPage(
+          `http://localhost:${port}${req.originalUrl}`,
+          req.originalUrl
+        );
         res.setHeader("X-Prerendered", "true");
         res.setHeader("X-Robots-Tag", "index, follow");
         return res.send(html);
@@ -81,6 +84,11 @@ app.use((req, res, next) => {
       }
     }
     return next();
+  });
+
+  app.use((_req: Request, res: Response, next: NextFunction) => {
+    res.setHeader("X-Robots-Tag", "index, follow");
+    next();
   });
 
   await registerRoutes(httpServer, app);
