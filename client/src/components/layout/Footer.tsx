@@ -104,6 +104,18 @@ export function Footer() {
           </div>
         </div>
         
+        {/* Conditions We Treat */}
+        <div className="border-t border-white/10 pt-10 mb-10">
+          <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-5">Conditions We Treat</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/60">
+            <Link href="/conditions/long-covid" className="hover:text-white transition-colors">Long COVID</Link>
+            <Link href="/conditions/lyme-disease" className="hover:text-white transition-colors">Lyme Disease</Link>
+            <Link href="/conditions/pots" className="hover:text-white transition-colors">POTS & Dysautonomia</Link>
+            <Link href="/conditions/autoimmune" className="hover:text-white transition-colors">Autoimmune Disease</Link>
+            <Link href="/conditions/c-difficile" className="hover:text-white transition-colors">C. difficile (FMT)</Link>
+          </div>
+        </div>
+
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/40">
           <p>© {new Date().getFullYear()} Purety Family Medical Clinic. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">

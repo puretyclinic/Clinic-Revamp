@@ -323,8 +323,18 @@ export default function OzoneTherapy() {
                   </p>
                   <h4 className="font-bold text-xs text-foreground uppercase tracking-wider mb-2">Best for:</h4>
                   <ul className="space-y-1 text-sm text-muted-foreground">
-                    {["Chronic Lyme disease", "Mold / mycotoxin illness", "Long COVID", "Heavy metal burden", "Autoimmune conditions", "Chronic EBV / viral infections"].map((c, i) => (
-                      <li key={i} className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-accent shrink-0" /> {c}</li>
+                    {[
+                      { label: "Chronic Lyme disease", href: "/conditions/lyme-disease" },
+                      { label: "Mold / mycotoxin illness", href: null },
+                      { label: "Long COVID", href: "/conditions/long-covid" },
+                      { label: "Heavy metal burden", href: null },
+                      { label: "Autoimmune conditions", href: "/conditions/autoimmune" },
+                      { label: "Chronic EBV / viral infections", href: null },
+                    ].map((c, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-accent shrink-0" />
+                        {c.href ? <Link href={c.href} className="hover:text-primary hover:underline transition-colors">{c.label}</Link> : c.label}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -381,17 +391,32 @@ export default function OzoneTherapy() {
             </FadeIn>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {[
-                "Chronic Lyme Disease", "Long COVID & Post-viral Fatigue", "Mold / Mycotoxin Illness",
-                "Epstein-Barr Virus (EBV)", "Autoimmune Conditions", "Multiple Sclerosis",
-                "Chronic Fatigue Syndrome (ME/CFS)", "Fibromyalgia", "Heavy Metal Toxicity",
-                "Cardiovascular Disease", "Diabetes & Metabolic Syndrome", "Inflammatory Bowel Disease",
-                "Cancer Support (adjunct)", "Chronic Infections", "Joint Pain & Arthritis",
-                "Brain Fog & Cognitive Decline", "Chronic Sinusitis", "Skin Conditions",
+                { label: "Chronic Lyme Disease", href: "/conditions/lyme-disease" },
+                { label: "Long COVID & Post-viral Fatigue", href: "/conditions/long-covid" },
+                { label: "Mold / Mycotoxin Illness", href: null },
+                { label: "Epstein-Barr Virus (EBV)", href: null },
+                { label: "Autoimmune Conditions", href: "/conditions/autoimmune" },
+                { label: "POTS & Dysautonomia", href: "/conditions/pots" },
+                { label: "Chronic Fatigue Syndrome (ME/CFS)", href: null },
+                { label: "Fibromyalgia", href: null },
+                { label: "Heavy Metal Toxicity", href: null },
+                { label: "Cardiovascular Disease", href: null },
+                { label: "Diabetes & Metabolic Syndrome", href: null },
+                { label: "Inflammatory Bowel Disease", href: null },
+                { label: "Cancer Support (adjunct)", href: null },
+                { label: "Chronic Infections", href: null },
+                { label: "Joint Pain & Arthritis", href: null },
+                { label: "Brain Fog & Cognitive Decline", href: null },
+                { label: "Chronic Sinusitis", href: null },
+                { label: "Skin Conditions", href: null },
               ].map((condition, i) => (
                 <FadeIn key={i} delay={i * 0.02}>
                   <div className="flex items-center gap-2 p-3 rounded-xl bg-[#f8fafb] border border-gray-100">
                     <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                    <span className="text-sm font-medium text-foreground">{condition}</span>
+                    {condition.href
+                      ? <Link href={condition.href} className="text-sm font-medium text-primary hover:underline">{condition.label}</Link>
+                      : <span className="text-sm font-medium text-foreground">{condition.label}</span>
+                    }
                   </div>
                 </FadeIn>
               ))}

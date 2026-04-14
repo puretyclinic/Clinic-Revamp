@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "wouter";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -6,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Droplet, Activity, RefreshCw, AlertCircle, CheckCircle2, ShieldCheck, HeartPulse } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
 import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
-import { Link } from "wouter";
 
 export default function PlasmaExchange() {
   useEffect(() => {
@@ -207,11 +207,12 @@ export default function PlasmaExchange() {
                    TPE has shown promise in managing various autoimmune and neurological conditions, as well as benefitting the aging process:
                  </p>
                  <ul className="space-y-3 text-sm text-muted-foreground">
-                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span>Autoimmune disorders like <strong>Lupus</strong> and <strong>Myasthenia Gravis</strong></span></li>
+                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span><Link href="/conditions/autoimmune" className="text-primary hover:underline font-medium">Autoimmune disorders</Link> like <strong>Lupus</strong> and <strong>Myasthenia Gravis</strong></span></li>
                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span>Neurological conditions, such as <strong>Multiple Sclerosis (MS)</strong> and <strong>Guillain-Barré syndrome</strong></span></li>
+                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span><Link href="/conditions/pots" className="text-primary hover:underline font-medium">POTS & Dysautonomia</Link> — including post-COVID autonomic dysfunction</span></li>
                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span>Certain kidney diseases, including <strong>Goodpasture’s syndrome</strong></span></li>
                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span>Blood disorders, such as <strong>Thrombotic Thrombocytopenic Purpura (TTP)</strong></span></li>
-                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span><strong>Long Covid</strong></span></li>
+                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span><Link href="/conditions/long-covid" className="text-primary hover:underline font-medium">Long COVID</Link> — fatigue, brain fog, post-exertional malaise</span></li>
                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span>Neurodegenerative conditions such as <strong>Alzheimer’s and dementia</strong></span></li>
                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span>Chronic inflammatory diseases where excess immune activity or toxins are problematic</span></li>
                  </ul>
