@@ -8,6 +8,16 @@ import { ContactCTA } from "@/components/ContactCTA";
 import { blogPosts } from "@/data/posts";
 import { useEffect } from "react";
 
+function formatDate(dateStr: string): string {
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    const [year, month, day] = dateStr.split("-").map(Number);
+    return new Date(year, month - 1, day).toLocaleDateString("en-US", {
+      year: "numeric", month: "long", day: "numeric"
+    });
+  }
+  return dateStr;
+}
+
 export default function BlogPost() {
   const { id } = useParams<{ id: string }>();
   const post = blogPosts.find((p) => p.id === id);
@@ -96,7 +106,7 @@ export default function BlogPost() {
               <div className="flex items-center justify-center gap-4 text-sm font-bold uppercase tracking-wider text-muted-foreground mb-6">
                 <span className="text-accent">{post.category}</span>
                 <span>•</span>
-                <span>{post.date}</span>
+                <span>{formatDate(post.date)}</span>
               </div>
               <h1 className="font-serif text-4xl md:text-6xl text-foreground mb-8 leading-tight">
                 {post.title}

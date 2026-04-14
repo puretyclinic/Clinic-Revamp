@@ -8,6 +8,16 @@ import { Link } from "wouter";
 import { blogPosts } from "@/data/posts";
 import { ContactCTA } from "@/components/ContactCTA";
 
+function formatDate(dateStr: string): string {
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    const [year, month, day] = dateStr.split("-").map(Number);
+    return new Date(year, month - 1, day).toLocaleDateString("en-US", {
+      year: "numeric", month: "long", day: "numeric"
+    });
+  }
+  return dateStr;
+}
+
 export default function Blog() {
   // Only show posts that are not hidden
   const visiblePosts = blogPosts.filter(post => !post.hidden);
@@ -55,7 +65,7 @@ export default function Blog() {
                       </div>
                       <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
                         <span className="text-primary">{post.category}</span>
-                        <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {post.date}</span>
+                        <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {formatDate(post.date)}</span>
                       </div>
                       <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 group-hover:text-primary transition-colors">
                         {post.title}
