@@ -101,7 +101,7 @@ export function HeroSafe({
         </FadeIn>
       </div>
 
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200 z-50 md:hidden flex gap-3 shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
+      <div className="fixed bottom-0 left-0 right-0 px-4 pt-3 pb-0 bg-white border-t border-gray-200 z-50 md:hidden flex gap-3 shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
         <Button variant="outline" className="flex-1 ui-btn-secondary h-12" asChild>
           <a href="tel:+18055008300">Call</a>
         </Button>

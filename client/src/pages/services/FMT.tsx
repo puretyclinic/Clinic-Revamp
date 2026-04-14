@@ -862,7 +862,7 @@ export default function FMT() {
         </section>
       </main>
 
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-2xl px-4 py-3 flex gap-3" data-testid="sticky-mobile-cta">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-2xl px-4 pt-3 pb-0 flex gap-3" data-testid="sticky-mobile-cta">
         <a
           href="tel:+18055008300"
           className="flex-1 flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-lg py-3 text-sm"
@@ -892,7 +892,7 @@ export default function FMT() {
       <Footer />
 
       {/* Sticky mobile call bar — visible only on small screens */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] px-4 py-3">
+      <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] px-4 pt-3 pb-0">
         <div className="flex gap-3">
           <a
             href="tel:+18055008300"
