@@ -27,17 +27,26 @@ function findChromium(): string {
   return "";
 }
 
+const chromiumPath = findChromium();
+if (!chromiumPath) {
+  console.error(
+    "[prerender] WARNING: No Chromium binary found. Bot prerendering is disabled. " +
+    "Set CHROMIUM_PATH env var or ensure chromium-browser is in PATH."
+  );
+} else {
+  console.log(`[prerender] Using Chromium at: ${chromiumPath}`);
+}
+
 const cache = new Map<string, { html: string; timestamp: number }>();
 const CACHE_TTL = 1000 * 60 * 60;
 
 let browser: Browser | null = null;
-let chromiumPath = "";
 
 async function getBrowser(): Promise<Browser> {
+  if (!chromiumPath) {
+    throw new Error("No Chromium binary available for prerendering.");
+  }
   if (!browser) {
-    if (!chromiumPath) {
-      chromiumPath = findChromium();
-    }
     browser = await puppeteer.launch({
       executablePath: chromiumPath,
       headless: true,
@@ -62,11 +71,7 @@ export async function prerenderPage(url: string, path: string): Promise<string> 
   const b = await getBrowser();
   const page = await b.newPage();
   try {
-    try {
-      await page.goto(url, { waitUntil: "networkidle0", timeout: 15000 });
-    } catch (err) {
-      console.warn(`[prerender] Navigation warning for ${url}:`, (err as Error).message);
-    }
+    await page.goto(url, { waitUntil: "networkidle0", timeout: 15000 });
     const html = await page.content();
     cache.set(path, { html, timestamp: Date.now() });
     return html;

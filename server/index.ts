@@ -67,7 +67,7 @@ app.use((req, res, next) => {
     if (
       isBot(ua) &&
       !req.path.startsWith("/api") &&
-      !req.path.match(/\.(js|css|png|jpg|jpeg|ico|svg|woff|woff2|ttf|map)$/)
+      !req.path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|map|txt|xml|json|webmanifest)$/)
     ) {
       try {
         const port = process.env.PORT || "5000";
