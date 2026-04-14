@@ -253,13 +253,7 @@ export async function registerRoutes(
       }
 
       const response = await fetch(
-        `https://places.googleapis.com/v1/places/${placeId}`,
-        {
-          headers: {
-            "X-Goog-Api-Key": apiKey,
-            "X-Goog-FieldMask": "rating,userRatingCount,reviews",
-          },
-        }
+        `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total,reviews&reviews_sort=newest&key=${apiKey}`
       );
 
       if (!response.ok) {
@@ -267,25 +261,34 @@ export async function registerRoutes(
       }
 
       const raw = await response.json() as {
-        rating?: number;
-        userRatingCount?: number;
-        reviews?: Array<{
-          authorAttribution?: { displayName?: string; photoUri?: string };
+        status?: string;
+        result?: {
           rating?: number;
-          text?: { text?: string };
-          relativePublishTimeDescription?: string;
-        }>;
+          user_ratings_total?: number;
+          reviews?: Array<{
+            author_name?: string;
+            profile_photo_url?: string;
+            rating?: number;
+            text?: string;
+            relative_time_description?: string;
+          }>;
+        };
       };
 
+      if (raw.status && raw.status !== "OK") {
+        throw new Error(`Places API error: ${raw.status}`);
+      }
+
+      const result = raw.result ?? {};
       const data = {
-        rating: raw.rating ?? 5,
-        totalReviews: raw.userRatingCount ?? 0,
-        reviews: (raw.reviews ?? []).map((r) => ({
-          author: r.authorAttribution?.displayName ?? "Patient",
-          photoUri: r.authorAttribution?.photoUri ?? null,
+        rating: result.rating ?? 5,
+        totalReviews: result.user_ratings_total ?? 0,
+        reviews: (result.reviews ?? []).map((r) => ({
+          author: r.author_name ?? "Patient",
+          photoUri: r.profile_photo_url ?? null,
           rating: r.rating ?? 5,
-          text: r.text?.text ?? "",
-          timeAgo: r.relativePublishTimeDescription ?? "",
+          text: r.text ?? "",
+          timeAgo: r.relative_time_description ?? "",
         })),
       };
 
