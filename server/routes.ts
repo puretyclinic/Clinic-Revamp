@@ -369,7 +369,7 @@ export async function registerRoutes(
           </p>
         </div>
         <div style="padding: 16px 32px; background: #f7f7f7; text-align: center; border: 1px solid #e5e5e5; border-top: none; border-radius: 0 0 8px 8px;">
-          <p style="font-size: 12px; color: #a0aec0; margin: 0;">2323 De la Vina St, Suite 101 · Santa Barbara, CA 93105 · puretyclinic.com</p>
+          <p style="font-size: 12px; color: #a0aec0; margin: 0;">2323 Oak Park Lane, Suite 102 · Santa Barbara, CA 93105 · puretyclinic.com</p>
         </div>
       </div>
     `;
