@@ -137,8 +137,8 @@ export default function Longevity() {
               },
               {
                 icon: <Microscope className="w-7 h-7 text-primary" />,
-                title: "Stem Cell Therapy (BMAC)",
-                desc: "Bone marrow aspirate concentrate (BMAC) delivers your body's own mesenchymal stem cells — cells with the potential to regenerate cartilage, bone, and soft tissue. As stem cell reserve naturally declines with age, BMAC therapy replenishes regenerative capacity at the site of greatest need, making it a cornerstone of structural longevity care."
+                title: "Muse Cell Therapy",
+                desc: "Multilineage-differentiating stress-enduring (Muse) cells are a rare, naturally occurring stem cell population with exceptional regenerative potential. Unlike conventional stem cell therapies, Muse cells home to sites of damage and differentiate into the specific cell types needed for repair — making them one of the most targeted and promising regenerative interventions available for longevity and tissue restoration."
               },
             ].map((t, i) => (
               <FadeIn key={i} delay={i * 0.1}>
