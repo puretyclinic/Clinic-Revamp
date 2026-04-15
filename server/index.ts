@@ -73,11 +73,10 @@ app.use((req, res, next) => {
         !req.path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|map|txt|xml|json|webmanifest)$/)
       ) {
         try {
-          const port = process.env.PORT || "5000";
-          const html = await prerenderPage(
-            `http://localhost:${port}${req.originalUrl}`,
-            req.originalUrl
-          );
+          const host = req.get("host") || "puretyclinic.com";
+          const protocol = req.secure ? "https" : "http";
+          const fullUrl = `${protocol}://${host}${req.originalUrl}`;
+          const html = await prerenderPage(fullUrl);
           res.setHeader("X-Prerendered", "true");
           res.setHeader("X-Robots-Tag", "index, follow");
           return res.send(html);

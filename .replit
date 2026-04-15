@@ -74,3 +74,6 @@ integrations = ["google-mail:1.0.0"]
 GOOGLE_ADS_CUSTOMER_ID = "3730159907"
 GOOGLE_PLACES_API_KEY = "AIzaSyAaoclqhPubMGV6msvxoo1-SixiRroL7zY"
 GOOGLE_PLACE_ID = "ChIJg1XxhiUV6YAROKh9D8BhNfk"
+
+[userenv.production]
+PRERENDER_ENABLED = "true"
