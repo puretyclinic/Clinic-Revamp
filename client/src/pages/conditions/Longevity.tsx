@@ -111,14 +111,14 @@ export default function Longevity() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: <Zap className="w-7 h-7 text-primary" />,
-                title: "EBO2 Ozone Therapy",
-                desc: "Our flagship longevity treatment. EBO2 processes blood extracorporeally through ozone and UV light, stimulating mitochondrial activity, reducing inflammatory burden, and activating antioxidant defense systems. Patients report significant improvements in energy, cognitive sharpness, and physical recovery."
-              },
-              {
                 icon: <Activity className="w-7 h-7 text-primary" />,
                 title: "Therapeutic Plasma Exchange (TPE)",
                 desc: "Removes pro-aging plasma factors and replaces them with fresh albumin, effectively \"diluting\" the systemic aging environment. Emerging research supports TPE as one of the most promising systemic anti-aging interventions available today."
+              },
+              {
+                icon: <Zap className="w-7 h-7 text-primary" />,
+                title: "EBO2 Ozone Therapy",
+                desc: "Our flagship longevity treatment. EBO2 processes blood extracorporeally through ozone and UV light, stimulating mitochondrial activity, reducing inflammatory burden, and activating antioxidant defense systems. Patients report significant improvements in energy, cognitive sharpness, and physical recovery."
               },
               {
                 icon: <Microscope className="w-7 h-7 text-primary" />,
