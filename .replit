@@ -1,79 +1,55 @@
 modules = ["nodejs-20", "web", "postgresql-16"]
-run = "npm run dev"
-hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
+  run = "npm run dev"
+  hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 
-[nix]
-channel = "stable-24_05"
-packages = ["chromium"]
+  [nix]
+  channel = "stable-24_05"
 
-[[ports]]
-localPort = 5000
-externalPort = 80
+  [[ports]]
+  localPort = 5000
+  externalPort = 80
 
-[[ports]]
-localPort = 5001
-externalPort = 3001
+  [env]
+  PORT = "5000"
 
-[[ports]]
-localPort = 5002
-externalPort = 3000
+  [deployment]
+  deploymentTarget = "autoscale"
+  build = ["npm", "run", "build"]
+  run = ["node", "./dist/index.js"]
 
-[[ports]]
-localPort = 5003
-externalPort = 3002
+  [workflows]
+  runButton = "Project"
 
-[[ports]]
-localPort = 5004
-externalPort = 3003
+  [[workflows.workflow]]
+  name = "Project"
+  mode = "parallel"
+  author = "agent"
 
-[[ports]]
-localPort = 5005
-externalPort = 4200
+  [[workflows.workflow.tasks]]
+  task = "workflow.run"
+  args = "Start application"
 
-[[ports]]
-localPort = 5006
-externalPort = 5000
+  [[workflows.workflow]]
+  name = "Start application"
+  author = "agent"
 
-[env]
-PORT = "5000"
+  [[workflows.workflow.tasks]]
+  task = "shell.exec"
+  args = "npm run dev"
+  waitForPort = 5000
 
-[deployment]
-deploymentTarget = "autoscale"
-build = ["npm", "run", "build"]
-run = ["node", "./dist/index.js"]
+  [agent]
+  stack = "MOCKUP_JS"
+  mockupState = "FULLSTACK"
+  integrations = ["google-mail:1.0.0"]
 
-[workflows]
-runButton = "Project"
+  [userenv]
 
-[[workflows.workflow]]
-name = "Project"
-mode = "parallel"
-author = "agent"
+  [userenv.shared]
+  GOOGLE_ADS_CUSTOMER_ID = "3730159907"
+  GOOGLE_PLACES_API_KEY = "AIzaSyAaoclqhPubMGV6msvxoo1-SixiRroL7zY"
+  GOOGLE_PLACE_ID = "ChIJg1XxhiUV6YAROKh9D8BhNfk"
 
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Start application"
-
-[[workflows.workflow]]
-name = "Start application"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm run dev"
-waitForPort = 5000
-
-[agent]
-stack = "MOCKUP_JS"
-mockupState = "FULLSTACK"
-integrations = ["google-mail:1.0.0"]
-
-[userenv]
-
-[userenv.shared]
-GOOGLE_ADS_CUSTOMER_ID = "3730159907"
-GOOGLE_PLACES_API_KEY = "AIzaSyAaoclqhPubMGV6msvxoo1-SixiRroL7zY"
-GOOGLE_PLACE_ID = "ChIJg1XxhiUV6YAROKh9D8BhNfk"
-
-[userenv.production]
-PRERENDER_ENABLED = "true"
+  [userenv.production]
+  PRERENDER_ENABLED = "true"
+  
