@@ -1,22 +1,23 @@
-import { createRequire } from "module";
 import type { Request, Response, NextFunction } from "express";
 
-const require = createRequire(import.meta.url);
-const prerender = require("prerender-node");
+// prerender-node is a CJS module kept external by esbuild.
+// Default import works correctly: esbuild converts it to require() in CJS output.
+// @ts-ignore - prerender-node has no TypeScript type declarations
+import prerenderLib from "prerender-node";
 
 const token = process.env.PRERENDER_TOKEN;
 if (token) {
-  prerender.set("prerenderToken", token);
+  prerenderLib.set("prerenderToken", token);
 }
 
-prerender.set("protocol", "https");
+prerenderLib.set("protocol", "https");
 
-prerender.set("shouldPreRender", (req: Request) => {
+prerenderLib.set("shouldPreRender", (req: Request) => {
   if (req.path.startsWith("/api")) return false;
   if (/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|map|txt|xml|json|webmanifest)$/i.test(req.path)) return false;
   return true;
 });
 
 export const prerenderMiddleware = (req: Request, res: Response, next: NextFunction) => {
-  prerender(req, res, next);
+  prerenderLib(req, res, next);
 };
