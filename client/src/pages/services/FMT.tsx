@@ -400,22 +400,6 @@ export default function FMT() {
                   We consult on a wide range of gut concerns. Whatever you're dealing with, reach out — Dr. Birch will personally evaluate whether FMT may be appropriate for your situation.
                 </p>
 
-                {/* Dr. Birch credibility card */}
-                <div className="flex items-center gap-4 bg-white rounded-xl px-4 py-3 border border-gray-100 shadow-sm mb-8">
-                  <img
-                    src="/images/dr-jonathan-birch.png"
-                    alt="Dr. Jonathan Birch NMD"
-                    className="w-14 h-14 rounded-full object-cover object-top border-2 border-primary/20 shrink-0"
-                  />
-                  <div>
-                    <div className="font-bold text-foreground text-sm">Dr. Jonathan Birch, NMD, RMSK</div>
-                    <div className="text-xs text-muted-foreground">FMT Specialist · 10+ years · 1,000+ procedures</div>
-                    <div className="flex items-center gap-1 mt-1">
-                      {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 text-accent fill-current" />)}
-                      <span className="text-xs text-muted-foreground ml-1">5.0 · 77 Google reviews</span>
-                    </div>
-                  </div>
-                </div>
 
                 <div className="flex gap-8 mb-8">
                   <div>

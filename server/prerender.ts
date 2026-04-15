@@ -1,32 +1,22 @@
-const BOT_AGENTS = [
-  "googlebot", "bingbot", "slurp", "duckduckbot", "baiduspider",
-  "yandexbot", "facebookexternalhit", "twitterbot", "linkedinbot",
-  "whatsapp", "telegrambot", "applebot", "ia_archiver"
-];
+import { createRequire } from "module";
+import type { Request, Response, NextFunction } from "express";
 
-export function isBot(userAgent: string): boolean {
-  const ua = userAgent.toLowerCase();
-  return BOT_AGENTS.some(bot => ua.includes(bot));
+const require = createRequire(import.meta.url);
+const prerender = require("prerender-node");
+
+const token = process.env.PRERENDER_TOKEN;
+if (token) {
+  prerender.set("prerenderToken", token);
 }
 
-export async function prerenderPage(url: string): Promise<string> {
-  const token = process.env.PRERENDER_TOKEN;
-  if (!token) {
-    throw new Error("[prerender] PRERENDER_TOKEN is not set.");
-  }
+prerender.set("protocol", "https");
 
-  const prerenderUrl = `https://service.prerender.io/${url}`;
-  console.log(`[prerender] Fetching: ${prerenderUrl}`);
+prerender.set("shouldPreRender", (req: Request) => {
+  if (req.path.startsWith("/api")) return false;
+  if (/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|map|txt|xml|json|webmanifest)$/i.test(req.path)) return false;
+  return true;
+});
 
-  const response = await fetch(prerenderUrl, {
-    headers: {
-      "X-Prerender-Token": token,
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`[prerender] prerender.io returned ${response.status} for ${url}`);
-  }
-
-  return response.text();
-}
+export const prerenderMiddleware = (req: Request, res: Response, next: NextFunction) => {
+  prerender(req, res, next);
+};

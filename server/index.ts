@@ -60,35 +60,13 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  const { isBot, prerenderPage } = await import("./prerender");
-
   const prerenderEnabled = process.env.PRERENDER_ENABLED === "true";
   if (prerenderEnabled) {
-    console.log("[prerender] Dynamic rendering middleware ENABLED");
-    app.use(async (req: Request, res: Response, next: NextFunction) => {
-      const ua = req.headers["user-agent"] || "";
-      if (
-        isBot(ua) &&
-        !req.path.startsWith("/api") &&
-        !req.path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|map|txt|xml|json|webmanifest)$/)
-      ) {
-        try {
-          const host = req.get("host") || "puretyclinic.com";
-          const protocol = req.secure ? "https" : "http";
-          const fullUrl = `${protocol}://${host}${req.originalUrl}`;
-          const html = await prerenderPage(fullUrl);
-          res.setHeader("X-Prerendered", "true");
-          res.setHeader("X-Robots-Tag", "index, follow");
-          return res.send(html);
-        } catch (err) {
-          console.error("[prerender] Error:", err);
-          return next();
-        }
-      }
-      return next();
-    });
+    console.log("[prerender] prerender.io middleware ENABLED");
+    const { prerenderMiddleware } = await import("./prerender");
+    app.use(prerenderMiddleware);
   } else {
-    console.log("[prerender] Dynamic rendering middleware DISABLED (set PRERENDER_ENABLED=true to enable)");
+    console.log("[prerender] prerender.io middleware DISABLED (set PRERENDER_ENABLED=true to enable)");
   }
 
   app.use((_req: Request, res: Response, next: NextFunction) => {
