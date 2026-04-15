@@ -39,6 +39,9 @@ import POTS from "@/pages/conditions/POTS";
 import AutoimmuneDisease from "@/pages/conditions/AutoimmuneDisease";
 import MoldIllness from "@/pages/conditions/MoldIllness";
 import OrthopedicInjuries from "@/pages/conditions/OrthopedicInjuries";
+import Arthritis from "@/pages/conditions/Arthritis";
+import GutHealth from "@/pages/conditions/GutHealth";
+import Longevity from "@/pages/conditions/Longevity";
 
 function Router() {
   return (
@@ -83,6 +86,10 @@ function Router() {
       <Route path="/conditions/cirs" component={MoldIllness} />
       <Route path="/conditions/orthopedic-injuries" component={OrthopedicInjuries} />
       <Route path="/conditions/sports-injuries" component={OrthopedicInjuries} />
+      <Route path="/conditions/arthritis" component={Arthritis} />
+      <Route path="/conditions/gut-health" component={GutHealth} />
+      <Route path="/conditions/gastrointestinal" component={GutHealth} />
+      <Route path="/conditions/longevity" component={Longevity} />
       <Route path="/thank-you" component={ThankYou} />
       <Route path="/claim" component={ClaimPreview} />
       <Route path="/admin" component={Admin} />

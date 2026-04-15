@@ -115,6 +115,9 @@ export function Footer() {
             <Link href="/conditions/mold-illness" className="hover:text-white transition-colors">Mold Illness / CIRS</Link>
             <Link href="/conditions/orthopedic-injuries" className="hover:text-white transition-colors">Orthopedic & Sports Injuries</Link>
             <Link href="/conditions/c-difficile" className="hover:text-white transition-colors">C. difficile (FMT)</Link>
+            <Link href="/conditions/arthritis" className="hover:text-white transition-colors">Arthritis</Link>
+            <Link href="/conditions/gut-health" className="hover:text-white transition-colors">Chronic Gastrointestinal Conditions</Link>
+            <Link href="/conditions/longevity" className="hover:text-white transition-colors">Longevity</Link>
           </div>
         </div>
 
