@@ -108,6 +108,7 @@ export function Footer() {
         <div className="border-t border-white/10 pt-10 mb-10">
           <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-5">Conditions We Treat</p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/60">
+            <Link href="/conditions/gut-health" className="hover:text-white transition-colors">Chronic Gastrointestinal Conditions</Link>
             <Link href="/conditions/long-covid" className="hover:text-white transition-colors">Long COVID</Link>
             <Link href="/conditions/lyme-disease" className="hover:text-white transition-colors">Lyme Disease</Link>
             <Link href="/conditions/pots" className="hover:text-white transition-colors">POTS & Dysautonomia</Link>
@@ -116,7 +117,6 @@ export function Footer() {
             <Link href="/conditions/orthopedic-injuries" className="hover:text-white transition-colors">Orthopedic & Sports Injuries</Link>
             <Link href="/conditions/c-difficile" className="hover:text-white transition-colors">C. difficile (FMT)</Link>
             <Link href="/conditions/arthritis" className="hover:text-white transition-colors">Arthritis</Link>
-            <Link href="/conditions/gut-health" className="hover:text-white transition-colors">Chronic Gastrointestinal Conditions</Link>
             <Link href="/conditions/longevity" className="hover:text-white transition-colors">Longevity</Link>
           </div>
         </div>

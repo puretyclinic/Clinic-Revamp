@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Link } from "wouter";
-import { CheckCircle2, ChevronDown, ChevronUp, ArrowRight, Activity, Zap, Shield, Microscope, Star } from "lucide-react";
+import { CheckCircle2, ChevronDown, ChevronUp, ArrowRight, Activity, Zap, Shield, Microscope, Star, Target } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
 
 function FAQItem({ question, answer }: { question: string; answer: string | React.ReactNode }) {
@@ -129,6 +129,16 @@ export default function Longevity() {
                 icon: <Shield className="w-7 h-7 text-primary" />,
                 title: "Advanced Biomarker Testing & Protocols",
                 desc: "Comprehensive panels measuring inflammation, hormones, metabolic health, oxidative stress, and organ function — followed by personalized intervention. We track your biology over time to quantify the impact of treatment and adjust your protocol."
+              },
+              {
+                icon: <Target className="w-7 h-7 text-primary" />,
+                title: "Regenerative Medicine & PRP",
+                desc: "Age-related joint degeneration, tendon breakdown, and tissue loss are hallmarks of biological aging. Ultrasound-guided PRP (platelet-rich plasma) injections deliver concentrated growth factors to joints and soft tissue — slowing degeneration, reducing inflammation, and restoring function. Dr. Birch has performed over 4,000 regenerative injections with RMSK-certified precision."
+              },
+              {
+                icon: <Microscope className="w-7 h-7 text-primary" />,
+                title: "Stem Cell Therapy (BMAC)",
+                desc: "Bone marrow aspirate concentrate (BMAC) delivers your body's own mesenchymal stem cells — cells with the potential to regenerate cartilage, bone, and soft tissue. As stem cell reserve naturally declines with age, BMAC therapy replenishes regenerative capacity at the site of greatest need, making it a cornerstone of structural longevity care."
               },
             ].map((t, i) => (
               <FadeIn key={i} delay={i * 0.1}>
