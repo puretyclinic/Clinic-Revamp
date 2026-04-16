@@ -19,5 +19,37 @@ prerenderLib.set("shouldPreRender", (req: Request) => {
 });
 
 export const prerenderMiddleware = (req: Request, res: Response, next: NextFunction) => {
+  // Tell prerender.io to cache each page for 24 hours (86400 seconds).
+  // Without this, prerender.io may cache pages indefinitely.
+  res.setHeader("Prerender-Cache-Duration", "86400");
   prerenderLib(req, res, next);
 };
+
+/**
+ * Submits all URLs in the sitemap to prerender.io for recaching.
+ * Call this once to flush stale cached pages (e.g. removed/renamed routes).
+ */
+export async function recacheSitemap(): Promise<void> {
+  if (!token) {
+    console.log("[prerender] No PRERENDER_TOKEN — skipping sitemap recache.");
+    return;
+  }
+  try {
+    const res = await fetch("https://api.prerender.io/recache", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        prerenderToken: token,
+        sitemap: "https://puretyclinic.com/sitemap.xml",
+      }),
+    });
+    if (res.ok) {
+      console.log("[prerender] Sitemap recache submitted successfully — stale cached pages will be refreshed.");
+    } else {
+      const body = await res.text();
+      console.warn(`[prerender] Recache API returned ${res.status}: ${body}`);
+    }
+  } catch (err) {
+    console.warn("[prerender] Failed to call recache API:", err);
+  }
+}

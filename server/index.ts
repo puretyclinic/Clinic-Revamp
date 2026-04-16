@@ -63,8 +63,10 @@ app.use((req, res, next) => {
   const prerenderEnabled = process.env.PRERENDER_ENABLED === "true";
   if (prerenderEnabled) {
     console.log("[prerender] prerender.io middleware ENABLED");
-    const { prerenderMiddleware } = await import("./prerender");
+    const { prerenderMiddleware, recacheSitemap } = await import("./prerender");
     app.use(prerenderMiddleware);
+    // Flush stale cached pages on startup so removed/renamed URLs don't persist.
+    recacheSitemap();
   } else {
     console.log("[prerender] prerender.io middleware DISABLED (set PRERENDER_ENABLED=true to enable)");
   }
