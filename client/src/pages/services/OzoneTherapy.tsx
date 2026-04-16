@@ -330,6 +330,7 @@ export default function OzoneTherapy() {
                       { label: "Heavy metal burden", href: null },
                       { label: "Autoimmune conditions", href: "/conditions/autoimmune" },
                       { label: "Chronic EBV / viral infections", href: null },
+                      { label: "Longevity & healthy aging", href: "/conditions/longevity" },
                     ].map((c, i) => (
                       <li key={i} className="flex items-center gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-accent shrink-0" />
@@ -405,10 +406,11 @@ export default function OzoneTherapy() {
                 { label: "Inflammatory Bowel Disease", href: null },
                 { label: "Cancer Support (adjunct)", href: null },
                 { label: "Chronic Infections", href: null },
-                { label: "Joint Pain & Arthritis", href: null },
+                { label: "Joint Pain & Arthritis", href: "/conditions/arthritis" },
                 { label: "Brain Fog & Cognitive Decline", href: null },
                 { label: "Chronic Sinusitis", href: null },
                 { label: "Skin Conditions", href: null },
+                { label: "Longevity & Healthy Aging", href: "/conditions/longevity" },
               ].map((condition, i) => (
                 <FadeIn key={i} delay={i * 0.02}>
                   <div className="flex items-center gap-2 p-3 rounded-xl bg-[#f8fafb] border border-gray-100">

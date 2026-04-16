@@ -215,6 +215,7 @@ export default function PlasmaExchange() {
                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span><Link href="/conditions/long-covid" className="text-primary hover:underline font-medium">Long COVID</Link> — fatigue, brain fog, post-exertional malaise</span></li>
                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span>Neurodegenerative conditions such as <strong>Alzheimer’s and dementia</strong></span></li>
                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span>Chronic inflammatory diseases where excess immune activity or toxins are problematic</span></li>
+                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0"/> <span><Link href="/conditions/longevity" className="text-primary hover:underline font-medium">Longevity & healthy aging</Link> — removing pro-aging plasma factors to support biological rejuvenation</span></li>
                  </ul>
                </div>
                

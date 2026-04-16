@@ -322,6 +322,11 @@ export default function RegenerativeMedicine() {
                       All sports &amp; orthopedic conditions →
                     </a>
                   </Link>
+                  <Link href="/conditions/arthritis">
+                    <a className="inline-flex items-center gap-1 text-primary text-xs font-bold mt-2 hover:underline">
+                      Arthritis treatment →
+                    </a>
+                  </Link>
                 </div>
               </FadeIn>
 

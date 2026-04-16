@@ -152,6 +152,20 @@ export default function GutHealth() {
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="py-12 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn>
+            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4 text-center">Explore Our GI Treatments</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/fecal-transplant"><a className="px-5 py-2.5 rounded-full border border-primary text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-colors">FMT — Fecal Microbiota Transplant →</a></Link>
+              <Link href="/conditions/c-difficile"><a className="px-5 py-2.5 rounded-full border border-primary text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-colors">C. difficile Treatment →</a></Link>
+              <Link href="/services/naturopathic"><a className="px-5 py-2.5 rounded-full border border-primary text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-colors">Naturopathic Medicine →</a></Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">

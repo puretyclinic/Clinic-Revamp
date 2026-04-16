@@ -141,6 +141,20 @@ export default function Arthritis() {
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="py-12 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn>
+            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4 text-center">Explore Our Arthritis Treatments</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/services/regenerative"><a className="px-5 py-2.5 rounded-full border border-primary text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-colors">Regenerative Medicine & PRP →</a></Link>
+              <Link href="/services/ozone-therapy"><a className="px-5 py-2.5 rounded-full border border-primary text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-colors">EBO2 Ozone Therapy →</a></Link>
+              <Link href="/conditions/orthopedic-injuries"><a className="px-5 py-2.5 rounded-full border border-primary text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-colors">Orthopedic & Sports Injuries →</a></Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
