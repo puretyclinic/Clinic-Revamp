@@ -1,4 +1,6 @@
 import type { Request, Response, NextFunction } from "express";
+import { readFileSync, existsSync } from "fs";
+import { join } from "path";
 
 // prerender-node is a CJS module kept external by esbuild.
 // Default import works correctly: esbuild converts it to require() in CJS output.
@@ -26,30 +28,57 @@ export const prerenderMiddleware = (req: Request, res: Response, next: NextFunct
 };
 
 /**
- * Submits all URLs in the sitemap to prerender.io for recaching.
- * Call this once to flush stale cached pages (e.g. removed/renamed routes).
+ * Reads the local sitemap.xml and submits every URL to prerender.io for recaching.
+ * Call this once on startup to flush stale cached pages (e.g. removed/renamed routes).
  */
 export async function recacheSitemap(): Promise<void> {
   if (!token) {
     console.log("[prerender] No PRERENDER_TOKEN — skipping sitemap recache.");
     return;
   }
-  try {
-    const res = await fetch("https://api.prerender.io/recache", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        prerenderToken: token,
-        sitemap: "https://puretyclinic.com/sitemap.xml",
-      }),
-    });
-    if (res.ok) {
-      console.log("[prerender] Sitemap recache submitted successfully — stale cached pages will be refreshed.");
-    } else {
-      const body = await res.text();
-      console.warn(`[prerender] Recache API returned ${res.status}: ${body}`);
-    }
-  } catch (err) {
-    console.warn("[prerender] Failed to call recache API:", err);
+
+  // Resolve sitemap path — production build writes to dist/public, dev uses client/public
+  const candidates = [
+    join(process.cwd(), "dist/public/sitemap.xml"),
+    join(process.cwd(), "client/public/sitemap.xml"),
+  ];
+  const sitemapPath = candidates.find(existsSync);
+  if (!sitemapPath) {
+    console.warn("[prerender] sitemap.xml not found — skipping recache.");
+    return;
   }
+
+  const xml = readFileSync(sitemapPath, "utf-8");
+  const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
+  if (urls.length === 0) {
+    console.warn("[prerender] No URLs found in sitemap — skipping recache.");
+    return;
+  }
+
+  console.log(`[prerender] Submitting ${urls.length} URLs for recaching…`);
+
+  let succeeded = 0;
+  let failed = 0;
+  await Promise.all(
+    urls.map(async (url) => {
+      try {
+        const res = await fetch("https://api.prerender.io/recache", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prerenderToken: token, url }),
+        });
+        if (res.ok) {
+          succeeded++;
+        } else {
+          failed++;
+          console.warn(`[prerender] Recache failed for ${url}: ${res.status}`);
+        }
+      } catch (err) {
+        failed++;
+        console.warn(`[prerender] Recache error for ${url}:`, err);
+      }
+    })
+  );
+
+  console.log(`[prerender] Recache complete — ${succeeded} succeeded, ${failed} failed.`);
 }
