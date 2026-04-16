@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
   Most patients begin to notice improvement within 4–8 weeks, with continued gains over 3–6 months as tissue remodeling occurs. Many require 1–3 sessions depending on the condition and severity.
 </p>
 <p>
-  To schedule a consultation or learn more about <a href="/prp-santa-barbara">PRP injections at Purety Clinic</a>, call (805) 500-8300 or submit a request online. We also work with patients who have <a href="/conditions/orthopedic-injuries">orthopedic injuries</a> including partial tendon tears, ligament sprains, and early osteoarthritis.
+  To schedule a consultation or learn more about <a href="/prp-santa-barbara">PRP injections at Purety Clinic</a>, call (805) 500-8300 or submit a request online. We also work with patients who have <a href="/conditions/orthopedic-injuries">orthopedic injuries</a> including partial tendon tears, ligament sprains, and early <a href="/conditions/arthritis">osteoarthritis</a>.
 </p>`
   },
 
@@ -391,7 +391,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Long COVID</strong> — particularly in patients with persistent fatigue, cognitive symptoms (brain fog), and autonomic dysfunction. Research groups in Germany and the United States have documented significant improvement in Long COVID patients following TPE, with studies showing reduction in autoantibodies and microclotting markers</li>
   <li><strong>POTS and dysautonomia</strong> — many POTS patients have detectable autoantibodies (including adrenergic and muscarinic receptor antibodies) that TPE can reduce, with corresponding improvements in heart rate variability and symptom burden</li>
   <li><strong>Neurological conditions</strong> — including MS, neuromyelitis optica spectrum disorder, and post-infectious neurological syndromes</li>
-  <li><strong>Longevity and anti-aging protocols</strong> — research from Stanford and other centers has explored "young blood" and plasma dilution approaches for cognitive aging and biological rejuvenation</li>
+  <li><strong><a href="/conditions/longevity">Longevity and anti-aging protocols</a></strong> — research from Stanford and other centers has explored "young blood" and plasma dilution approaches for cognitive aging and biological rejuvenation</li>
 </ul>
 
 <h2>Step-by-Step: What Happens During a TPE Session</h2>
@@ -435,7 +435,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>How Many Sessions Will I Need?</h2>
 <p>
-  This depends entirely on the indication and the individual patient. Acute autoimmune neurological conditions (like Guillain-Barré or myasthenic crisis) may require a 5-session series over 10 days. Long COVID and POTS protocols typically involve 5–10 sessions over several weeks, often followed by periodic maintenance sessions. Patients undergoing TPE for longevity protocols typically have 2–4 sessions.
+  This depends entirely on the indication and the individual patient. Acute autoimmune neurological conditions (like Guillain-Barré or myasthenic crisis) may require a 5-session series over 10 days. Long COVID and POTS protocols typically involve 5–10 sessions over several weeks, often followed by periodic maintenance sessions. Patients undergoing TPE for <a href="/conditions/longevity">longevity protocols</a> typically have 2–4 sessions.
 </p>
 <p>
   We use lab markers — including specific autoantibody titers, inflammatory cytokines, and clinical symptom tracking — to guide the number and frequency of sessions.
@@ -610,7 +610,7 @@ export const blogPosts: BlogPost[] = [
 <ul>
   <li>Digestive disorders such as IBS, SIBO, and chronic bloating</li>
   <li>Hormonal imbalances including thyroid dysfunction and adrenal fatigue</li>
-  <li>Autoimmune conditions like Hashimoto's, rheumatoid arthritis, and lupus</li>
+  <li>Autoimmune conditions like Hashimoto's, <a href="/conditions/arthritis">rheumatoid arthritis</a>, and lupus</li>
   <li>Chronic fatigue and fibromyalgia</li>
   <li>Anxiety, depression, and stress-related conditions</li>
   <li>Skin conditions such as eczema, acne, and psoriasis</li>
@@ -654,7 +654,7 @@ export const blogPosts: BlogPost[] = [
 </p>
 <ul>
   <li>Tendon injuries such as tennis elbow, Achilles tendinitis, and rotator cuff tears</li>
-  <li>Osteoarthritis of the knee, hip, and shoulder</li>
+  <li><a href="/conditions/arthritis">Osteoarthritis</a> of the knee, hip, and shoulder</li>
   <li>Ligament sprains and partial tears</li>
   <li>Muscle strains and chronic muscle pain</li>
   <li>Meniscus tears and cartilage damage</li>
@@ -750,7 +750,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Our Approach to Gut Restoration</h2>
 <p>
-  At Purety Clinic, we take a comprehensive, multi-step approach to restoring gut health:
+  At Purety Clinic, we take a comprehensive, multi-step approach to restoring <a href="/conditions/gut-health">gut health</a>:
 </p>
 <p>
   <strong>1. Testing:</strong> We start with advanced stool analysis and other functional testing to understand exactly what's happening in your gut. This tells us which bacteria are present, which are missing, whether there's inflammation, and how well you're digesting and absorbing nutrients.
@@ -1119,7 +1119,7 @@ export const blogPosts: BlogPost[] = [
   Starting AIP can feel overwhelming, especially when you look at the list of eliminated foods. But here's what I tell every patient: focus on what you CAN eat, not what you can't. The allowed food list is abundant and delicious. And the temporary sacrifice of certain foods is a small price to pay for the information you'll gain about your body and the relief you'll likely experience.
 </p>
 <p>
-  At Purety Family Medical Clinic, we don't just hand you a food list and send you on your way. We provide comprehensive support throughout the entire process — from pre-protocol lab work and gut health testing, through the elimination phase, and into a carefully guided reintroduction. We can also complement AIP with other therapies like <a href="/fecal-transplant">Fecal Microbiota Transplant (FMT)</a>, IV nutrient therapy, and targeted supplementation to accelerate your healing.
+  At Purety Family Medical Clinic, we don't just hand you a food list and send you on your way. We provide comprehensive support throughout the entire process — from pre-protocol lab work and <a href="/conditions/gut-health">gut health</a> testing, through the elimination phase, and into a carefully guided reintroduction. We can also complement AIP with other therapies like <a href="/fecal-transplant">Fecal Microbiota Transplant (FMT)</a>, IV nutrient therapy, and targeted supplementation to accelerate your healing.
 </p>
 <p>
   If you're living with an autoimmune condition and you're ready to explore how food can be part of your healing, I'd encourage you to reach out. Understanding your body's unique relationship with food is one of the most powerful steps you can take toward reclaiming your health.
@@ -1154,7 +1154,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>The Research on FMT for SIBO</h2>
 <p>
-  The scientific literature on FMT specifically for SIBO is still early — most FMT research has focused on <em>Clostridioides difficile</em> infection, where the evidence is overwhelming and the FDA approved the first FMT-derived product (Rebyota) in 2022. But SIBO researchers are beginning to explore whether the same principle — restoring a healthy, diverse gut microbiome — could interrupt the SIBO recurrence cycle.
+  The scientific literature on FMT specifically for SIBO is still early — most FMT research has focused on <a href="/conditions/c-difficile"><em>Clostridioides difficile</em> infection</a>, where the evidence is overwhelming and the FDA approved the first FMT-derived product (Rebyota) in 2022. But SIBO researchers are beginning to explore whether the same principle — restoring a healthy, diverse gut microbiome — could interrupt the SIBO recurrence cycle.
 </p>
 <p>
   A 2019 case series published in <em>Gut Microbes</em> documented patients with refractory SIBO (meaning SIBO that kept coming back despite appropriate antibiotic treatment) who received FMT. The authors noted improvements in both hydrogen breath test results and patient-reported symptoms in a subset of patients. While this was a small study and not a randomized controlled trial, it generated enough interest to prompt further investigation.

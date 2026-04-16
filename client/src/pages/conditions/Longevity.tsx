@@ -33,6 +33,38 @@ export default function Longevity() {
     document.title = "Longevity Medicine Santa Barbara | EBO2, TPE & Health Span | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Longevity and health span medicine in Santa Barbara. EBO2 ozone therapy, therapeutic plasma exchange, microbiome optimization, and advanced biomarker testing. Dr. Jonathan Birch NMD. Call (805) 500-8300.");
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": FAQS.map(f => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": typeof f.answer === "string" ? f.answer : String(f.answer) }
+      }))
+    };
+
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://puretyclinic.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Conditions", "item": "https://puretyclinic.com/conditions" },
+        { "@type": "ListItem", "position": 3, "name": "Longevity Medicine", "item": "https://puretyclinic.com/conditions/longevity" }
+      ]
+    };
+
+    const schemas = [
+      { id: "longevity-faq-schema", data: faqSchema },
+      { id: "longevity-breadcrumb-schema", data: breadcrumbSchema },
+    ];
+    schemas.forEach(({ id, data }) => {
+      const s = document.createElement("script");
+      s.type = "application/ld+json"; s.id = id;
+      s.text = JSON.stringify(data);
+      document.head.appendChild(s);
+    });
+    return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
   }, []);
 
   return (

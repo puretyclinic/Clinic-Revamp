@@ -177,7 +177,19 @@ export default function OzoneTherapy() {
       document.head.appendChild(s);
     });
 
-    return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+    let canonical = document.getElementById("ozone-canonical") as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.id = "ozone-canonical";
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = "https://puretyclinic.com/services/ozone-therapy";
+
+    return () => {
+      schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+      document.getElementById("ozone-canonical")?.remove();
+    };
   }, [variant.title]);
 
   function scrollToForm() {

@@ -181,7 +181,19 @@ export default function RegenerativeMedicine() {
       document.head.appendChild(s);
     });
 
-    return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+    let canonical = document.getElementById("regen-canonical") as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.id = "regen-canonical";
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = "https://puretyclinic.com/services/regenerative";
+
+    return () => {
+      schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+      document.getElementById("regen-canonical")?.remove();
+    };
   }, [variant.title]);
 
   function scrollToForm() {

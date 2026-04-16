@@ -292,11 +292,21 @@ export default function FMT() {
     faqScript.text = JSON.stringify(faqSchema);
     document.head.appendChild(faqScript);
 
+    let canonical = document.getElementById("fmt-canonical") as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.id = "fmt-canonical";
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = "https://puretyclinic.com/services/fmt";
+
     return () => {
       document.getElementById("fmt-physician-schema")?.remove();
       document.getElementById("fmt-national-schema")?.remove();
       document.getElementById("fmt-clinic-schema")?.remove();
       document.getElementById("fmt-faq-schema")?.remove();
+      document.getElementById("fmt-canonical")?.remove();
     };
   }, []);
 

@@ -33,6 +33,38 @@ export default function GutHealth() {
     document.title = "Chronic Gastrointestinal Conditions Treatment | FMT & Gut Health | Purety Clinic Santa Barbara";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Integrative treatment for chronic GI conditions including IBS, Crohn's, C. diff, SIBO, and gut dysbiosis. FMT specialists in Santa Barbara. Dr. Jonathan Birch NMD — 1,000+ FMT procedures. Call (805) 500-8300.");
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": FAQS.map(f => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": typeof f.answer === "string" ? f.answer : String(f.answer) }
+      }))
+    };
+
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://puretyclinic.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Conditions", "item": "https://puretyclinic.com/conditions" },
+        { "@type": "ListItem", "position": 3, "name": "Chronic GI Conditions", "item": "https://puretyclinic.com/conditions/gut-health" }
+      ]
+    };
+
+    const schemas = [
+      { id: "gut-health-faq-schema", data: faqSchema },
+      { id: "gut-health-breadcrumb-schema", data: breadcrumbSchema },
+    ];
+    schemas.forEach(({ id, data }) => {
+      const s = document.createElement("script");
+      s.type = "application/ld+json"; s.id = id;
+      s.text = JSON.stringify(data);
+      document.head.appendChild(s);
+    });
+    return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
   }, []);
 
   return (

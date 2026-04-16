@@ -33,6 +33,38 @@ export default function Arthritis() {
     document.title = "Arthritis Treatment Santa Barbara | PRP & Regenerative Medicine | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Ultrasound-guided PRP and stem cell therapy for arthritis in Santa Barbara. Dr. Jonathan Birch NMD, RMSK — over 4,000 regenerative injections. Serving Southern & Central California. Call (805) 500-8300.");
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": FAQS.map(f => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": typeof f.answer === "string" ? f.answer : String(f.answer) }
+      }))
+    };
+
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://puretyclinic.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Conditions", "item": "https://puretyclinic.com/conditions" },
+        { "@type": "ListItem", "position": 3, "name": "Arthritis Treatment", "item": "https://puretyclinic.com/conditions/arthritis" }
+      ]
+    };
+
+    const schemas = [
+      { id: "arthritis-faq-schema", data: faqSchema },
+      { id: "arthritis-breadcrumb-schema", data: breadcrumbSchema },
+    ];
+    schemas.forEach(({ id, data }) => {
+      const s = document.createElement("script");
+      s.type = "application/ld+json"; s.id = id;
+      s.text = JSON.stringify(data);
+      document.head.appendChild(s);
+    });
+    return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
   }, []);
 
   return (
