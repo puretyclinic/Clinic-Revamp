@@ -4,4 +4,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://www.puretyclinic.com/sitemap.xml
+Sitemap: https://puretyclinic.com/sitemap.xml
