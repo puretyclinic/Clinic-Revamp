@@ -64,7 +64,19 @@ export default function GutHealth() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+    let canonical = document.getElementById("gut-health-canonical") as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.id = "gut-health-canonical";
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = "https://puretyclinic.com/conditions/gut-health";
+
+    return () => {
+      schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+      document.getElementById("gut-health-canonical")?.remove();
+    };
   }, []);
 
   return (

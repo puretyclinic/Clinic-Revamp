@@ -140,7 +140,19 @@ export default function LymeDisease() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+    let canonical = document.getElementById("lyme-canonical") as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.id = "lyme-canonical";
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = "https://puretyclinic.com/conditions/lyme-disease";
+
+    return () => {
+      schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+      document.getElementById("lyme-canonical")?.remove();
+    };
   }, []);
 
   function scrollToForm() {

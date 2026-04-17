@@ -132,10 +132,20 @@ export default function PlasmaExchange() {
     s2.text = JSON.stringify(faqSchema);
     document.head.appendChild(s2);
 
+    let canonical = document.getElementById("tpe-canonical") as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.id = "tpe-canonical";
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = "https://puretyclinic.com/services/plasma-exchange";
+
     return () => {
       document.getElementById("tpe-localbusiness-schema")?.remove();
       document.getElementById("tpe-procedure-schema")?.remove();
       document.getElementById("tpe-faq-schema")?.remove();
+      document.getElementById("tpe-canonical")?.remove();
     };
   }, []);
 

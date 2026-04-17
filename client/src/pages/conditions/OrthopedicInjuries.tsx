@@ -140,7 +140,19 @@ export default function OrthopedicInjuries() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+    let canonical = document.getElementById("ortho-canonical") as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.id = "ortho-canonical";
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = "https://puretyclinic.com/conditions/orthopedic-injuries";
+
+    return () => {
+      schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+      document.getElementById("ortho-canonical")?.remove();
+    };
   }, []);
 
   function scrollToForm() {

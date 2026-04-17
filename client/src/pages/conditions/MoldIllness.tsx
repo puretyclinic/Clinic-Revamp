@@ -140,7 +140,19 @@ export default function MoldIllness() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+    let canonical = document.getElementById("mold-canonical") as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.id = "mold-canonical";
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = "https://puretyclinic.com/conditions/mold-illness";
+
+    return () => {
+      schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+      document.getElementById("mold-canonical")?.remove();
+    };
   }, []);
 
   function scrollToForm() {

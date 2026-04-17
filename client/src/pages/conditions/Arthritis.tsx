@@ -64,7 +64,19 @@ export default function Arthritis() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+    let canonical = document.getElementById("arthritis-canonical") as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.id = "arthritis-canonical";
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = "https://puretyclinic.com/conditions/arthritis";
+
+    return () => {
+      schemas.forEach(({ id }) => document.getElementById(id)?.remove());
+      document.getElementById("arthritis-canonical")?.remove();
+    };
   }, []);
 
   return (
