@@ -508,11 +508,11 @@ export const blogPosts: BlogPost[] = [
   EBOO is most commonly used for conditions where chronic infection, immune dysfunction, or inflammatory burden is a central feature:
 </p>
 <ul>
-  <li><strong>Long COVID and post-viral fatigue:</strong> One of the most common reasons patients seek EBOO. Long COVID creates a persistent inflammatory state that ozone therapy can help modulate.</li>
-  <li><strong>Chronic Lyme disease:</strong> Ozone has direct antimicrobial properties and may help address the immune dysregulation associated with Lyme and co-infections.</li>
-  <li><strong>Mold and mycotoxin illness:</strong> EBOO is frequently used as part of comprehensive mold detoxification protocols alongside binders, nutritional support, and environmental remediation.</li>
+  <li><strong>Long COVID and post-viral fatigue:</strong> One of the most common reasons patients seek EBOO. <a href="/conditions/long-covid">Long COVID</a> creates a persistent inflammatory state that ozone therapy can help modulate.</li>
+  <li><strong>Chronic Lyme disease:</strong> Ozone has direct antimicrobial properties and may help address the immune dysregulation associated with <a href="/conditions/lyme-disease">Lyme disease</a> and co-infections.</li>
+  <li><strong>Mold and mycotoxin illness:</strong> EBOO is frequently used as part of comprehensive <a href="/conditions/mold-illness">mold illness and CIRS</a> detoxification protocols alongside binders, nutritional support, and environmental remediation.</li>
   <li><strong>Chronic EBV and other viral infections:</strong> Reactivated Epstein-Barr virus is a common finding in patients with chronic fatigue. Ozone's antiviral properties make EBOO a useful tool in these cases.</li>
-  <li><strong>Autoimmune conditions:</strong> Ozone therapy has immune-modulating effects that may help reduce the immune hyperactivity driving autoimmune disease.</li>
+  <li><strong>Autoimmune conditions:</strong> Ozone therapy has immune-modulating effects that may help reduce the immune hyperactivity driving <a href="/conditions/autoimmune">autoimmune disease</a>.</li>
   <li><strong>Chronic fatigue syndrome (ME/CFS) and fibromyalgia:</strong> Patients with these diagnoses often have underlying inflammatory or infectious contributors that ozone therapy can address.</li>
   <li><strong>Cardiovascular disease:</strong> Ozone therapy improves oxygen delivery and circulation and has been studied in the context of cardiovascular health.</li>
   <li><strong>Heavy metal burden:</strong> As part of a broader detoxification protocol, EBOO may support the body's ability to process and eliminate heavy metals.</li>
@@ -554,7 +554,7 @@ export const blogPosts: BlogPost[] = [
   Dr. Jonathan Birch has been performing ozone therapy for over a decade and has completed more than 2,500 ozone treatments. Purety Clinic is one of the most experienced ozone therapy practices on California's Central Coast, serving patients from Santa Barbara, Goleta, Montecito, Ventura, Ojai, and as far as Los Angeles.
 </p>
 <p>
-  If you're interested in EBOO and want to explore whether it's right for your condition, the first step is a consultation with Dr. Birch. He'll review your history, discuss the options across the ozone therapy spectrum, and recommend a protocol tailored to your specific situation.
+  If you're interested in EBOO and want to explore whether it's right for your condition, the first step is a consultation with Dr. Birch. He'll review your history, discuss the options across the <a href="/services/ozone-therapy">ozone therapy spectrum</a>, and recommend a protocol tailored to your specific situation.
 </p>`,
   },
   {
@@ -610,7 +610,7 @@ export const blogPosts: BlogPost[] = [
 <ul>
   <li>Digestive disorders such as IBS, SIBO, and chronic bloating</li>
   <li>Hormonal imbalances including thyroid dysfunction and adrenal fatigue</li>
-  <li>Autoimmune conditions like Hashimoto's, <a href="/conditions/arthritis">rheumatoid arthritis</a>, and lupus</li>
+  <li><a href="/conditions/autoimmune">Autoimmune conditions</a> like Hashimoto's, <a href="/conditions/arthritis">rheumatoid arthritis</a>, and lupus</li>
   <li>Chronic fatigue and fibromyalgia</li>
   <li>Anxiety, depression, and stress-related conditions</li>
   <li>Skin conditions such as eczema, acne, and psoriasis</li>
@@ -695,7 +695,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>A Different Approach to Pain</h2>
 <p>
-  At Purety Clinic, we believe that your body is remarkably capable of healing itself when given the right support. Regenerative injection therapy represents a fundamental shift in how we think about pain and injury — moving from merely managing symptoms to actually repairing the damage. If you're tired of living with chronic pain and want to explore a treatment that works with your body rather than against it, we'd love to talk with you.
+  At Purety Clinic, we believe that your body is remarkably capable of healing itself when given the right support. <a href="/services/regenerative">Regenerative injection therapy</a> represents a fundamental shift in how we think about pain and injury — moving from merely managing symptoms to actually repairing the damage. If you're tired of living with chronic pain and want to explore a treatment that works with your body rather than against it, we'd love to talk with you.
 </p>`
   },
   {
@@ -884,7 +884,7 @@ export const blogPosts: BlogPost[] = [
     category: "Autoimmune Health",
     tags: ["AIP", "Autoimmune", "Diet", "Paleo", "GutHealth", "Inflammation"],
     content: `<p class="lead text-xl text-muted-foreground mb-8">
-  If you or someone you love is living with an autoimmune condition — whether it's Hashimoto's thyroiditis, rheumatoid arthritis, lupus, psoriasis, Crohn's disease, or any of the more than 100 recognized autoimmune disorders — you've probably noticed that what you eat has a direct impact on how you feel. The Autoimmune Protocol, commonly known as AIP, is a targeted elimination diet designed to reduce inflammation, heal the gut, and help identify which foods may be triggering your immune system. At Purety Family Medical Clinic, we use AIP as a foundational tool for many of our autoimmune patients, and the results we've seen have been truly remarkable.
+  If you or someone you love is living with an <a href="/conditions/autoimmune">autoimmune condition</a> — whether it's Hashimoto's thyroiditis, rheumatoid arthritis, lupus, psoriasis, Crohn's disease, or any of the more than 100 recognized autoimmune disorders — you've probably noticed that what you eat has a direct impact on how you feel. The Autoimmune Protocol, commonly known as AIP, is a targeted elimination diet designed to reduce inflammation, heal the gut, and help identify which foods may be triggering your immune system. At Purety Family Medical Clinic, we use AIP as a foundational tool for many of our autoimmune patients, and the results we've seen have been truly remarkable.
 </p>
 
 <h2>What Is the AIP Diet?</h2>
@@ -1182,7 +1182,7 @@ export const blogPosts: BlogPost[] = [
   At our clinic, we approach SIBO comprehensively — including breath testing for diagnosis, appropriate antibiotic protocols, dietary strategies (elemental diet, low-FODMAP), motility support, and in some cases, microbiome restoration. For patients who have had multiple SIBO recurrences and are interested in exploring every evidence-based option, a discussion about the current FMT research may be part of that conversation.
 </p>
 <p>
-  If you've been dealing with recurring SIBO and want to discuss what the current research suggests about microbiome-based approaches, I'd encourage you to schedule a consultation. Every patient's situation is different, and the right approach depends on your specific history, test results, and health goals.
+  If you've been dealing with recurring SIBO and want to discuss what the current research suggests about microbiome-based approaches, I'd encourage you to schedule a consultation. You can also learn more about our <a href="/services/fmt">FMT program at Purety Clinic</a>. Every patient's situation is different, and the right approach depends on your specific history, test results, and health goals.
 </p>`
   },
 
@@ -1250,7 +1250,7 @@ export const blogPosts: BlogPost[] = [
   If you've been living with IBS — especially IBS-D or post-infectious IBS — and conventional treatments haven't provided lasting relief, the evolving FMT research represents a genuinely new direction in understanding what drives the condition. Whether FMT is appropriate for any individual patient depends on a thorough evaluation of their history, prior treatments, and current symptoms.
 </p>
 <p>
-  I'm happy to discuss what the current literature suggests and what questions to ask about microbiome-based approaches. Schedule a consultation and we can review your case together.
+  I'm happy to discuss what the current literature suggests and what questions to ask about microbiome-based approaches. You can also learn more about our <a href="/services/fmt">FMT services</a> or the well-established evidence for <a href="/conditions/c-difficile">C. difficile treatment with FMT</a>. Schedule a consultation and we can review your case together.
 </p>`
   },
 
@@ -1310,7 +1310,7 @@ export const blogPosts: BlogPost[] = [
   Several ongoing trials are addressing the key variables: optimal donor selection, delivery route (colonoscopy vs. enema vs. capsule), dosing frequency, and which patient subgroups benefit most. Results from these trials over the next several years will substantially clarify FMT's role in UC management.
 </p>
 <p>
-  For UC patients who are interested in what the current research shows and how microbiome science is evolving in the context of inflammatory bowel disease, I'm glad to have that conversation. Schedule a consultation and we can review the literature together in the context of your specific situation.
+  For UC patients who are interested in what the current research shows and how microbiome science is evolving in the context of inflammatory bowel disease, I'm glad to have that conversation. To learn more about our approach, visit our <a href="/services/fmt">FMT services page</a>. Schedule a consultation and we can review the literature together in the context of your specific situation.
 </p>`
   },
 
@@ -1378,7 +1378,7 @@ export const blogPosts: BlogPost[] = [
   The next five years of research will substantially clarify whether and for whom microbiome restoration strategies play a meaningful role in Crohn's management. I follow this literature closely and am glad to discuss the current state of evidence with patients who are curious about where the science is heading.
 </p>
 <p>
-  If you have Crohn's disease and want to understand more about the microbiome science underlying your condition — or explore whether any microbiome-directed approaches might be relevant to your situation — I'd welcome a conversation. Schedule a consultation and we can review what the research currently shows in the context of your specific case.
+  If you have Crohn's disease and want to understand more about the microbiome science underlying your condition — or explore whether any microbiome-directed approaches might be relevant to your situation — I'd welcome a conversation. Crohn's patients who also have <a href="/conditions/c-difficile">recurrent C. difficile</a> may be particularly good candidates for <a href="/services/fmt">FMT</a>. Schedule a consultation and we can review what the research currently shows in the context of your specific case.
 </p>`
   },
 
@@ -1454,7 +1454,7 @@ export const blogPosts: BlogPost[] = [
   At our clinic, the choice of delivery method is individualized based on several factors: the patient's primary diagnosis, disease location and severity, prior treatment history, personal preferences, and practical logistics. For most recurrent <em>C. difficile</em> cases, we typically start with capsules, which have equivalent efficacy and dramatically better convenience. For complex or severe cases, or for patients who have not responded to capsule-based treatment, colonoscopy delivery may be more appropriate.
 </p>
 <p>
-  If you're researching FMT and want to understand which delivery method might be most appropriate for your situation, a consultation is the best place to start. We'll review your history and discuss the options in detail.
+  If you're researching <a href="/services/fmt">FMT</a> and want to understand which delivery method might be most appropriate for your situation — whether for <a href="/conditions/c-difficile">recurrent C. difficile</a>, IBS, or another indication — a consultation is the best place to start. We'll review your history and discuss the options in detail.
 </p>`
   },
 
@@ -1534,7 +1534,7 @@ export const blogPosts: BlogPost[] = [
   FMT is not typically covered by insurance for indications beyond <em>C. difficile</em>, and even for C. diff, coverage varies by insurer and plan. We discuss pricing during the initial consultation and are transparent about what to expect. Many patients find that FMT, even when paid out of pocket, compares favorably in cost to the ongoing expenses of repeated antibiotic courses, hospitalizations, and the quality-of-life costs of untreated chronic illness.
 </p>
 <p>
-  If you're ready to explore whether FMT is appropriate for your situation, the best first step is a consultation. We're happy to answer questions, review your history, and help you understand your options.
+  If you're ready to explore whether <a href="/services/fmt">FMT</a> is appropriate for your situation — whether for <a href="/conditions/c-difficile">C. difficile</a> or another indication — the best first step is a consultation. We're happy to answer questions, review your history, and help you understand your options.
 </p>`
   },
 
@@ -1555,7 +1555,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>FMT Success Rate for Recurrent C. difficile</h2>
 <p>
-  For recurrent <em>Clostridioides difficile</em> infection — the indication with the strongest evidence base — FMT has consistently demonstrated cure rates of 85–95% across dozens of studies, systematic reviews, and meta-analyses. This is the most important number to understand: roughly 9 out of 10 patients with recurrent <em>C. diff</em> who receive FMT are cured.
+  For <a href="/conditions/c-difficile">recurrent <em>Clostridioides difficile</em> infection</a> — the indication with the strongest evidence base — FMT has consistently demonstrated cure rates of 85–95% across dozens of studies, systematic reviews, and meta-analyses. This is the most important number to understand: roughly 9 out of 10 patients with recurrent <em>C. diff</em> who receive FMT are cured.
 </p>
 <p>
   To put that in context, antibiotics — the standard of care — have the following success rates for recurrent C. diff: vancomycin achieves sustained cure in approximately 31–44% of cases of recurrent infection. Fidaxomicin (Dificid) performs somewhat better at around 40–55%. After three or more recurrences, cure rates with antibiotics alone drop further, while the probability of yet another recurrence climbs to 60% or higher. FMT's 85–95% cure rate in this population represents a dramatic difference.
@@ -1615,7 +1615,7 @@ export const blogPosts: BlogPost[] = [
   We discuss all costs transparently during the initial consultation. We're happy to help you think through insurance, understand your options, and develop a protocol that makes clinical and financial sense for your situation.
 </p>
 <p>
-  If you have questions about whether FMT might be right for you — or you simply want to understand the evidence and options before making a decision — schedule a consultation and we can talk through everything in detail.
+  If you have questions about whether <a href="/services/fmt">FMT</a> might be right for you — or you simply want to understand the evidence and options before making a decision — schedule a consultation and we can talk through everything in detail.
 </p>`
   },
 
@@ -1704,10 +1704,10 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Choosing Well</h2>
 <p>
-  Recurrent C. difficile is a serious condition. The right FMT can resolve it durably — I've seen patients who had eight, ten, twelve recurrences before FMT achieve complete, lasting resolution. But the quality of care matters. Take the time to ask the questions above before choosing your provider.
+  <a href="/conditions/c-difficile">Recurrent C. difficile</a> is a serious condition. The right FMT can resolve it durably — I've seen patients who had eight, ten, twelve recurrences before FMT achieve complete, lasting resolution. But the quality of care matters. Take the time to ask the questions above before choosing your provider.
 </p>
 <p>
-  If you'd like to discuss whether FMT is appropriate for your situation, I'm happy to start with a consultation. We'll go through your history, your prior treatments, and your test results together — and I'll give you a direct, honest assessment of what I think your options are.
+  If you'd like to discuss whether <a href="/services/fmt">FMT</a> is appropriate for your situation, I'm happy to start with a consultation. We'll go through your history, your prior treatments, and your test results together — and I'll give you a direct, honest assessment of what I think your options are.
 </p>`
   },
 
@@ -1801,7 +1801,7 @@ export const blogPosts: BlogPost[] = [
   The most important thing is to choose a provider with genuine FMT expertise — not just a GI practice that has done it a handful of times. Ask about patient volume, donor screening protocols, delivery options, and what happens if the first treatment doesn't fully resolve your symptoms.
 </p>
 <p>
-  If you'd like to discuss whether FMT is right for you, we offer remote initial consultations. Reach out and we'll review your case together.
+  If you'd like to discuss whether <a href="/services/fmt">FMT</a> is right for you — particularly if you're dealing with <a href="/conditions/c-difficile">recurrent C. difficile</a> — we offer remote initial consultations. Reach out and we'll review your case together.
 </p>`
   },
 
@@ -1836,13 +1836,13 @@ export const blogPosts: BlogPost[] = [
   TPE's primary mechanism — the physical removal of pathological antibodies and inflammatory proteins — makes it applicable to any condition where these circulating substances are driving symptoms. The evidence base varies by condition:
 </p>
 <p>
-  <strong>Autoimmune diseases:</strong> Conditions like lupus, myasthenia gravis, neuromyelitis optica, and anti-NMDA receptor encephalitis involve pathological autoantibodies that attack the body's own tissues. TPE removes these antibodies from circulation, providing symptomatic relief and reducing inflammatory burden. It is particularly useful in acute flares when rapid reduction of antibody load is needed.
+  <strong><a href="/conditions/autoimmune">Autoimmune diseases</a>:</strong> Conditions like lupus, myasthenia gravis, neuromyelitis optica, and anti-NMDA receptor encephalitis involve pathological autoantibodies that attack the body's own tissues. TPE removes these antibodies from circulation, providing symptomatic relief and reducing inflammatory burden. It is particularly useful in acute flares when rapid reduction of antibody load is needed.
 </p>
 <p>
   <strong>Neurological conditions:</strong> Multiple sclerosis, Guillain-Barré syndrome, and chronic inflammatory demyelinating polyneuropathy (CIDP) all have components driven by circulating inflammatory mediators. TPE has an established evidence base for GBS and CIDP, and is increasingly used as an adjunct therapy in MS management.
 </p>
 <p>
-  <strong>Long Covid:</strong> One of the most compelling emerging applications. Research from Germany published in 2023 in <em>The Lancet</em> documented that Long Covid patients have measurable microclots and inflammatory mediators circulating in their blood long after acute infection resolves. A pilot study using TPE in Long Covid patients showed significant improvement in fatigue, brain fog, and exercise intolerance — symptoms that correspond to the removal of these circulating factors. This is an active area of research and one we follow closely.
+  <strong><a href="/conditions/long-covid">Long Covid</a>:</strong> One of the most compelling emerging applications. Research from Germany published in 2023 in <em>The Lancet</em> documented that Long Covid patients have measurable microclots and inflammatory mediators circulating in their blood long after acute infection resolves. A pilot study using TPE in Long Covid patients showed significant improvement in fatigue, brain fog, and exercise intolerance — symptoms that correspond to the removal of these circulating factors. This is an active area of research and one we follow closely.
 </p>
 <p>
   <strong>Neurodegeneration and aging:</strong> Research from Stanford published in <em>Nature</em> demonstrated that "young blood" factors improve cognitive function in aged animals, and that diluting aged plasma reduces inflammatory markers associated with neurodegeneration. TPE achieves a similar dilution effect — removing aged, inflammatory plasma and replacing it with albumin. Some longevity-focused physicians have adopted this as a protocol for patients interested in reducing neuroinflammatory burden as part of a comprehensive longevity program.
@@ -1883,7 +1883,7 @@ export const blogPosts: BlogPost[] = [
   TPE is a significant medical intervention and is not appropriate for every patient. Ideal candidates typically have a documented condition with an antibody or inflammatory mediator component, have not achieved adequate response from conventional treatments alone, and have the venous access necessary for the procedure.
 </p>
 <p>
-  If you're in Santa Barbara, Ventura, Los Angeles, or elsewhere in California and want to understand whether TPE might be appropriate for your situation, we're happy to start with a consultation. We'll review your case, discuss the current evidence, and give you an honest assessment of whether this therapy makes sense for you.
+  If you're in Santa Barbara, Ventura, Los Angeles, or elsewhere in California and want to understand whether <a href="/services/plasma-exchange">therapeutic plasma exchange</a> might be appropriate for your situation, we're happy to start with a consultation. We'll review your case, discuss the current evidence, and give you an honest assessment of whether this therapy makes sense for you.
 </p>`
   },
 
