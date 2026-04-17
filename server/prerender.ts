@@ -82,3 +82,57 @@ export async function recacheSitemap(): Promise<void> {
 
   console.log(`[prerender] Recache complete — ${succeeded} succeeded, ${failed} failed.`);
 }
+
+/**
+ * Deletes all www. variants of sitemap URLs from the prerender.io cache.
+ * These cause duplicate-content signals since canonicals point to non-www.
+ */
+export async function deleteWwwCachedPages(): Promise<void> {
+  if (!token) {
+    console.log("[prerender] No PRERENDER_TOKEN — skipping www cache deletion.");
+    return;
+  }
+
+  const candidates = [
+    join(process.cwd(), "dist/public/sitemap.xml"),
+    join(process.cwd(), "client/public/sitemap.xml"),
+  ];
+  const sitemapPath = candidates.find(existsSync);
+  if (!sitemapPath) {
+    console.warn("[prerender] sitemap.xml not found — skipping www deletion.");
+    return;
+  }
+
+  const xml = readFileSync(sitemapPath, "utf-8");
+  const nonWwwUrls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
+  if (nonWwwUrls.length === 0) return;
+
+  // Convert https://puretyclinic.com/... → https://www.puretyclinic.com/...
+  const wwwUrls = nonWwwUrls.map((u) => u.replace("https://", "https://www."));
+
+  console.log(`[prerender] Deleting ${wwwUrls.length} www. cached URLs…`);
+
+  let deleted = 0;
+  let failed = 0;
+  await Promise.all(
+    wwwUrls.map(async (url) => {
+      try {
+        const res = await fetch(
+          `https://api.prerender.io/cache?prerenderToken=${encodeURIComponent(token!)}&url=${encodeURIComponent(url)}`,
+          { method: "DELETE" }
+        );
+        if (res.ok || res.status === 404) {
+          deleted++;
+        } else {
+          failed++;
+          console.warn(`[prerender] Delete failed for ${url}: ${res.status}`);
+        }
+      } catch (err) {
+        failed++;
+        console.warn(`[prerender] Delete error for ${url}:`, err);
+      }
+    })
+  );
+
+  console.log(`[prerender] www deletion complete — ${deleted} deleted, ${failed} failed.`);
+}
