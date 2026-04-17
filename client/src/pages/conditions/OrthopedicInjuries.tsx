@@ -72,9 +72,9 @@ const TREATMENTS = [
 
 export default function OrthopedicInjuries() {
   useEffect(() => {
-    document.title = "Orthopedic & Sports Injury PRP Treatment Santa Barbara | Purety Clinic";
+    document.title = "PRP for Orthopedic & Sports Injuries | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Ultrasound-guided PRP injections for sports injuries and orthopedic conditions in Santa Barbara, CA. Dr. Jonathan Birch NMD, RMSK — 4,000+ procedures. Serving Los Angeles, Ventura, and all of California. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "PRP and biologic injections for orthopedic and sports injuries in Santa Barbara. Ultrasound-guided by Dr. Birch RMSK. Call (805) 500-8300.");
 
     const conditionSchema = {
       "@context": "https://schema.org",

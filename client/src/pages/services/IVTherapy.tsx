@@ -8,9 +8,9 @@ import { ContactCTA } from "@/components/ContactCTA";
 
 export default function IVTherapy() {
   useEffect(() => {
-    document.title = "IV Therapy Santa Barbara | Myers Cocktail, NAD+, Vitamin C | Purety Clinic";
+    document.title = "IV Therapy Santa Barbara | Myers Cocktail | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Custom IV therapy and nutrient infusions at Purety Clinic in Santa Barbara, CA. Myers Cocktail, high-dose Vitamin C, NAD+, glutathione, and ozone IV. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "IV therapy at Purety Clinic in Santa Barbara: Myers Cocktail, high-dose Vitamin C, NAD+, and glutathione. Call (805) 500-8300.");
 
     const schema = {
       "@context": "https://schema.org",

@@ -85,9 +85,9 @@ export default function FMT() {
   const [sending, setSending] = useState(false);
 
   useEffect(() => {
-    document.title = "FMT Treatment | Fecal Microbiota Transplant | Dr. Jonathan Birch | Purety Clinic";
+    document.title = "FMT | Microbiota Transplant Santa Barbara | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Leading FMT specialists since 2014. 90%+ success rate for C. diff. Multiple treatment options: capsules, oral, enema, colonoscopy. Schedule your consultation with Dr. Birch today. (805) 500-8300");
+    if (meta) meta.setAttribute("content", "Leading FMT specialists since 2014 with 90%+ success for C. diff. Capsules, oral, enema, and colonoscopy options. Call (805) 500-8300.");
 
     const faqSchema = {
       "@context": "https://schema.org",

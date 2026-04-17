@@ -72,9 +72,9 @@ const TREATMENTS = [
 
 export default function POTS() {
   useEffect(() => {
-    document.title = "POTS & Dysautonomia Treatment Santa Barbara, CA | TPE & EBO2 | Purety Clinic";
+    document.title = "POTS Treatment Santa Barbara | TPE & EBO2 | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Purety Clinic in Santa Barbara offers integrative POTS and dysautonomia treatment including therapeutic plasma exchange (TPE) and EBO2 ozone therapy. Dr. Jonathan Birch NMD. Serving Los Angeles, Ventura, and all of California. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "POTS and dysautonomia treatment at Purety Clinic in Santa Barbara: TPE, EBO2 ozone, and integrative medicine. Call (805) 500-8300.");
 
     const conditionSchema = {
       "@context": "https://schema.org",

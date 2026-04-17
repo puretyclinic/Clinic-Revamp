@@ -27,16 +27,16 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 const GEO_VARIANTS: Record<string, { title: string; metaDescription: string; h1: React.ReactNode; subtitle: string; breadcrumbName: string; breadcrumbUrl: string }> = {
   "/prp-santa-barbara": {
-    title: "PRP Santa Barbara, CA | Platelet-Rich Plasma Therapy | Purety Clinic",
-    metaDescription: "Dr. Jonathan Birch performs ultrasound-guided PRP therapy in Santa Barbara, CA. Over 4,000 injections. Board-registered sonographer (RMSK). Joint pain, arthritis, sports injuries. Call (805) 500-8300.",
+    title: "PRP Santa Barbara | Platelet-Rich Plasma | Purety Clinic",
+    metaDescription: "Ultrasound-guided PRP therapy in Santa Barbara by Dr. Birch NMD, RMSK. 4,000+ injections for joint pain and arthritis. Call (805) 500-8300.",
     h1: <>PRP Therapy in <span className="italic text-accent">Santa Barbara, CA</span></>,
     subtitle: "Ultrasound-guided platelet-rich plasma injections for joint pain, arthritis, and tendon injuries — at our Santa Barbara clinic.",
     breadcrumbName: "PRP Therapy Santa Barbara",
     breadcrumbUrl: "https://puretyclinic.com/prp-santa-barbara",
   },
   "/stem-cell-therapy-santa-barbara": {
-    title: "Stem Cell Therapy Santa Barbara, CA | Biologic Injections | Purety Clinic",
-    metaDescription: "Stem cell and biologic injections in Santa Barbara, CA. Wharton's Jelly, exosomes, and mesenchymal stem cell therapy for advanced arthritis and joint degeneration. Dr. Birch NMD, RMSK. Call (805) 500-8300.",
+    title: "Stem Cell Therapy Santa Barbara | Purety Clinic",
+    metaDescription: "Stem cell injections in Santa Barbara: Wharton's Jelly, exosomes, and biologic therapy for arthritis. Dr. Birch NMD, RMSK. Call (805) 500-8300.",
     h1: <>Stem Cell Therapy in <span className="italic text-accent">Santa Barbara, CA</span></>,
     subtitle: "Biologic injections — Wharton's Jelly, exosomes, and stem cell matrix — delivered under real-time ultrasound guidance at our Santa Barbara clinic.",
     breadcrumbName: "Stem Cell Therapy Santa Barbara",
@@ -45,8 +45,8 @@ const GEO_VARIANTS: Record<string, { title: string; metaDescription: string; h1:
 };
 
 const DEFAULT_REGEN_VARIANT = {
-  title: "PRP Therapy Santa Barbara | Stem Cell Injections | Purety Clinic",
-  metaDescription: "PRP therapy and stem cell injections in Santa Barbara, CA. Dr. Jonathan Birch NMD, RMSK has performed over 4,000 regenerative injections using ultrasound guidance. Joint pain, arthritis, tendon injuries. Call (805) 500-8300.",
+  title: "PRP Therapy Santa Barbara | Stem Cell | Purety Clinic",
+  metaDescription: "PRP and stem cell injections in Santa Barbara. Ultrasound-guided by Dr. Birch NMD, RMSK — 4,000+ regen injections. Call (805) 500-8300.",
   h1: <>PRP &amp; Regenerative<br /><span className="italic text-accent">Medicine</span></>,
   subtitle: "Ultrasound-guided PRP therapy, stem cell injections, and prolotherapy in Santa Barbara — without surgery, without steroids.",
   breadcrumbName: "PRP & Regenerative Medicine Santa Barbara",

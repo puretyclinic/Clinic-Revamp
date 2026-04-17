@@ -10,9 +10,9 @@ import { ContactCTA } from "@/components/ContactCTA";
 
 export default function DrDena() {
   useEffect(() => {
-    document.title = "Dr. Dena Birch NMD | Women's Health & Pediatrics | Purety Family Medical Clinic";
+    document.title = "Dr. Dena Birch NMD | Women's Health | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Dr. Dena Nakhle Birch NMD specializes in women's health, pediatrics, and holistic family medicine in Santa Barbara, CA. Hormone balancing, thyroid, fertility, PCOS, pediatric naturopathy, and functional medicine. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Dr. Dena Birch NMD focuses on women's health, pediatrics, and holistic medicine in Santa Barbara. Hormone balancing, fertility, and PCOS. (805) 500-8300.");
 
     const schema = {
       "@context": "https://schema.org",

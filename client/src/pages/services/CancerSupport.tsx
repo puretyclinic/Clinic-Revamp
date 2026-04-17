@@ -8,9 +8,9 @@ import { ContactCTA } from "@/components/ContactCTA";
 
 export default function CancerSupport() {
   useEffect(() => {
-    document.title = "Holistic Cancer Support Santa Barbara | Integrative Oncology | Purety Clinic";
+    document.title = "Integrative Cancer Support Santa Barbara | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Integrative cancer support at Purety Clinic in Santa Barbara, CA. High-dose IV Vitamin C, ozone therapy, and naturopathic care to complement conventional cancer treatment. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Integrative cancer support at Purety Clinic in Santa Barbara. High-dose IV Vitamin C, ozone therapy, and naturopathic care. Call (805) 500-8300.");
 
     const schema = {
       "@context": "https://schema.org", "@type": "MedicalTherapy",

@@ -126,9 +126,9 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   useEffect(() => {
-    document.title = "Patient Testimonials & Reviews | Purety Family Medical Clinic | Santa Barbara";
+    document.title = "Patient Reviews | Purety Clinic Santa Barbara";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Read real patient reviews and testimonials from Purety Clinic. Hear how Dr. Jonathan Birch has helped patients with FMT, regenerative medicine, ozone therapy, and plasma exchange. 77 five-star reviews.");
+    if (meta) meta.setAttribute("content", "Real patient reviews for Purety Clinic in Santa Barbara. FMT, PRP, ozone and plasma exchange patients share their stories. 77 five-star reviews.");
   }, []);
   const [activeCategory, setActiveCategory] = useState("All");
 

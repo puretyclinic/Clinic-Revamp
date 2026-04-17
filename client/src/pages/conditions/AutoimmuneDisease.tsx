@@ -72,9 +72,9 @@ const TREATMENTS = [
 
 export default function AutoimmuneDisease() {
   useEffect(() => {
-    document.title = "Autoimmune Disease Treatment Santa Barbara, CA | Integrative & Holistic | Purety Clinic";
+    document.title = "Autoimmune Treatment Santa Barbara | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Purety Clinic in Santa Barbara offers integrative autoimmune disease treatment including therapeutic plasma exchange (TPE), EBO2 ozone therapy, and naturopathic care. Dr. Jonathan Birch NMD. Serving Los Angeles, Ventura, and all of California. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Integrative autoimmune treatment at Purety Clinic in Santa Barbara. TPE, EBO2, and functional medicine for lupus, MS, and more. Call (805) 500-8300.");
 
     const conditionSchema = {
       "@context": "https://schema.org",

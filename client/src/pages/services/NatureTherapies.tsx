@@ -8,9 +8,9 @@ import { ContactCTA } from "@/components/ContactCTA";
 
 export default function NatureTherapies() {
   useEffect(() => {
-    document.title = "Nature Therapies Santa Barbara | Forest Bathing & Grounding | Purety Clinic";
+    document.title = "Nature Therapies Santa Barbara | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Nature-based therapies at Purety Clinic in Santa Barbara, CA. Forest bathing, grounding, and nature immersion to support healing, reduce stress, and restore wellbeing. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Nature-based therapies at Purety Clinic in Santa Barbara: forest bathing, grounding, and nature immersion for healing and wellbeing.");
 
     const schema = {
       "@context": "https://schema.org", "@type": "MedicalTherapy",

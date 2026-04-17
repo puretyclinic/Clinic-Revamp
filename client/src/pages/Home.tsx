@@ -13,9 +13,9 @@ import { Link } from "wouter";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Integrative Medicine Santa Barbara | Purety Family Medical Clinic";
+    document.title = "Integrative Medicine Santa Barbara | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Purety Family Medical Clinic — Santa Barbara's integrative medicine clinic specializing in FMT, therapeutic plasma exchange, PRP & regenerative injections, EBO2 ozone therapy, and holistic primary care. Dr. Jonathan & Dr. Dena Birch. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Purety Clinic in Santa Barbara — FMT, plasma exchange, PRP, EBO2 ozone therapy, IV therapy, BHRT, and holistic primary care. Call (805) 500-8300.");
 
     const schema = {
       "@context": "https://schema.org",

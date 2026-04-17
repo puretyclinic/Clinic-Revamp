@@ -10,9 +10,9 @@ import { ContactCTA } from "@/components/ContactCTA";
 
 function useBlogMeta() {
   useEffect(() => {
-    document.title = "Integrative Medicine Blog | Purety Family Medical Clinic | Santa Barbara";
+    document.title = "Blog | Integrative Medicine Santa Barbara | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Articles on FMT, regenerative medicine, ozone therapy, therapeutic plasma exchange, and holistic health from Dr. Jonathan Birch at Purety Clinic in Santa Barbara, CA.");
+    if (meta) meta.setAttribute("content", "Articles on FMT, PRP, ozone therapy, plasma exchange, and holistic health from Dr. Jonathan Birch at Purety Clinic in Santa Barbara.");
   }, []);
 }
 

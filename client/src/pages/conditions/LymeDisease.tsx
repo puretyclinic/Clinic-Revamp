@@ -72,9 +72,9 @@ const TREATMENTS = [
 
 export default function LymeDisease() {
   useEffect(() => {
-    document.title = "Lyme Disease Treatment Santa Barbara, CA | Integrative Lyme Doctor | Purety Clinic";
+    document.title = "Lyme Disease Treatment Santa Barbara | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Purety Clinic in Santa Barbara offers integrative Lyme disease treatment including EBO2 ozone therapy, PRP injections, and NAD+ IV therapy. Dr. Jonathan Birch NMD. Serving Los Angeles, Ventura, and all of California. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Integrative Lyme disease treatment at Purety Clinic in Santa Barbara. EBO2 ozone, PRP, and naturopathic care. Call (805) 500-8300.");
 
     const conditionSchema = {
       "@context": "https://schema.org",

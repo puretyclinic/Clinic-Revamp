@@ -40,9 +40,9 @@ const WHY_ANTIBIOTICS_FAIL = [
 
 export default function CDiff() {
   useEffect(() => {
-    document.title = "Recurrent C. difficile Treatment California | FMT Specialist | Purety Clinic";
+    document.title = "C. difficile Treatment | FMT Specialist | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Purety Family Medical Clinic is California's most experienced outpatient FMT clinic for recurrent C. difficile. Dr. Jonathan Birch NMD. 90%+ success rate since 2014. Capsule, enema, and colonoscopy options. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "California's most experienced FMT clinic for recurrent C. difficile. Dr. Birch — 1,000+ procedures since 2014. Call (805) 500-8300.");
 
     const conditionSchema = {
       "@context": "https://schema.org",

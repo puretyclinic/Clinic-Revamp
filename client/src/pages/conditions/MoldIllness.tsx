@@ -72,9 +72,9 @@ const TREATMENTS = [
 
 export default function MoldIllness() {
   useEffect(() => {
-    document.title = "Mold Illness Treatment Santa Barbara, CA | CIRS Doctor | Purety Clinic";
+    document.title = "Mold Illness (CIRS) Treatment Santa Barbara | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Purety Clinic in Santa Barbara specializes in mold illness and CIRS treatment — EBO2 ozone therapy, NAD+ IV, and naturopathic detox protocols. Dr. Jonathan Birch NMD. Serving Los Angeles, Ventura, and all of California. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Mold illness (CIRS) treatment at Purety Clinic in Santa Barbara. EBO2 ozone, NAD+, and naturopathic protocols. Call (805) 500-8300.");
 
     const conditionSchema = {
       "@context": "https://schema.org",

@@ -10,9 +10,9 @@ import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
 
 export default function PlasmaExchange() {
   useEffect(() => {
-    document.title = "Therapeutic Plasma Exchange (TPE) Santa Barbara | Purety Clinic";
+    document.title = "Plasma Exchange (TPE) Santa Barbara | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Therapeutic Plasma Exchange (TPE) at Purety Clinic in Santa Barbara, CA. Advanced plasmapheresis for autoimmune disease, Long Covid, MS, and blood detoxification. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Plasma Exchange (TPE) at Purety Clinic in Santa Barbara. Plasmapheresis for autoimmune disease, Long Covid, and blood detox. Call (805) 500-8300.");
 
     const schema = {
       "@context": "https://schema.org",

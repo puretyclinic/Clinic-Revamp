@@ -8,9 +8,9 @@ import { ContactCTA } from "@/components/ContactCTA";
 
 export default function NaturopathicMedicine() {
   useEffect(() => {
-    document.title = "Naturopathic Medicine Santa Barbara | Dr. Jonathan Birch NMD | Purety Clinic";
+    document.title = "Naturopathic Medicine Santa Barbara | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Naturopathic and functional medicine consultations with Dr. Jonathan Birch, NMD in Santa Barbara, CA. Root-cause care for chronic illness, hormonal imbalance, and immune conditions. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Naturopathic medicine with Dr. Jonathan Birch NMD in Santa Barbara. Root-cause care for chronic illness and immune health. Call (805) 500-8300.");
 
     const schema = {
       "@context": "https://schema.org", "@type": "Physician",

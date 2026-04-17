@@ -30,9 +30,9 @@ const FAQS = [
 
 export default function Longevity() {
   useEffect(() => {
-    document.title = "Longevity Medicine Santa Barbara | EBO2, TPE & Health Span | Purety Clinic";
+    document.title = "Longevity Medicine Santa Barbara | EBO2 | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Longevity and health span medicine in Santa Barbara. EBO2 ozone therapy, therapeutic plasma exchange, microbiome optimization, and advanced biomarker testing. Dr. Jonathan Birch NMD. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Longevity medicine at Purety Clinic in Santa Barbara: EBO2, therapeutic plasma exchange, and microbiome optimization. Call (805) 500-8300.");
 
     const faqSchema = {
       "@context": "https://schema.org",

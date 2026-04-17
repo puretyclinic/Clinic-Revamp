@@ -27,16 +27,16 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 const GEO_VARIANTS_OZONE: Record<string, { title: string; metaDescription: string; h1: React.ReactNode; subtitle: string; breadcrumbName: string; breadcrumbUrl: string }> = {
   "/ebo2-santa-barbara": {
-    title: "EBO2 Santa Barbara, CA | Extracorporeal Blood Ozone Therapy | Purety Clinic",
-    metaDescription: "EBO2 ozone therapy in Santa Barbara, CA. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (extracorporeal blood ozonation). One of California's most experienced EBO2 providers. Call (805) 500-8300.",
+    title: "EBO2 Santa Barbara | Ozone Therapy | Purety Clinic",
+    metaDescription: "EBO2 ozone therapy in Santa Barbara. Dr. Birch — 2,500+ treatments, one of CA's most experienced providers. Call (805) 500-8300.",
     h1: <>EBO2 Ozone Therapy in <span className="italic text-accent">Santa Barbara, CA</span></>,
     subtitle: "Extracorporeal blood ozonation (EBO2) — the most advanced ozone therapy available — performed at our Santa Barbara clinic by one of California's most experienced providers.",
     breadcrumbName: "EBO2 Ozone Therapy Santa Barbara",
     breadcrumbUrl: "https://puretyclinic.com/ebo2-santa-barbara",
   },
   "/eboo-santa-barbara": {
-    title: "EBOO Santa Barbara, CA | Ozone Dialysis | Extracorporeal Ozone | Purety Clinic",
-    metaDescription: "EBOO (extracorporeal blood ozone) therapy in Santa Barbara, CA. Also known as EBO2 or ozone dialysis. Over 2,500 treatments performed by Dr. Jonathan Birch. Call (805) 500-8300.",
+    title: "EBOO Santa Barbara | Ozone Dialysis | Purety Clinic",
+    metaDescription: "EBOO ozone therapy in Santa Barbara. Also called EBO2 or ozone dialysis. 2,500+ treatments by Dr. Jonathan Birch. Call (805) 500-8300.",
     h1: <>EBOO Ozone Therapy in <span className="italic text-accent">Santa Barbara, CA</span></>,
     subtitle: "EBOO (Extracorporeal Blood Oxygenation and Ozonation) — also called EBO2 or ozone dialysis — available in Santa Barbara at Purety Family Medical Clinic.",
     breadcrumbName: "EBOO Ozone Therapy Santa Barbara",
@@ -45,8 +45,8 @@ const GEO_VARIANTS_OZONE: Record<string, { title: string; metaDescription: strin
 };
 
 const DEFAULT_OZONE_VARIANT = {
-  title: "Ozone Therapy Santa Barbara | EBO2 | EBOO | Ozone Dialysis | Purety Clinic",
-  metaDescription: "Santa Barbara's most experienced ozone therapy clinic. Dr. Jonathan Birch has performed over 2,500 ozone treatments including EBO2 (EBOO / ozone dialysis), Multipass OHT / 10-Pass, and Prolozone injections. Call (805) 500-8300.",
+  title: "Ozone Therapy Santa Barbara | EBO2 & EBOO | Purety Clinic",
+  metaDescription: "Ozone therapy at Purety Clinic in Santa Barbara. EBO2, Multipass 10-Pass, and Prolozone — 2,500+ treatments by Dr. Birch. Call (805) 500-8300.",
   h1: <>Ozone <span className="italic text-accent">Therapies</span></>,
   subtitle: "Medical ozone therapy uses high-concentration ozone gas to oxygenate the blood, modulate the immune system, and eliminate chronic pathogens — delivered through several evidence-informed protocols depending on your condition and goals.",
   breadcrumbName: "Ozone Therapy Santa Barbara — EBO2 & EBOO",

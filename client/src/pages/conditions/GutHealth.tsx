@@ -30,9 +30,9 @@ const FAQS = [
 
 export default function GutHealth() {
   useEffect(() => {
-    document.title = "Chronic Gastrointestinal Conditions Treatment | FMT & Gut Health | Purety Clinic Santa Barbara";
+    document.title = "Gut Health & FMT Treatment Santa Barbara | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Integrative treatment for chronic GI conditions including IBS, Crohn's, C. diff, SIBO, and gut dysbiosis. FMT specialists in Santa Barbara. Dr. Jonathan Birch NMD — 1,000+ FMT procedures. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "FMT and gut health treatment at Purety Clinic in Santa Barbara. Treating IBS, C. diff, Crohn's, and SIBO. Call (805) 500-8300.");
 
     const faqSchema = {
       "@context": "https://schema.org",

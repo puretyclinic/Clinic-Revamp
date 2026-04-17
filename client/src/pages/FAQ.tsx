@@ -9,9 +9,9 @@ import { ContactCTA } from "@/components/ContactCTA";
 
 export default function FAQ() {
   useEffect(() => {
-    document.title = "Frequently Asked Questions | Purety Family Medical Clinic | Santa Barbara";
+    document.title = "Frequently Asked Questions | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Answers to common questions about FMT, regenerative medicine, ozone therapy, therapeutic plasma exchange, and integrative care at Purety Clinic in Santa Barbara, CA.");
+    if (meta) meta.setAttribute("content", "Common questions about FMT, PRP, ozone therapy, and integrative care at Purety Clinic in Santa Barbara, CA. Call (805) 500-8300.");
   }, []);
   const pageData = storedPages.find(p => p.id === "faq-page");
 

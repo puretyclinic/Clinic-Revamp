@@ -30,9 +30,9 @@ const FAQS = [
 
 export default function Arthritis() {
   useEffect(() => {
-    document.title = "Arthritis Treatment Santa Barbara | PRP & Regenerative Medicine | Purety Clinic";
+    document.title = "Arthritis Treatment Santa Barbara | PRP | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Ultrasound-guided PRP and stem cell therapy for arthritis in Santa Barbara. Dr. Jonathan Birch NMD, RMSK — over 4,000 regenerative injections. Serving Southern & Central California. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "PRP and stem cell therapy for arthritis in Santa Barbara. Ultrasound-guided by Dr. Birch NMD, RMSK — 4,000+ procedures. Call (805) 500-8300.");
 
     const faqSchema = {
       "@context": "https://schema.org",

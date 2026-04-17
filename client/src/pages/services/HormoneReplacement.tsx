@@ -8,9 +8,9 @@ import { ContactCTA } from "@/components/ContactCTA";
 
 export default function HormoneReplacement() {
   useEffect(() => {
-    document.title = "Bioidentical Hormone Replacement Therapy (BHRT) Santa Barbara | Purety Clinic";
+    document.title = "BHRT Santa Barbara | Hormone Therapy | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Bioidentical hormone replacement therapy (BHRT) for men and women at Purety Clinic in Santa Barbara, CA. Natural hormone balancing with Dr. Jonathan Birch, NMD. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Bioidentical hormone therapy (BHRT) for men and women at Purety Clinic in Santa Barbara, CA. Natural hormone balancing. Call (805) 500-8300.");
 
     const schema = {
       "@context": "https://schema.org", "@type": "MedicalTherapy",

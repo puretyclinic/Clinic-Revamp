@@ -43,9 +43,9 @@ const SYMPTOMS = [
 
 export default function LongCovid() {
   useEffect(() => {
-    document.title = "Long COVID Treatment Santa Barbara, CA | TPE & EBO2 Ozone | Purety Clinic";
+    document.title = "Long COVID Treatment Santa Barbara | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Purety Clinic in Santa Barbara offers evidence-informed Long COVID treatment including therapeutic plasma exchange (TPE) and EBO2 ozone therapy. Dr. Jonathan Birch NMD. Serving Los Angeles, Ventura, and all of California. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Long COVID treatment at Purety Clinic in Santa Barbara: TPE, EBO2 ozone therapy, and functional medicine. Call (805) 500-8300.");
 
     const conditionSchema = {
       "@context": "https://schema.org",

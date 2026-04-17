@@ -10,9 +10,9 @@ import { ContactCTA } from "@/components/ContactCTA";
 
 export default function DrBirch() {
   useEffect(() => {
-    document.title = "Dr. Jonathan Birch NMD, RMSK | FMT Specialist | Purety Family Medical Clinic";
+    document.title = "Dr. Jonathan Birch NMD | FMT Specialist | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Dr. Jonathan Birch is one of the most experienced FMT specialists in the United States, with 1,000+ procedures since 2014. NMD, RMSK. Remote consultations available nationwide. Call (805) 500-8300.");
+    if (meta) meta.setAttribute("content", "Dr. Jonathan Birch is one of the US's most experienced FMT specialists — 1,000+ procedures since 2014. NMD, RMSK. Call (805) 500-8300.");
 
     const schema = {
       "@context": "https://schema.org",
