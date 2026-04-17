@@ -52,4 +52,8 @@ run = ["node", "./dist/index.cjs"]
 
   [userenv.production]
   PRERENDER_ENABLED = "true"
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 120000
   
