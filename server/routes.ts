@@ -58,6 +58,65 @@ async function getGmailClient() {
   return google.gmail({ version: 'v1', auth: oauth2Client });
 }
 
+async function sendPatientConfirmation(data: {
+  firstName: string;
+  email: string;
+  source: string;
+}) {
+  try {
+    const gmail = await getGmailClient();
+    const htmlBody = `
+      <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #fff;">
+        <div style="background: #5A8085; padding: 28px 32px 20px; text-align: center;">
+          <h1 style="color: white; margin: 0; font-size: 22px; letter-spacing: 0.5px;">Purety Family Medical Clinic</h1>
+          <p style="color: rgba(255,255,255,0.85); margin: 6px 0 0; font-size: 13px; font-family: Arial, sans-serif;">Santa Barbara, CA &nbsp;·&nbsp; (805) 500-8300</p>
+        </div>
+        <div style="padding: 32px; border: 1px solid #e5e5e5; border-top: none;">
+          <p style="font-size: 17px; color: #2d3748; margin: 0 0 16px;">Hi ${data.firstName},</p>
+          <p style="font-size: 15px; color: #4a5568; line-height: 1.7; margin: 0 0 16px;">
+            We received your inquiry and Dr. Birch will personally review your case — typically the same business day.
+          </p>
+          <p style="font-size: 15px; color: #4a5568; line-height: 1.7; margin: 0 0 24px;">
+            You'll hear from us by email with next steps. If you'd prefer to speak with someone sooner, feel free to call or text us directly:
+          </p>
+          <div style="text-align: center; margin-bottom: 28px;">
+            <a href="tel:+18055008300" style="display: inline-block; background: #5A8085; color: white; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-family: Arial, sans-serif; font-size: 15px; font-weight: bold;">
+              Call or Text (805) 500-8300
+            </a>
+          </div>
+          <p style="font-size: 13px; color: #718096; line-height: 1.6; margin: 0;">
+            <strong>Did you receive this in error?</strong> If you didn't submit an inquiry, you can safely ignore this email. If you think you may have mistyped your email address, please resubmit at <a href="https://puretyclinic.com/services/fmt" style="color: #5A8085;">puretyclinic.com</a> or call us directly.
+          </p>
+        </div>
+        <div style="padding: 16px 32px; text-align: center;">
+          <p style="font-size: 12px; color: #a0aec0; margin: 0;">Purety Family Medical Clinic · 2323 Oak Park Ln, Suite 102, Santa Barbara, CA 93105</p>
+        </div>
+      </div>
+    `;
+
+    const rawMessage = [
+      `To: ${data.firstName} <${data.email}>`,
+      `From: Purety Family Medical Clinic <me>`,
+      `Subject: We received your inquiry — Dr. Birch will be in touch`,
+      `MIME-Version: 1.0`,
+      `Content-Type: text/html; charset=UTF-8`,
+      ``,
+      htmlBody,
+    ].join("\r\n");
+
+    const encodedMessage = Buffer.from(rawMessage)
+      .toString("base64")
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=+$/, "");
+
+    await gmail.users.messages.send({ userId: "me", requestBody: { raw: encodedMessage } });
+    console.log(`[contact] Confirmation email sent to ${data.email}`);
+  } catch (error: any) {
+    console.error("Failed to send patient confirmation:", error?.message || error);
+  }
+}
+
 async function sendEmailNotification(data: {
   firstName: string;
   lastName: string;
@@ -206,6 +265,12 @@ export async function registerRoutes(
         ...parsed.data,
         source: parsed.data.source || "Website",
       }).catch((err) => console.error("Email notification failed silently:", err?.message || err));
+
+      sendPatientConfirmation({
+        firstName: parsed.data.firstName,
+        email: parsed.data.email,
+        source: parsed.data.source || "Website",
+      }).catch((err) => console.error("Patient confirmation failed silently:", err?.message || err));
 
       return res.json({ success: true, id: submission.id });
     } catch (error) {

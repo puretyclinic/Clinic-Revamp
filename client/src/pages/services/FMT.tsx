@@ -524,8 +524,8 @@ export default function FMT() {
                     <div className="border-t border-gray-100 pt-4 mt-2">
                       <p className="text-xs font-semibold text-foreground mb-2">What happens next:</p>
                       <ol className="space-y-1.5 text-xs text-muted-foreground">
-                        <li className="flex items-start gap-2"><span className="bg-primary/10 text-primary font-bold rounded-full w-4 h-4 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">1</span>Dr. Birch personally reviews your case — usually same day.</li>
-                        <li className="flex items-start gap-2"><span className="bg-primary/10 text-primary font-bold rounded-full w-4 h-4 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">2</span>You'll receive a brief email with next steps and any follow-up questions.</li>
+                        <li className="flex items-start gap-2"><span className="bg-primary/10 text-primary font-bold rounded-full w-4 h-4 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">1</span>You'll get an instant confirmation email — if it doesn't arrive, check spam or resubmit.</li>
+                        <li className="flex items-start gap-2"><span className="bg-primary/10 text-primary font-bold rounded-full w-4 h-4 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">2</span>Dr. Birch personally reviews your case — usually same business day.</li>
                         <li className="flex items-start gap-2"><span className="bg-primary/10 text-primary font-bold rounded-full w-4 h-4 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">3</span>We'll schedule a telehealth or in-person consultation at your convenience.</li>
                       </ol>
                     </div>
