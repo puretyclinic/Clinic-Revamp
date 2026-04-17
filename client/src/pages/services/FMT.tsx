@@ -479,28 +479,56 @@ export default function FMT() {
                       <Input id="fmt-email" name="email" type="email" placeholder="john@example.com" required className="h-11 text-black" data-testid="input-fmt-email" />
                     </div>
                     <div className="space-y-1">
-                      <Label htmlFor="fmt-phone" className="text-sm font-medium">Phone Number</Label>
-                      <Input id="fmt-phone" name="phone" type="tel" placeholder="(555) 123-4567" required className="h-11 text-black" data-testid="input-fmt-phone" />
+                      <Label htmlFor="fmt-phone" className="text-sm font-medium">
+                        Phone Number <span className="text-muted-foreground font-normal">(optional)</span>
+                      </Label>
+                      <Input id="fmt-phone" name="phone" type="tel" placeholder="(555) 123-4567" className="h-11 text-black" data-testid="input-fmt-phone" />
+                      <p className="text-xs text-muted-foreground">We'll follow up by email first — no unexpected calls.</p>
                     </div>
                     <div className="space-y-1">
-                      <Label htmlFor="fmt-message" className="text-sm font-medium">Tell us about your situation (optional)</Label>
+                      <Label htmlFor="fmt-concern" className="text-sm font-medium">Primary Concern</Label>
+                      <select
+                        id="fmt-concern"
+                        name="concern"
+                        required
+                        className="w-full h-11 rounded-md border border-input bg-background px-3 py-2 text-sm text-black ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                        data-testid="select-fmt-concern"
+                      >
+                        <option value="">Select your primary concern…</option>
+                        <option value="Recurrent C. difficile infection">Recurrent C. difficile (C. diff) infection</option>
+                        <option value="IBS / Irritable Bowel Syndrome">IBS / Irritable Bowel Syndrome</option>
+                        <option value="Crohn's disease or ulcerative colitis">Crohn's disease or ulcerative colitis</option>
+                        <option value="SIBO (Small Intestinal Bacterial Overgrowth)">SIBO (Small Intestinal Bacterial Overgrowth)</option>
+                        <option value="Post-antibiotic gut disruption / dysbiosis">Post-antibiotic gut disruption / dysbiosis</option>
+                        <option value="Chronic bloating, gas, or digestive issues">Chronic bloating, gas, or digestive issues</option>
+                        <option value="Other gut condition">Other gut condition</option>
+                        <option value="General inquiry / not sure yet">General inquiry / not sure yet</option>
+                      </select>
+                    </div>
+                    <div className="space-y-1">
+                      <Label htmlFor="fmt-message" className="text-sm font-medium">Anything else you'd like Dr. Birch to know? <span className="text-muted-foreground font-normal">(optional)</span></Label>
                       <Textarea
                         id="fmt-message"
                         name="message"
-                        placeholder="Share any additional details about your symptoms, history, or questions..."
-                        className="min-h-[100px] text-black"
+                        placeholder="Brief history, prior treatments, how long you've been dealing with this..."
+                        className="min-h-[80px] text-black"
                         data-testid="input-fmt-message"
                       />
                     </div>
                     <Button type="submit" size="lg" disabled={sending} className="w-full h-12 bg-accent hover:bg-accent/90 text-white font-bold text-base" data-testid="button-fmt-submit">
-                      {sending ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...</> : <><ArrowRight className="w-4 h-4 mr-2" /> Request My Consultation</>}
+                      {sending ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...</> : <><ArrowRight className="w-4 h-4 mr-2" /> Send My Case to Dr. Birch</>}
                     </Button>
                     <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-1">
-                      <ShieldCheck className="w-3 h-3" /> Your information is 100% confidential and HIPAA protected
+                      <ShieldCheck className="w-3 h-3" /> 100% confidential · HIPAA protected
                     </p>
-                    <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-1 mt-1">
-                      <Clock className="w-3 h-3" /> We respond to every inquiry within 1 business day
-                    </p>
+                    <div className="border-t border-gray-100 pt-4 mt-2">
+                      <p className="text-xs font-semibold text-foreground mb-2">What happens next:</p>
+                      <ol className="space-y-1.5 text-xs text-muted-foreground">
+                        <li className="flex items-start gap-2"><span className="bg-primary/10 text-primary font-bold rounded-full w-4 h-4 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">1</span>Dr. Birch personally reviews your case — usually same day.</li>
+                        <li className="flex items-start gap-2"><span className="bg-primary/10 text-primary font-bold rounded-full w-4 h-4 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">2</span>You'll receive a brief email with next steps and any follow-up questions.</li>
+                        <li className="flex items-start gap-2"><span className="bg-primary/10 text-primary font-bold rounded-full w-4 h-4 flex items-center justify-center shrink-0 mt-0.5 text-[10px]">3</span>We'll schedule a telehealth or in-person consultation at your convenience.</li>
+                      </ol>
+                    </div>
                   </form>
                 </div>
               </FadeIn>
