@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -8,6 +8,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ContactCTA } from "@/components/ContactCTA";
 
 export default function FAQ() {
+  useEffect(() => {
+    document.title = "Frequently Asked Questions | Purety Family Medical Clinic | Santa Barbara";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Answers to common questions about FMT, regenerative medicine, ozone therapy, therapeutic plasma exchange, and integrative care at Purety Clinic in Santa Barbara, CA.");
+  }, []);
   const pageData = storedPages.find(p => p.id === "faq-page");
 
   return (

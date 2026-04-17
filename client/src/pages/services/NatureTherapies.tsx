@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -7,6 +7,11 @@ import { Leaf, Sun, Droplets, Mountain } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
 
 export default function NatureTherapies() {
+  useEffect(() => {
+    document.title = "Nature Therapies Santa Barbara | Forest Bathing & Grounding | Purety Clinic";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Nature-based therapies at Purety Clinic in Santa Barbara, CA. Forest bathing, grounding, and nature immersion to support healing, reduce stress, and restore wellbeing. Call (805) 500-8300.");
+  }, []);
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
       <Navbar />

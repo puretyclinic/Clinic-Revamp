@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -7,6 +7,11 @@ import { Flower, Sun, Heart, CheckCircle2 } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
 
 export default function HormoneReplacement() {
+  useEffect(() => {
+    document.title = "Bioidentical Hormone Replacement Therapy (BHRT) Santa Barbara | Purety Clinic";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Bioidentical hormone replacement therapy (BHRT) for men and women at Purety Clinic in Santa Barbara, CA. Natural hormone balancing with Dr. Jonathan Birch, NMD. Call (805) 500-8300.");
+  }, []);
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
       <Navbar />
@@ -20,7 +25,7 @@ export default function HormoneReplacement() {
                 <Flower className="w-4 h-4" />
                 <span>Bioidentical Hormone Replacement</span>
               </div>
-              <h1 className="font-serif text-5xl md:text-7xl mb-6">Balance & <span className="italic text-accent">Vitality</span></h1>
+              <h1 className="font-serif text-5xl md:text-7xl mb-6">Bioidentical Hormone <span className="italic text-accent">Replacement (BHRT)</span></h1>
               <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
                 Restore optimal hormone levels safely with natural, bioidentical hormones. For Men and Women.
               </p>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -8,6 +8,11 @@ import { Link } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
 
 export default function About() {
+  useEffect(() => {
+    document.title = "About Dr. Jonathan Birch & Purety Family Medical Clinic | Santa Barbara";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Meet Dr. Jonathan Birch, NMD, RMSK — the physician behind Purety Family Medical Clinic in Santa Barbara, CA. Holistic, integrative care with 1,000+ FMT procedures and 4,000+ regenerative injections.");
+  }, []);
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
       <Navbar />

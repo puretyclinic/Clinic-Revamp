@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -125,6 +125,11 @@ const TESTIMONIALS = [
 ];
 
 export default function Testimonials() {
+  useEffect(() => {
+    document.title = "Patient Testimonials & Reviews | Purety Family Medical Clinic | Santa Barbara";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Read real patient reviews and testimonials from Purety Clinic. Hear how Dr. Jonathan Birch has helped patients with FMT, regenerative medicine, ozone therapy, and plasma exchange. 77 five-star reviews.");
+  }, []);
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filtered = activeCategory === "All"

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -93,6 +94,11 @@ const services = [
 ];
 
 export default function Services() {
+  useEffect(() => {
+    document.title = "Our Services | Holistic & Integrative Medicine | Purety Clinic Santa Barbara";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Explore integrative medicine services at Purety Clinic: FMT, regenerative injections, ozone therapy, therapeutic plasma exchange, IV therapy, bioidentical HRT, and more. Santa Barbara, CA.");
+  }, []);
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
       <Navbar />

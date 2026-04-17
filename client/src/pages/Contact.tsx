@@ -8,9 +8,14 @@ import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import * as gtag from "@/lib/gtag";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Contact() {
+  useEffect(() => {
+    document.title = "Contact Purety Clinic | Santa Barbara, CA | (805) 500-8300";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Contact Purety Family Medical Clinic in Santa Barbara, CA. Call (805) 500-8300 or send a message to schedule a consultation with Dr. Jonathan Birch.");
+  }, []);
   const { toast } = useToast();
   const [sending, setSending] = useState(false);
 

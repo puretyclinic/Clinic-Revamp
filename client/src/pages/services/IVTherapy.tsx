@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -7,6 +7,11 @@ import { Droplet, Wind, Zap, CheckCircle2 } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
 
 export default function IVTherapy() {
+  useEffect(() => {
+    document.title = "IV Therapy Santa Barbara | Myers Cocktail, NAD+, Vitamin C | Purety Clinic";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Custom IV therapy and nutrient infusions at Purety Clinic in Santa Barbara, CA. Myers Cocktail, high-dose Vitamin C, NAD+, glutathione, and ozone IV. Call (805) 500-8300.");
+  }, []);
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
       <Navbar />

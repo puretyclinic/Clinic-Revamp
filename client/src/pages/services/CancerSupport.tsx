@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -7,6 +7,11 @@ import { Heart, Sun, Leaf, Shield, AlertCircle } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
 
 export default function CancerSupport() {
+  useEffect(() => {
+    document.title = "Holistic Cancer Support Santa Barbara | Integrative Oncology | Purety Clinic";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Integrative cancer support at Purety Clinic in Santa Barbara, CA. High-dose IV Vitamin C, ozone therapy, and naturopathic care to complement conventional cancer treatment. Call (805) 500-8300.");
+  }, []);
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
       <Navbar />
