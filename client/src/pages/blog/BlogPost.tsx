@@ -72,9 +72,34 @@ export default function BlogPost() {
     const prevDesc = metaDesc.getAttribute("content") || "";
     metaDesc.setAttribute("content", post.excerpt);
 
+    let canonical = document.getElementById("blog-canonical") as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.id = "blog-canonical";
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = `https://puretyclinic.com/blog/${post.id}`;
+
+    const ogImage = document.querySelector('meta[property="og:image"]') as HTMLMetaElement | null;
+    const prevOgImage = ogImage?.getAttribute("content") || "";
+    if (ogImage && post.image) ogImage.setAttribute("content", post.image);
+
+    const twImage = document.querySelector('meta[name="twitter:image"]') as HTMLMetaElement | null;
+    const prevTwImage = twImage?.getAttribute("content") || "";
+    if (twImage && post.image) twImage.setAttribute("content", post.image);
+
+    const ogTitle = document.querySelector('meta[property="og:title"]') as HTMLMetaElement | null;
+    const prevOgTitle = ogTitle?.getAttribute("content") || "";
+    if (ogTitle) ogTitle.setAttribute("content", `${post.title} | Purety Clinic`);
+
     return () => {
       document.getElementById("blogposting-schema")?.remove();
+      document.getElementById("blog-canonical")?.remove();
       metaDesc?.setAttribute("content", prevDesc);
+      if (ogImage) ogImage.setAttribute("content", prevOgImage);
+      if (twImage) twImage.setAttribute("content", prevTwImage);
+      if (ogTitle) ogTitle.setAttribute("content", prevOgTitle);
     };
   }, [post]);
 

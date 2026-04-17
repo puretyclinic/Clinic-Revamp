@@ -11,6 +11,33 @@ export default function NatureTherapies() {
     document.title = "Nature Therapies Santa Barbara | Forest Bathing & Grounding | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Nature-based therapies at Purety Clinic in Santa Barbara, CA. Forest bathing, grounding, and nature immersion to support healing, reduce stress, and restore wellbeing. Call (805) 500-8300.");
+
+    const schema = {
+      "@context": "https://schema.org", "@type": "MedicalTherapy",
+      "name": "Nature Therapies",
+      "alternateName": ["Forest Bathing", "Shinrin-Yoku", "Grounding Therapy", "Nature Immersion Therapy"],
+      "description": "Nature-based healing therapies at Purety Family Medical Clinic in Santa Barbara, CA. Forest bathing, grounding, and nature immersion to reduce stress, lower cortisol, and support recovery.",
+      "procedureType": "Therapeutic",
+      "performer": { "@type": "Physician", "name": "Dr. Jonathan Birch", "worksFor": { "@type": "MedicalClinic", "name": "Purety Family Medical Clinic", "telephone": "+1-805-500-8300", "url": "https://puretyclinic.com" } }
+    };
+    const localSchema = {
+      "@context": "https://schema.org", "@type": "MedicalClinic",
+      "name": "Purety Family Medical Clinic", "url": "https://puretyclinic.com/services/nature-therapies",
+      "telephone": "+1-805-500-8300", "description": "Nature therapy and forest bathing programs in Santa Barbara, CA. Serving Ventura, Los Angeles, Thousand Oaks, Goleta, and Southern California.",
+      "address": { "@type": "PostalAddress", "streetAddress": "2323 Oak Park Ln, Suite 102", "addressLocality": "Santa Barbara", "addressRegion": "CA", "postalCode": "93105", "addressCountry": "US" },
+      "medicalSpecialty": "IntegrativeMedicine", "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "77", "bestRating": "5" }
+    };
+    const schemas = [
+      { id: "nature-therapy-schema", data: schema },
+      { id: "nature-local-schema", data: localSchema },
+    ];
+    schemas.forEach(({ id, data }) => {
+      const s = document.createElement("script");
+      s.type = "application/ld+json"; s.id = id;
+      s.text = JSON.stringify(data);
+      document.head.appendChild(s);
+    });
+    return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
   }, []);
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">

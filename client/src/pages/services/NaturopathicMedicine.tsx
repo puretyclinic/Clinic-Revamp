@@ -11,6 +11,33 @@ export default function NaturopathicMedicine() {
     document.title = "Naturopathic Medicine Santa Barbara | Dr. Jonathan Birch NMD | Purety Clinic";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Naturopathic and functional medicine consultations with Dr. Jonathan Birch, NMD in Santa Barbara, CA. Root-cause care for chronic illness, hormonal imbalance, and immune conditions. Call (805) 500-8300.");
+
+    const schema = {
+      "@context": "https://schema.org", "@type": "Physician",
+      "name": "Dr. Jonathan Birch, NMD, RMSK",
+      "medicalSpecialty": ["NaturopathicMedicine", "IntegrativeMedicine", "FunctionalMedicine"],
+      "description": "Dr. Jonathan Birch is a Naturopathic Medical Doctor (NMD) offering holistic, root-cause medicine at Purety Family Medical Clinic in Santa Barbara, CA.",
+      "worksFor": { "@type": "MedicalClinic", "name": "Purety Family Medical Clinic", "url": "https://puretyclinic.com", "telephone": "+1-805-500-8300", "address": { "@type": "PostalAddress", "streetAddress": "2323 Oak Park Ln, Suite 102", "addressLocality": "Santa Barbara", "addressRegion": "CA", "postalCode": "93105" } },
+      "hasCredential": [{ "@type": "EducationalOccupationalCredential", "credentialCategory": "NMD" }, { "@type": "EducationalOccupationalCredential", "credentialCategory": "RMSK" }]
+    };
+    const localSchema = {
+      "@context": "https://schema.org", "@type": "MedicalClinic",
+      "name": "Purety Family Medical Clinic", "url": "https://puretyclinic.com/services/naturopathic",
+      "telephone": "+1-805-500-8300", "description": "Naturopathic and functional medicine in Santa Barbara, CA. Root-cause care serving Ventura, Los Angeles, Thousand Oaks, and Southern California.",
+      "address": { "@type": "PostalAddress", "streetAddress": "2323 Oak Park Ln, Suite 102", "addressLocality": "Santa Barbara", "addressRegion": "CA", "postalCode": "93105", "addressCountry": "US" },
+      "medicalSpecialty": "NaturopathicMedicine", "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "77", "bestRating": "5" }
+    };
+    const schemas = [
+      { id: "natmed-physician-schema", data: schema },
+      { id: "natmed-local-schema", data: localSchema },
+    ];
+    schemas.forEach(({ id, data }) => {
+      const s = document.createElement("script");
+      s.type = "application/ld+json"; s.id = id;
+      s.text = JSON.stringify(data);
+      document.head.appendChild(s);
+    });
+    return () => schemas.forEach(({ id }) => document.getElementById(id)?.remove());
   }, []);
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
