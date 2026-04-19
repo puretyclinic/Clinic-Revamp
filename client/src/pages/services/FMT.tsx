@@ -322,7 +322,7 @@ export default function FMT() {
       lastName: formData.get("lastName") as string,
       email: formData.get("email") as string,
       phone: formData.get("phone") as string,
-      message: `Primary Concern: ${formData.get("concern")}\n\n${formData.get("message") || ""}`,
+      message: formData.get("message") as string || "",
       source: "FMT Page - puretyclinic.com/fecal-transplant",
       _honey: formData.get("_honey") as string,
     };
@@ -484,26 +484,6 @@ export default function FMT() {
                       </Label>
                       <Input id="fmt-phone" name="phone" type="tel" placeholder="(555) 123-4567" className="h-11 text-black" data-testid="input-fmt-phone" />
                       <p className="text-xs text-muted-foreground">We'll follow up by email first — no unexpected calls.</p>
-                    </div>
-                    <div className="space-y-1">
-                      <Label htmlFor="fmt-concern" className="text-sm font-medium">Primary Concern</Label>
-                      <select
-                        id="fmt-concern"
-                        name="concern"
-                        required
-                        className="w-full h-11 rounded-md border border-input bg-background px-3 py-2 text-sm text-black ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                        data-testid="select-fmt-concern"
-                      >
-                        <option value="">Select your primary concern…</option>
-                        <option value="Recurrent C. difficile infection">Recurrent C. difficile (C. diff) infection</option>
-                        <option value="IBS / Irritable Bowel Syndrome">IBS / Irritable Bowel Syndrome</option>
-                        <option value="Crohn's disease or ulcerative colitis">Crohn's disease or ulcerative colitis</option>
-                        <option value="SIBO (Small Intestinal Bacterial Overgrowth)">SIBO (Small Intestinal Bacterial Overgrowth)</option>
-                        <option value="Post-antibiotic gut disruption / dysbiosis">Post-antibiotic gut disruption / dysbiosis</option>
-                        <option value="Chronic bloating, gas, or digestive issues">Chronic bloating, gas, or digestive issues</option>
-                        <option value="Other gut condition">Other gut condition</option>
-                        <option value="General inquiry / not sure yet">General inquiry / not sure yet</option>
-                      </select>
                     </div>
                     <div className="space-y-1">
                       <Label htmlFor="fmt-message" className="text-sm font-medium">Anything else you'd like Dr. Birch to know? <span className="text-muted-foreground font-normal">(optional)</span></Label>
