@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Syringe, Wind, Droplet, Flower, Activity, Baby, HeartPulse, Brain, Bone, Leaf, Pill, ArrowRight, RefreshCw } from "lucide-react";
+import { Syringe, Wind, Droplet, Flower, Activity, Baby, HeartPulse, Brain, Bone, Pill, ArrowRight, RefreshCw } from "lucide-react";
 import { Link } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
 
@@ -29,11 +29,6 @@ const services = [
         title: "Pediatric Wellness",
         description: "Well-child exams and natural treatment for common childhood ailments.",
         icon: Baby
-      },
-      {
-        title: "Holistic Cancer Support",
-        description: "Integrative oncology support to strengthen the body during treatment.",
-        icon: Leaf
       }
     ]
   },

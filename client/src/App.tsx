@@ -18,7 +18,6 @@ import RegenerativeMedicine from "@/pages/services/RegenerativeMedicine";
 import IVTherapy from "@/pages/services/IVTherapy";
 import NaturopathicMedicine from "@/pages/services/NaturopathicMedicine";
 import FMT from "@/pages/services/FMT";
-import CancerSupport from "@/pages/services/CancerSupport";
 import BlogPost from "@/pages/blog/BlogPost";
 
 import OzoneTherapy from "@/pages/services/OzoneTherapy";
@@ -56,7 +55,6 @@ function Router() {
       <Route path="/services/naturopathic" component={NaturopathicMedicine} />
       <Route path="/services/fmt" component={FMT} />
       <Route path="/fecal-transplant" component={FMT} />
-      <Route path="/services/cancer-support" component={CancerSupport} />
       <Route path="/services/ozone-therapy" component={OzoneTherapy} />
       <Route path="/ebo2-santa-barbara" component={OzoneTherapy} />
       <Route path="/eboo-santa-barbara" component={OzoneTherapy} />

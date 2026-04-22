@@ -791,7 +791,6 @@ const SERVICE_LINKS: Record<string, string> = {
   "Naturopathic Primary Care": "/services/naturopathic",
   "Naturopathic Medicine": "/services/naturopathic",
   "Pediatric Holistic Care": "/services/naturopathic",
-  "Integrative Oncology Support": "/services/cancer-support",
 };
 
 export default function LocationPage({ params }: { params: { city: string } }) {
