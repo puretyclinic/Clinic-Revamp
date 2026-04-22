@@ -418,7 +418,7 @@ export default function PlasmaExchange() {
                 </div>
                 <div className="space-y-4 text-sm text-blue-800/90">
                   <p>
-                    TPE at Purety Clinic is offered on a fee-for-service basis, with transparent pricing provided at consultation. The cost per session reflects specialized apheresis equipment, albumin replacement fluid (typically 250–500mL of 5% albumin), nursing oversight, and physician supervision.
+                    TPE at Purety Clinic is offered on a fee-for-service basis, with transparent pricing provided at consultation. The cost per session reflects specialized apheresis equipment, albumin replacement fluid (typically 1500–3000mL of 5% albumin), nursing oversight, and physician supervision.
                   </p>
                   <p>
                     <strong>Insurance coverage:</strong> TPE for FDA-approved Category I indications (myasthenia gravis crisis, TTP, Guillain-Barré, CIDP) may be covered by major insurers and Medicare when performed in an approved outpatient or hospital setting. For off-label use cases — Long COVID, longevity, integrative autoimmune protocols — coverage is generally not available.
