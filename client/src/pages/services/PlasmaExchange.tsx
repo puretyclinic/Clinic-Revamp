@@ -72,6 +72,10 @@ const FAQS = [
     answer: "TPE is a well-established procedure with a strong safety record when performed by experienced practitioners. Common, manageable side effects include: mild citrate toxicity (tingling, cramping — treated with calcium supplementation), temporary fatigue after the session, and mild drop in clotting factors or immunoglobulins with multiple sessions. Serious complications are rare but include: venous access complications (bruising, hematoma), hypotension, allergic reactions to albumin (uncommon), and infection risk from IV access (mitigated by sterile technique). At Purety Clinic, every patient is monitored throughout the procedure and for 30 minutes after. Dr. Birch reviews labs before each session to ensure safe proceeding.",
   },
   {
+    question: "Can therapeutic plasma exchange remove environmental toxins and chemicals like BPA and glyphosate?",
+    answer: "Yes — and this is now supported by peer-reviewed research. A 2025 study published in Medical Hypotheses (Elsevier) found that serial TPE sessions combined with nutritional supplementation dramatically and significantly reduced levels of bisphenol A (BPA), glyphosate, and butylparaben in participants (p ≤ 0.0006). These synthetic chemicals are highly protein-bound — meaning they circulate attached to plasma proteins, making them difficult to clear through conventional detox methods. Because TPE physically removes the plasma fraction and replaces it with albumin, it directly removes the protein-bound chemicals along with the plasma. At Purety Clinic, we offer TPE as part of a comprehensive chemical detoxification protocol, including baseline and follow-up toxin panel testing and concurrent IV nutritional support.",
+  },
+  {
     question: "Is therapeutic plasma exchange available as an outpatient procedure?",
     answer: "Yes — at Purety Clinic, TPE is offered entirely on an outpatient basis. Most hospital-based TPE programs require inpatient admission or hospital-adjacent infusion suites, making access difficult and expensive. We have invested in the specialized apheresis equipment needed to offer TPE safely in our dedicated clinical suite in Santa Barbara. After your procedure and a 30-minute monitoring period, most patients drive themselves home (though having a driver for the first session is recommended). We serve patients from Santa Barbara, Ventura, Los Angeles, and throughout California, including remote consultations for those traveling from out of the area.",
   },
@@ -280,6 +284,7 @@ export default function PlasmaExchange() {
                     { label: "POTS & Dysautonomia", href: "/conditions/pots", sub: "Adrenergic & muscarinic receptor autoantibodies" },
                     { label: "Autoimmune Disease", href: "/conditions/autoimmune", sub: "Lupus (SLE), multiple sclerosis, NMDA receptor encephalitis" },
                     { label: "Alzheimer's & Longevity", href: "/conditions/longevity", sub: "Pro-aging plasma dilution — Stanford research program" },
+                    { label: "Chemical & Environmental Detox", href: "/blog/tpe-chemical-detox-study-2025", sub: "BPA, glyphosate, parabens — 2025 peer-reviewed evidence" },
                     { label: "Lyme Disease & CIRS", href: "/conditions/lyme-disease", sub: "Inflammatory protein load reduction" },
                     { label: "Mold Illness", href: "/conditions/mold-illness", sub: "Biotoxin and inflammatory mediator clearance" },
                   ].map(({ label, href, sub }) => (
@@ -501,7 +506,7 @@ export default function PlasmaExchange() {
 
         <RelatedBlogPosts
           heading="Learn More About Therapeutic Plasma Exchange"
-          postIds={["therapeutic-plasma-exchange-guide", "what-to-expect-therapeutic-plasma-exchange", "tpe-for-long-covid", "tpe-vs-ivig"]}
+          postIds={["tpe-chemical-detox-study-2025", "tpe-for-long-covid", "tpe-vs-ivig", "therapeutic-plasma-exchange-guide"]}
         />
         <ContactCTA heading="Questions About Plasma Exchange?" subheading="Call (805) 500-8300 or submit a consultation request. Remote consultations available for patients outside Santa Barbara." formSource="Plasma Exchange Page" />
       </main>
