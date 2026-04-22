@@ -12,7 +12,7 @@ export default function FAQ() {
   usePageSEO({
     title: "Frequently Asked Questions | Purety Clinic",
     description: "Common questions about FMT, PRP, ozone therapy, and integrative care at Purety Clinic in Santa Barbara, CA. Call (805) 500-8300.",
-    canonicalPath: "/faq",
+    canonicalPath: "/faqs",
   });
   const pageData = storedPages.find(p => p.id === "faq-page");
 
