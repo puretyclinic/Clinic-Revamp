@@ -97,7 +97,7 @@ async function sendPatientConfirmation(data: {
     const rawMessage = [
       `To: ${data.firstName} <${data.email}>`,
       `From: Purety Family Medical Clinic <me>`,
-      `Subject: We received your inquiry — Dr. Birch will be in touch`,
+      `Subject: We received your inquiry - Dr. Birch will be in touch`,
       `MIME-Version: 1.0`,
       `Content-Type: text/html; charset=UTF-8`,
       ``,
