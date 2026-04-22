@@ -10,6 +10,7 @@ import { GoogleReviews } from "@/components/GoogleReviews";
 import { useToast } from "@/hooks/use-toast";
 import * as gtag from "@/lib/gtag";
 import { useState, useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 function scrollToForm() {
   const el = document.querySelector('#consultation');
@@ -83,12 +84,13 @@ const fmtStructuredData = {
 export default function FMT() {
   const { toast } = useToast();
   const [sending, setSending] = useState(false);
+  usePageSEO({
+    title: "FMT | Microbiota Transplant Santa Barbara | Purety Clinic",
+    description: "Leading FMT specialists since 2014 with 90%+ success for C. diff. Capsules, oral, enema, and colonoscopy options. Call (805) 500-8300.",
+    canonicalPath: "/services/fmt",
+  });
 
   useEffect(() => {
-    document.title = "FMT | Microbiota Transplant Santa Barbara | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Leading FMT specialists since 2014 with 90%+ success for C. diff. Capsules, oral, enema, and colonoscopy options. Call (805) 500-8300.");
-
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -292,21 +294,11 @@ export default function FMT() {
     faqScript.text = JSON.stringify(faqSchema);
     document.head.appendChild(faqScript);
 
-    let canonical = document.getElementById("fmt-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "fmt-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/services/fmt";
-
     return () => {
       document.getElementById("fmt-physician-schema")?.remove();
       document.getElementById("fmt-national-schema")?.remove();
       document.getElementById("fmt-clinic-schema")?.remove();
       document.getElementById("fmt-faq-schema")?.remove();
-      document.getElementById("fmt-canonical")?.remove();
     };
   }, []);
 

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { Link } from "wouter";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
@@ -9,11 +10,12 @@ import { GoogleReviews } from "@/components/GoogleReviews";
 import { ContactCTA } from "@/components/ContactCTA";
 
 export default function DrDena() {
+  usePageSEO({
+    title: "Dr. Dena Birch NMD | Women's Health | Purety Clinic",
+    description: "Dr. Dena Birch NMD focuses on women's health, pediatrics, and holistic medicine in Santa Barbara. Hormone balancing, fertility, and PCOS. (805) 500-8300.",
+    canonicalPath: "/dr-dena-birch",
+  });
   useEffect(() => {
-    document.title = "Dr. Dena Birch NMD | Women's Health | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Dr. Dena Birch NMD focuses on women's health, pediatrics, and holistic medicine in Santa Barbara. Hormone balancing, fertility, and PCOS. (805) 500-8300.");
-
     const schema = {
       "@context": "https://schema.org",
       "@type": "Physician",

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { Link } from "wouter";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Footer } from "@/components/layout/Footer";
@@ -7,8 +8,12 @@ import { CheckCircle2, Phone, Clock, Mail } from "lucide-react";
 import * as gtag from "@/lib/gtag";
 
 export default function ThankYou() {
+  usePageSEO({
+    title: "Thank You — Purety Family Medical Clinic",
+    description: "Thank you for contacting Purety Clinic. We will be in touch soon.",
+    canonicalPath: "/thank-you",
+  });
   useEffect(() => {
-    document.title = "Thank You — Purety Family Medical Clinic";
     gtag.pageview("/thank-you");
   }, []);
 

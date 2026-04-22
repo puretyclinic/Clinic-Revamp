@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -71,11 +72,12 @@ const TREATMENTS = [
 ];
 
 export default function LymeDisease() {
+  usePageSEO({
+    title: "Lyme Disease Treatment Santa Barbara | Purety Clinic",
+    description: "Integrative Lyme disease treatment at Purety Clinic in Santa Barbara. EBO2 ozone, PRP, and naturopathic care. Call (805) 500-8300.",
+    canonicalPath: "/conditions/lyme-disease",
+  });
   useEffect(() => {
-    document.title = "Lyme Disease Treatment Santa Barbara | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Integrative Lyme disease treatment at Purety Clinic in Santa Barbara. EBO2 ozone, PRP, and naturopathic care. Call (805) 500-8300.");
-
     const conditionSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalCondition",
@@ -140,18 +142,8 @@ export default function LymeDisease() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    let canonical = document.getElementById("lyme-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "lyme-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/conditions/lyme-disease";
-
     return () => {
       schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-      document.getElementById("lyme-canonical")?.remove();
     };
   }, []);
 

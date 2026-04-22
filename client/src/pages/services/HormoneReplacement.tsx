@@ -5,13 +5,15 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Flower, Sun, Heart, CheckCircle2 } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 export default function HormoneReplacement() {
+  usePageSEO({
+    title: "BHRT Santa Barbara | Hormone Therapy | Purety Clinic",
+    description: "Bioidentical hormone therapy (BHRT) for men and women at Purety Clinic in Santa Barbara, CA. Natural hormone balancing. Call (805) 500-8300.",
+    canonicalPath: "/services/hormone-replacement",
+  });
   useEffect(() => {
-    document.title = "BHRT Santa Barbara | Hormone Therapy | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Bioidentical hormone therapy (BHRT) for men and women at Purety Clinic in Santa Barbara, CA. Natural hormone balancing. Call (805) 500-8300.");
-
     const schema = {
       "@context": "https://schema.org", "@type": "MedicalTherapy",
       "name": "Bioidentical Hormone Replacement Therapy (BHRT)",

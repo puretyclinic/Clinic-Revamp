@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -56,12 +57,13 @@ const DEFAULT_REGEN_VARIANT = {
 export default function RegenerativeMedicine() {
   const [location] = useLocation();
   const variant = GEO_VARIANTS[location] ?? DEFAULT_REGEN_VARIANT;
+  usePageSEO({
+    title: variant.title,
+    description: variant.metaDescription,
+    canonicalPath: "/services/regenerative",
+  });
 
   useEffect(() => {
-    document.title = variant.title;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", variant.metaDescription);
-
     const localSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalClinic",
@@ -181,18 +183,8 @@ export default function RegenerativeMedicine() {
       document.head.appendChild(s);
     });
 
-    let canonical = document.getElementById("regen-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "regen-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/services/regenerative";
-
     return () => {
       schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-      document.getElementById("regen-canonical")?.remove();
     };
   }, [variant.title]);
 

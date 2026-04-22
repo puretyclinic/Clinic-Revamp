@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { Link } from "wouter";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
@@ -9,11 +10,12 @@ import { ContactCTA } from "@/components/ContactCTA";
 import { RelatedBlogPosts } from "@/components/RelatedBlogPosts";
 
 export default function PlasmaExchange() {
+  usePageSEO({
+    title: "Plasma Exchange (TPE) Santa Barbara | Purety Clinic",
+    description: "Plasma Exchange (TPE) at Purety Clinic in Santa Barbara. Plasmapheresis for autoimmune disease, Long Covid, and blood detox. Call (805) 500-8300.",
+    canonicalPath: "/services/plasma-exchange",
+  });
   useEffect(() => {
-    document.title = "Plasma Exchange (TPE) Santa Barbara | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Plasma Exchange (TPE) at Purety Clinic in Santa Barbara. Plasmapheresis for autoimmune disease, Long Covid, and blood detox. Call (805) 500-8300.");
-
     const schema = {
       "@context": "https://schema.org",
       "@type": "MedicalProcedure",
@@ -132,20 +134,10 @@ export default function PlasmaExchange() {
     s2.text = JSON.stringify(faqSchema);
     document.head.appendChild(s2);
 
-    let canonical = document.getElementById("tpe-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "tpe-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/services/plasma-exchange";
-
     return () => {
       document.getElementById("tpe-localbusiness-schema")?.remove();
       document.getElementById("tpe-procedure-schema")?.remove();
       document.getElementById("tpe-faq-schema")?.remove();
-      document.getElementById("tpe-canonical")?.remove();
     };
   }, []);
 

@@ -5,13 +5,15 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Baby, Flower, Heart, CheckCircle2 } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 export default function NaturopathicMedicine() {
+  usePageSEO({
+    title: "Naturopathic Medicine Santa Barbara | Purety Clinic",
+    description: "Naturopathic medicine with Dr. Jonathan Birch NMD in Santa Barbara. Root-cause care for chronic illness and immune health. Call (805) 500-8300.",
+    canonicalPath: "/services/naturopathic",
+  });
   useEffect(() => {
-    document.title = "Naturopathic Medicine Santa Barbara | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Naturopathic medicine with Dr. Jonathan Birch NMD in Santa Barbara. Root-cause care for chronic illness and immune health. Call (805) 500-8300.");
-
     const schema = {
       "@context": "https://schema.org", "@type": "Physician",
       "name": "Dr. Jonathan Birch, NMD, RMSK",

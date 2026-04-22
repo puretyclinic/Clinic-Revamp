@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -29,11 +30,12 @@ const FAQS = [
 ];
 
 export default function GutHealth() {
+  usePageSEO({
+    title: "Gut Health & FMT Treatment Santa Barbara | Purety Clinic",
+    description: "FMT and gut health treatment at Purety Clinic in Santa Barbara. Treating IBS, C. diff, Crohn's, and SIBO. Call (805) 500-8300.",
+    canonicalPath: "/conditions/gut-health",
+  });
   useEffect(() => {
-    document.title = "Gut Health & FMT Treatment Santa Barbara | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "FMT and gut health treatment at Purety Clinic in Santa Barbara. Treating IBS, C. diff, Crohn's, and SIBO. Call (805) 500-8300.");
-
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -64,18 +66,8 @@ export default function GutHealth() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    let canonical = document.getElementById("gut-health-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "gut-health-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/conditions/gut-health";
-
     return () => {
       schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-      document.getElementById("gut-health-canonical")?.remove();
     };
   }, []);
 

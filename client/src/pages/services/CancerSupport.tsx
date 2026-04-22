@@ -5,13 +5,15 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Heart, Sun, Leaf, Shield, AlertCircle } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 export default function CancerSupport() {
+  usePageSEO({
+    title: "Integrative Cancer Support Santa Barbara | Purety Clinic",
+    description: "Integrative cancer support at Purety Clinic in Santa Barbara. High-dose IV Vitamin C, ozone therapy, and naturopathic care. Call (805) 500-8300.",
+    canonicalPath: "/services/cancer-support",
+  });
   useEffect(() => {
-    document.title = "Integrative Cancer Support Santa Barbara | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Integrative cancer support at Purety Clinic in Santa Barbara. High-dose IV Vitamin C, ozone therapy, and naturopathic care. Call (805) 500-8300.");
-
     const schema = {
       "@context": "https://schema.org", "@type": "MedicalTherapy",
       "name": "Integrative Cancer Support",

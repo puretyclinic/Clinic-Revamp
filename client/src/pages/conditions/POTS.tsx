@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -71,11 +72,12 @@ const TREATMENTS = [
 ];
 
 export default function POTS() {
+  usePageSEO({
+    title: "POTS Treatment Santa Barbara | TPE & EBO2 | Purety Clinic",
+    description: "POTS and dysautonomia treatment at Purety Clinic in Santa Barbara: TPE, EBO2 ozone, and integrative medicine. Call (805) 500-8300.",
+    canonicalPath: "/conditions/pots",
+  });
   useEffect(() => {
-    document.title = "POTS Treatment Santa Barbara | TPE & EBO2 | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "POTS and dysautonomia treatment at Purety Clinic in Santa Barbara: TPE, EBO2 ozone, and integrative medicine. Call (805) 500-8300.");
-
     const conditionSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalCondition",
@@ -140,18 +142,8 @@ export default function POTS() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    let canonical = document.getElementById("pots-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "pots-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/conditions/pots";
-
     return () => {
       schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-      document.getElementById("pots-canonical")?.remove();
     };
   }, []);
 

@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -8,13 +9,6 @@ import { Link } from "wouter";
 import { blogPosts } from "@/data/posts";
 import { ContactCTA } from "@/components/ContactCTA";
 
-function useBlogMeta() {
-  useEffect(() => {
-    document.title = "Blog | Integrative Medicine Santa Barbara | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Articles on FMT, PRP, ozone therapy, plasma exchange, and holistic health from Dr. Jonathan Birch at Purety Clinic in Santa Barbara.");
-  }, []);
-}
 
 function formatDate(dateStr: string): string {
   if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
@@ -27,7 +21,11 @@ function formatDate(dateStr: string): string {
 }
 
 export default function Blog() {
-  useBlogMeta();
+  usePageSEO({
+    title: "Blog | Integrative Medicine Santa Barbara | Purety Clinic",
+    description: "Articles on FMT, PRP, ozone therapy, plasma exchange, and holistic health from Dr. Jonathan Birch at Purety Clinic in Santa Barbara.",
+    canonicalPath: "/blog",
+  });
   // Only show posts that are not hidden
   const visiblePosts = blogPosts.filter(post => !post.hidden);
 

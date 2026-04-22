@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -29,11 +30,12 @@ const FAQS = [
 ];
 
 export default function Arthritis() {
+  usePageSEO({
+    title: "Arthritis Treatment Santa Barbara | PRP | Purety Clinic",
+    description: "PRP and stem cell therapy for arthritis in Santa Barbara. Ultrasound-guided by Dr. Birch NMD, RMSK — 4,000+ procedures. Call (805) 500-8300.",
+    canonicalPath: "/conditions/arthritis",
+  });
   useEffect(() => {
-    document.title = "Arthritis Treatment Santa Barbara | PRP | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "PRP and stem cell therapy for arthritis in Santa Barbara. Ultrasound-guided by Dr. Birch NMD, RMSK — 4,000+ procedures. Call (805) 500-8300.");
-
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -64,18 +66,8 @@ export default function Arthritis() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    let canonical = document.getElementById("arthritis-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "arthritis-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/conditions/arthritis";
-
     return () => {
       schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-      document.getElementById("arthritis-canonical")?.remove();
     };
   }, []);
 

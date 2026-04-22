@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -125,11 +126,11 @@ const TESTIMONIALS = [
 ];
 
 export default function Testimonials() {
-  useEffect(() => {
-    document.title = "Patient Reviews | Purety Clinic Santa Barbara";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Real patient reviews for Purety Clinic in Santa Barbara. FMT, PRP, ozone and plasma exchange patients share their stories. 77 five-star reviews.");
-  }, []);
+  usePageSEO({
+    title: "Patient Reviews | Purety Clinic Santa Barbara",
+    description: "Real patient reviews for Purety Clinic in Santa Barbara. FMT, PRP, ozone and plasma exchange patients share their stories. 77 five-star reviews.",
+    canonicalPath: "/testimonials",
+  });
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filtered = activeCategory === "All"

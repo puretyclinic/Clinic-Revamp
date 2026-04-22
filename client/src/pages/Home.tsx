@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { Navbar } from "@/components/layout/Navbar";
 import { HeroSafe } from "@/components/hero-safe";
 import { Philosophy } from "@/components/home/Philosophy";
@@ -12,11 +13,12 @@ import { CheckCircle2, MapPin } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
+  usePageSEO({
+    title: "Integrative Medicine Santa Barbara | Purety Clinic",
+    description: "Purety Clinic in Santa Barbara — FMT, plasma exchange, PRP, EBO2 ozone therapy, IV therapy, BHRT, and holistic primary care. Call (805) 500-8300.",
+    canonicalPath: "/",
+  });
   useEffect(() => {
-    document.title = "Integrative Medicine Santa Barbara | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Purety Clinic in Santa Barbara — FMT, plasma exchange, PRP, EBO2 ozone therapy, IV therapy, BHRT, and holistic primary care. Call (805) 500-8300.");
-
     const schema = {
       "@context": "https://schema.org",
       "@type": "MedicalClinic",

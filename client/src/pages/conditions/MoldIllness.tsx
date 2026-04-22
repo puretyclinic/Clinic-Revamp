@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -71,11 +72,12 @@ const TREATMENTS = [
 ];
 
 export default function MoldIllness() {
+  usePageSEO({
+    title: "Mold Illness (CIRS) Treatment Santa Barbara | Purety Clinic",
+    description: "Mold illness (CIRS) treatment at Purety Clinic in Santa Barbara. EBO2 ozone, NAD+, and naturopathic protocols. Call (805) 500-8300.",
+    canonicalPath: "/conditions/mold-illness",
+  });
   useEffect(() => {
-    document.title = "Mold Illness (CIRS) Treatment Santa Barbara | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Mold illness (CIRS) treatment at Purety Clinic in Santa Barbara. EBO2 ozone, NAD+, and naturopathic protocols. Call (805) 500-8300.");
-
     const conditionSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalCondition",
@@ -140,18 +142,8 @@ export default function MoldIllness() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    let canonical = document.getElementById("mold-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "mold-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/conditions/mold-illness";
-
     return () => {
       schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-      document.getElementById("mold-canonical")?.remove();
     };
   }, []);
 

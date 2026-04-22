@@ -6,14 +6,34 @@ import { Button } from "@/components/ui/button";
 import { storedPages } from "@/data/stored_pages";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ContactCTA } from "@/components/ContactCTA";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 export default function FAQ() {
-  useEffect(() => {
-    document.title = "Frequently Asked Questions | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Common questions about FMT, PRP, ozone therapy, and integrative care at Purety Clinic in Santa Barbara, CA. Call (805) 500-8300.");
-  }, []);
+  usePageSEO({
+    title: "Frequently Asked Questions | Purety Clinic",
+    description: "Common questions about FMT, PRP, ozone therapy, and integrative care at Purety Clinic in Santa Barbara, CA. Call (805) 500-8300.",
+    canonicalPath: "/faq",
+  });
   const pageData = storedPages.find(p => p.id === "faq-page");
+
+  useEffect(() => {
+    if (!pageData?.content_sections?.length) return;
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": pageData.content_sections.map(faq => ({
+        "@type": "Question",
+        "name": faq.heading,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.body },
+      })),
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "faq-page-schema";
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+    return () => { document.getElementById("faq-page-schema")?.remove(); };
+  }, [pageData]);
 
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">

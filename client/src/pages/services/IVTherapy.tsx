@@ -5,13 +5,15 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Droplet, Wind, Zap, CheckCircle2 } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 export default function IVTherapy() {
+  usePageSEO({
+    title: "IV Therapy Santa Barbara | Myers Cocktail | Purety Clinic",
+    description: "IV therapy at Purety Clinic in Santa Barbara: Myers Cocktail, high-dose Vitamin C, NAD+, and glutathione. Call (805) 500-8300.",
+    canonicalPath: "/services/iv-therapy",
+  });
   useEffect(() => {
-    document.title = "IV Therapy Santa Barbara | Myers Cocktail | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "IV therapy at Purety Clinic in Santa Barbara: Myers Cocktail, high-dose Vitamin C, NAD+, and glutathione. Call (805) 500-8300.");
-
     const schema = {
       "@context": "https://schema.org",
       "@type": "MedicalTherapy",

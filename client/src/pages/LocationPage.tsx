@@ -6,6 +6,7 @@ import { MapPin, Car, Phone, CheckCircle2, ChevronDown, ChevronUp, ArrowRight, E
 import { Link } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
 import { useState, useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
@@ -796,13 +797,14 @@ const SERVICE_LINKS: Record<string, string> = {
 export default function LocationPage({ params }: { params: { city: string } }) {
   const cityKey = params.city.toLowerCase();
   const location = locations[cityKey];
+  usePageSEO({
+    title: location?.metaTitle || "Purety Clinic | Santa Barbara, CA",
+    description: location?.metaDescription || "Integrative medicine clinic in Santa Barbara, CA.",
+    canonicalPath: `/locations/${cityKey}`,
+  });
 
   useEffect(() => {
     if (!location) return;
-    document.title = location.metaTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", location.metaDescription);
-
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.id = "location-schema";

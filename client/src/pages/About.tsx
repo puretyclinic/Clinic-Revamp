@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -6,13 +6,14 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 export default function About() {
-  useEffect(() => {
-    document.title = "About Purety Clinic | Dr. Jonathan Birch NMD";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Meet Dr. Jonathan Birch NMD, RMSK at Purety Clinic in Santa Barbara. 1,000+ FMT procedures, 4,000+ regen injections, and a 5.0★ Google rating.");
-  }, []);
+  usePageSEO({
+    title: "About Purety Clinic | Dr. Jonathan Birch NMD",
+    description: "Meet Dr. Jonathan Birch NMD, RMSK at Purety Clinic in Santa Barbara. 1,000+ FMT procedures, 4,000+ regen injections, and a 5.0★ Google rating.",
+    canonicalPath: "/about",
+  });
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
       <Navbar />

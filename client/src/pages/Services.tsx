@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -94,11 +94,11 @@ const services = [
 ];
 
 export default function Services() {
-  useEffect(() => {
-    document.title = "Our Services | Purety Clinic | Santa Barbara, CA";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Integrative medicine at Purety Clinic in Santa Barbara: FMT, PRP, ozone therapy, plasma exchange, IV therapy, BHRT, and more.");
-  }, []);
+  usePageSEO({
+    title: "Our Services | Purety Clinic | Santa Barbara, CA",
+    description: "Integrative medicine at Purety Clinic in Santa Barbara: FMT, PRP, ozone therapy, plasma exchange, IV therapy, BHRT, and more.",
+    canonicalPath: "/services",
+  });
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans selection:bg-accent/20 selection:text-accent-foreground">
       <Navbar />

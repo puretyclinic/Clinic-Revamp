@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -29,11 +30,12 @@ const FAQS = [
 ];
 
 export default function Longevity() {
+  usePageSEO({
+    title: "Longevity Medicine Santa Barbara | EBO2 | Purety Clinic",
+    description: "Longevity medicine at Purety Clinic in Santa Barbara: EBO2, therapeutic plasma exchange, and microbiome optimization. Call (805) 500-8300.",
+    canonicalPath: "/conditions/longevity",
+  });
   useEffect(() => {
-    document.title = "Longevity Medicine Santa Barbara | EBO2 | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Longevity medicine at Purety Clinic in Santa Barbara: EBO2, therapeutic plasma exchange, and microbiome optimization. Call (805) 500-8300.");
-
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -64,18 +66,8 @@ export default function Longevity() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    let canonical = document.getElementById("longevity-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "longevity-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/conditions/longevity";
-
     return () => {
       schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-      document.getElementById("longevity-canonical")?.remove();
     };
   }, []);
 

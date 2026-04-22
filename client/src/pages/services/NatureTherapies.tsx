@@ -5,13 +5,15 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Leaf, Sun, Droplets, Mountain } from "lucide-react";
 import { ContactCTA } from "@/components/ContactCTA";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 export default function NatureTherapies() {
+  usePageSEO({
+    title: "Nature Therapies Santa Barbara | Purety Clinic",
+    description: "Nature-based therapies at Purety Clinic in Santa Barbara: forest bathing, grounding, and nature immersion for healing and wellbeing.",
+    canonicalPath: "/services/nature-therapies",
+  });
   useEffect(() => {
-    document.title = "Nature Therapies Santa Barbara | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Nature-based therapies at Purety Clinic in Santa Barbara: forest bathing, grounding, and nature immersion for healing and wellbeing.");
-
     const schema = {
       "@context": "https://schema.org", "@type": "MedicalTherapy",
       "name": "Nature Therapies",

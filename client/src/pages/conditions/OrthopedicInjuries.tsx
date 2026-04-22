@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -71,11 +72,12 @@ const TREATMENTS = [
 ];
 
 export default function OrthopedicInjuries() {
+  usePageSEO({
+    title: "PRP for Orthopedic & Sports Injuries | Purety Clinic",
+    description: "PRP and biologic injections for orthopedic and sports injuries in Santa Barbara. Ultrasound-guided by Dr. Birch RMSK. Call (805) 500-8300.",
+    canonicalPath: "/conditions/orthopedic-injuries",
+  });
   useEffect(() => {
-    document.title = "PRP for Orthopedic & Sports Injuries | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "PRP and biologic injections for orthopedic and sports injuries in Santa Barbara. Ultrasound-guided by Dr. Birch RMSK. Call (805) 500-8300.");
-
     const conditionSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalCondition",
@@ -140,18 +142,8 @@ export default function OrthopedicInjuries() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    let canonical = document.getElementById("ortho-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "ortho-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/conditions/orthopedic-injuries";
-
     return () => {
       schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-      document.getElementById("ortho-canonical")?.remove();
     };
   }, []);
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -56,12 +57,13 @@ const DEFAULT_OZONE_VARIANT = {
 export default function OzoneTherapy() {
   const [location] = useLocation();
   const variant = GEO_VARIANTS_OZONE[location] ?? DEFAULT_OZONE_VARIANT;
+  usePageSEO({
+    title: variant.title,
+    description: variant.metaDescription,
+    canonicalPath: "/services/ozone-therapy",
+  });
 
   useEffect(() => {
-    document.title = variant.title;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", variant.metaDescription);
-
     const localSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalClinic",
@@ -177,18 +179,8 @@ export default function OzoneTherapy() {
       document.head.appendChild(s);
     });
 
-    let canonical = document.getElementById("ozone-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "ozone-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/services/ozone-therapy";
-
     return () => {
       schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-      document.getElementById("ozone-canonical")?.remove();
     };
   }, [variant.title]);
 

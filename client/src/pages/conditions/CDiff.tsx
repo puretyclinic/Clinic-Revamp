@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -39,11 +40,12 @@ const WHY_ANTIBIOTICS_FAIL = [
 ];
 
 export default function CDiff() {
+  usePageSEO({
+    title: "C. difficile Treatment | FMT Specialist | Purety Clinic",
+    description: "California's most experienced FMT clinic for recurrent C. difficile. Dr. Birch — 1,000+ procedures since 2014. Call (805) 500-8300.",
+    canonicalPath: "/conditions/c-difficile",
+  });
   useEffect(() => {
-    document.title = "C. difficile Treatment | FMT Specialist | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "California's most experienced FMT clinic for recurrent C. difficile. Dr. Birch — 1,000+ procedures since 2014. Call (805) 500-8300.");
-
     const conditionSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalCondition",
@@ -111,18 +113,8 @@ export default function CDiff() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    let canonical = document.getElementById("cdiff-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "cdiff-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/conditions/c-difficile";
-
     return () => {
       schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-      document.getElementById("cdiff-canonical")?.remove();
     };
   }, []);
 

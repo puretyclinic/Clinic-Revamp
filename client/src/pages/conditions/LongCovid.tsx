@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -42,11 +43,12 @@ const SYMPTOMS = [
 ];
 
 export default function LongCovid() {
+  usePageSEO({
+    title: "Long COVID Treatment Santa Barbara | Purety Clinic",
+    description: "Long COVID treatment at Purety Clinic in Santa Barbara: TPE, EBO2 ozone therapy, and functional medicine. Call (805) 500-8300.",
+    canonicalPath: "/conditions/long-covid",
+  });
   useEffect(() => {
-    document.title = "Long COVID Treatment Santa Barbara | Purety Clinic";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Long COVID treatment at Purety Clinic in Santa Barbara: TPE, EBO2 ozone therapy, and functional medicine. Call (805) 500-8300.");
-
     const conditionSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalCondition",
@@ -111,18 +113,8 @@ export default function LongCovid() {
       s.text = JSON.stringify(data);
       document.head.appendChild(s);
     });
-    let canonical = document.getElementById("long-covid-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "long-covid-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://puretyclinic.com/conditions/long-covid";
-
     return () => {
       schemas.forEach(({ id }) => document.getElementById(id)?.remove());
-      document.getElementById("long-covid-canonical")?.remove();
     };
   }, []);
 
