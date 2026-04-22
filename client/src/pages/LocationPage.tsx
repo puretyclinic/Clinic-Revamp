@@ -800,7 +800,7 @@ export default function LocationPage({ params }: { params: { city: string } }) {
   usePageSEO({
     title: location?.metaTitle || "Purety Clinic | Santa Barbara, CA",
     description: location?.metaDescription || "Integrative medicine clinic in Santa Barbara, CA.",
-    canonicalPath: `/locations/${cityKey}`,
+    canonicalPath: location ? `/locations/${cityKey}` : "/locations",
   });
 
   useEffect(() => {
