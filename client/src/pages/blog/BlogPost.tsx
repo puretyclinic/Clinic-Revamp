@@ -26,7 +26,7 @@ export default function BlogPost() {
   usePageSEO({
     title: post ? `${post.title} | Purety Clinic` : "Blog | Purety Clinic",
     description: post?.excerpt || "Articles on integrative medicine from Purety Clinic in Santa Barbara.",
-    canonicalPath: `/blog/${id}`,
+    canonicalPath: post && id ? `/blog/${id}` : "/blog",
   });
 
   useEffect(() => {
