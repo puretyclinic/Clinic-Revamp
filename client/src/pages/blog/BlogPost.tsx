@@ -7,6 +7,7 @@ import { Link, useParams } from "wouter";
 import { ContactCTA } from "@/components/ContactCTA";
 import { blogPosts } from "@/data/posts";
 import { useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 function formatDate(dateStr: string): string {
   if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
@@ -21,6 +22,12 @@ function formatDate(dateStr: string): string {
 export default function BlogPost() {
   const { id } = useParams<{ id: string }>();
   const post = blogPosts.find((p) => p.id === id);
+
+  usePageSEO({
+    title: post ? `${post.title} | Purety Clinic` : "Blog | Purety Clinic",
+    description: post?.excerpt || "Articles on integrative medicine from Purety Clinic in Santa Barbara.",
+    canonicalPath: `/blog/${id}`,
+  });
 
   useEffect(() => {
     if (!post) return;
@@ -61,25 +68,6 @@ export default function BlogPost() {
     script.id = "blogposting-schema";
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
-    document.title = `${post.title} | Purety Clinic`;
-
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      (metaDesc as HTMLMetaElement).name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    const prevDesc = metaDesc.getAttribute("content") || "";
-    metaDesc.setAttribute("content", post.excerpt);
-
-    let canonical = document.getElementById("blog-canonical") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.id = "blog-canonical";
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = `https://puretyclinic.com/blog/${post.id}`;
 
     const ogImage = document.querySelector('meta[property="og:image"]') as HTMLMetaElement | null;
     const prevOgImage = ogImage?.getAttribute("content") || "";
@@ -89,17 +77,10 @@ export default function BlogPost() {
     const prevTwImage = twImage?.getAttribute("content") || "";
     if (twImage && post.image) twImage.setAttribute("content", post.image);
 
-    const ogTitle = document.querySelector('meta[property="og:title"]') as HTMLMetaElement | null;
-    const prevOgTitle = ogTitle?.getAttribute("content") || "";
-    if (ogTitle) ogTitle.setAttribute("content", `${post.title} | Purety Clinic`);
-
     return () => {
       document.getElementById("blogposting-schema")?.remove();
-      document.getElementById("blog-canonical")?.remove();
-      metaDesc?.setAttribute("content", prevDesc);
       if (ogImage) ogImage.setAttribute("content", prevOgImage);
       if (twImage) twImage.setAttribute("content", prevTwImage);
-      if (ogTitle) ogTitle.setAttribute("content", prevOgTitle);
     };
   }, [post]);
 
